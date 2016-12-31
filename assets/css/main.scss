@@ -1,0 +1,14 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+// Utils
+@import '_reset.scss';
+
+// Layout Blocks
+@import '_clearfix.scss';
+@import '_contain.scss';
+
+// Blocks
+@import '_page.scss';
+@import '_link.scss';
+@import '_profile.scss';
