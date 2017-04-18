@@ -54,7 +54,7 @@ On the day of the conference, we turned up early to the hotel. We brought with u
 
 ## Lessons learned
 ### Developers are users too
-Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that bus factor). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent to improve the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle. 
+Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that [bus factor](https://en.wikipedia.org/wiki/Bus_factor)). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent to improve the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle. 
 
 ### Don’t use manual procedures
 > "People just aren’t as repeatable as computers. Nor should we expect them to be."

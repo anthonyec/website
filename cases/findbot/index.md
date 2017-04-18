@@ -1,8 +1,9 @@
 ---
 layout: case
 title: Findbot
-overview: Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders quickly.
+overview: Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders&nbsp;quickly.
 tech: node, botkit, slack
+subjects: chatbots, node
 ---
 
 ## Problem
@@ -27,7 +28,7 @@ Within a few days, I got a chatbot on Slack up and running. I named the integrat
 
 I had heard about a Node.js framework called Botkit that assisted in the creation of bots for various chat services. So I gave it a try and it was very easy to get started with. You can define phrases using strings or regex that Botkit can “listen” out for. Then when it hears something specific it can send a response back or start a conversation using the API it provides. I also created a very rudimentary indexer that used Node’s built in filesystem functions `fs` to scan project folders on the server using my computer. It would then save the scraped results to a JSON file.
 
-Later that week I released snbot to the world (well, the office at least) and got instant feedback on its usefulness and flaws. Everyone who saw it thought it was a good idea. At this time the chatbot was running on my laptop. This meant that when my computer was off, snbot was down. While this gave the nice illusion that snbot lived fulfilling 9 to 6 life at work it wasn't useful being unavailable occasionally. Deploying on my computer was always temporary step to test out snbot. Next I need to find a way to keep it up 24/7.
+Later that week I released snbot to the world (well, the office at least) and got instant feedback on its usefulness and flaws. Everyone who saw it thought it was a good idea. At this time the chatbot was running on my laptop. This meant that when my computer was off, snbot was down. While this gave the nice illusion that snbot lived a fulfilling 9 to 6 lifestyle, it wasn't useful being unavailable occasionally. Deploying on my computer was always a temporary step to test out snbot. Next I need to find a way to keep it up 24/7.
 
 I debated for a while if snbot should be hosted on a cloud service like AWS. While this would solve the chatbot uptime issue it introduced other problems. How would a server on AWS index the project server that was only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
 
@@ -37,7 +38,7 @@ Anyway, Christmas came we all had a holiday. I ate lots of food and got a Raspbe
 I spent a long time trying to get AFP ([Apple File Protocol](https://en.wikipedia.org/wiki/Apple_Filing_Protocol)) to work on the Raspberry Pi. I did find an apt package that allowed me to connect to the server via AFP but hit a dead end when it did not play nicely with the `fs` module.
 
 The project stalled for a bit until I realised one day that our server is a Synology NAS and had an API. I spent a good while backward engineering it's API from a single PDF that Synology provided on their website. However, instead I ended up a [npm package](https://www.npmjs.com/package/synology) that someone else already created.
-Using the API made indexing really simple. All that was required to do was called GET requests to specific folders and save the JSON result.
+Using the API made indexing really simple. All that was required to do was call `GET` requests to specific folders and save the JSON result.
 
 ## Separating concerns
 Up until this point, the snbot had been monolithic in structure. Project indexing, searching and chat bot interface were tightly coupled. While this allowed me to get things up and running quickly, it hindered further development.
@@ -45,7 +46,7 @@ Up until this point, the snbot had been monolithic in structure. Project indexin
 ![Diagram of a monolithic architecture, with database, chatbot and indexing all in one](images/monolithic_diagram.svg)
 *My technical diagram for monolithic architecture. Or what I like to call “a big thing doing a bunch of stuff inside of it”.*
 
-So inspired by a [microservices talk by Netflix](https://www.youtube.com/watch?v=57UK46qfBLY), I refactored the code base to remove the tight coupling between chat interface and index searching. The project indexer and search became a separate Node app that was provided a simple RESTful API. This would allow for future development of other interfaces or tools that interact with the project server searching.
+So inspired by a [microservices talk by Netflix](https://www.youtube.com/watch?v=57UK46qfBLY), I refactored the code base to remove the tight coupling between chat interface and index searching. The project indexer and search became a separate Node app that provided a simple RESTful API. This would allow for future development of other interfaces or tools that interact with the project server searching.
 
 ![Diagram of the previous architecture split into separate services that interact with each other vertically](images/services_diagram.svg)
 *Separating concerns.*
