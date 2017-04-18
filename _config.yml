@@ -23,3 +23,9 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Collection definitions and settings
+collections:
+  cases:
+    output: true
+    permalink: /:path/

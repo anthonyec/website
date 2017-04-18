@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <title>{{ page.title | escape | strip_html }}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body class="page">
+    <div class="article">
+      <div class="rich-text l-contain">
+        <h1>
+          {{ page.title }}
+        </h1>
+        <p>
+          {{ page.overview }}
+        </p>
+        {{ content }}
+      </div>
+    </div>
+    <div class="footer">
+      <div class="teaser">
+        <div class="teaser__thumbnail"></div>
+        <h3 class="teaser__title">
+          Some other project
+        </h3>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser__thumbnail"></div>
+        <h3 class="teaser__title">
+          Some other project
+        </h3>
+      </div>
+
+      <div class="teaser">
+        <div class="teaser__thumbnail"></div>
+        <h3 class="teaser__title">
+          Some other project
+        </h3>
+      </div>
+    </div>
+  </body>
+</html>

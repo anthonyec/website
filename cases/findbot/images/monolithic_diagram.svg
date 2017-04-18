@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="215px" height="181px" viewBox="0 0 215 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="211" height="177" rx="24"></rect>
+    </defs>
+    <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(2.000000, 2.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Rectangle-4" stroke="#000000" stroke-width="3" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <text id="Chatbot-interface" mask="url(#mask-2)" transform="translate(63.894537, 46.044229) rotate(-30.000000) translate(-63.894537, -46.044229) " font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400" fill="#000000">
+                <tspan x="3.60203693" y="52.0442286">Chatbot interface</tspan>
+            </text>
+            <text id="Project-search-and-i" mask="url(#mask-2)" transform="translate(152.910081, 98.713457) rotate(-330.000000) translate(-152.910081, -98.713457) " font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400" fill="#000000">
+                <tspan x="103.012581" y="95.7134573">Project search </tspan>
+                <tspan x="108.315081" y="113.713457">and indexing</tspan>
+            </text>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(67.444864, 121.908965) rotate(-30.000000) translate(-67.444864, -121.908965) translate(33.444864, 83.908965)">
+                    <ellipse id="Oval-Copy" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd" cx="33.9421168" cy="62.32" rx="31.9083228" ry="13.68"></ellipse>
+                    <rect id="Rectangle" stroke="none" fill="#FFFFFF" fill-rule="evenodd" x="0.704280487" y="12.92" width="66.4756726" height="50.16"></rect>
+                    <ellipse id="Oval" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd" cx="33.9421168" cy="13.68" rx="31.9083228" ry="13.68"></ellipse>
+                    <path d="M65.8504396,47.12 C65.8504396,54.6752554 51.5645969,60.8 33.9421168,60.8 C16.3196367,60.8 2.03379394,54.6752554 2.03379394,47.12" id="Oval-Copy-2" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd"></path>
+                    <path d="M65.8504396,29.64 C65.8504396,37.1952554 51.5645969,43.32 33.9421168,43.32 C16.3196367,43.32 2.03379394,37.1952554 2.03379394,29.64" id="Oval-Copy-3" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd"></path>
+                    <path d="M1.5,14.06 L1.5,62.1266204" id="Line" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square"></path>
+                    <path d="M65.5,14.06 L65.5,62.1266204" id="Line-Copy" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

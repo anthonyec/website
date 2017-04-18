@@ -1,13 +1,5 @@
 .l-contain {
-  padding: 0 80px;
-  max-width: 960px + (80px * 2);
   margin: 0 auto;
-
-  @media(max-width: 768px) {
-    padding: 0 40px;
-  }
-
-  @media(max-width: 480px) {
-    padding: 0 15px;
-  }
+  max-width: 760px;
+  padding: 0 1.5rem;
 }

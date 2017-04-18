@@ -1,0 +1,16 @@
+.teaser {
+  background: white;
+  color: black;
+  display: inline-block;
+  margin-right: 30px;
+
+  &:first-child {
+    margin-left: calc(78vw - 760px);
+  }
+
+  &__thumbnail {
+    background: gray;
+    width: 400px;
+    padding-bottom: 60%;
+  }
+}
