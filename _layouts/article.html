@@ -1,26 +1,36 @@
-<link rel="stylesheet" href="/reset.css">
-<link rel="stylesheet" href="/article.css">
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <title>{{ page.title | escape | strip_html }}</title>
 
-<body>
-  <div class="page">
-    <div class="article">
-      <h1>
-        {{ page.title }}
-      </h1>
-      <h2 class="overview">
-        {{ page.overview }}
-      </h2>
-      {{ content }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}">
+
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/article.css">
+  </head>
+  <body>
+    <div class="page">
+      <div class="article">
+        <h1>
+          {{ page.title }}
+        </h1>
+        <h2 class="overview">
+          {{ page.overview }}
+        </h2>
+        {{ content }}
+      </div>
     </div>
-  </div>
 
-  <div class="lets-talk">
-    <h2 class="lets-talk__title">
-      Let's talk!
-    </h2>
+    <div class="lets-talk">
+      <h2 class="lets-talk__title">
+        Let's talk!
+      </h2>
 
-    <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
-      Email me
-    </a>
-  </div>
-</body>
+      <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
+        Email me
+      </a>
+    </div>
+  </body>
+</html>
