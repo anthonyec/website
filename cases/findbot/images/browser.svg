@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="478px" height="321px" viewBox="0 0 478 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>browser</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.9%" y="-1.3%" width="103.5%" height="105.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0882869112 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="460" height="297" rx="8"></rect>
+        <filter x="-0.7%" y="-1.0%" width="101.3%" height="102.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="4" operator="erode" in="SourceAlpha" result="shadowSpreadInner1"></feMorphology>
+            <feOffset dx="2" dy="2" in="shadowSpreadInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M0,0 L260,0 L260,252.004579 C260,254.211189 258.200871,256 255.994171,256 L0,256 L0,0 Z" id="path-4"></path>
+        <path d="M0,0 L194,0 L194,256 L4.00743476,256 C1.79418966,256 0,254.211092 0,252.004579 L0,0 Z" id="path-6"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="browser" transform="translate(235.000000, 156.500000) rotate(-2.000000) translate(-235.000000, -156.500000) translate(5.000000, 8.000000)">
+            <g filter="url(#filter-1)">
+                <g id="background">
+                    <use fill="#EEF3FA" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <rect stroke="#000000" stroke-width="3" x="1.5" y="1.5" width="457" height="294" rx="8"></rect>
+                </g>
+                <path d="M3,36.5 L457,36.5" id="title_bar_divider" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+                <g id="traffic_lights" transform="translate(13.000000, 12.000000)" stroke="#000000" stroke-width="3" fill="#EEF3FA">
+                    <circle id="close_button" cx="7" cy="7" r="7"></circle>
+                    <circle id="min_button" cx="28" cy="7" r="7"></circle>
+                    <circle id="max_button" cx="49" cy="7" r="7"></circle>
+                </g>
+                <g id="right_side" transform="translate(197.000000, 38.000000)">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <use id="right_side_mask" fill="#FFFFFF" xlink:href="#path-4"></use>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                        <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                        <text id="label" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400" fill="#000000">
+                            <tspan x="8" y="21">16035_CME_Website</tspan>
+                        </text>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 30.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16050_WordPress_Theme</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 60.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16051_Infographic</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 90.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16058_Infographic_Updates</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 120.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16066_Wmail</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 150.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16113_Eco_Friendly</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 180.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16123_Economist_Project</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 210.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16175_Dev_blog</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 240.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16182_Bigscreen</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-5)">
+                        <g transform="translate(0.000000, 270.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="260" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="252 15.5 246 20 246 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">16190_</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+                <g id="left_side" transform="translate(3.000000, 38.000000)">
+                    <mask id="mask-7" fill="white">
+                        <use xlink:href="#path-6"></use>
+                    </mask>
+                    <use id="left_side_mask" fill="#FFFFFF" xlink:href="#path-6"></use>
+                    <g id="folder_unselected" mask="url(#mask-7)">
+                        <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="191" height="30"></rect>
+                        <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="183 15.5 177 20 177 11"></polygon>
+                        <text id="label" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400" fill="#000000">
+                            <tspan x="8" y="21">2013</tspan>
+                        </text>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-7)">
+                        <g transform="translate(0.000000, 30.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="191" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="183 15.5 177 20 177 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">2014</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-7)">
+                        <g transform="translate(0.000000, 60.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="191" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="183 15.5 177 20 177 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">2015</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_selected" mask="url(#mask-7)">
+                        <g transform="translate(0.000000, 90.000000)">
+                            <rect id="background" fill="#1D7BFF" fill-rule="evenodd" x="0" y="0" width="191" height="30"></rect>
+                            <polygon id="arrow" fill="#FFFFFF" fill-rule="evenodd" points="183 15.5 177 20 177 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#FFFFFF">2016</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="folder_unselected" mask="url(#mask-7)">
+                        <g transform="translate(0.000000, 120.000000)">
+                            <rect id="background" fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" x="0" y="0" width="191" height="30"></rect>
+                            <polygon id="arrow" fill="#000000" fill-rule="evenodd" points="183 15.5 177 20 177 11"></polygon>
+                            <text id="label" fill="none" font-family="HelveticaNeue-Medium, Helvetica Neue" font-size="15" font-weight="400">
+                                <tspan x="8" y="21" fill="#000000">2017</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+                <path d="M195.5,37 L195.5,295" id="side_divider" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+                <g id="cursor" transform="translate(156.000000, 149.000000)">
+                    <polygon fill="#000000" points="0 28.9063313 0 0 20.9181328 20.9717554 8.68054688 20.9717554 7.93882031 21.1955697"></polygon>
+                    <polygon fill="#000000" points="16.3946836 30.1234115 9.88878516 32.8940152 1.43923828 12.8788851 8.09131641 10.0757923"></polygon>
+                    <polygon fill="#FFFFFF" points="13.9881328 28.8947796 10.6602891 30.2918136 5.06575781 16.9820861 8.3881875 15.5832471"></polygon>
+                    <polygon fill="#FFFFFF" points="1.8046875 4.34470372 1.8046875 24.5385241 7.16280469 19.3655272 7.93521094 19.1146387 16.5399609 19.1146387"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
