@@ -1,5 +1,5 @@
 ---
-layout: case
+layout: article
 title: Findbot
 overview: Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders&nbsp;quickly.
 tech: node, botkit, slack
@@ -9,8 +9,8 @@ subjects: chatbots, node
 ## Problem
 At Signal Noise we have a server that contains all the files that are related to a project. These include design assets, proposal documents, contracts, copy and much more. All of this is organised into project folders which have a project number and name. In turn, all these project folders are contained in year folders.
 
-![Illustrations of a long list of folders in a file browser](images/files.svg)
-*It's a little bit painful to watch and&nbsp;experience.*
+![Illustrations of a long list of folders in a file browser](images/browser.svg)
+*It's a little bit painful to watch and experience.*
 
 As the company has got bigger and more people work on different projects at once it has become hard for people to find the project they are looking for. Most people will remember the project number but sometimes people deal with multiple ongoing projects at once. People resort scrolling through a huge list in the Finder.
 
@@ -34,13 +34,13 @@ I debated for a while if snbot should be hosted on a cloud service like AWS. Whi
 
 Anyway, Christmas came we all had a holiday. I ate lots of food and got a Raspberry Pi as a gift. Raspberry Pi 3 was ideal because it ran a Linux-based operating system, so most things that can work on AWS are compatible. It’s also a physical thing that we have full control over so security is better. Setting up the Raspberry Pi allowed me to get a lot more familiar with the internal workings of Linux. In turn, this helped me understand more how AWS works.
 
-## Indexing the server
+### Indexing the server
 I spent a long time trying to get AFP ([Apple File Protocol](https://en.wikipedia.org/wiki/Apple_Filing_Protocol)) to work on the Raspberry Pi. I did find an apt package that allowed me to connect to the server via AFP but hit a dead end when it did not play nicely with the `fs` module.
 
 The project stalled for a bit until I realised one day that our server is a Synology NAS and had an API. I spent a good while backward engineering it's API from a single PDF that Synology provided on their website. However, instead I ended up a [npm package](https://www.npmjs.com/package/synology) that someone else already created.
 Using the API made indexing really simple. All that was required to do was call `GET` requests to specific folders and save the JSON result.
 
-## Separating concerns
+### Separating concerns
 Up until this point, the snbot had been monolithic in structure. Project indexing, searching and chat bot interface were tightly coupled. While this allowed me to get things up and running quickly, it hindered further development.
 
 ![Diagram of a monolithic architecture, with database, chatbot and indexing all in one](images/monolithic_diagram.svg)
@@ -68,7 +68,7 @@ On the technical side of things, I learned more about separating concerns. This 
 A lot of assumptions you make about the user will be wrong. Getting users to learn new things is an effort. And asking users to change their workflow is a bigger one. For example, originally the “find” command had to be used to start a search.
 
 ![Screenshot of a FindBot not understanding what the user said](images/failed_chat.svg)
-*Some users were not as forgiving and abandoned FindBot straight&nbsp;away.*
+*Some users were not as forgiving and abandoned FindBot straight away.*
 
 I got feedback from a few people who used FindBot frequently that typing the word “find” before every query wasn't inline with how they expected to use it.  I also saw from looking at the analytics a few individuals not returning to FindBot again once they received the “don't understand response”. This small design decision was chosen originally because I had the grand plan of adding a whole array of functionality that wasn't to do with search. However, this greatly affected the user experience and taught me to really focus on doing one thing and doing it well.
 FindBot’s new features are now completely driven by seeing how people interact with it and talking about how they use it.
@@ -76,4 +76,4 @@ FindBot’s new features are now completely driven by seeing how people interact
 What's next for FindBot? Well, JIRA and BitBucket are still a hassle to search. And it's a requested feature among project managers. With Elasticsearch we can even do more relational searches. The plan for FindBot is to become a universal search for all things project related.
 
 ![Screenshot of a user thanking FindBot](images/thanks_chat.svg)
-*It makes it all worthwhile when seeing users thank FindBot. Or maybe it’s a sign of human’s inevitable&nbsp;demise.*
+*It makes it all worthwhile when seeing users thank FindBot. Or maybe it’s a sign of human’s inevitable demise.*

@@ -1,0 +1,180 @@
+/* Global */
+body {
+  background: #2C4172;
+  font-size: 22px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.488em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.728em;
+}
+
+h3 {
+  font-size: 1.44em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+p, blockquote, ul {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+blockquote {
+  background: #EEF3FA;
+  padding: 0.9em 1.1em;
+}
+
+cite {
+  display: block;
+  font-style: italic;
+  font-size: 0.694em;
+}
+
+cite:before {
+  content: '\2014';
+}
+
+ul {
+  margin-left: 1rem;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+@media(max-width: 520px) {
+  body {
+    font-size: 16px;
+  }
+
+  .article h2 {
+    margin-top: 1.5em;
+  }
+
+  .article .overview {
+    font-size: 1.44em;
+  }
+}
+
+@media(min-width: 520px) and (max-width: 960px) {
+  body {
+    font-size: calc(16px + (22 - 16) * ((100vw - 520px) / (960 - 520)));
+  }
+}
+
+/* Article */
+.article {
+  color: #333333;
+  font-family: 'Georgia', serif;
+  max-width: 800px; /* 780 + 20 */
+  padding: 1.5em 20px 3em;
+  margin: 0 auto;
+}
+
+.article h1 {
+  margin-top: 2.06em;
+}
+
+.article h2 {
+  margin-top: 2.5em;
+}
+
+.article h3 {
+  margin-top: 0.8em;
+}
+
+.article p, .article blockquote, .article ul {
+  margin: 1.5em 0;
+}
+
+.article .overview {
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.article img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.article img + em {
+  opacity: 0.95;
+  display: block;
+  font-size: 0.694em;
+  text-align: center;
+  margin: 1em auto 0;
+  max-width: 460px;
+}
+
+.article a:link, .article a:visited {
+  color: #1D7BFF;
+  border-bottom: 2px solid #1D7BFF;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+
+.article a:hover, .article a:active {
+  background: #d1ddff;
+  background: #EEF3FA;
+}
+
+/* Page */
+.page {
+  background: white;
+}
+
+/* Lets Talk! */
+.lets-talk {
+  background: #2C4172;
+  color: white;
+  text-align: center;
+  padding: 2.6em 0;
+}
+
+.lets-talk__button {
+  background: white;
+  border-radius: 8px;
+  color: #2C4172;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  padding: 12px 18px;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+.lets-talk__button:active {
+  color: #2C4172;
+  background: #eee;
+  position: relative;
+  top: 1px;
+}
+
+.lets-talk__button:visited {
+  color: #2C4172;
+}

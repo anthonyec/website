@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="216px" height="287px" viewBox="0 0 216 287" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="480px" height="297px" viewBox="0 0 480 297" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
     <title>services_diagram</title>
     <desc>Created with Sketch.</desc>
@@ -19,48 +19,51 @@
     </defs>
     <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="services_diagram">
-            <g id="diagram_group">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <g id="background">
-                    <use fill="#EEF3FA" fill-rule="evenodd" xlink:href="#path-1"></use>
-                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
-                    <path stroke="#000000" stroke-width="3" d="M1.5,23.9958593 C1.5,11.5727329 11.5770101,1.5 24.0043459,1.5 L55.8378906,1.5 L192.000463,1.5 C204.423705,1.5 214.5,11.57717 214.5,23.9958593 L214.5,41.0041407 C214.5,53.426047 204.425391,63.5 192.006962,63.5 L23.9930383,63.5 C11.5734759,63.5 1.5,53.4229209 1.5,41.0041407 L1.5,23.9958593 Z"></path>
+            <rect id="Rectangle-8" fill-opacity="0.01" fill="#FFFFFF" x="0" y="0" width="480" height="297"></rect>
+            <g transform="translate(132.000000, 6.000000)">
+                <g id="diagram_group">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="background">
+                        <use fill="#EEF3FA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                        <path stroke="#000000" stroke-width="3" d="M1.5,23.9958593 C1.5,11.5727329 11.5770101,1.5 24.0043459,1.5 L55.8378906,1.5 L192.000463,1.5 C204.423705,1.5 214.5,11.57717 214.5,23.9958593 L214.5,41.0041407 C214.5,53.426047 204.425391,63.5 192.006962,63.5 L23.9930383,63.5 C11.5734759,63.5 1.5,53.4229209 1.5,41.0041407 L1.5,23.9958593 Z"></path>
+                    </g>
+                    <text id="label" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="15" font-weight="bold" fill="#000000">
+                        <tspan x="46.0025" y="39">Chatbot interface</tspan>
+                    </text>
                 </g>
-                <text id="label" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="15" font-weight="bold" fill="#000000">
-                    <tspan x="46.0025" y="39">Chatbot interface</tspan>
-                </text>
-            </g>
-            <g id="diagram_group" transform="translate(0.000000, 100.000000)">
-                <mask id="mask-5" fill="white">
-                    <use xlink:href="#path-4"></use>
-                </mask>
-                <g id="background">
-                    <use fill="#EEF3FA" fill-rule="evenodd" xlink:href="#path-4"></use>
-                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-4"></use>
-                    <path stroke="#000000" stroke-width="3" d="M1.5,23.9958593 C1.5,11.5727329 11.5770101,1.5 24.0043459,1.5 L55.8378906,1.5 L192.000463,1.5 C204.423705,1.5 214.5,11.57717 214.5,23.9958593 L214.5,41.0041407 C214.5,53.426047 204.425391,63.5 192.006962,63.5 L23.9930383,63.5 C11.5734759,63.5 1.5,53.4229209 1.5,41.0041407 L1.5,23.9958593 Z"></path>
+                <g id="diagram_group" transform="translate(0.000000, 100.000000)">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <g id="background">
+                        <use fill="#EEF3FA" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-4"></use>
+                        <path stroke="#000000" stroke-width="3" d="M1.5,23.9958593 C1.5,11.5727329 11.5770101,1.5 24.0043459,1.5 L55.8378906,1.5 L192.000463,1.5 C204.423705,1.5 214.5,11.57717 214.5,23.9958593 L214.5,41.0041407 C214.5,53.426047 204.425391,63.5 192.006962,63.5 L23.9930383,63.5 C11.5734759,63.5 1.5,53.4229209 1.5,41.0041407 L1.5,23.9958593 Z"></path>
+                    </g>
+                    <text id="label" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="15" font-weight="bold" fill="#000000">
+                        <tspan x="17.6075" y="39">Project search + indexing</tspan>
+                    </text>
                 </g>
-                <text id="label" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="15" font-weight="bold" fill="#000000">
-                    <tspan x="17.6075" y="39">Project search + indexing</tspan>
-                </text>
+                <g id="database" transform="translate(70.000000, 200.000000)">
+                    <ellipse id="Oval-Copy" stroke="#000000" stroke-width="3" fill="#E3E3E3" fill-rule="evenodd" cx="38.1245577" cy="69.9992417" rx="35.8401541" ry="15.3656872"></ellipse>
+                    <rect id="Rectangle" fill="#E3E3E3" fill-rule="evenodd" x="0.791063865" y="14.5120379" width="74.6669877" height="56.3408531"></rect>
+                    <polygon id="Rectangle-2-Copy" fill="#FFFFFF" fill-rule="evenodd" points="67 25 72 22 72 73 66 78"></polygon>
+                    <ellipse id="Oval" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd" cx="38.1245577" cy="15.3656872" rx="35.8401541" ry="15.3656872"></ellipse>
+                    <path d="M73.2844036,52.9262559 C73.2844036,61.4124906 57.3905122,68.2919431 37.7844036,68.2919431 C18.178295,68.2919431 2.28440362,61.4124906 2.28440362,52.9262559" id="Oval-Copy-2" stroke="#000000" stroke-width="3"></path>
+                    <path d="M73.2844036,33.2923223 C73.2844036,41.778557 57.3905122,48.6580095 37.7844036,48.6580095 C18.178295,48.6580095 2.28440362,41.778557 2.28440362,33.2923223" id="Oval-Copy-3" stroke="#000000" stroke-width="3"></path>
+                    <path d="M1.68483412,15.7925118 L1.68483412,69.7820334" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+                    <path d="M73.57109,15.7925118 L73.57109,69.7820334" id="Line-Copy" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+                </g>
+                <path d="M103.5,92.5 L103.5,72.4667036" id="Line" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
+                <path id="Line-decoration-1" d="M103.5,72.4667036 L100.5,83.2667036 L106.5,83.2667036 L103.5,72.4667036 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
+                <path d="M108.5,192.5 L108.5,172.466704" id="Line-Copy-6" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
+                <path id="Line-Copy-6-decoration-1" d="M108.5,172.466704 L105.5,183.266704 L111.5,183.266704 L108.5,172.466704 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
+                <path d="M113.5,92.5 L113.5,72.4667036" id="Line-Copy-3" stroke="#000000" fill="#000000" stroke-linecap="square" transform="translate(113.500000, 82.500000) scale(1, -1) translate(-113.500000, -82.500000) "></path>
+                <path id="Line-Copy-3-decoration-1" d="M113.5,72.4667036 L110.5,83.2667036 L116.5,83.2667036 L113.5,72.4667036 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
             </g>
-            <g id="database" transform="translate(70.000000, 200.000000)">
-                <ellipse id="Oval-Copy" stroke="#000000" stroke-width="3" fill="#E3E3E3" fill-rule="evenodd" cx="38.1245577" cy="69.9992417" rx="35.8401541" ry="15.3656872"></ellipse>
-                <rect id="Rectangle" fill="#E3E3E3" fill-rule="evenodd" x="0.791063865" y="14.5120379" width="74.6669877" height="56.3408531"></rect>
-                <polygon id="Rectangle-2-Copy" fill="#FFFFFF" fill-rule="evenodd" points="67 25 72 22 72 73 66 78"></polygon>
-                <ellipse id="Oval" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd" cx="38.1245577" cy="15.3656872" rx="35.8401541" ry="15.3656872"></ellipse>
-                <path d="M73.2844036,52.9262559 C73.2844036,61.4124906 57.3905122,68.2919431 37.7844036,68.2919431 C18.178295,68.2919431 2.28440362,61.4124906 2.28440362,52.9262559" id="Oval-Copy-2" stroke="#000000" stroke-width="3"></path>
-                <path d="M73.2844036,33.2923223 C73.2844036,41.778557 57.3905122,48.6580095 37.7844036,48.6580095 C18.178295,48.6580095 2.28440362,41.778557 2.28440362,33.2923223" id="Oval-Copy-3" stroke="#000000" stroke-width="3"></path>
-                <path d="M1.68483412,15.7925118 L1.68483412,69.7820334" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
-                <path d="M73.57109,15.7925118 L73.57109,69.7820334" id="Line-Copy" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
-            </g>
-            <path d="M103.5,92.5 L103.5,72.4667036" id="Line" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
-            <path id="Line-decoration-1" d="M103.5,72.4667036 L100.5,83.2667036 L106.5,83.2667036 L103.5,72.4667036 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
-            <path d="M108.5,192.5 L108.5,172.466704" id="Line-Copy-6" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
-            <path id="Line-Copy-6-decoration-1" d="M108.5,172.466704 L105.5,183.266704 L111.5,183.266704 L108.5,172.466704 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
-            <path d="M113.5,92.5 L113.5,72.4667036" id="Line-Copy-3" stroke="#000000" fill="#000000" stroke-linecap="square" transform="translate(113.500000, 82.500000) scale(1, -1) translate(-113.500000, -82.500000) "></path>
-            <path id="Line-Copy-3-decoration-1" d="M113.5,72.4667036 L110.5,83.2667036 L116.5,83.2667036 L113.5,72.4667036 Z" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
         </g>
     </g>
 </svg>
