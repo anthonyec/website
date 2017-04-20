@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="480px" height="297px" viewBox="0 0 480 297" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>services_diagram</title>
     <desc>Created with Sketch.</desc>
     <defs>
@@ -50,7 +50,7 @@
                 <g id="database" transform="translate(70.000000, 200.000000)">
                     <ellipse id="Oval-Copy" stroke="#000000" stroke-width="3" fill="#E3E3E3" fill-rule="evenodd" cx="38.1245577" cy="69.9992417" rx="35.8401541" ry="15.3656872"></ellipse>
                     <rect id="Rectangle" fill="#E3E3E3" fill-rule="evenodd" x="0.791063865" y="14.5120379" width="74.6669877" height="56.3408531"></rect>
-                    <polygon id="Rectangle-2-Copy" fill="#FFFFFF" fill-rule="evenodd" points="67 25 72 22 72 73 66 78"></polygon>
+                    <polygon id="Rectangle-2-Copy" fill="#FFFFFF" fill-rule="evenodd" points="68 26 72 22 72 73 68 77"></polygon>
                     <ellipse id="Oval" stroke="#000000" stroke-width="3" fill="#FFFFFF" fill-rule="evenodd" cx="38.1245577" cy="15.3656872" rx="35.8401541" ry="15.3656872"></ellipse>
                     <path d="M73.2844036,52.9262559 C73.2844036,61.4124906 57.3905122,68.2919431 37.7844036,68.2919431 C18.178295,68.2919431 2.28440362,61.4124906 2.28440362,52.9262559" id="Oval-Copy-2" stroke="#000000" stroke-width="3"></path>
                     <path d="M73.2844036,33.2923223 C73.2844036,41.778557 57.3905122,48.6580095 37.7844036,48.6580095 C18.178295,48.6580095 2.28440362,41.778557 2.28440362,33.2923223" id="Oval-Copy-3" stroke="#000000" stroke-width="3"></path>

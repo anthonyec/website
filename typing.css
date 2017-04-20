@@ -1,0 +1,50 @@
+.lets-talk span {
+  position: relative;
+}
+
+.lets-talk span:after {
+  content: '';
+  border-right: 1px solid white;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  -webkit-animation: 'blink' 0.5s steps(2) infinite;
+}
+
+.lets-talk span:before {
+  content: attr(data-text);
+  background: #5E8BC6;
+  position: absolute;
+  left: 0;
+  width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lets-talk span.animate:before {
+  -webkit-animation: 'select' 0.3s steps(4) both;
+}
+
+@-webkit-keyframes 'select' {
+  0% {
+    width: 0%;
+  }
+
+  90% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes 'blink' {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

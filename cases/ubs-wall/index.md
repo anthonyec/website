@@ -32,6 +32,15 @@ Testing for the answer submission app was done throughout developing it. It had 
 
 I chose the devices based on what was the best selling on Amazon. This is because the best selling devices are usually the best for value, and are not high-end phones. They tend more towards lower mid range devices. We got 1 device for each OS as well as using our own phone to test some high-end phones (we all have fancy phones in the office).
 
+<video src="videos/slider.mp4" autoplay loop></video>
+*Example of the slider question.*
+
+<video src="videos/multiple.mp4" autoplay loop></video>
+*Example of the multple answers question.*
+
+<video src="videos/admin.mp4" autoplay loop></video>
+*Admin panel.*
+
 Surprising Blackberry 10 wasn't the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.
 
 ![Five identical MacBook Pros lined up in a row on a desk](images/IMG_20151107_121704_web.jpg)

@@ -1,7 +1,10 @@
 /* Global */
+html {
+  font-size: 22px;
+}
+
 body {
   background: #2C4172;
-  font-size: 22px;
 }
 
 h1, h2, h3, h4 {
@@ -34,13 +37,14 @@ p, blockquote, ul {
 
 blockquote {
   background: #EEF3FA;
-  padding: 0.9em 1.1em;
+  padding: 0.2em 2em;
 }
 
 cite {
   display: block;
   font-style: italic;
   font-size: 0.694em;
+  margin-top: 1em;
 }
 
 cite:before {
@@ -116,13 +120,13 @@ a {
   font-weight: 400;
 }
 
-.article img {
+.article img, .article video {
   display: block;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.article img + em {
+.article img + em, .article video + p em {
   opacity: 0.95;
   display: block;
   font-size: 0.694em;
