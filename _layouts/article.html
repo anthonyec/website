@@ -25,7 +25,8 @@
 
     <div class="lets-talk">
       <h2 class="lets-talk__title">
-        Let's talk <span class="js-span" data-text="chatbots">chatbots</span>
+        Let's talk<span class="js-typey-container"> about <span class="typey js-typey">
+          <noscript>work</noscript></span></span><span class="typey-cursor"></span>
       </h2>
 
       <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
@@ -33,7 +34,44 @@
       </a>
     </div>
 
-    <link rel="stylesheet" href="/typing.css">
-    <script src="/typing.js"></script>
+    <link rel="stylesheet" href="/assets/typey/typey.css">
+    <script src="/assets/typey/typey.js"></script>
+
+    <script>
+      (function() {
+        var typey = new Typey({
+          target: document.querySelectorAll('.js-typey')[0],
+          sequence: [
+            {% for subject in page.subjects %}
+            '{{ subject }}',
+            {% endfor %}
+            'work',
+            '',
+          ],
+          onStop() {
+            document.querySelectorAll('.js-typey-container')[0].innerText = '!';
+            document.querySelectorAll('.typey-cursor')[0].classList.add(
+              'typey-cursor--hide'
+            );
+          },
+        });
+
+        var $letsTalk = document.querySelectorAll('.lets-talk')[0];
+
+        function onScroll() {
+          var scroll = document.body.scrollTop;
+
+          if (scroll > $letsTalk.offsetTop - window.innerHeight) {
+            window.removeEventListener('scroll', onScroll, false);
+
+            setTimeout(function() {
+              typey.start();
+            }, 300);
+          }
+        };
+
+        window.addEventListener('scroll', onScroll, false);
+      })();
+    </script>
   </body>
 </html>
