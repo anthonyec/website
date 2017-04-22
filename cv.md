@@ -1,10 +1,12 @@
 ---
 layout: article
 heading: CV
-title: Anthony Cossins
-overview: Front-end Developer
+title:
 cta_label: Download PDF
 cta_link: http://www.google.com
+subjects:
+- javascript
+- oocss
 ---
 
 ## Profile
@@ -76,7 +78,6 @@ It's made up of micro-service-esque Python and Node.js apps. These handle indexi
 
 ### Environment
 - macOS
-- Git
 - Sublime Text
 - ZSH
 

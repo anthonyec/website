@@ -1,99 +1,20 @@
-<!doctype html>
-<html lang="en-gb">
-  <head>
-    <title>{{ page.title | escape | strip_html }} - Anthony Cossins</title>
+---
+layout: default
+---
+<link rel="stylesheet" href="assets/css/article.css">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}">
+{% include navbar.html %}
 
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="/article.css">
-    <link rel="stylesheet" href="/navbar.css">
-  </head>
-  <body>
-    <div class="page">
-      <div class="navbar">
-        <a class="navbar__logo" href="/">
-          <img src="/assets/img/pp-head.png" alt="Logo" class="navbar__logo-img">
-          <span class="navbar__logo-text">
-            Anthony Cossins
-          </span>
-        </a>
-        <div class="navbar__title">
-          {{ page.heading }}
-        </div>
-        {% if page.cta_label %}
-          <div class="navbar__actions">
-            <a class="navbar__button" href="{{ page.url }}">
-              {{ page.cta_label }}
-            </a>
-          </div>
-        {% endif %}
-      </div>
+<div class="article">
+  <div class="contain">
+    <h1>
+      {{ page.title }}
+    </h1>
+    <h2 class="overview">
+      {{ page.overview }}
+    </h2>
+    {{ content }}
+  </div>
+</div>
 
-      <div class="article">
-        <div class="contain">
-          <h1>
-            {{ page.title }}
-          </h1>
-          <h2 class="overview">
-            {{ page.overview }}
-          </h2>
-          {{ content }}
-        </div>
-      </div>
-
-      <div class="lets-talk">
-        <h2 class="lets-talk__title">
-          Let's talk<span class="js-typey-container"> <span class="typey js-typey">
-            <noscript>work</noscript></span></span><span class="typey-cursor"></span>
-        </h2>
-
-        <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
-          Email me
-        </a>
-      </div>
-    </div>
-
-    <link rel="stylesheet" href="/assets/typey/typey.css">
-    <script src="/assets/typey/typey.js"></script>
-
-    <script>
-      (function() {
-        var typey = new Typey({
-          target: document.querySelectorAll('.js-typey')[0],
-          sequence: [
-            {% for subject in page.subjects %}
-            '{{ subject }}',
-            {% endfor %}
-            'work',
-            '',
-          ],
-          onStop() {
-            document.querySelectorAll('.js-typey-container')[0].innerText = '!';
-            document.querySelectorAll('.typey-cursor')[0].classList.add(
-              'typey-cursor--hide'
-            );
-          },
-        });
-
-        var $letsTalk = document.querySelectorAll('.lets-talk')[0];
-
-        function onScroll() {
-          var scroll = document.body.scrollTop;
-
-          if (scroll > $letsTalk.offsetTop - window.innerHeight) {
-            window.removeEventListener('scroll', onScroll, false);
-
-            setTimeout(function() {
-              typey.start();
-            }, 300);
-          }
-        };
-
-        window.addEventListener('scroll', onScroll, false);
-      })();
-    </script>
-  </body>
-</html>
+{% include lets-talk.html %}

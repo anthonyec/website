@@ -1,5 +1,4 @@
 .navbar {
-  // background: #D6E0EE;
   border-bottom: 1px solid black;
   text-align: center;
   padding: 2.096em 0;
@@ -52,8 +51,8 @@
   padding: 0.9em 1em;
 }
 
-@media(max-width: 500px) {
-  .navbar__logo-text {
-    display: none;
-  }
-}
+// @media(max-width: 500px) {
+//   .navbar__logo-text {
+//     display: none;
+//   }
+// }
