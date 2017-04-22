@@ -1,0 +1,43 @@
+.navbar {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 2.096em 0;
+  font-size: 0.694em;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar__logo {
+  color: black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 1.5em;
+  position: absolute;
+}
+
+.navbar__logo:hover {
+  background: #EEF3FA;
+}
+
+.navbar__logo-img {
+  width: 1.638em;
+  height: 1.378em;
+  margin-top: -1px;
+  margin-left: -2px;
+  display: inline-block;
+}
+
+.navbar__logo-text {
+  margin-left: 0.7em;
+}
+
+@media(max-width: 500px) {
+  .navbar__logo-text {
+    display: none;
+  }
+}

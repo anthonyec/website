@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-gb">
   <head>
-    <title>{{ page.title | escape | strip_html }}</title>
+    <title>{{ page.title | escape | strip_html }} case study - Anthony Cossins</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,9 +9,22 @@
 
     <link rel="stylesheet" href="/reset.css">
     <link rel="stylesheet" href="/article.css">
+    <link rel="stylesheet" href="/navbar.css">
   </head>
   <body>
     <div class="page">
+      <div class="navbar">
+        <a class="navbar__logo" href="/">
+          <img src="/assets/img/pp-head.png" alt="Logo" class="navbar__logo-img">
+          <span class="navbar__logo-text">
+            Anthony Cossins
+          </span>
+        </a>
+        <div class="navbar__title">
+          Case Study
+        </div>
+      </div>
+
       <div class="article">
         <h1>
           {{ page.title }}
@@ -21,17 +34,17 @@
         </h2>
         {{ content }}
       </div>
-    </div>
 
-    <div class="lets-talk">
-      <h2 class="lets-talk__title">
-        Let's talk<span class="js-typey-container"> about <span class="typey js-typey">
-          <noscript>work</noscript></span></span><span class="typey-cursor"></span>
-      </h2>
+      <div class="lets-talk">
+        <h2 class="lets-talk__title">
+          Let's talk<span class="js-typey-container"> about <span class="typey js-typey">
+            <noscript>work</noscript></span></span><span class="typey-cursor"></span>
+        </h2>
 
-      <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
-        Email me
-      </a>
+        <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button">
+          Email me
+        </a>
+      </div>
     </div>
 
     <link rel="stylesheet" href="/assets/typey/typey.css">
