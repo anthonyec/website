@@ -1,6 +1,7 @@
 ---
 layout: article
 slug: ubs-wall
+heading: Case Study
 title: UBS Insights &<br> Opinion Wall
 overview: UBS host high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees and show the results in real time on visualisations around the event.
 tech: backbone, svg, canvas, laravel, aws

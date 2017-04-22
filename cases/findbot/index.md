@@ -1,5 +1,6 @@
 ---
 layout: article
+heading: Case Study
 title: Findbot
 overview: Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders&nbsp;quickly.
 tech: 
