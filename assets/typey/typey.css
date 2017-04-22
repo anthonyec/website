@@ -4,7 +4,8 @@
 
 .typey--selecting:before {
   content: attr(data-text);
-  background: #5E8BC6;
+  background: #1D7BFF;
+  color: white;
   left: 0;
   width: 0%;
   white-space: nowrap;

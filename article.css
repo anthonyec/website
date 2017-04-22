@@ -5,6 +5,7 @@ html {
 
 body {
   background: #2C4172;
+  background: #D6E0EE;
 }
 
 h1, h2, h3, h4 {
@@ -93,13 +94,22 @@ a {
   }
 }
 
+/* Contain */
+.contain {
+  max-width: 800px; /* 780 + 20 */
+  padding: 0em 1em;
+  margin: 0 auto;
+}
+
+.contain--12-12 {
+  max-width: 960px; /* 940 + 20 */
+}
+
 /* Article */
 .article {
   color: #333333;
   font-family: 'Georgia', serif;
-  max-width: 800px; /* 780 + 20 */
-  padding: 0em 1em 3em;
-  margin: 0 auto;
+  padding-bottom: 3em
 }
 
 .article h1 {
@@ -159,20 +169,24 @@ a {
 .lets-talk {
   background: #2C4172;
   color: white;
+  border-top: 1px solid black;
+  background: #D6E0EE;
+  color: black;
   text-align: center;
   padding: 2.6em 0;
 }
 
 .lets-talk__button {
-  background: white;
-  border-radius: 8px;
-  color: #2C4172;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
-  display: inline-block;
-  padding: 12px 18px;
   margin-top: 1em;
+  font-size: 0.694em;
   text-decoration: none;
+  background: #1D7BFF;
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.9em 1em;
 }
 
 .lets-talk__button:active {
@@ -184,4 +198,54 @@ a {
 
 .lets-talk__button:visited {
   color: #2C4172;
+}
+
+/* Profile */
+.profile {
+  border-bottom: 1px solid black;
+  color: #333333;
+  padding-top: 5.6em;
+  padding-bottom: 5.5rem;
+}
+
+.profile__title {
+  margin-bottom: 1.3em;
+}
+
+.profile a:link, .profile a:visited {
+  color: #1D7BFF;
+  // border-bottom: 2px solid #1D7BFF;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+
+.profile a:hover, .profile a:active {
+  background: #d1ddff;
+  background: #EEF3FA;
+}
+
+/* Section */
+.section {
+  background: #D6E0EE;
+  padding-top: 4.5em;
+  padding-bottom: 3em;
+}
+
+.section__title {
+  margin-bottom: 0.9em;
+}
+
+/* Teaser */
+.teaser {
+  background: white;
+  padding: 2.5em 3.5em;
+  margin-bottom: 1.5em;
+}
+
+.teaser__title {
+  margin-bottom: 0.5em;
+}
+
+.teaser__overview {
+  max-width: 460px;
 }

@@ -27,5 +27,6 @@ exclude:
 # Collection definitions and settings
 collections:
   cases:
-    output: true
+    title: Case Study
     permalink: /:path/
+    output: true
