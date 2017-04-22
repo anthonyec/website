@@ -28,5 +28,5 @@ exclude:
 collections:
   cases:
     title: Case Study
-    permalink: /:path/
+    permalink: /:collection/:path/
     output: true

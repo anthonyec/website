@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  background: #2C4172;
-  background: #D6E0EE;
+  // background: #2C4172;
+  // background: #D6E0EE;
 }
 
 h1, h2, h3, h4 {
@@ -25,6 +25,7 @@ h2 {
 
 h3 {
   font-size: 1.44em;
+  line-height: 1.3;
 }
 
 h4 {
@@ -94,6 +95,20 @@ a {
   }
 }
 
+/* Link */
+.link:link, .link:visited {
+  color: #1D7BFF;
+  border-bottom: 2px solid #1D7BFF;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+
+.link:hover, .link:active {
+  background: #d1ddff;
+  background: #EEF3FA;
+}
+
+
 /* Contain */
 .contain {
   max-width: 800px; /* 780 + 20 */
@@ -107,7 +122,7 @@ a {
 
 /* Article */
 .article {
-  color: #333333;
+  // color: #333333;
   font-family: 'Georgia', serif;
   padding-bottom: 3em
 }
@@ -163,14 +178,15 @@ a {
 /* Page */
 .page {
   background: white;
+  // background: #EEF3FA;
 }
 
 /* Lets Talk! */
 .lets-talk {
-  background: #2C4172;
+  // background: #2C4172;
   color: white;
   border-top: 1px solid black;
-  background: #D6E0EE;
+  // background: #D6E0EE;
   color: black;
   text-align: center;
   padding: 2.6em 0;
@@ -203,30 +219,17 @@ a {
 /* Profile */
 .profile {
   border-bottom: 1px solid black;
-  color: #333333;
   padding-top: 5.6em;
-  padding-bottom: 5.5rem;
+  padding-bottom: 5.6em;
 }
 
 .profile__title {
-  margin-bottom: 1.3em;
-}
-
-.profile a:link, .profile a:visited {
-  color: #1D7BFF;
-  // border-bottom: 2px solid #1D7BFF;
-  text-decoration: none;
-  padding-bottom: 1px;
-}
-
-.profile a:hover, .profile a:active {
-  background: #d1ddff;
-  background: #EEF3FA;
+  margin-bottom: 0.9em;
 }
 
 /* Section */
 .section {
-  background: #D6E0EE;
+  // background: #D6E0EE;
   padding-top: 4.5em;
   padding-bottom: 3em;
 }
@@ -238,6 +241,8 @@ a {
 /* Teaser */
 .teaser {
   background: white;
+  border: 1px solid black;
+  // background: #D6E0EE;
   padding: 2.5em 3.5em;
   margin-bottom: 1.5em;
 }

@@ -8,12 +8,12 @@ layout: default
       Anthony Cossins
     </h1>
 
-    <h2>
-      Working at <a href="http://signal-noise.co.uk/">Signal Noise</a><br>
-      Front-<a href="https://en.wikipedia.org/wiki/Front-end_web_development">end</a> Developer<br>
-      <a href="mailto:anthonycossins@gmail.com">Email me</a><br>
-      <a href="/cv">CV</a>
-    </h2>
+    <h3>
+      Working at <a href="http://signal-noise.co.uk/" class="profile__link link">Signal Noise</a><br>
+      Front-<a href="https://en.wikipedia.org/wiki/Front-end_web_development" class="profile__link link">end</a> Developer<br>
+      <a href="mailto:anthonycossins@gmail.com" class="profile__link link">Email me</a><br>
+      <a href="/cv" class="profile__link link">CV</a>
+    </h3>
   </div>
 </div>
 
@@ -33,6 +33,9 @@ layout: default
         <p class="teaser__overview">
           {{ item.overview }}
         </p>
+        <a href="{{ item.url }}" class="teaser__link link">
+          Read case study
+        </a>
       </div>
     {% endfor %}
   </div>
