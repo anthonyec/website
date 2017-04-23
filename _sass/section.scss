@@ -1,12 +1,24 @@
-/* Section */
 .section {
-  // background: #D6E0EE;
-  // background: black;
-  padding-top: 4.5em;
-  padding-bottom: 3em;
-}
+  position: relative;
 
-.section__title {
-  // color: white;
-  margin-bottom: 0.9em;
+  &:before {
+    content: '';
+    border-top: 1px solid black;
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    z-index: -1;
+  }
+
+  &__title {
+    background: white;
+    display: inline-block;
+    font-size: 0.833em;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+    top: -0.7em;
+    margin-bottom: 1.4em;
+    margin-left: span(1);
+    padding: 0 gutter();
+  }
 }

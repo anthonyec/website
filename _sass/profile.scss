@@ -1,14 +1,22 @@
-/* Profile */
 .profile {
-  border-bottom: 1px solid black;
-  padding-top: 5.6em;
-  padding-bottom: 5.6em;
-}
+  padding-top: 6em;
+  padding-bottom: 12em;
 
-.profile__title {
-  margin-bottom: 0.9em;
-}
+  &__bio, &__title {
+    padding: 0 span(1) + gutter();
+  }
 
-.profile__link {
-  border: 0 !important;
+  &__bio {
+    margin-bottom: 4em;
+  }
+
+  &__title {
+    font-weight: normal;
+  }
+
+  &__link {
+    color: black;
+    border-bottom: 2px solid #D6E0EE;
+    padding-bottom: 2px;
+  }
 }
