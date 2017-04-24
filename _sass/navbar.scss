@@ -2,13 +2,23 @@
   border-bottom: 1px solid #252525;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   position: relative;
+  display: flex;
+  flex-shrink: 0;
 
   &__home {
     padding: 1em;
+    padding-right: 1.5em;
+    color: inherit;
+    display: block;
+    flex-shrink: 0;
+    width: 280px;
+  }
 
-    // &:hover {
-    //   background: #EEF3FA;
-    // }
+  &__actions {
+    padding: 1em;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
   }
 }
 

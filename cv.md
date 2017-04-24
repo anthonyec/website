@@ -3,7 +3,7 @@ layout: article
 heading: CV
 title:
 cta_label: Download PDF
-cta_link: http://www.google.com
+cta_href: http://www.google.com
 subjects:
 - javascript
 - oocss
@@ -25,10 +25,10 @@ Looking to work more closely with designers, users and clients and to continue s
 
 - Developed, maintained and deployed server instances on AWS for high profile conferences taking place globally. Made on site visits to give support.
 
-### Freelance Front-end Developer (2014 December - 2015 February)
+### Freelance Developer (2014 December - 2015 February)
 - Developed WordPress website for a sport product that used PayPal and Stripe payment system.
 
-### Intern Web Developer - Signal Noise (2013 June - 2014 April)
+### Intern Developer - Signal Noise (2013 June - 2014 April)
 - Developed and maintained the Signal Noise website using WordPress and PHP. Helped improve SEO so that the site appeared higher in relevant searches.
 
 - Programmed and animated wide range of interactive visualisations using HTML5 canvas and SVG.

@@ -34,61 +34,17 @@ title: Anthony Cossins — Front-end Developer
       Featured work
     </div>
 
-    <div class="teaser">
+    {% for post in site.cases %}
+    <div class="teaser" style="background-color: #{{ post.color }};">
       <h2 class="teaser__title">
-        Slack chat bot to help my collegues find project folders on the server quickly.
+        {{ post.snippet }}
       </h2>
-      <a href="/cases/findbot" class="teaser__link"></a>
+
+      <span class="teaser__client">
+        {{ post.client }}
+      </span>
+      <a href="{{ post.url }}" class="teaser__link"></a>
     </div>
-
-    <div class="teaser">
-      <h2 class="teaser__title">
-        Collecting insights from conference attendees and showing the results in real time.
-      </h2>
-      <a href="/cases/findbot" class="teaser__link"></a>
-    </div>
-  </div>
-</div>
-
-<!--
-<div class="profile">
-  <div class="contain">
-    <h1 class="profile__title">
-      Anthony Cossins
-    </h1>
-
-    <h3>
-      Working at <a href="http://signal-noise.co.uk/" class="profile__link link">Signal Noise</a><br>
-      Front-<a href="https://en.wikipedia.org/wiki/Front-end_web_development" class="profile__link link">end</a> Developer<br>
-      <a href="mailto:anthonycossins@gmail.com" class="profile__link link">Email me</a><br>
-      <a href="/cv" class="profile__link link">CV</a>
-    </h3>
-  </div>
-</div>
-
-<div class="section">
-  <div class="contain">
-    <h2 class="section__title">
-      Case studies
-    </h2>
-  </div>
-  <div class="contain contain--12-12">
-    {% for item in site.cases %}
-      <div class="teaser">
-        <div class="teaser__thumbnail">
-          <img src="cases/findbot/images/icon.png" alt="">
-        </div>
-        <h3 class="teaser__title">
-          {{ item.title }}
-        </h3>
-        <p class="teaser__overview">
-          {{ item.overview }}
-        </p>
-        <a href="{{ item.url }}" class="teaser__link link">
-          Read case study
-        </a>
-      </div>
     {% endfor %}
   </div>
 </div>
- -->

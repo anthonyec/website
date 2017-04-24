@@ -1,25 +1,5 @@
-<!-- <div class="navbar">
-  <a class="navbar__logo" href="/">
-    <img src="/assets/images/pp-head.png" alt="Logo" class="navbar__logo-img">
-    <span class="navbar__logo-text">
-      Anthony Cossins
-    </span>
-  </a>
-  <div class="navbar__title">
-    &nbsp;
-  </div>
-  {% if page.cta_label %}
-    <div class="navbar__actions">
-      <a class="navbar__button" href="{{ page.url }}">
-        {{ page.cta_label }}
-      </a>
-    </div>
-  {% endif %}
-</div>
- -->
-
 <div class="navbar">
-  <div class="navbar__home">
+  <a class="navbar__home" href="/">
     <div class="bio">
       <div class="bio__icon">
         <img class="bio__icon-img" src="/assets/images/pp_head_logo.png" alt="My head as a logo">
@@ -31,9 +11,13 @@
         Front-end Developer
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="navbar__actions">
-
-  </div>
+  {% if page.cta_label %}
+    <div class="navbar__actions">
+      <a class="button" href="{{ page.cta_href }}">
+        {{ page.cta_label }}
+      </a>
+    </div>
+  {% endif %}
 </div>

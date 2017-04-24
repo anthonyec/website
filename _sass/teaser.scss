@@ -1,12 +1,18 @@
 .teaser {
-  background: pink;
-  padding: 3.5em (span(1) + gutter());
+  padding: 3em (span(1) + gutter());
   position: relative;
   margin-bottom: 1.5em;
 
   &__title {
     max-width: span(10);
+    padding-right: gutter();
     font-weight: normal;
+    margin-bottom: 3em;
+  }
+
+  &__client {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.833em;
   }
 
   &__link {

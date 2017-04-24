@@ -1,7 +1,10 @@
 ---
 layout: article
 heading: Case Study
+color: FCC8D1
 title: Findbot
+client: Personal
+snippet: Slack chat bot to help my collegues find project folders on the server quickly.
 overview: Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders&nbsp;quickly.
 tech: 
 - node
@@ -10,6 +13,9 @@ tech:
 subjects: 
 - chatbots
 - nodejs
+
+cta_label: View on GitHub
+cta_href: https://github.com/anthonyec/findbot
 ---
 
 ## Problem
