@@ -12,11 +12,12 @@
 
   &__title {
     font-weight: normal;
+    line-height: 1.43;
   }
 
   &__link {
-    color: black;
-    border-bottom: 2px solid #D6E0EE;
+    border-bottom: 2px solid #1D7BFF;
+    color: #1D7BFF;
     padding-bottom: 2px;
   }
 }

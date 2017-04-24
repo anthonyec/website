@@ -4,16 +4,17 @@ layout: default
 <link rel="stylesheet" href="/assets/css/article.css">
 
 {% include navbar.html %}
-
-<div class="article">
-  <div class="contain">
-    <h1>
-      {{ page.title }}
-    </h1>
-    <h2 class="overview">
-      {{ page.overview }}
-    </h2>
-    {{ content }}
+<div class="l-contain">
+  <div class="article">
+    <div class="contain">
+      <h1>
+        {{ page.title }}
+      </h1>
+      <h2 class="overview">
+        {{ page.overview }}
+      </h2>
+      {{ content }}
+    </div>
   </div>
 </div>
 

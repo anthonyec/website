@@ -1,11 +1,19 @@
+// $baseline-add-4:  2.074em;
+// $baseline-add-3:  1.728em;
+// $baseline-add-2:  1.44em;
+// $baseline-add-1:  1.2em;
+// $baseline:        1em;
+// $baseline-sub-1:  0.833em;
+// $baseline-sub-2:  0.694em;
+// $baseline-sub-3:  0.579em;
+
 /* Global */
 html {
   font-size: 22px;
 }
 
 body {
-  // background: #2C4172;
-  // background: #D6E0EE;
+  color: #252525;
 }
 
 h1, h2, h3, h4 {
@@ -54,12 +62,12 @@ cite:before {
 }
 
 ul {
-  padding-left: 1rem;
+  padding-left: 2em;
   list-style-type: disc;
 }
 
 li {
-  padding-left: 1rem;
+  padding-left: 0.5em;
 }
 
 strong {

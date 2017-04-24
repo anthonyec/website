@@ -76,11 +76,6 @@ It's made up of micro-service-esque Python and Node.js apps. These handle indexi
 - Craft CMS
 - Jekyll
 
-### Environment
-- macOS
-- Sublime Text
-- ZSH
-
 ## Interests
 [Taking pictures](https://www.instagram.com/gnormanperry/) all the time, mainly street photography and abstract stuff.
 
