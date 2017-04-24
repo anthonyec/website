@@ -1,6 +1,5 @@
 /* Article */
 .article {
-  // color: #333333;
   font-family: 'Georgia', serif;
   padding-bottom: 3em
 }
@@ -22,7 +21,7 @@
 }
 
 .article .overview {
-  opacity: 0.55;
+  color: #78889F;
   font-weight: 400;
 }
 
@@ -33,7 +32,7 @@
 }
 
 .article img + em, .article video + p em {
-  opacity: 0.95;
+  color: #78889F;
   display: block;
   font-size: 0.694em;
   text-align: center;

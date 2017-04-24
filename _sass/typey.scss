@@ -12,12 +12,14 @@
   overflow: hidden;
   position: absolute;
   -webkit-animation: 'typey-select' 0.2s steps(4) both;
+  animation: 'typey-select' 0.2s steps(4) both;
 }
 
 .typey-cursor {
   border-right: 1px solid black;
   height: 100%;
   -webkit-animation: 'typey-blink' 0.5s steps(2) infinite;
+  animation: 'typey-blink' 0.5s steps(2) infinite;
 }
 
 .typey-cursor--hide {
@@ -39,6 +41,31 @@
 }
 
 @-webkit-keyframes 'typey-blink' {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes 'typey-select' {
+  0% {
+    width: 0%;
+  }
+
+  90% {
+    width: 100%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes 'typey-blink' {
   0% {
     opacity: 0;
   }
