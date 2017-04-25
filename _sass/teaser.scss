@@ -1,4 +1,5 @@
 .teaser {
+  border: 1px solid #252525;
   padding: 3em (span(1) + gutter());
   position: relative;
   margin-bottom: 1.5em;
@@ -7,7 +8,7 @@
     max-width: span(10);
     padding-right: gutter();
     font-weight: normal;
-    margin-bottom: 3em;
+    margin-bottom: 5em;
   }
 
   &__client {

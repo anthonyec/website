@@ -22,19 +22,21 @@
     margin-top: 0.3em;
   }
 
-  p, blockquote, ul {
+  p, blockquote, ul, video, img {
     margin: 1.5em 0;
   }
 
   .overview {
     color: #78889F;
     font-weight: 400;
+    margin-bottom: 2.5em;
   }
 
   img, video {
     display: block;
     max-width: 100%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   img + em, video + p em {

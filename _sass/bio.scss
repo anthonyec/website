@@ -1,19 +1,18 @@
 .bio {
+  display: flex;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.2;
-  overflow: hidden;
+  align-items: center;
 
   &__icon {
-    background: #D6E0EE;
+    background: #F23B39;
     border-radius: 100px;
     width: 1.9em;
     height: 1.9em;
-    float: left;
-    margin-right: 0.9em;
-    overflow: hidden;
+    margin-right: 0.6em;
   }
 
   &__icon-img {
+    vertical-align: middle;
     width: 100%;
     height: 100%;
   }
@@ -24,7 +23,7 @@
   }
 
   &__job-title {
-    color: #78889F;
     font-size: 0.694em;
+    display: none;
   }
 }

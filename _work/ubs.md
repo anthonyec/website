@@ -1,15 +1,19 @@
 ---
 layout: article
-heading: Case Study
 color: D1E0F3
 title: UBS Insights & Opinion Wall
 client: UBS — Signal Noise
 snippet: Collecting insights from conference attendees and showing the results in real time.
 overview: UBS host high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees and show the results in real time on visualisations around the event.
-tech: backbone, svg, canvas, laravel, aws
+tags: 
+    - backbone
+    - svg
+    - canvas
+    - laravel
+    - aws
 subjects: 
-- animation
-- mobile
+    - animation
+    - mobile
 ---
 
 ## Problem

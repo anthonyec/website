@@ -29,7 +29,7 @@ sass:
 
 # Collection definitions and settings
 collections:
-  cases:
-    title: Case Study
+  work:
+    title: Work
     permalink: /:collection/:path/
     output: true

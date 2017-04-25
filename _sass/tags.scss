@@ -1,0 +1,16 @@
+.tags {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 1em;
+
+  &__items {
+    margin-top: -0.5em;
+  }
+
+  &__item {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 0.4em 0.5em;
+    margin-right: 0.2em;
+    margin-top: 0.5em;
+  }
+}
