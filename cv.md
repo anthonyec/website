@@ -40,7 +40,7 @@ Looking to work more closely with designers, users and clients and to continue s
 ### BA Graphic Design New Media - UCA (2011- 2013)
 
 ## Personal Projects
-### [FindBot](/cases/findbot)
+### [FindBot](/work/findbot)
 Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders quickly. They use it all the time.
 
 It's made up of micro-service-esque Python and Node.js apps. These handle indexing all the project folders with ElasticSearch and providing a conversational chat interface with Botkit.
