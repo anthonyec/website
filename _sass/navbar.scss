@@ -7,16 +7,14 @@
 
   &__home {
     padding: 1em;
-    padding-right: 1.5em;
     color: inherit;
     display: block;
-    flex-shrink: 0;
-    width: 280px;
   }
 
   &__actions {
     padding: 1em;
     display: flex;
+    flex-shrink: 0;
     margin-left: auto;
     align-items: center;
   }

@@ -6,8 +6,8 @@
   &__icon {
     background: #F23B39;
     border-radius: 100px;
-    width: 1.9em;
-    height: 1.9em;
+    width: 2em;
+    height: 2em;
     margin-right: 0.6em;
   }
 
@@ -22,8 +22,13 @@
     font-size: 0.833em;
   }
 
-  &__job-title {
-    font-size: 0.694em;
-    display: none;
+  @media(max-width: 374px) {
+    &__name {
+      display: none;
+    }
+
+    &__icon {
+      margin-right: 0;
+    }
   }
 }
