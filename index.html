@@ -4,7 +4,7 @@ title: Anthony Cossins — Front-end Developer
 ---
 
 <div class="profile">
-  <div class="l-contain">
+  <div class="l-contain profile__contain">
     <img class="profile__logo" src="/assets/images/blink_animation.gif" alt="My head as a logo">
 
     <h1 class="profile__title">
@@ -18,13 +18,13 @@ title: Anthony Cossins — Front-end Developer
 </div>
 
 <div class="section">
-  <div class="l-contain">
+  <div class="l-contain section__contain">
     <div class="section__title">
       Featured work
     </div>
 
     {% for post in site.work %}
-    <div class="teaser" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
+    <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
       <h2 class="teaser__title">
         {{ post.snippet }}
       </h2>

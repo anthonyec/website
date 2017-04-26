@@ -104,3 +104,17 @@ a {
     font-size: calc(16px + (22 - 16) * ((100vw - 520px) / (960 - 520)));
   }
 }
+
+@media(max-width: 420px) {
+  h1 {
+    font-size: 1.728em;
+  }
+
+  h2 {
+    font-size: 1.44em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+}

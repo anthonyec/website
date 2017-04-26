@@ -13,4 +13,8 @@
     margin-right: 0.2em;
     margin-top: 0.5em;
   }
+
+  @media(max-width: 420px) {
+    font-size: 0.833em
+  }
 }
