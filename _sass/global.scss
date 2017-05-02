@@ -65,7 +65,7 @@ cite:before {
 }
 
 ul {
-  padding-left: 1em;
+  padding-left: 1.1em;
   list-style-type: disc;
 }
 
@@ -132,5 +132,9 @@ a {
 
   cite {
     margin-top: 0.5em
+  }
+
+  li {
+    padding-left: 0;
   }
 }

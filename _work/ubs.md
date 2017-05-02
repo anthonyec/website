@@ -1,7 +1,7 @@
 ---
 layout: article
 weight: 2
-color: D1E0F3
+color: B4D5FF
 title: UBS Insights & Opinion Wall
 client: UBS — Signal Noise
 snippet: Collecting insights from conference attendees and showing the results in real time.
