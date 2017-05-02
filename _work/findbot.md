@@ -1,5 +1,6 @@
 ---
 layout: article
+weight: 1
 color: FCC8D1
 title: Findbot
 client: Personal
@@ -24,7 +25,7 @@ At Signal Noise we have a server that contains all the files that are related to
 ![Illustrations of a long list of folders in a file browser](images/browser.svg)
 *It's a little bit painful to watch and experience.*
 
-As the company has got bigger and more people work on different projects at once it has become hard for people to find the project they are looking for. Most people will remember the project number but sometimes people deal with multiple ongoing projects at once. People resort scrolling through a huge list in the Finder.
+As the company has got bigger and more people work on different projects at once it has become hard for people to find the project they are looking for. Most people will remember the project number but sometimes people deal with multiple ongoing projects at once. People to resort scrolling through a huge list in the Finder.
 
 ## Limitations
 The ideal solution was to somehow index the server. However, without access to servers configuration panel, there is no way to do this. Furthermore, even if I can convince someone to start an index, it may take weeks or months to be usable. Most people would be happy for project folders to be searchable and not the files within.

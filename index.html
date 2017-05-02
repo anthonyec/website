@@ -17,13 +17,26 @@ title: Anthony Cossins — Front-end Developer
   </div>
 </div>
 
+<!-- <div class="section">
+  <div class="l-contain section__contain">
+    <div class="section__title">
+      Showreel
+    </div>
+
+    <video class="showreel" src="/assets/videos/showreel.mp4" autoplay loop>
+    </video>
+  </div>
+</div> -->
+
 <div class="section">
   <div class="l-contain section__contain">
     <div class="section__title">
       Featured work
     </div>
 
-    {% for post in site.work %}
+    {% assign sortedWork = site.work | sort: "weight"  %}
+
+    {% for post in sortedWork %}
     <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
       <h2 class="teaser__title">
         {{ post.snippet }}

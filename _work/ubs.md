@@ -1,5 +1,6 @@
 ---
 layout: article
+weight: 2
 color: D1E0F3
 title: UBS Insights & Opinion Wall
 client: UBS — Signal Noise
@@ -31,7 +32,7 @@ The kiosk app that took users submissions had to work on iPads used as kiosks th
 ## Solutions
 The solution was to split up the work of the three apps between three front-end developers, with each working on either the visualisations, kiosk and backend. My focus was the kiosk app.
 
-Five MacBook pros would also be rented for the event. We had to install Apache, PHP and Chrome on all of them. We had to create scripts that automatically load Chrome into full screen, disable screensavers and notifications.
+Five MacBook pros would also be rented for the event. We would then set up machine with the required software.
 
 The visualisation would randomly select animations to play and loop. However, the logic to the selection had to be smart and not completely random so that repeating animations would not appear one after another by chance.
 
@@ -73,7 +74,7 @@ On the day of the conference, we turned up early to the hotel. We brought with u
 
 ## Lessons learned
 ### Developers are users too
-Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that [bus factor](https://en.wikipedia.org/wiki/Bus_factor)). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent to improve the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle. 
+Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that [bus factor](https://en.wikipedia.org/wiki/Bus_factor)). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent time to improving the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle. 
 
 ### Don’t use manual procedures
 > "People just aren’t as repeatable as computers. Nor should we expect them to be."

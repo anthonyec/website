@@ -24,16 +24,18 @@
     left: 0;
   }
 
+  @media(max-width: 675px) {
+    &__title {
+      margin-bottom: 2em;
+    }
+  }
+
   @media(max-width: 420px) {
     border-left: 0;
     border-right: 0;
     border-top: 0;
     padding: 1.5em;
     margin-bottom: 0;
-
-    &__title {
-      margin-bottom: 2em;
-    }
 
     &:last-child {
       border-bottom: 0;

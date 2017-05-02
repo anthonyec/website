@@ -1,10 +1,11 @@
 ---
 layout: article
+weight: 4
 color: B3FFEE
 title: Signal Noise Website
 client: Signal Noise
 snippet: Craft CMS based website with a focus on making life easier for content creators.
-overview: Commutor tool was created in 2015 for Total Jobs. It uses the information about the users daily commute to calculate a few interesting stats displayed with illustrations.
+overview: We migrated Signal Noise's content management from WordPress to Craft CMS. This gave users more control over the content they create and the ability to easily build upon the website in the future.
 tags:
     - craft cms
     - php
@@ -15,9 +16,10 @@ tags:
 subjects: 
     - backbone
     - svg
+    - craft cms
 
-cta_label: Try the tool
-cta_href: https://www.totaljobs.com/insidejob/commuter-calculator/
+cta_label: Visit the website
+cta_href: http://signal-noise.co.uk/
 ---
 From the design I created repeatable image assets to add some looping animation to the start screen.
 

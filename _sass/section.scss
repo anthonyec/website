@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding-bottom: 6em;
+  padding-bottom: 3.5em;
 
   &:before {
     content: '';
@@ -19,25 +19,35 @@
     position: relative;
     top: -0.65em;
     margin-bottom: 6em;
+    margin-bottom: gutter() * 3;
     margin-left: span(1);
     padding: 0 gutter();
     z-index: 2;
   }
 
+  @media(max-width: 975px) {
+    padding-bottom: 0;
+
+    &__title {
+      margin-bottom: gutter();
+    }
+  }
+
   @media(max-width: 420px) {
     padding-bottom: 0;
+
+    &:before {
+      top: 0.95em;
+    }
 
     &__title {
       margin-bottom: 0;
       margin-left: 1.5em;
+      top: 0.56em;
     }
 
     &__contain {
       padding: 0;
-    }
-
-    &__first-item {
-      top: -1em;
     }
   }
 }
