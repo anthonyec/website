@@ -1,7 +1,7 @@
 ---
 layout: article
 heading: CV
-title:
+title: CV
 cta_label: Download PDF
 cta_href: http://www.google.com
 subjects:
