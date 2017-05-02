@@ -5,7 +5,7 @@ color: B4D5FF
 title: UBS Insights & Opinion Wall
 client: UBS — Signal Noise
 snippet: Collecting insights from conference attendees and showing the results in real time.
-overview: UBS host high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees and show the results in real time on visualisations around the event.
+overview: UBS host high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event.
 tags: 
     - backbone
     - svg

@@ -5,7 +5,7 @@ color: 68C859
 title: Total Jobs Commuter Survey
 client: Total Jobs — Signal Noise
 snippet: Tool that shows the cost of your commute over a lifetime.
-overview: Commutor tool was created in 2015 for Total Jobs. It uses the information about the users daily commute to calculate a few interesting stats displayed with illustrations.
+overview: Commuter tool created in 2015 for Total Jobs. It uses the information from user's daily commute. It calculates a few interesting stats displayed with illustrations.
 tags:
     - backbone
     - svg

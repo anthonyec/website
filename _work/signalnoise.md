@@ -5,7 +5,7 @@ color: B3FFEE
 title: Signal Noise Website
 client: Signal Noise
 snippet: Craft CMS based website with a focus on making life easier for content creators.
-overview: We migrated Signal Noise's content management from WordPress to Craft CMS. This gave users more control over the content they create and the ability to easily build upon the website in the future.
+overview: We migrated Signal Noise content management from WordPress to Craft CMS. This gave users more control over the content they create. It also laid the foundations to build upon the website in the future.
 tags:
     - craft cms
     - php
