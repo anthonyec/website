@@ -13,7 +13,7 @@ html {
   font-size: 22px;
 }
 
-body {
+.body {
   color: #252525;
   border: 1px solid #252525;
   margin: 0.5em;
@@ -86,7 +86,7 @@ a {
 }
 
 @media(max-width: 520px) {
-  body {
+  .body {
     font-size: 16px;
   }
 
@@ -100,13 +100,13 @@ a {
 }
 
 @media(min-width: 520px) and (max-width: 960px) {
-  body {
+  .body {
     font-size: calc(16px + (22 - 16) * ((100vw - 520px) / (960 - 520)));
   }
 }
 
 @media(max-width: 420px) {
-  body {
+  .body {
     margin: 0.1em;
   }
 

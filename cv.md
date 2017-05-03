@@ -10,23 +10,23 @@ subjects:
 ---
 
 ## Profile
-Front-end developer with a background in design and animation. Specialises in developing and structuring the front-end UI for small to medium scale web applications.
+Front-end developer with a background in design and animation. Specialises in developing and structuring the front-end UI for web applications.
 
 Motivated by improving the experience for users by developing accessible and polished interfaces. Produces clean, tested, modular HTML, CSS/SCSS (BEM) and JavaScript (ES6) for developers.
 
-Looking to work more closely with designers, users and clients and to continue sharing skills among the development community.
+Looking to work more with UI/UX designers, users and clients.  Continue sharing skills among the development community.
 
 ## Employment
 
 ### Front-end Developer - Signal Noise (April 2014 - Present)
-- Implemented small to medium scale web applications for multiple clients built with technologies that included Backbone, Laravel, Node.js and React. Structured responsive and cross-browser UI using SCSS (BEM) and CSS Modules.
+- Worked on web applications for many clients. Used technologies that included Backbone, Laravel, Node.js and React. Structured responsive and cross-browser UI using SCSS (BEM) and CSS Modules.
 
 - Developed and maintained the redesigned Signal Noise website using Craft CMS (PHP/MySQL). Focused on improving the user experience for content creators.
 
-- Developed, maintained and deployed server instances on AWS for high profile conferences taking place globally. Made on site visits to give support.
+- Developed, maintained and deployed server instances on AWS. Worked on high profile conferences that took place globally. Made on site visits to give support.
 
 ### Freelance Developer (2014 December - 2015 February)
-- Developed WordPress website for a sport product that used PayPal and Stripe payment system.
+- Developed WordPress website for a sport product. It used PayPal and Stripe payment system.
 
 ### Intern Developer - Signal Noise (2013 June - 2014 April)
 - Developed and maintained the Signal Noise website using WordPress and PHP. Helped improve SEO so that the site appeared higher in relevant searches.
@@ -41,9 +41,9 @@ Looking to work more closely with designers, users and clients and to continue s
 
 ## Personal Projects
 ### [FindBot](/work/findbot)
-Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders quickly. They use it all the time.
+Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders. They use it all the time.
 
-It's made up of micro-service-esque Python and Node.js apps. These handle indexing all the project folders with ElasticSearch and providing a conversational chat interface with Botkit.
+It's made up of micro-service-esque Python and Node.js apps. These handle indexing all the project folders with ElasticSearch and provide a conversational chat interface with Botkit.
 
 ## Technical Skills
 ### Experience
@@ -77,7 +77,7 @@ It's made up of micro-service-esque Python and Node.js apps. These handle indexi
 - Jekyll
 
 ## Interests
-[Taking pictures](https://www.instagram.com/gnormanperry/) all the time, mainly street photography and abstract stuff.
+[Taking pictures](https://www.instagram.com/gnormanperry/) all the time, street photography and abstract stuff.
 
 Record and collect sounds on my sampler [SP-404](https://en.wikipedia.org/wiki/Roland_SP-404). Use them to create interesting (but mainly horrible) experimental noise from it.
 
