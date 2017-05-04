@@ -18,14 +18,13 @@ subjects:
 cta_label: View on GitHub
 cta_href: https://github.com/anthonyec/findbot
 ---
-Finding specific project folders on my company server was really hard. So I created a Slack bot for my colleagues to locate and open project folders quickly.
 
 ## Problem
 
 At Signal Noise we have a server that contains all the files that are related to a project. These include design assets, proposal documents, contracts, copy and much more. We name project folders using a project number and name, then group them into year folders.
 
 ![Illustrations of a long list of folders in a file browser](images/browser.svg)
-**It’s a little bit painful to watch and experience.**
+*It’s a little bit painful to watch and experience.*
 
 As the company has got bigger more people work on different projects at the same time. It has become hard for people to find the project they are looking for. Most people remember one or two  project number. However, most of the time people deal with many ongoing projects at once and they resort to scrolling through a huge list in the Finder.
 
@@ -70,7 +69,7 @@ Should the process of indexing the server change, as long as the API   remained 
 
 I released the chatbot a second time and changed its name to “FindBot”. To emphasise the bots new single focus, finding things.
 
-##Lessons learned
+## Lessons learned
 ### Focus on a few things
 I once heard about how climatologists study climate change’s effects in Antarctica. This sounds rather extreme. To study something that affects the world globally.  They do have very good reasons, though. First of all, the Antarctic ecosystem is very primitive so it's easy to measure and study. Also the continent is very isolated. So if you do observe changes over time, you can reasonably assume they are down to global factors.
 
