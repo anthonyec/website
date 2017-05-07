@@ -4,7 +4,7 @@ weight: 1
 color: FCC8D1
 title: Findbot
 client: Personal
-snippet: Slack chat bot to help my colleagues find project folders on the server fast.
+snippet: Slack chatbot to help my colleagues find project folders on the server fast.
 overview: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast.
 tags: 
     - nodejs
@@ -41,13 +41,13 @@ A colleague suggested using Slack. Which made sense as Slack is already part of 
 ### Getting things started
 Within a few days, I got a chatbot on Slack up and running. I named it “snbot” with the vision that it would become an assistant for all things Signal Noise related. More on my grand vision later.
 
-I heard about a Node.js framework called Botkit which assists in the creation of bots for chat services. So I gave it a try and it was very easy to get started with. You can define phrases using strings or regex that Botkit can “listen” out for. Then when it hears something specific it sends a response back or starts a conversation. I also created a very rudimentary indexer to scan project folders on the server, using Node’s built in filesystem functions. This saved the scraped results to a JSON file.
+I heard about a Node.js framework called Botkit which assists in the creation of bots for chat services. So I gave it a try and it was very easy to get started with. You can define phrases that Botkit can “listen” out for. Then when it hears something specific it sends a response back or starts a conversation. I also created a very rudimentary indexer to scan project folders on the server. This saved the results to a file.
 
-Later that week I released snbot to the world. Well, the office at least. I got instant feedback on its usefulness and flaws. Everyone who saw it thought it was a good idea. Initially the chatbot was running on my laptop. This meant that when my computer was off, snbot was down. While this gave the nice illusion that snbot lived a fulfilling 9 to 6 lifestyle, it wasn’t useful being unavailable occasionally. Deploying on my computer was always a temporary step to test out snbot. I needed to find a way to keep it up 24/7.
+Later that week I released snbot to the world. Well, the office at least. I got instant feedback on its usefulness and flaws. Everyone who saw it thought it was a good idea. Initially the chatbot was running on my laptop. This meant that when my computer was off, snbot was down. While this gave the nice illusion that snbot lived a fulfilling 9 to 6 lifestyle, it wasn’t useful being unavailable occasionally. Having it run on my computer was always a temporary step to test out snbot. I needed to find a way to keep it up 24/7.
 
-I debated if I should host snbot on a cloud service like AWS. This would solve the chatbot uptime issue but also introduce other problems. How could a cloud service app index a project server that is only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
+I debated if I should host snbot on a cloud service like AWS. This would solve the chatbot uptime issue but also introduced other problems. How could a cloud service app index our server that's only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
 
-Anyway, Christmas came we all had a holiday. I ate lots of food and got a Raspberry Pi as a gift. Raspberry Pi 3 is ideal as it uses Linux just like AWS. This means most things that can work on AWS are compatible. It’s also a physical thing that we have full control over so security is better. Setting up the Raspberry Pi allowed me to get a lot more familiar with the internal workings of Linux. In turn, this helped me understand more how AWS works.
+Anyway, Christmas came and we all had a holiday. I ate lots of food and got a Raspberry Pi as a gift. Raspberry Pi 3 is ideal as it uses Linux like AWS. This means most things that can work on AWS are compatible. It’s also a physical thing that we have full control over so security is better. Setting up the Raspberry Pi allowed me to get a lot more familiar with the internal workings of Linux. In turn, this helped me understand more how AWS works.
 
 ### Indexing the server
 I struggled for a while trying to get AFP ([Apple File Protocol](https://en.wikipedia.org/wiki/Apple_Filing_Protocol)) to work on the Raspberry Pi. The project stalled for a bit until I realised one day that our server is a Synology NAS and had an API.
@@ -55,7 +55,7 @@ I struggled for a while trying to get AFP ([Apple File Protocol](https://en.wiki
 After wasting a lot of time on backward engineering Synology API, I realised I could use a use a [library](https://www.npmjs.com/package/synology) that someone else already created. The library made indexing really simple. All I had to do was to make requests to the server and save the JSON result.
 
 ### Separating concerns
-Up until this point, the snbot had been monolithic in structure. Project indexing, searching and chat bot interface were tightly coupled. While this allowed me to get things up and running quickly, it slowed down further development.
+Up until this point, the snbot had been monolithic in structure. Project indexing, searching and chatbot interface were tightly coupled. While this allowed me to get things up and running quickly, it slowed down further development.
 
 ![Diagram of a monolithic architecture, with database, chatbot and indexing all in one](images/monolithic_diagram.svg)
 *My technical diagram for monolithic architecture. Or what I like to call “a big thing doing a bunch of stuff inside of it”.*
@@ -67,7 +67,7 @@ Inspired by a [microservices talk by Netflix](https://www.youtube.com/watch?v=57
 
 Should the process of indexing the server change, as long as the API   remained the same other apps won't break. It also made development easier. I could work on the indexer separately while the chatbot was still up and running.
 
-I released the chatbot a second time and changed its name to “FindBot”. To emphasise the bots new single focus, finding things.
+I released the chatbot a second time and changed its name to “FindBot”. This emphasised the bots new single focus, finding things.
 
 ## Lessons learned
 ### Focus on a few things
@@ -83,7 +83,7 @@ Getting users to learn new things is an effort. Asking users to change their wor
 ![Screenshot of a FindBot not understanding what the user said](images/failed_chat.svg)
 *Some users were not as forgiving and abandoned FindBot straight away.*
 
-But then I got feedback that typing the word “find” before every query wasn't how they expected to use it. From looking at the analytics I noticed few people not returning to FindBot once they received the “don’t understand” response. The word "find" made sense initally. I had a grand plan of adding a whole array of functionality that wasn’t to do with search. This hindered the user experience, though. Again, focus on one thing and do it really well ok. Unlike the initial design, FindBot’s new features are now completely driven by user research. I watch people using it and  we've discussed the way they interact with it.
+But then I got feedback that typing the word “find” before every query wasn't how they expected to use it. From looking at the analytics I noticed a few people not returning to FindBot once they received the “don’t understand” response. The word "find" made sense initally. I had a grand plan of adding a whole array of functionality that wasn’t to do with search. This hindered the user experience, though. Again, focus on one thing and do it really well ok. Unlike the initial design, FindBot’s new features are now completely driven by user research. I watch people using it and we've discussed the way they interact with it.
 
 What’s next for FindBot? Well, I think JIRA and BitBucket are still a hassle to search. So do project managers who requested the very same feature. And with Elasticsearch, we can do relational searches.
 
