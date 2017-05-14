@@ -37,26 +37,28 @@ title: Anthony Cossins — Front-end Developer
     {% assign sortedWork = site.work | sort: "weight"  %}
 
     {% for post in sortedWork %}
-    <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
-      <h2 class="teaser__title">
-        {{ post.snippet }}
-      </h2>
+      {% if post.hidden != true %}
+        <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
+          <h2 class="teaser__title">
+            {{ post.snippet }}
+          </h2>
 
-      <div class="tags">
-        <div class="tags__items">
-          {% for tag in post.tags %}
-            <span class="tags__item">
-              {{ tag }}
-            </span>
-          {% endfor %}
+          <div class="tags">
+            <div class="tags__items">
+              {% for tag in post.tags %}
+                <span class="tags__item">
+                  {{ tag }}
+                </span>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- <span class="teaser__client">
+            {{ post.client }}
+          </span> -->
+          <a href="{{ post.url }}" class="teaser__link"></a>
         </div>
-      </div>
-
-      <!-- <span class="teaser__client">
-        {{ post.client }}
-      </span> -->
-      <a href="{{ post.url }}" class="teaser__link"></a>
-    </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>

@@ -1,5 +1,6 @@
 ---
 layout: article
+hidden: true
 weight: 4
 color: B3FFEE
 title: Signal Noise Website
