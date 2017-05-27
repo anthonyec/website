@@ -48,7 +48,13 @@ I chose the devices based on what was the best selling on Amazon. This is becaus
 <video src="videos/multiple.mp4" autoplay loop></video>
 *Example of the multple answers question.*
 
-<video src="videos/admin.mp4" autoplay loop></video>
+<style>
+    .video-window {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+</style>
+<video src="videos/admin_screen.mp4" autoplay loop class="video-window"></video>
 *Admin panel.*
 
 Surprising Blackberry 10 wasn't the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.
