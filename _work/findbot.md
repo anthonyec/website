@@ -45,7 +45,7 @@ I heard about a Node.js framework called Botkit which assists in the creation of
 
 Later that week I released snbot to the world. Well, the office at least. I got instant feedback on its usefulness and flaws. Everyone who saw it thought it was a good idea. Initially the chatbot was running on my laptop. This meant that when my computer was off, snbot was down. While this gave the nice illusion that snbot lived a fulfilling 9 to 6 lifestyle, it wasn’t useful being unavailable occasionally. Having it run on my computer was always a temporary step to test out snbot. I needed to find a way to keep it up 24/7.
 
-I debated if I should host snbot on a cloud service like AWS. This would solve the chatbot uptime issue but also introduced other problems. How could a cloud service app index our server that's only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
+I debated if I should host snbot on a cloud service like AWS or Bluemix. This would solve the chatbot uptime issue but also introduced other problems. How could a cloud service app index our server that's only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
 
 Anyway, Christmas came and we all had a holiday. I ate lots of food and got a Raspberry Pi as a gift. Raspberry Pi 3 is ideal as it uses Linux like AWS. This means most things that can work on AWS are compatible. It’s also a physical thing that we have full control over so security is better. Setting up the Raspberry Pi allowed me to get a lot more familiar with the internal workings of Linux. In turn, this helped me understand more how AWS works.
 
