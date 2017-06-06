@@ -1,4 +1,10 @@
 .showreel {
-  border: 1px solid black;
-  width: 100%;
+  padding: 20px;
+
+  &__video {
+    border: 1px solid black;
+    width: 100%;
+    overflow: hidden;
+  }
 }
+
