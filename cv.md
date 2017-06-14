@@ -3,7 +3,7 @@ layout: article
 heading: CV
 title: CV
 cta_label: Download PDF
-cta_href: /assets/pdf/anthony_cossins_cv.pdf
+cta_href: /cv.pdf
 subjects:
 - javascript
 - oocss
