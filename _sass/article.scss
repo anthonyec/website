@@ -5,7 +5,7 @@
   width: span(10);
 
   h1 {
-    max-width: span(8);
+    // max-width: span(8);
     margin-top: 2.06em;
   }
 
@@ -21,7 +21,7 @@
     margin-top: 0.4em;
   }
 
-  p, blockquote, ul, video, img {
+  p, blockquote, ul, video, img, .article__block {
     margin: 1em 0;
   }
 

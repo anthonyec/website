@@ -21,6 +21,9 @@ sass:
 
 # Collection definitions and settings
 collections:
+  posts:
+    permalink: /blog/:title
+
   work:
     title: Work
     permalink: /:collection/:path/
