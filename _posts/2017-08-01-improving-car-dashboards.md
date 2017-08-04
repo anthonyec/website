@@ -42,3 +42,11 @@ There's a trend for digital displays replacing physical gauges, lights and butto
 - [OSLO - multimodal car display concept](https://www.terriechan.com/car-display)
 
 ## Further reading
+
+- [Human machine interfaces](https://drive.google.com/open?id=0B2U2YEQghVvQWlRtQkdsY1lKcmM)
+
+- [Usability evaluation of fuel gauges for hybrid electric vehicles](https://drive.google.com/open?id=0B2U2YEQghVvQYVVfNVlYTjA3LU0)
+
+- [Usability of Car Dashboard Displays for Elder Drivers](https://drive.google.com/open?id=0B2U2YEQghVvQUjYxbmdLcGNCcW8)
+
+
