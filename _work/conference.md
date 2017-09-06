@@ -14,6 +14,7 @@ tags:
 subjects: 
     - animation
     - mobile
+hidden: true
 ---
 
 <style>
