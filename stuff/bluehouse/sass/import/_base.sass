@@ -1,0 +1,104 @@
+// Version 0.8 - https://github.com/Anthonyec/_base //
+
+// Settings //
+$debug: true !default
+
+// Default Styles //
+*, *:before, *:after
+	-moz-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+// html
+// 	font-size: 62.5% // Remove this rule if you are not using REM for font sizing
+
+// body
+// 	font-family: sans-serif
+
+// Browser Prefix Mixins //
+@mixin keyframes ( $name )
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@-khtml-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
+@mixin transition ( $prop... )
+	-webkit-transition: $prop
+	-moz-transition: $prop
+	-ms-transition: $prop
+	-khtml-transition: $prop
+	transition: $prop
+
+@mixin transform ( $prop... )
+	-webkit-transform: $prop
+	-moz-transform: $prop
+	-ms-transform: $prop
+	-khtml-transition: $prop
+	transform: $prop
+
+@mixin transform-origin ( $prop... )
+	-webkit-transform-origin: $prop
+	-moz-transform-origin: $prop
+	-ms-transform-origin: $prop
+	-khtml-transition-origin: $prop
+	transform-origin: $prop
+
+@mixin perspective ( $prop... )
+	-webkit-perspective: $prop
+	perspective: $prop
+
+@mixin animation ( $prop... )
+	-webkit-animation: $prop
+	-moz-animation: $prop
+	-ms-animation: $prop
+	-khtml-animation: $prop
+	animation: $prop
+
+@mixin animation-play-state ( $prop... )
+	-webkit-animation-play-state: $prop
+	-moz-animation-play-state: $prop
+	-ms-animation-play-state: $prop
+	-khtml-animation-play-state: $prop
+	animation-play-state: $prop
+
+@mixin opacity ( $prop )
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$prop*100})"
+	filter: alpha(opacity=$prop*100)
+	-moz-opacity: $prop
+	-khtml-opacity: $prop
+	opacity: $prop
+
+// Debug Mixins //
+@mixin debug
+	@if $debug
+		outline: 1px solid red
+
+@mixin debug-b
+	@if $debug
+		background-color: blue
+
+@mixin debug-style
+	@if $debug
+		@content
+
+// Custom Mixins //
+@mixin force-gpu
+	-webkit-transform: translate3d(0, 0, 0)
+
+@mixin background-image-retina ( $imageName, $imageType)
+	background-image: url("#{$imageName}.#{$imageType}")
+	
+	@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+		background-image: url("#{$imageName}@2x.#{$imageType}")
+
+@mixin font-size ( $prop: 16 )
+	font-size: ($prop) + px
+	font-size: ($prop / 10) + rem
+	line-height: ($prop * 1.5) + px
+	line-height: (($prop / 10) * 1.5) + rem

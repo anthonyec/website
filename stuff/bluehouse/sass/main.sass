@@ -1,0 +1,164 @@
+@import "import/reset"
+@import "import/base"
+
+body
+	background: #616161
+	color: white
+	font-family: "Open Sans", sans-serif
+	font-style: italic
+
+a
+	color: white
+	text-decoration: none
+
+a:hover
+	border-bottom: 1px solid white
+
+.content
+	left: 50%
+	top: 50%
+	margin-left: -600px
+	margin-top: -392px
+	position: absolute
+
+	@media screen and (max-width: 1200px)
+		width: 100%
+		left: 0px
+		margin-left: 0px
+
+	@media screen and (max-height: 785px)
+		height: 100%
+		top: 0px
+		margin-top: 0px
+
+.cover
+	background-size: cover
+	background-position: center center
+	width: 100%
+	height: 100%
+	position: absolute
+	left: 0px
+	top: 0px
+	display: none
+
+#cover2
+	background-image: url("../images/cover2.jpg")
+
+#cover3
+	background-image: url("../images/cover3.jpg")	
+
+.container
+	width: 50%
+	height: 785px
+	float: left
+	padding: 60px
+	position: relative
+	overflow: auto
+
+	@media screen and (max-width: 1200px)
+		width: 50%
+
+	@media screen and (max-width: 830px)
+		width: 100%
+	
+	@media screen and (max-height: 785px)
+		height: 100%
+
+	&.right
+		background-image: url("../images/cover.jpg")
+		background-size: cover
+
+		@media screen and (max-width: 830px)
+			// display: none
+			position: absolute
+			width: 100%
+			z-index: -1
+
+	ul
+		margin-bottom: 80px
+
+	li
+		margin-bottom: 18px
+
+		&:hover
+			.message
+				display: inline-block
+
+.containers
+	background: black
+	width: 1200px
+	height: 785px
+	overflow: hidden
+
+	@media screen and (max-width: 1200px)
+		width: 100%
+
+	@media screen and (max-width: 830px)
+		background: none
+
+	@media screen and (max-height: 785px)
+		height: 100%
+
+
+#page-credits, #page-controls
+	display: none
+
+.message
+	color: grey
+	display: none
+
+	&:before
+		content: " - "
+
+.key
+	border: 1px solid white
+	border-radius: 3px
+	padding: 1px
+	padding-left: 5px
+	padding-right: 5px
+	margin-right: 5px
+
+.key-info
+	position: absolute
+	// left: 50%
+	right: 60px
+	// text-align: right
+
+.back
+	background-image: url("../images/back.png")
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 80%
+	display: block
+	position: absolute
+	left: 18px
+	margin-top: -1px
+	width: 28px
+	height: 17px
+	opacity: 0
+	+animation(slide-in 200ms 200ms ease-out forwards)
+
+
+	&:hover
+		border: none
+
+.footer
+	color: blue
+	margin-top: 50px
+	margin-bottom: 50px
+	text-align: center
+
+	@media screen and (max-height: 785px)
+		display: none
+
+	span
+		display: block
+		margin-top: 10px
+
++keyframes ("slide-in")
+	0%
+		+transform( translateX(10px) )
+		opacity: 0
+	100%
+		+transform( translateX(0px) )
+		opacity: 100
