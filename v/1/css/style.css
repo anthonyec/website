@@ -1,0 +1,167 @@
+* {
+	box-sizing: content-box;
+}
+
+body {
+	background: #E9E9E9 url("../images/under-construction.gif") no-repeat;
+	background-size: 100%;
+	font-family:  Arial;
+	padding: 0px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: blue;
+}
+
+
+section a {
+	z-index: 101;
+}
+
+section {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+section a:hover span {
+	display: block;
+}
+
+section span {
+	//background: #ef3d3f;
+	//box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
+	display: none;
+	width: 50%;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 20px;
+	position: absolute;
+	line-height: 1.5;
+	z-index: 100;
+}
+
+section img {
+	position: relative;
+}
+
+#work0 img { left: 50%; }
+#work0 { margin-top: -100px; }
+
+#work1 img { left: 10%; }
+#work1 { margin-top: 100px; }
+
+#work2 img { left: 20%; }
+#work2 { margin-top: -20px; }
+
+#work3 img { left: 35%; }
+#work3 { margin-top: -150px; }
+
+#work4 img { left: 2%; }
+#work4 { margin-top: 0px; }
+
+#work5 img { left: 25%; }
+#work5 { margin-top: 10px; }
+
+#work6 img { left: 10%;}
+#work6 { margin-top: -50px; }
+
+#work7 img { left: 30%; }
+#work7 { margin-top: -50px; }
+
+#work8 img { left: 50px; }
+#work8 { margin-top: -150px; }
+
+#work9 img { left: 50%; }
+
+.about {
+	background: white;
+	color: #ef3d3f;
+	border: 3px solid #ef3d3f;
+	padding: 1em;
+	width: auto;
+	right: 2em;
+	top: 60px;
+	position: fixed;
+	z-index: 5;
+}
+
+
+q:before {
+    content: "“ ";
+    left: -1px;
+}
+
+q:after {
+    content: " ”"; 
+}
+
+.about ul {
+	list-style-type: square;
+}
+
+.about h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 2px;
+}
+
+.about li {
+	margin-top: .5em;
+}
+
+.work {
+	position: absolute;
+}
+
+#contact {
+	color: blue;
+	border: 3px solid blue;
+}
+
+#response, #response2 {
+	color: blue;
+}
+
+@media (max-width: 500px) {
+	.about {
+		width: 85%;
+		right: auto;
+		margin: 10px;
+		position: absolute;
+	}
+	
+	#contact {
+		top: 280px;
+		color: blue;
+		border: 3px solid blue;
+	}
+	
+	.content {
+		margin-top: 360px;	
+	}
+	
+	section, section img {
+		width: 100%;
+		margin: 0px !important;
+		top: auto !important;
+		left: auto !important;
+	}
+	
+	section a:hover span {
+		display: none;
+	}
+}
+
+@media (min-width: 999px) {
+	#response {
+		display: none;
+	}
+}
+
+@media (min-width: 500px) {
+	#response2 {
+		display: none;
+	}
+}

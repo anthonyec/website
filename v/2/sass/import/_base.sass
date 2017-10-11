@@ -1,0 +1,39 @@
+* 
+	box-sizing: border-box
+
+body
+	font-family: 'Helvetica', Arial, san-serif
+	padding: 0px
+	margin: 0px
+
+@mixin keyframes ($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
+@mixin transform ($prop...)
+	-webkit-transform: $prop
+	-moz-transform: $prop
+	-ms-transform: $prop
+	transform: $prop
+
+@mixin transition ($prop...)
+	-webkit-transition: $prop
+	-moz-transition: $prop
+	-ms-transition: $prop
+	transition: $prop
+
+@mixin animation ($prop...)
+	-webkit-animation: $prop
+	-moz-animation: $prop
+	-ms-animation: $prop
+	animation: $prop
+
+@mixin min-device-pixel-ratio ($prop...)
+	@media (min--moz-device-pixel-ratio: $prop), (-o-min-device-pixel-ratio: $prop), (-webkit-min-device-pixel-ratio: prop), (min-device-pixel-ratio: $prop), (min-resolution: $prop)
+		@content

@@ -1,0 +1,420 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600italic,600' rel='stylesheet' type='text/css'>
+<style>
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .cf:before,
+  .cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  .cf {
+    *zoom: 1;
+  }
+
+  .teaser {
+    width: 100%;
+  }
+
+  .teaser__image {
+    width: 100%;
+  }
+
+  .teaser__details {
+    padding-top: 9px;
+  }
+
+  .teaser__title {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  .teaser__snippet {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .l-showcase {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .l-showcase__row {
+    margin: -20px -20px;
+  }
+
+  .l-showcase__item {
+    float: left;
+    padding: 20px 20px;
+  }
+
+  .l-showcase__item:hover {
+    background: #ffeead;
+    /*box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);*/
+    /*outline: 2px solid lightGray;*/
+  }
+
+  .l-showcase__item--secondary {
+    width: 50%;
+  }
+
+  .l-showcase__item--tertiary {
+    width: 25%;
+  }
+
+  .l-contain {
+    padding: 0 80px;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    background: white;
+    padding: 10px 0;
+  }
+
+  .section-heading__title {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+  }
+
+  .section-heading__icon {
+    display: inline-block;
+    margin-left: -24px;
+  }
+
+  .profile {
+    padding: 80px 0;
+  }
+
+  .profile__logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .profile__details {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .profile__title {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .link {
+    color: #0017FF;
+    text-decoration: underline;
+  }
+
+  .link:visited {
+    /*color: #0017FF;*/
+  }
+
+  .link:active {
+    color: red;
+  }
+
+  .section {
+    padding-bottom: 40px;
+  }
+</style>
+
+<div class="profile">
+  <div class="l-contain">
+    <img src="pp-head.png" class="profile__logo">
+
+    <h1 class="profile__title">
+      <a class="link">
+        Anthony Cossins
+      </a>
+    </h1>
+
+    <ul class="profile__details">
+      <li class="profile__detail">
+        Working at <a class="link">Signal Noise</a>
+      </li>
+      <li class="profile__detail">
+        London, <a class="link">UK</a>
+      </li>
+      <li class="profile__detail">
+        <a class="link">Email</a> <a class="link">me</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-heading">
+    <div class="l-contain">
+      <!-- <img src="." class="section-heading__icon"> -->
+      <h2 class="section-heading__title">Showcase</h2>
+    </div>
+  </div>
+
+  <div class="l-contain">
+    <ul class="l-showcase cf">
+      <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--secondary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">ListyThing</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+      </div>
+
+      <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--secondary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">Wires</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+      </div>
+
+      <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">Signal Noise</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">Slackmark</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">Private_i</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <img src="thumbnail.png" alt="Teaser image" class="teaser__image">
+            <div class="teaser__details">
+              <h3 class="teaser__title">
+                <a class="link" href="#">Blue House</a>
+              </h3>
+              <p class="teaser__snippet">
+                A fast, simple and functional list making thing
+              </p>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-heading">
+    <div class="l-contain">
+      <h2 class="section-heading__title">Blog!</h2>
+    </div>
+  </div>
+
+  <div class="l-contain">
+    <ul class="l-showcase cf">
+      <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+      </div>
+
+            <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+      </div>
+      <div class="l-showcase__row">
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+
+        <li class="l-showcase__item l-showcase__item--tertiary">
+          <div class="teaser">
+            <h3 class="teaser__title">
+              <a class="link" href="#">Wires</a>
+            </h3>
+            <p class="teaser__snippet">
+              A fast, simple and functional list making thing
+            </p>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </ul>
+</div>

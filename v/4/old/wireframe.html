@@ -1,0 +1,40 @@
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+
+<style>
+	*, *:before, *:after {
+		margin: 0;
+		padding: 0;
+		box-sizing: borer-box;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		vertical-align: top;
+		margin: 0 auto;
+	}
+	
+	img.mobile {
+		max-width: 360px;
+	}
+
+	img.desktop {
+		display: none;
+		max-width: 1280px;
+	}
+	
+	@media(min-width: 600px) {
+		img.mobile {
+			display: none;
+		}
+	}
+
+	@media(min-width: 600px) {
+		img.desktop {
+			display: block;
+		}	
+	}
+</style>
+
+<img src="wireframe.png" class="mobile">
+<img src="wireframe-desktop.png" class="desktop">

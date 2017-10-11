@@ -1,0 +1,188 @@
+@import "import/reset"
+@import "import/base"
+
+/* Hey, by the way I use SASS to compile my CSS. Just thought I had to say that before you think I'm some kind of CSS genius who types out their stylesheets perfectly and spends time writing each browser prefix for everything like a good little boy. Mixins m8! I'm sorry */
+/* All my SASS files can be found in a /sass directory somewhere if you are interested m8 */
+
+// I see you've come to see some SASS. WELP HERE IT IS HELLO
+
+$thumbURL: "../thumbs/"
+
+@mixin thumb-sprite-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-thumb-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-thumb-@2x.jpg')
+	&:hover
+		background-image: url('#{$url}#{$name}-sprite.jpg')
+		&:after
+			background-image: url('#{$url}#{$name}-sprite.jpg')
+
+@mixin thumb-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-thumb-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-thumb-@2x.jpg')
+
+@mixin cover-sprite-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-cover-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-cover-@2x.jpg')
+
+	&:hover
+		background-image: url('#{$url}#{$name}-sprite.jpg')
+
+@mixin cover-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-cover-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-cover-@2x.jpg')
+
+
+body 
+	background: black url("../images/blobs.jpg") fixed
+
+.content
+	background: rgba(0, 0, 0, 0.7)
+
+.sprite.thumb:hover
+	&:hover
+		background-size: 420px 2240px
+		@include animation (1s sprite steps(8) infinite)
+
+.sprite.cover
+	&:hover
+		background-size: 280px 2240px
+		@include animation (1s sprite steps(8) infinite)
+
+.thumb
+	background: grey
+	background-size: 420px 280px
+	box-shadow: -10px 10px 1px rgba(0, 0, 0, 0.1)
+	display: block
+	width: 420px
+	height: 280px
+	position: relative
+
+	&:hover
+		z-index: 100
+
+	&:hover span
+		display: block
+
+	a
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+
+	span
+		display: none
+		color: white
+		font-size: 25px
+		padding: 15px
+		line-height: 1.2
+		text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.7)
+		text-transform: uppercase
+		@include animation (0.1s blink steps(2) infinite)
+
+		h1
+			font-family: "flood-std"
+			font-size: 40px
+			font-weight: bold
+			position: absolute
+			overflow: hidden
+			padding: 10px
+			white-space: nowrap
+			text-align: center
+			left: -50px
+
+			@include transform (rotate(-10deg))
+
+		p
+			display: none
+
+	@include transition (left 0.2s ease-in-out)
+
+	@media (max-width: 700px)
+		box-shadow: none
+		margin: auto
+		left: auto !important
+		top: auto !important
+
+.thumb:after
+	content: ""
+	background: red
+	display: block
+	width: 420px
+	height: 280px
+	position: absolute
+	top: 0px
+	opacity: 0.5
+
+.cover
+	@extend .thumb
+	background-size: 280px 280px
+	width: 280px
+	height: 280px
+
+.thumb-wires
+	left: 50%
+	@include thumb-sprite-image ("wires", $thumbURL)
+
+.thumb-bottle
+	top: -100px
+	left: 5%
+	@include thumb-sprite-image ("bottle", $thumbURL)
+
+.thumb-hospital
+	top: -120px
+	left: 30%
+	@include cover-image ("hospital", $thumbURL)
+
+.thumb-bluehouse
+	left: 20%
+	@include thumb-sprite-image ("bluehouse", $thumbURL)
+
+.thumb-lightisbehindme
+	bottom: -20px
+	left: 35%
+	@include cover-image ("lightisbehindme", $thumbURL)
+
+.thumb-survey
+	left: 10%
+	@include thumb-sprite-image ("survey", $thumbURL)
+
+.thumb-timeline
+	top: -50px
+	left: 60%
+	@include thumb-sprite-image ("timeline", $thumbURL)
+
+.thumb-cme2011
+	left: 3%
+	@include thumb-sprite-image ("cme2011", $thumbURL)
+
+.thumb-runningman
+	top: 100px
+	left: 25%
+	@include thumb-sprite-image ("runningman", $thumbURL)
+
+.thumb-launchpad	
+	left: 55%
+	@include thumb-sprite-image ("launchpad", $thumbURL)
+
+
+/* Animations */
+@include keyframes("sprite")
+	0% 
+		background-position: 0px 0px
+	100% 
+		background-position: 0px 2240px
+
+@include keyframes("blink")
+	0% 
+		opacity: 1
+	100% 
+		opacity: 0.8
+		top: 0px

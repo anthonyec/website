@@ -1,0 +1,266 @@
+@import "import/reset"
+@import "import/base"
+
+$mobileSize: 530px
+$thumbURL: "../images/thumbs/"
+
+@mixin thumb-sprite-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1), (min--moz-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-thumb-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-thumb-@1x.jpg')
+		background-image: url('#{$url}#{$name}-thumb-@2x.jpg')
+	&:hover
+		&:after
+			background-image: url('#{$url}#{$name}-sprite.jpg')
+
+@mixin cover-image ( $name, $url )
+	@media (-webkit-min-device-pixel-ratio: 1), (min--moz-device-pixel-ratio: 1)
+		background-image: url('#{$url}#{$name}-cover-@1x.jpg')
+	@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2)
+		background-image: url('#{$url}#{$name}-cover-@2x.jpg')
+
+body 
+	background: #E9E9E9
+	//background: url("../images/blobs-black.jpg") fixed
+	//background: #E9E9E9 url("../images/under-construction.gif") no-repeat
+	//background-size: 100%
+
+.content
+	//margin-top: 200px
+	//background: rgba(255, 255, 255, 0.9)
+	background: url("../images/under-construction.gif") no-repeat
+	background-size: 100%
+	+transition (padding 0.2s ease-in-out)
+
+	@media (max-width: $mobileSize)
+
+
+.sprite.thumb:hover
+	&:hover
+		&:after
+			background-size: 420px 2240px
+			+animation (1s sprite steps(8) infinite)
+
+.sprite.cover
+	&:hover
+		background-size: 280px 2240px
+		+animation (1s sprite steps(8) infinite)
+
+.thumb
+	background: #ef3d3f
+	background-size: 420px 280px
+	background-position: center
+	//box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.5)
+	display: block
+	width: 420px
+	height: 280px
+	position: relative
+
+	&:hover
+		z-index: 100
+
+	&:hover span
+		display: block
+
+	&:after
+		content: ""
+		display: block
+		width: 420px
+		height: 280px
+		position: absolute
+		top: 0px
+		z-index: -1
+
+	a
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+
+	span
+		display: none
+		color: white
+		padding: 15px
+		+animation (0.1s blink steps(2) infinite)
+
+		h1
+			color: #ef3d3f
+			font-family: "flood-std"
+			font-size: 40px
+			font-weight: bold
+			position: absolute
+			overflow: hidden
+			padding: 10px
+			white-space: nowrap
+			text-align: center
+			text-transform: uppercase
+			text-shadow: -1px 1px 0px blue
+			left: -50px
+			z-index: 101
+
+			+transform (rotate(-10deg))
+
+			@media (max-width: $mobileSize)
+				left: 0px
+
+		p
+			display: none
+
+	//+transition (left 0.2s ease-in-out)
+
+	@media (max-width: $mobileSize)
+		box-shadow: none
+		background-size: cover
+		margin: auto
+		left: auto !important
+		top: auto !important
+		bottom: auto !important
+		width: auto
+		margin-left: 25px
+		margin-right: 25px
+
+		&:after
+			width: auto
+
+
+.profile
+	background: white
+	border: 3px solid #ef3d3f
+	color: #ef3d3f
+	display: inline-block
+	padding: 1em
+	position: fixed
+	line-height: 1.8
+	right: 30px
+	top: 30px
+	width: 460px
+	outline: 6px solid white
+	z-index: 100
+
+	h1
+		font-weight: bold
+		text-transform: uppercase
+
+	ul
+		list-style-type: square	
+
+	#response1
+		color: blue
+		display: none
+		@media (max-width: 900px)
+			display: inline-block
+
+	#response2
+		color: blue
+		display: none
+		@media (max-width: 500px)
+			display: inline-block
+
+	q:before, q:after
+		content: "\""
+
+	@media (max-width: $mobileSize)
+		right: auto
+		width: auto
+		margin-left: 30px
+		margin-right: 30px
+		margin-bottom: 65px
+		position: relative
+
+	// li:before
+	// 	background: red
+	// 	content: ""
+	// 	display: inline-block
+	// 	width: 50px
+	// 	height: 50px
+
+.contact
+	color: blue
+	border: 3px solid blue
+	font-weight: bold
+	padding: 0.7em 1em 0.7em 1em
+	text-decoration: none
+	text-transform: uppercase
+	position: absolute
+	top: -3px
+	right: -3px
+	
+.cover
+	@extend .thumb
+	background-size: 280px 280px
+	width: 280px
+	height: 280px
+
+.thumb-signal-noise
+	top: 10px
+	left: 30%
+	+thumb-sprite-image ("signal-noise", $thumbURL)
+
+.thumb-cme2013
+	top: 10px
+	left: 30%
+	+thumb-sprite-image ("cme2013", $thumbURL)
+
+.thumb-wires
+	left: 50%
+	+thumb-sprite-image ("wires", $thumbURL)
+
+.thumb-bottle
+	top: -100px
+	left: 5%
+	+thumb-sprite-image ("bottle", $thumbURL)
+
+.thumb-hospital
+	top: -150px
+	left: 40%
+	+cover-image ("hospital", $thumbURL)
+
+.thumb-bluehouse
+	top: -210px
+	left: 15%
+	+thumb-sprite-image ("bluehouse", $thumbURL)
+
+.thumb-lightisbehindme
+	top: -160px
+	left: 35%
+	+cover-image ("lightisbehindme", $thumbURL)
+
+.thumb-survey
+	top: -150px
+	left: 10%
+	+thumb-sprite-image ("survey", $thumbURL)
+
+.thumb-timeline
+	top: -200px
+	left: 40%
+	+thumb-sprite-image ("timeline", $thumbURL)
+
+.thumb-cme2011
+	top: -260px
+	left: 3%
+	+thumb-sprite-image ("cme2011", $thumbURL)
+
+.thumb-runningman
+	top: -255px
+	left: 35%
+	+thumb-sprite-image ("runningman", $thumbURL)
+
+.thumb-launchpad
+	top: -300px	
+	left: 10%
+	+thumb-sprite-image ("launchpad", $thumbURL)
+
+
++keyframes("sprite")
+	0% 
+		background-position: 0px 0px
+	100% 
+		background-position: 0px 2240px
+
++keyframes("blink")
+	0% 
+		opacity: 1
+	100% 
+		opacity: 0.8
+		top: 0px
