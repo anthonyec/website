@@ -1,0 +1,3 @@
+[submodule "stuff/bluehouse"]
+	path = stuff/bluehouse
+	url = https://github.com/anthonyec/bluehouse.git
