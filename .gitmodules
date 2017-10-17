@@ -1,3 +1,6 @@
 [submodule "stuff/bluehouse"]
 	path = stuff/bluehouse
 	url = https://github.com/anthonyec/bluehouse.git
+[submodule "snippets"]
+	path = snippets
+	url = https://github.com/anthonyec/snippets.git
