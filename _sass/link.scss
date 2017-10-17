@@ -1,12 +1,14 @@
 /* Link */
-.link:link, .link:visited {
-  color: #1D7BFF;
-  border-bottom: 2px solid #1D7BFF;
-  text-decoration: none;
-  padding-bottom: 1px;
-}
+.link {
+  &:visited {
+    color: #1D7BFF;
+    border-bottom: 2px solid #1D7BFF;
+    text-decoration: none;
+    padding-bottom: 1px;
+  }
 
-.link:hover, .link:active {
-  background: #d1ddff;
-  background: #EEF3FA;
+  &:hover, &:active {
+    background: #d1ddff;
+    background: #EEF3FA;
+  }
 }

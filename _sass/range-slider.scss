@@ -1,0 +1,26 @@
+.range-slider {
+  width: 100%;
+  height: 1px;
+  background: black;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      border-color: #1D7BFF;
+      box-shadow: 0 0 0 2px #1D7BFF;
+    }
+  }
+
+  &::-webkit-slider-thumb {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: white;
+    background: #EEF3FA;
+    border-radius: 100px;
+    -webkit-appearance: none;
+  }
+}

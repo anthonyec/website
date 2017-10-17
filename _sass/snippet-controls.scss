@@ -1,0 +1,16 @@
+.snippet-controls {
+  position: absolute;
+  max-width: 420px;
+  width: 80%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: white;
+  border-left: 1px solid black;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  z-index: 99;
+
+  &__group {
+
+  }
+}

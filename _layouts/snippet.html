@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <title>{{ page.title | escape | strip_html }}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description | strip_html | strip_newlines | truncate: 160 }}">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/css/snippet.css">
+  </head>
+
+  <body>
+    <div class="snippet-menubar">
+      <a href="/" class="snippet-menubar__title">
+        <img class="snippet-menubar__logo" src="/assets/images/pp_head_logo.png" alt="My head as a logo">
+      </a>
+
+      <div class="snippet-menubar__description">
+        {{ page.description | markdownify }}
+      </div>
+
+      <div class="snippet-menubar__buttons">
+        <button class="snippet-button">
+          <img src="/assets/images/controls_icon.svg" alt="Controls">
+        </button>
+      </div>
+
+    </div>
+
+    <div class="snippet-controls">
+      <div class="snippet-controls__group">
+        <div class="snippet-control">
+          <label class="snippet-control__label">
+            Count:
+          </label>
+          <div class="snippet-control__input-container">
+            <input class="range-slider" type="range" />
+          </div>
+        </div>
+
+        <div class="snippet-control">
+          <label class="snippet-control__label">
+            Radius:
+          </label>
+          <div class="snippet-control__input-container">
+            <input class="range-slider" type="range" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="snippet-content">
+      {{ content }}
+    </div>
+  </body>
+</html>

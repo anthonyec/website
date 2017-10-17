@@ -1,0 +1,19 @@
+.snippet-button {
+  background: white;
+  border: 1px solid black;
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    background: lightGray;
+  }
+
+  img {
+    vertical-align: middle;
+    margin: 0;
+    display: block;
+  }
+}

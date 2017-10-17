@@ -28,3 +28,8 @@ collections:
     title: Work
     permalink: /:collection/:path/
     output: true
+
+  snippets:
+    title: Snippets
+    permalink: /:collection/:path/
+    output: true

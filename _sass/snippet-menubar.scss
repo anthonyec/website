@@ -1,0 +1,42 @@
+.snippet-menubar {
+  display: flex;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  background: white;
+  border-bottom: 1px solid black;
+  position: relative;
+  align-items: center;
+
+  &__buttons {
+    margin-left: auto;
+    padding: 0 20px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+
+  &__logo {
+    width: 30px;
+  }
+
+  &__description {
+    a:link, a:visited {
+      color: #1D7BFF;
+      border-bottom: 2px solid #1D7BFF;
+      text-decoration: none;
+      padding-bottom: 1px;
+    }
+
+    a:hover, a:active {
+      background: #d1ddff;
+      background: #EEF3FA;
+    }
+  }
+}
