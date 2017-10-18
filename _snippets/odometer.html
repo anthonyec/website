@@ -2,6 +2,41 @@
 layout: snippet
 title: Canvas odometer
 description: Canvas odometer
+controls:
+  - id: "total"
+    label: "Total"
+    type: "range"
+    attrs:
+      min: 1
+      max: 100
+  - id: "radius"
+    label: "Radius"
+    type: "range"
+    attrs:
+      min: 0
+      max: 300
+  - id: "dashLength"
+    label: "Normal dash length"
+    type: "range"
+    attrs:
+      min: 0
+      max: 50
+  - id: "dashMinorLength"
+    label: "Minor dash length"
+    type: "range"
+    attrs:
+      min: 0
+      max: 50
+  - id: "dashMajorLength"
+    label: "Major dash length"
+    type: "range"
+    attrs:
+      min: 0
+      max: 50
+  - id: "showOutline"
+    label: "Show outline"
+    type: "checkbox"
+
 ---
 <!--
 Created using JS Bin
@@ -12,6 +47,7 @@ Copyright (c) 2017 by Anthonyec (http://jsbin.com/ladeyey/29/edit)
 Released under the MIT license: http://jsbin.mit-license.org
 -->
 <script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
 <style id="jsbin-css">
 canvas {
   outline: 1px solid black;
@@ -20,137 +56,130 @@ canvas {
 
 <canvas id="canvas"></canvas>
 
-<input class="range" data-prop="total" type="range" min="1" max="100" />
-<!-- <input class="range" data-prop="startAngle" type="number" min="-90" max="90" /> -->
-<!-- <input class="range" data-prop="endAngle" type="number" min="90" max="270" /> -->
-<input class="range" data-prop="radius" type="range" min="0" max="300" />
 <script id="jsbin-javascript">
-const PIXEL_RATIO = window.devicePixelRatio || 1;
+  const PIXEL_RATIO = window.devicePixelRatio || 1;
 
-const $ranges = document.querySelectorAll('.range');
-const $canvas = document.getElementById('canvas');
-const context = $canvas.getContext('2d');
+  const $ranges = document.querySelectorAll('.range');
+  const $canvas = document.getElementById('canvas');
+  const context = $canvas.getContext('2d');
 
-$canvas.width = 600;
-$canvas.height = 600;
-$canvas.style.width = '300px';
-$canvas.style.height = '300px';
+  $canvas.width = 600;
+  $canvas.height = 600;
+  $canvas.style.width = '300px';
+  $canvas.style.height = '300px';
 
-context.scale(PIXEL_RATIO, PIXEL_RATIO);
+  context.scale(PIXEL_RATIO, PIXEL_RATIO);
 
-let DEFAULT_PROPS = {
-  x: 150,
-  y: 160,
-  radius: 100,
-  total: 31,
-  startAngle: -30,
-  endAngle: 210,
-};
-
-const toRadians = (angle) => {
-  return angle * (Math.PI / 180);
-}
-
-const toDegrees = (angle) => {
-  return angle * (180 / Math.PI);
-}
-
-const interpolate = (min, max, t) => {
-  return min + (max - min) * t;
-}
-
-const offsetBy = (angle, distance) => {
-  const { radius } = DEFAULT_PROPS;
-
-  return {
-    x: Math.cos(angle) * (radius + distance),
-    y: Math.sin(angle) * (radius + distance),
+  let DEFAULT_PROPS = {
+    x: 150,
+    y: 160,
+    radius: 100,
+    total: 31,
+    startAngle: -30,
+    endAngle: 210,
+    dashLength: 10,
+    dashMinorLength: 15,
+    dashMajorLength: 20,
   };
-}
 
-const getPosition = (index) => {
-  const { radius, total, startAngle, endAngle, length } = DEFAULT_PROPS;
+  const toRadians = (angle) => {
+    return angle * (Math.PI / 180);
+  }
 
-  const angleDiff = toRadians(endAngle - startAngle);
-  const offset = toRadians(startAngle);
+  const toDegrees = (angle) => {
+    return angle * (180 / Math.PI);
+  }
 
-  const unit = 1 / (total - 1);
-  const ramp = index * unit;
-  const angle = (Math.PI + ramp * (angleDiff)) + offset;
+  const interpolate = (min, max, t) => {
+    return min + (max - min) * t;
+  }
 
-  const x = Math.cos(angle) * radius;
-  const y = Math.sin(angle) * radius;
+  const offsetBy = (angle, distance) => {
+    const { radius } = DEFAULT_PROPS;
 
-  return {
-    x,
-    y,
-    angle: toDegrees(angle),
-    offsetBy: offsetBy.bind(this, angle),
-  };
-}
+    return {
+      x: Math.cos(angle) * (radius + distance),
+      y: Math.sin(angle) * (radius + distance),
+    };
+  }
 
-const draw = () => {
-  context.fillStyle = '#000000';
-  context.fillRect(0, 0, 400, 400);
-  context.fillStyle = '#ffffff';
+  const getPosition = (index) => {
+    const { radius, total, startAngle, endAngle, length } = DEFAULT_PROPS;
 
-  _.times(DEFAULT_PROPS.total, (i) => {
-    const position = getPosition(i);
-    let positionOffset = position.offsetBy(-10);
+    const angleDiff = toRadians(endAngle - startAngle);
+    const offset = toRadians(startAngle);
 
-    context.beginPath();
-    context.strokeStyle = 'silver';
-    context.lineWidth = 1;
+    const unit = 1 / (total - 1);
+    const ramp = index * unit;
+    const angle = (Math.PI + ramp * (angleDiff)) + offset;
 
-    if (i % 10 === 0) {
-      context.strokeStyle = 'white';
-      positionOffset = position.offsetBy(-20);
-      context.lineWidth = 2;
-    }
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
 
-    if (i % 5 === 0 && i % 10 !== 0) {
-      context.strokeStyle = 'white';
-      positionOffset = position.offsetBy(-15);
-      context.lineWidth = 2;
-    }
+    return {
+      x,
+      y,
+      angle: toDegrees(angle),
+      offsetBy: offsetBy.bind(this, angle),
+    };
+  }
 
-    context.moveTo(DEFAULT_PROPS.x + position.x, DEFAULT_PROPS.y + position.y);
-    context.lineTo(DEFAULT_PROPS.x + positionOffset.x, DEFAULT_PROPS.y + positionOffset.y);
-    context.stroke();
+  const draw = () => {
+    context.fillStyle = '#000000';
+    context.fillRect(0, 0, 400, 400);
+    context.fillStyle = '#ffffff';
+
+    _.times(DEFAULT_PROPS.total, (i) => {
+      const position = getPosition(i);
+      let positionOffset = position.offsetBy(-DEFAULT_PROPS.dashLength);
+
+      context.beginPath();
+      context.strokeStyle = 'silver';
+      context.lineWidth = 1;
+
+      if (i % 10 === 0) {
+        context.strokeStyle = 'white';
+        positionOffset = position.offsetBy(-DEFAULT_PROPS.dashMajorLength);
+        context.lineWidth = 2;
+      }
+
+      if (i % 5 === 0 && i % 10 !== 0) {
+        context.strokeStyle = 'white';
+        positionOffset = position.offsetBy(-DEFAULT_PROPS.dashMinorLength);
+        context.lineWidth = 2;
+      }
+
+      context.moveTo(DEFAULT_PROPS.x + position.x, DEFAULT_PROPS.y + position.y);
+      context.lineTo(DEFAULT_PROPS.x + positionOffset.x, DEFAULT_PROPS.y + positionOffset.y);
+      context.stroke();
+    });
+
+    // context.beginPath();
+    // context.lineWidth = 2;
+    // context.strokeStyle = 'white';
+    // context.arc(
+    //   DEFAULT_PROPS.x,
+    //   DEFAULT_PROPS.y,
+    //   DEFAULT_PROPS.radius -1,
+    //   -toRadians(DEFAULT_PROPS.endAngle),
+    //   interpolate(-toRadians(DEFAULT_PROPS.endAngle), -toRadians(DEFAULT_PROPS.startAngle), 1)
+    // );
+    // context.stroke();
+  }
+
+  draw();
+
+  _.forEach(DEFAULT_PROPS, (value, prop) => {
+    console.log(prop);
+    document.addEventListener(`${prop}_control_change`, (evt) => {
+      const value =  evt.detail.value;
+      DEFAULT_PROPS[prop] = parseInt(value);
+      draw();
+    });
   });
 
-//   context.beginPath();
-//   context.lineWidth = 2;
-//   context.strokeStyle = 'white';
-//   context.arc(
-//     DEFAULT_PROPS.x,
-//     DEFAULT_PROPS.y,
-//     DEFAULT_PROPS.radius -1,
-//     -toRadians(DEFAULT_PROPS.endAngle),
-//     interpolate(-toRadians(DEFAULT_PROPS.endAngle), -toRadians(DEFAULT_PROPS.startAngle), 1)
-//   );
-//   context.stroke();
-}
-
-draw();
-
-$ranges.forEach(($range) => {
-  $range.addEventListener('mousemove', (evt) => {
-    const prop = evt.target.attributes['data-prop'].nodeValue;
-
-    DEFAULT_PROPS[prop] = parseInt(evt.target.value);
-
-
-    draw();
+  document.addEventListener(`showOutline_control_change`, (evt) => {
+    console.log('wow', evt.detail);
   });
 
-  $range.addEventListener('change', (evt) => {
-    const prop = evt.target.attributes['data-prop'].nodeValue;
-
-    DEFAULT_PROPS[prop] = parseInt(evt.target.value);
-
-
-    draw();
-  });
-});
 </script>

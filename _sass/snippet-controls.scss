@@ -9,6 +9,12 @@
   border-left: 1px solid black;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   z-index: 99;
+  overflow: scroll;
+
+  &__menubar {
+    height: 60px;
+    border-bottom: 1px solid black;
+  }
 
   &__group {
 
