@@ -13,9 +13,9 @@
 
   <body>
     <div class="snippet-menubar">
-      <!-- <a href="/" class="snippet-menubar__title">
+      <a href="/" class="snippet-menubar__title">
         <img class="snippet-menubar__logo" src="/assets/images/pp_head_logo.png" alt="My head as a logo">
-      </a> -->
+      </a>
 
       <div class="snippet-menubar__description">
         {{ page.description | markdownify }}
@@ -30,68 +30,8 @@
       {% endif %}
     </div>
 
-    {% if page.controls %}
-      <div class="snippet-controls">
-        <div class="snippet-controls__menubar"></div>
-        <div class="snippet-controls__group">
-          {% for control in page.controls %}
-            <div class="snippet-control">
-              <label class="snippet-control__label">
-                {{ control.label }}:
-              </label>
-              <div class="snippet-control__input-container" data-control-id="{{ control.id }}"></div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
-
     <div class="snippet-content">
       {{ content }}
     </div>
-
-    {% if page.controls %}
-      <script>
-        const CONTROLS = {{ page.controls | jsonify }};
-
-        CONTROLS.forEach((control) => {
-          const $control = document.querySelector(`[data-control-id=${control.id}]`);
-
-          const input = document.createElement('input');
-          input.type = control.type;
-
-          if (control.attrs) {
-            Object.keys(control.attrs).forEach((attr) => {
-              const value = control.attrs[attr];
-              input.setAttribute(attr, value);
-            });
-          }
-
-          input.addEventListener('change', (evt) => {
-            const changeEvent = new CustomEvent(`${control.id}_control_change`, {
-              detail: {
-                value: evt.target.value,
-              },
-            });
-            document.dispatchEvent(changeEvent);
-          });
-
-          input.addEventListener('mousedown', (evt) => {
-
-          });
-
-          input.addEventListener('mousemove', (evt) => {
-            const changeEvent = new CustomEvent(`${control.id}_control_change`, {
-              detail: {
-                value: evt.target.value,
-              },
-            });
-            document.dispatchEvent(changeEvent);
-          });
-
-          $control.appendChild(input);
-        });
-      </script>
-    {% endif %}
   </body>
 </html>

@@ -2,41 +2,6 @@
 layout: snippet
 title: Canvas odometer
 description: Canvas odometer
-controls:
-  - id: "total"
-    label: "Total"
-    type: "range"
-    attrs:
-      min: 1
-      max: 100
-  - id: "radius"
-    label: "Radius"
-    type: "range"
-    attrs:
-      min: 0
-      max: 300
-  - id: "dashLength"
-    label: "Normal dash length"
-    type: "range"
-    attrs:
-      min: 0
-      max: 50
-  - id: "dashMinorLength"
-    label: "Minor dash length"
-    type: "range"
-    attrs:
-      min: 0
-      max: 50
-  - id: "dashMajorLength"
-    label: "Major dash length"
-    type: "range"
-    attrs:
-      min: 0
-      max: 50
-  - id: "showOutline"
-    label: "Show outline"
-    type: "checkbox"
-
 ---
 <!--
 Created using JS Bin
@@ -46,16 +11,23 @@ Copyright (c) 2017 by Anthonyec (http://jsbin.com/ladeyey/29/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
-<script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
+
 <style id="jsbin-css">
-canvas {
-  outline: 1px solid black;
-}
+  body {
+    background: black;
+  }
+
+  canvas {
+    outline: 1px solid black;
+  }
 </style>
 
-<canvas id="canvas"></canvas>
+<div class="app">
+  <canvas id="canvas"></canvas>
+</div>
 
+<script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
 <script id="jsbin-javascript">
   const PIXEL_RATIO = window.devicePixelRatio || 1;
 
@@ -80,6 +52,7 @@ canvas {
     dashLength: 10,
     dashMinorLength: 15,
     dashMajorLength: 20,
+    showOutline: false,
   };
 
   const toRadians = (angle) => {
@@ -154,32 +127,42 @@ canvas {
       context.stroke();
     });
 
-    // context.beginPath();
-    // context.lineWidth = 2;
-    // context.strokeStyle = 'white';
-    // context.arc(
-    //   DEFAULT_PROPS.x,
-    //   DEFAULT_PROPS.y,
-    //   DEFAULT_PROPS.radius -1,
-    //   -toRadians(DEFAULT_PROPS.endAngle),
-    //   interpolate(-toRadians(DEFAULT_PROPS.endAngle), -toRadians(DEFAULT_PROPS.startAngle), 1)
-    // );
-    // context.stroke();
+    if (DEFAULT_PROPS.showOutline) {
+      context.beginPath();
+      context.lineWidth = 2;
+      context.strokeStyle = 'white';
+      context.arc(
+        DEFAULT_PROPS.x,
+        DEFAULT_PROPS.y,
+        DEFAULT_PROPS.radius -1,
+        -toRadians(DEFAULT_PROPS.endAngle),
+        interpolate(-toRadians(DEFAULT_PROPS.endAngle), -toRadians(DEFAULT_PROPS.startAngle), 1)
+      );
+      context.stroke();
+    }
   }
 
   draw();
 
-  _.forEach(DEFAULT_PROPS, (value, prop) => {
-    console.log(prop);
-    document.addEventListener(`${prop}_control_change`, (evt) => {
-      const value =  evt.detail.value;
-      DEFAULT_PROPS[prop] = parseInt(value);
-      draw();
-    });
-  });
+  window.onload = () => {
+    const gui = new dat.GUI();
 
-  document.addEventListener(`showOutline_control_change`, (evt) => {
-    console.log('wow', evt.detail);
-  });
+    gui.add(DEFAULT_PROPS, 'total', 0, 181);
+    gui.add(DEFAULT_PROPS, 'radius', 0, 300);
+    gui.add(DEFAULT_PROPS, 'startAngle', -90, 90);
+    gui.add(DEFAULT_PROPS, 'endAngle', 90, 270);
+    gui.add(DEFAULT_PROPS, 'dashLength', 0, 100);
+    gui.add(DEFAULT_PROPS, 'dashMinorLength', 0, 100);
+    gui.add(DEFAULT_PROPS, 'dashMajorLength', 0, 100);
+    gui.add(DEFAULT_PROPS, 'showOutline');
+
+    gui.onChange = function(f) {
+      var i, j;
+      for (i in this.__controllers) this.__controllers[i].onChange (f);
+      for (i in this.__folders) for (j in this.__folders[i].__controllers) this.__folders[i].__controllers[j].onChange (f);
+    };
+
+    gui.onChange(draw);
+  };
 
 </script>
