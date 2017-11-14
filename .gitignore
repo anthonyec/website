@@ -1,4 +1,12 @@
+# Build output
 _site
 .sass-cache
 .jekyll-metadata
+
+# OS specific junk
 .DS_Store
+.thumbdb
+
+# Bundle dependencies
+.bundle
+vendor
