@@ -18,7 +18,7 @@ Looking to work more with UI/UX designers, users and clients.  Continue sharing 
 
 ## Employment
 
-### Front-end Developer - Signal Noise (April 2014 - Present)
+### Front-end Developer - Signal Noise (April 2014 - October 2017)
 - Worked on web applications for many clients. Used technologies that included Backbone, Laravel, Node.js and React. Structured responsive and cross-browser UI using SCSS (BEM) and CSS Modules.
 
 - Developed and maintained the redesigned Signal Noise website using Craft CMS (PHP/MySQL). Focused on improving the user experience for content creators.
