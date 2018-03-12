@@ -6,9 +6,12 @@
   &__icon {
     background: #F23B39;
     border-radius: 100px;
-    width: 2em;
-    height: 2em;
+    // width: 2em;
+    // height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     margin-right: 0.6em;
+    overflow: hidden;
   }
 
   &__icon-img {
