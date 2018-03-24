@@ -5,10 +5,12 @@
   </h2>
 
   <a href="mailto:anthonycossins@gmail.com" class="lets-talk__button button">
+    <img src="/assets/images/icons/mail.svg" class="button__icon">
     Email me
   </a>
 
   <a href="/wechat" class="lets-talk__button button">
+    <img src="/assets/images/icons/message_circle.svg" class="button__icon">
     WeChat
   </a>
 </div>
@@ -36,7 +38,7 @@
     var $letsTalk = document.querySelectorAll('.lets-talk')[0];
 
     function onScroll() {
-      var scroll = document.body.scrollTop;
+      var scroll = document.body.scrollTop || window.scrollY;
 
       if (scroll > $letsTalk.offsetTop - window.innerHeight) {
         window.removeEventListener('scroll', onScroll, false);

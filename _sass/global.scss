@@ -15,12 +15,22 @@ html {
 
 .body {
   color: #252525;
-  border: 1px solid #252525;
   margin: 0.5em;
+
+  ::selection {
+    background: #F23B39;
+    color: white;
+  }
+
+  ::-moz-selection {
+    background: #F23B39;
+    color: white;
+
+  }
 }
 
 h1, h2, h3, h4 {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -107,7 +117,8 @@ a {
 
 @media(max-width: 420px) {
   .body {
-    margin: 0.1em;
+    margin: 0;
+    border: none;
   }
 
   h1 {

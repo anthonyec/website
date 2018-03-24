@@ -1,18 +1,19 @@
 .navbar {
-  border-bottom: 1px solid #252525;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   position: relative;
   display: flex;
+  align-items: center;
   flex-shrink: 0;
 
   &__home {
+    border-radius: 6px;
     padding: 1em;
     color: inherit;
     display: block;
   }
 
   &__actions {
-    padding: 1em;
+    padding-right: 1em;
     display: flex;
     flex-shrink: 0;
     margin-left: auto;

@@ -9,6 +9,7 @@ enforce_ssl: anthonycossins.com
 
 # Build settings
 markdown: kramdown
+
 gems:
   - jekyll-feed
   - jekyll-sitemap
