@@ -10,14 +10,10 @@ tags:
     - ui
     - ux
     - sketch
-    - react
 subjects:
     - dashboards
     - usability
     - prototyping
-
-cta_label: View slides
-cta_href: https://docs.google.com/presentation/d/1kxBuHmhbf1CzSe-ApM54Vh962DHiHwe1E8zfulMCdas/edit?usp=sharing
 ---
 
 During my visit to China I would often take the ride sharing service Didi (China's Uber equivalent). I'd find myself in fancy electric vehicles equipped with digital dashboards and consoles. Yet, all this technology gets replaced with a smartphone on a cheap plastic mount.
@@ -121,6 +117,9 @@ This is a place to start though. The features I've shown focus on improving toda
 And car manufactures want to develop their own platforms. The reward is big for the company that dominates this market space.
 
 I hear those upcoming self driving cars use a lot of software.
+
+**This case study is loosely based on a small talk that I did for [Visualising Data London](hhttps://www.meetup.com/Visualising-Data-London/events/241775682/). See the slides [here](https://docs.google.com/presentation/d/1kxBuHmhbf1CzSe-ApM54Vh962DHiHwe1E8zfulMCdas/edit?usp=sharing).**
+
 
 <!-- [illustration of hidden sneaky self driving car] -->
 
