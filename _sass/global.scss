@@ -16,6 +16,8 @@ html {
 .body {
   color: #252525;
   margin: 0.5em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   ::selection {
     background: #F23B39;
