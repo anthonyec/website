@@ -5,13 +5,13 @@ color: B4D5FF
 title: Conference visualisations
 snippet: Collecting insights from conference attendees and showing the results in real time.
 overview: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event.
-tags: 
+tags:
     - backbone
     - svg
     - canvas
     - laravel
     - aws
-subjects: 
+subjects:
     - animation
     - mobile
 ---
@@ -49,20 +49,20 @@ Testing for the answer submission app was done throughout developing it. It had 
 
 I chose the devices based on what was the best selling on Amazon. This is because the best selling devices are usually the best for value, and are not high-end phones. They tend more towards lower mid range devices. We got 1 device for each OS as well as using our own phone to test some high-end phones (we all have fancy phones in the office).
 
-<video src="videos/slider.mp4" autoplay loop class="video-window"></video>
+<video src="videos/slider.mp4" muted playsinline loop autoplay class="video-window"></video>
 *Example of the slider question.*
 
-<video src="videos/multiple.mp4" autoplay loop class="video-window"></video>
+<video src="videos/multiple.mp4" muted playsinline loop autoplay class="video-window"></video>
 *Example of the multple answers question.*
 
-<video src="videos/admin_screen.mp4" autoplay loop class="video-window"></video>
+<video src="videos/admin_screen.mp4" muted playsinline loop autoplay class="video-window"></video>
 *Admin panel.*
 
 Surprising Blackberry 10 wasn't the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.
 
 ![Five identical MacBook Pros lined up in a row on a desk](images/IMG_20151107_121704_web.jpg)
 
-For the first conference, there were five different screens to show the visualisation. We rented 
+For the first conference, there were five different screens to show the visualisation. We rented
 five MacBook Pros and installed Apache, PHP and Chrome. I quickly put together a package of files that includes a shell script to install and setup the machines automatically. This was needed because we were still making changes to the code base and needed a way to setup the machines relatively quickly often.
 
 ## Late night fixes
@@ -80,7 +80,7 @@ On the day of the conference, we turned up early to the hotel. We brought with u
 
 ## Lessons learned
 ### Developers are users too
-Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that [bus factor](https://en.wikipedia.org/wiki/Bus_factor)). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent time to improving the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle. 
+Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that [bus factor](https://en.wikipedia.org/wiki/Bus_factor)). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent time to improving the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle.
 
 ### Don’t use manual procedures
 > "People just aren’t as repeatable as computers. Nor should we expect them to be."

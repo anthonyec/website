@@ -78,7 +78,7 @@ TALK ABOUT THE PLACEMENT OF THE NOTIFICATION BAR AND WHY. AND THE NEED FOR SPEED
 ### Status
 Fancy marketing slogan: View glanceable information about the status of your car. Find out more by diving deeper.
 
-<video src="videos/notification_example.mp4" controls></video>
+<video src="videos/notification_example.mp4" controls muted playsinline></video>
 *This is an example of a status notification appearing.*
 
 Notifications appear in the dashboard to explain something. This notification alerts the driver that the tyre pressure is low. A subtle animation in the driver's visions catches their attention. ​After which the notification hides and a icon displays in the status bar.
