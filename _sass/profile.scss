@@ -14,13 +14,19 @@
   &__title {
     padding-left: span(1) + gutter();
     font-weight: 500;
-    line-height: 1.15;
+    line-height: 1.16;
   }
 
   &__link {
     border-bottom: 1px solid #252525;
     color: #252525;
     padding-bottom: 0.06em;
+
+
+    &--iplayer-pink:hover {
+      color: #F34D97;
+      border-color: #F34D97;
+    }
   }
 
   // If you on a bigger screen than this then you probably got some room to
