@@ -36,14 +36,37 @@ title: Anthony Cossins — Front-end Developer
 <div class="section">
   <div class="l-contain section__contain">
     <div class="section__title">
-      Featured work
+      Projects
+    </div>
+  </div>
+
+  <div class="section__inner">
+    <div class="l-contain">
+      <div class="scroll-view">
+        <div class="scroll-view__inner">
+          <div class="teaser-project scroll-view__item"></div>
+          <div class="teaser-project scroll-view__item"></div>
+          <div class="teaser-project scroll-view__item"></div>
+          <div class="teaser-project scroll-view__item"></div>
+          <div class="teaser-project scroll-view__item scroll-view__item--last"></div>
+          <div class="scroll-view__spacer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="l-contain section__contain">
+    <div class="section__title">
+      Case studies
     </div>
 
     {% assign sortedWork = site.work | sort: "weight"  %}
 
     {% for post in sortedWork %}
       {% if post.hidden != true %}
-        <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});">
+        <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});"> <!-- TODO: box-shadow: 0 0 0 0.25em #{{ post.color }}; -->
           <h2 class="teaser__title">
             {{ post.snippet }}
           </h2>

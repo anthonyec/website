@@ -11,6 +11,10 @@
     z-index: -1;
   }
 
+  &__inner {
+    overflow: hidden;
+  }
+
   &__title {
     box-shadow: 0px 0.54em 0px white inset;
     display: inline-block;
