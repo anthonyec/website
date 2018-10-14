@@ -1,7 +1,22 @@
 .teaser-project {
-  background: white;
+  background-color: silver;
+  background-size: cover;
+  background-position: center;
   border: 1px solid black;
   width: span(4);
   padding-bottom: 30%;
   margin-right: gutter();
+  position: relative;
+  font-size: 0;
+
+  // border-radius: 12px;
+  // color: transparent;
+  // border: 0px;
+  // box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
