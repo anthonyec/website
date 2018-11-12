@@ -14,7 +14,9 @@ html {
 }
 
 .body {
+  background: var(--background-color);
   color: #252525;
+  color: var(--text-color);
   margin: 0.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

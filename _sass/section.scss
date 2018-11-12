@@ -5,6 +5,7 @@
   &:before {
     content: '';
     border-top: 1px solid #252525;
+    border-color: var(--border-color);
     width: 100%;
     position: absolute;
     top: -1px;
@@ -17,6 +18,7 @@
 
   &__title {
     box-shadow: 0px 0.54em 0px white inset;
+    box-shadow: 0px 0.54em 0px var(--background-color) inset;
     display: inline-block;
     font-size: 0.833em;
     font-family: 'Helvetica Neue', Arial, sans-serif;
