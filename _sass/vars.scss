@@ -1,7 +1,11 @@
 :root {
   --background-color: white;
   --text-color: #252525;
+  --project-text-color: black;
   --border-color: black;
+  --selection-color: #F23B39;
+  --selection-text-color: white;
+  --button-background-color: transparent;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -9,6 +13,10 @@
     --background-color: #1E1E1F;
     --background-color: black;
     --text-color: white;
+    --project-text-color: black;
     --border-color: #2A2A2A;
+    --selection-color: white;
+    --selection-text-color: black;
+    --button-background-color: #EEF3FA;
   }
 }

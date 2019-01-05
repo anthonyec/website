@@ -23,12 +23,15 @@ html {
 
   ::selection {
     background: #F23B39;
+    background: var(--selection-color);
     color: white;
+    color: var(--selection-text-color);
   }
 
   ::-moz-selection {
     background: #F23B39;
-    color: white;
+    background: var(--selection-color);
+    color: var(--selection-text-color);
 
   }
 }
