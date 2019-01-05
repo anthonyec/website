@@ -34,7 +34,11 @@
     {{ content }}
   </body>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35803367-4"></script>
   <script>
-    /* I didn't forget the analytics, I just chose not to. */
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-35803367-4');
   </script>
 </html>
