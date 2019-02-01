@@ -1,0 +1,110 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import 'reset.scss';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// html {
+//   font-size: 32px;
+// }
+
+// @media (min-width: 320px) and (max-width: 960px) {
+//   html {
+//     font-size: calc(16px + (32 - 16) * ((100vw - 520px) / (960 - 520)));
+//   }
+// }
+
+// @media (max-width: 320px) {
+//   html {
+//     font-size: 8.72727px;
+//   }
+// }
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background: #F53931;
+  color: white;
+}
+
+.l-contain {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  // max-width: calc(900px + 192px);
+  padding: 0 96px;
+  // padding: 0 calc(96rem / 32);
+
+  @media(max-width: 375px) {
+    padding: 0 15px;
+  }
+}
+
+.profile {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  // font-size: 67px;
+  font-size: calc(67rem / 32); // 2.1rem
+  font-weight: 700;
+  // letter-spacing: -2.64px;
+  letter-spacing: calc(-2.64rem / 32); // -0.0825rem
+  // line-height: 67px;
+  line-height: calc(67rem / 32); // 2.09rem
+
+  // height: 100vh;
+  // min-height: 800px;
+  // padding: calc(235rem / 32) 0;
+  border-bottom: 1px solid black;
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(96rem / 32);
+    min-width: 60px;
+  }
+
+  &__link:hover {
+    color: #F34D97;
+  }
+
+  @media(max-width: 375px) {
+    font-size: 40px;
+    letter-spacing: -1.58px;
+    line-height: 40px;
+
+    padding-top: 165px;
+    padding-bottom: 135px;
+
+    &__hide {
+      display: none;
+    }
+  }
+
+  @media(max-width: 320px) {
+    font-size: 32px;
+    color: #000000;
+    letter-spacing: -1.26px;
+    line-height: 33px;
+
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+}

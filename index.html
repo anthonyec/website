@@ -1,119 +1,25 @@
----
-layout: default
-title: Anthony Cossins — Front-end Developer
----
+<title>Anthony Cossins — Front-end Developer</title>
 
-<div class="profile">
-  <div class="l-contain profile__contain">
-    <img class="profile__logo" src="/assets/images/blink_animation.gif" alt="My head as a logo">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/css/homepage.css">
 
+<section class="profile">
+  <img
+    class="profile__logo"
+    src="https://anthonycossins.com/assets/images/blink_animation.gif"
+  />
+  <div class="profile__contain l-contain">
     <h1 class="profile__title">
-      Anthony Cossins<br>
-      Front-<a class="profile__link" href="https://en.wikipedia.org/wiki/Front-end_web_development" target="_blank">end</a> Developer<br>
-      <!-- Available for <a class="profile__link" href="mailto:anthonycossins@gmail.com">freelance</a><br> -->
-      Working at <a class="profile__link profile__link--iplayer-pink" href="https://www.bbc.co.uk/iplayer" target="_blank">BBC iPlayer</a><br>
-      Here’s my <a class="profile__link" href="/cv.pdf">CV</a><br>
-      <a class="profile__link" href="mailto:anthonycossins@gmail.com">Email</a> me
+      Anthony Cossins
     </h1>
+    <h2 class="profile__title">
+      Software Engineer
+    </h2>
+    <h3 class="profile__title">
+      <span class="profile__hide">Working at </span><a class="profile__link" href="#">BBC iPlayer</a>
+    </h3>
+    <h3 class="profile__title">
+      Email me
+    </h3>
   </div>
-</div>
-
-<div class="section">
-  <div class="l-contain section__contain">
-    <div class="section__title">
-      Interaction highlights
-    </div>
-
-    <div class="showreel">
-      <video class="showreel__video" autoplay loop muted playsinline>
-        <source src="/assets/videos/showreel_sep_2017.mp4" type="video/mp4">
-        <source src="/assets/videos/showreel_sep_2017.webmhd.webm" type="video/webm">
-      </video>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="l-contain section__contain">
-    <div class="section__title">
-      Projects
-    </div>
-  </div>
-
-  <div class="section__inner">
-    <div class="l-contain">
-      <div class="scroll-view">
-        <div class="scroll-view__inner">
-          <div class="teaser-project scroll-view__item" style="background-image: url('/assets/images/robot_1.jpg')">
-            <a class="teaser-project__link" href="http://www.fullstopnewparagraph.co.uk/client/robots/"></a>
-            Robotic Oracle
-          </div>
-
-          <div class="teaser-project scroll-view__item" style="background-image: url('/assets/images/projects/handicons_2.jpg')">
-            <a class="teaser-project__link" href="https://www.instagram.com/handicons/"></a>
-            Handicon Collection
-          </div>
-
-          <div class="teaser-project scroll-view__item" style="background-image: url('/assets/images/bluehouse_thumbnail.jpg')">
-            <a class="teaser-project__link" href="/stuff/bluehouse"></a>
-            Bluehouse Game
-          </div>
-
-          <div class="teaser-project scroll-view__item" style="background-image: url('/assets/images/gnorman.jpg')">
-            <a class="teaser-project__link" href="https://www.instagram.com/gnormanperry/"></a>
-            Gnorman Perry Photos
-          </div>
-
-          <!-- <div class="teaser-project scroll-view__item">
-            <a class="teaser-project__link" href="https://news.anthony.ec"></a>
-            DNHN
-          </div>
-
-          <div class="teaser-project scroll-view__item">
-            <a class="teaser-project__link" href="https://github.com/anthonyec/bigscreen"></a>
-            Bigscreen
-          </div> -->
-
-          <div class="teaser-project scroll-view__item scroll-view__item--last" style="background-image: url('/assets/images/projects/snippets.jpg')">
-            <a class="teaser-project__link" href="/snippets"></a>
-            Snippets
-          </div>
-
-          <div class="scroll-view__spacer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="l-contain section__contain">
-    <div class="section__title">
-      Case studies
-    </div>
-
-    {% assign sortedWork = site.work | sort: "weight"  %}
-
-    {% for post in sortedWork %}
-      {% if post.hidden != true %}
-        <div class="teaser section__first-item" style="background-color: #{{ post.color }}; background-image: url({{ post.thumbnail }});"> <!-- TODO: box-shadow: 0 0 0 0.25em #{{ post.color }}; -->
-          <h2 class="teaser__title">
-            {{ post.snippet }}
-          </h2>
-
-          <div class="tags">
-            <div class="tags__items">
-              {% for tag in post.tags %}
-                <span class="tags__item">
-                  {{ tag }}
-                </span>
-              {% endfor %}
-            </div>
-          </div>
-
-          <a href="{{ post.url }}" class="teaser__link"></a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
+</section>
