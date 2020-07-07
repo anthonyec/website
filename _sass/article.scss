@@ -38,6 +38,11 @@
     margin-bottom: 2em;
   }
 
+  img[src*=".gif"] {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+  }
+
   img, video {
     display: block;
     max-width: 100%;

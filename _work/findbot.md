@@ -6,12 +6,12 @@ title: Findbot
 client: Personal
 snippet: Slack chatbot to help my colleagues find project folders on the server fast.
 overview: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast.
-tags: 
+tags:
     - nodejs
     - slack
     - raspberry pi
     - ux
-subjects: 
+subjects:
     - chatbots
     - nodejs
 
@@ -23,8 +23,7 @@ cta_href: https://github.com/anthonyec/findbot
 
 At Signal Noise we have a server that contains all the files that are related to a project. These include design assets, proposal documents, contracts, copy and much more. We name project folders using a project number and name, then group them into year folders.
 
-![Illustrations of a long list of folders in a file browser](images/browser.svg)
-*It’s a little bit painful to watch and experience.*
+![Illustration of a person thinking about all confusing folders and their names](images/browser.gif)
 
 As the company has got bigger more people work on different projects at the same time. It has become hard for people to find the project they are looking for. Most people remember one or two  project number. However, most of the time people deal with many ongoing projects at once and they resort to scrolling through a huge list in the Finder.
 
@@ -47,6 +46,8 @@ Later that week I released snbot to the world. Well, the office at least. I got 
 
 I debated if I should host snbot on a cloud service like AWS or Bluemix. This would solve the chatbot uptime issue but also introduced other problems. How could a cloud service app index our server that's only accessible on the local network? And if it could somehow get to that data, transferring and storing it in the cloud is a potential security risk.
 
+![Illustration of the food raspberry pie](images/pi.gif)
+
 Anyway, Christmas came and we all had a holiday. I ate lots of food and got a Raspberry Pi as a gift. Raspberry Pi 3 is ideal as it uses Linux like AWS. This means most things that can work on AWS are compatible. It’s also a physical thing that we have full control over so security is better. Setting up the Raspberry Pi allowed me to get a lot more familiar with the internal workings of Linux. In turn, this helped me understand more how AWS works.
 
 ### Indexing the server
@@ -57,12 +58,12 @@ After wasting a lot of time on backward engineering Synology API, I realised I c
 ### Separating concerns
 Up until this point, the snbot had been monolithic in structure. Project indexing, searching and chatbot interface were tightly coupled. While this allowed me to get things up and running quickly, it slowed down further development.
 
-![Diagram of a monolithic architecture, with database, chatbot and indexing all in one](images/monolithic_diagram.svg)
+![Diagram of a monolithic architecture, with database, chatbot and indexing all in one box](images/monolithic_diagram.gif)
 *My technical diagram for monolithic architecture. Or what I like to call “a big thing doing a bunch of stuff inside of it”.*
 
 Inspired by a [microservices talk by Netflix](https://www.youtube.com/watch?v=57UK46qfBLY), I refactored the code to remove the tight coupling between chat interface and index searching. The project indexer and search became separate Node apps with a simple RESTful API. This allows other interfaces or tools to interact with the indexer.
 
-![Diagram of the previous architecture split into separate services that interact with each other vertically](images/services_diagram.svg)
+![Diagram of the previous architecture split into separate boxes that interact with each other](images/services_diagram.gif)
 *Separating concerns.*
 
 Should the process of indexing the server change, as long as the API   remained the same other apps won't break. It also made development easier. I could work on the indexer separately while the chatbot was still up and running.
@@ -73,6 +74,8 @@ I released the chatbot a second time and changed its name to “FindBot”. This
 ### Focus on a few things
 I once heard about how climatologists study climate change’s effects in Antarctica. This sounds rather extreme. To study something that affects the world globally.  They do have very good reasons, though. First of all, the Antarctic ecosystem is very primitive so it's easy to measure and study. Also the continent is very isolated. So if you do observe changes over time, you can reasonably assume they are down to global factors.
 
+![Illustration of antartica with a big chunk of ice in the water](images/antarctic.gif)
+
 FindBot allowed me to study user behaviour with a very limited feature set of one. Search. I could assume that any problems people were having with the app were to do with search failing them.
 
 On the technical side of things, I've learned more about separating concerns. Do one thing and do it well. Having two Node applications, each focused on one task, made development easier.
@@ -80,7 +83,7 @@ On the technical side of things, I've learned more about separating concerns. Do
 ### Assumptions vs evidence
 Getting users to learn new things is an effort. Asking users to change their workflow is even a bigger one. And a lot of assumptions you'll make about behaviour will be wrong. For example, originally the “find” command was required to start a search.
 
-![Screenshot of a FindBot not understanding what the user said](images/failed_chat.svg)
+![Illustration of an example chat where FindBot does not understand what the user said](images/failed_chat.gif)
 *Some users were not as forgiving and abandoned FindBot straight away.*
 
 But then I got feedback that typing the word “find” before every query wasn't how they expected to use it. From looking at the analytics I noticed a few people not returning to FindBot once they received the “don’t understand” response. The word "find" made sense initally. I had a grand plan of adding a whole array of functionality that wasn’t to do with search. This hindered the user experience, though. Again, focus on one thing and do it really well ok. Unlike the initial design, FindBot’s new features are now completely driven by user research. I watch people using it and we've discussed the way they interact with it.
@@ -89,5 +92,5 @@ What’s next for FindBot? Well, I think JIRA and BitBucket are still a hassle t
 
 Ultimately, I'd like FindBot to become a universal search for all things project related.
 
-![Screenshot of a user thanking FindBot](images/thanks_chat.svg)
+![Illustration of an example chat where the user thanks FindBot](images/thanks_chat.gif)
 *It makes it all worthwhile when seeing users thank FindBot. Or maybe it’s a sign of human’s inevitable demise.*
