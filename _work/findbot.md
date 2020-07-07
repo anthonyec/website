@@ -23,7 +23,7 @@ cta_href: https://github.com/anthonyec/findbot
 
 At Signal Noise we have a server that contains all the files that are related to a project. These include design assets, proposal documents, contracts, copy and much more. We name project folders using a project number and name, then group them into year folders.
 
-![Illustration of a person thinking about all confusing folders and their names](images/browser.gif)
+![Illustration of a person thinking about all confusing folders and their names](images/confused.gif)
 
 As the company has got bigger more people work on different projects at the same time. It has become hard for people to find the project they are looking for. Most people remember one or two  project number. However, most of the time people deal with many ongoing projects at once and they resort to scrolling through a huge list in the Finder.
 
