@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Anthony Cossins</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anthony Cossins has a website on the internet and this is it.">
+    <meta name="keywords" content="just, a, great, guy">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="post.css">
+    <link rel="stylesheet" href="header.css">
+  </head>
+  <body>
+    <header class="header">
+      <a href="">
+        <img class="header__logo" src="https://anthonycossins.com/assets/images/blink_animation.gif" class="logo" alt="">
+      </a>
+      <nav class="header__nav">
+        <a class="header__nav-link" href="">Posts</a>
+        <a class="header__nav-link" href="">About</a>
+      </nav>
+    </header>
+    <article class="article">
+      <div class="contain">
+        <h1>My Plans for Kinopio</h1>
+
+        <p>Over the last couple months, it’s been super encouraging to hear from teachers, programmers, designers, and students about how they use Kinopio to map out and make sense of their ideas, feelings, and plans.</p>
+
+        <figure>
+          <img src="http://pketh.org/images/2019/kinopio-cat.png" class="no-shadow" />
+          <figcaption>Probably a cat</figcaption>
+        </figure>
+
+        <p>Right now I’m working on features to make it easier to share and collaborate with other people on those spaces. But I’m taking a little break to answer some  questions that really deserve public answers.</p>
+
+        <h2 id="how-will-kinopio-make-money">How Will Kinopio Make Money?</h2>
+
+        <p>My plan is to eventually require people to pay $4/month to create more than 100 or so cards. I want the pricing to feel simple, straightforward, and obvious.</p>
+
+        <h2 id="what-about-user-data-and-privacy">What About User Data and Privacy?</h2>
+
+        <p>I haven’t written a legalese privacy policy yet. But either way, here’s the common sense human version.</p>
+
+        <ul>
+          <li>Kinopio won’t show you ads of any kind.</li>
+          <li>No cookies are used for anything. <code class="language-plaintext highlighter-rouge">LocalStorage</code> is used to save your info. Unlike cookies, other websites cannot access <code class="language-plaintext highlighter-rouge">localStorage</code>.</li>
+          <li>To share spaces and collaborate, your user data and spaces will be hosted on AWS (via Heroku). Besides this necessity, your data will not be shared with any third party.</li>
+          <li>The only analytics I use are from <a href="https://www.netlify.com/products/analytics/">Netlify</a>. Which does not allow me to uniquely identify anyone.</li>
+          <li>Children, and anyone else, will always be able to use Kinopio anonymously and collaborate with others on public spaces.</li>
+          <li>You can permanently <a href="https://www.are.na/block/4788320">remove all</a> of your data anytime.</li>
+        </ul>
+
+        <h2 id="what-happens-to-my-data-if-kinopio-dies">What Happens to My Data if Kinopio&nbsp;Dies?</h2>
+
+        <p>We don’t live in a deterministic world. I could do everything right and still run out of money without being able to turn Kinopio into a healthy, sustainable business. If that happens, you won’t lose any data and Kinopio will still be usable.</p>
+
+        <p>Kinopio consists of two codebases, the <code class="language-plaintext highlighter-rouge">client</code> app that runs when you hit <a href="https://kinopio.club">kinopio.club</a> and the <code class="language-plaintext highlighter-rouge">server</code> app which will enable sharing and collaboration. The client app is like a cockroach, it’s tiny, free to host, and doesn’t depend on a connection to the server app. So if I can’t afford to run the kinopio server anymore, I can just switch it off and you can continue to use Kinopio as you do now – with all your data intact.</p>
+
+        <p>Besides all that, there’s already a bunch of ways to export your data. Either as entire spaces, or just the specific cards you care about.</p>
+
+        <h2 id="so-when-are-you-going-to-get-a-real-job">So When Are You Going to Get a Real Job?</h2>
+
+        <p>chill mom</p>
+
+        <p>🌱</p>
+      </div>
+    </article>
+  </body>
+</html>
