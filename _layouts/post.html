@@ -8,19 +8,21 @@
     <meta name="keywords" content="just, a, great, guy">
 
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="vars.css">
+    <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="post.css">
     <link rel="stylesheet" href="header.css">
   </head>
   <body>
     <header class="header">
-      <a href="">
-        <img class="header__logo" src="https://anthonycossins.com/assets/images/blink_animation.gif" class="logo" alt="">
+      <a href="/">
+        <img class="header__logo" src="https://anthonycossins.com/assets/images/blink_animation.gif" class="logo" alt="A head as a logo">
       </a>
       <nav class="header__nav">
         <a class="header__nav-link" href="">Posts</a>
         <a class="header__nav-link" href="">About</a>
-        <a class="header__nav-link" href="">☼</a>
-        <!-- <a class="header__nav-link" href="">☾</a> -->
+        <a class="header__nav-link header__nav-link--fixed" href="">☾</a>
+        <!-- ☀ -->
       </nav>
     </header>
     <article class="article">
@@ -28,6 +30,8 @@
         <h1>
           Findbot case study
         </h1>
+
+        <img src="tree.gif" alt="">
 
         <h2 class="overview">
           Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast.
@@ -108,7 +112,6 @@
 
         <p><img src="https://anthonycossins.com/work/findbot/images/thanks_chat.gif" alt="Illustration of an example chat where the user thanks FindBot" />
         <em>It makes it all worthwhile when seeing users thank FindBot. Or maybe it’s a sign of human’s inevitable demise.</em></p>
-
       </div>
     </article>
   </body>

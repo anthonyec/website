@@ -1,5 +1,6 @@
 .contain {
   max-width: 720px;
+  max-width: 55ch;
   padding: 0 35px;
   margin: 0 auto;
 }
