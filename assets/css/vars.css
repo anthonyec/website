@@ -1,9 +1,9 @@
 :root {
   --background-color: white;
 
-  --text-color: black;
+  --text-color: #111;
 
-  --link-color: #00AEFF;
+  --link-color: #111;
   --link-hover-background: #d4f7ff;
 
   --nav-link-background: #d9d9d9;

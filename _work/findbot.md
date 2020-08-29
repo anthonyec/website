@@ -6,12 +6,12 @@ title: Findbot
 client: Personal
 snippet: Slack chatbot to help my colleagues find project folders on the server fast.
 overview: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast.
-tags: 
+tags:
     - nodejs
     - slack
     - raspberry pi
     - ux
-subjects: 
+subjects:
     - chatbots
     - nodejs
 
