@@ -4,7 +4,7 @@ title: How to Blog
 date: 2017-08-01
 ---
 
-How to blog
+# How to blog
 I’ve been continuously writing here for about 9 years. This will be the 300th or so thing posted to the internet on this domain. Here are some of the things I’ve learned about starting a blog and keeping it going.
 
 ## Own your domain and use simple technology

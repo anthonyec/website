@@ -19,10 +19,14 @@
       <a href="/">
         <img class="header__logo" src="https://anthonycossins.com/assets/images/blink_animation.gif" class="logo" alt="A head as a logo">
       </a>
-      <nav class="header__nav">
+
+      <a class="header__nav-link header__menu-button header__menu-button--hidden js-menu-button" href="#">Menu</a>
+
+      <nav class="header__nav js-nav">
         <a class="header__nav-link" href="">Posts</a>
         <a class="header__nav-link" href="">About</a>
       </nav>
+
       <a class="header__nav-link header__nav-link--fixed" href="">☾</a>
       <!-- ☀ -->
     </header>
@@ -38,4 +42,43 @@
       </div>
     </article>
   </body>
+
+  <script>
+    const state = {
+      showMobileNav: false
+    };
+    const $menuButton = document.querySelector('.js-menu-button');
+    const $nav = document.querySelector('.js-nav');
+
+    function createRender(renderFunc = () => {}) {
+      let lastStateString = '';
+
+      return function() {
+        const newStateString = JSON.stringify(state);
+
+        if (newStateString === lastStateString) {
+          return;
+        }
+
+        lastStateString = newStateString;
+
+        renderFunc();
+      }
+    }
+
+    const render = createRender(() => {
+      if (state.showMobileNav) {
+        $menuButton.classList.remove('header__menu-button--hidden');
+        $nav.classList.add('header__nav--hidden');
+      } else {
+        $menuButton.classList.add('header__menu-button--hidden');
+        $nav.classList.remove('header__nav--hidden');
+      }
+    });
+
+    document.addEventListener('scroll', () => {
+      state.showMobileNav = window.scrollY > 100;
+      render();
+    });
+  </script>
 </html>
