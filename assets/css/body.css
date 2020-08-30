@@ -1,6 +1,16 @@
-body {
+.body {
   background: var(--background-color);
   color: var(--text-color);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
+}
+
+.body--dark {
+  --background-color: black;
+  --text-color: white;
+  --link-color: #96e7ff;
+  --link-background: #1D7BFF;
+  --nav-link-background: rgba(255, 255, 255, 0.6);
+  --nav-link-color: black;
+  --nav-link-hover-color: black;
 }

@@ -14,20 +14,23 @@
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/iframe.css">
   </head>
-  <body>
+  <body class="body body--dark js-body">
     <header class="header">
       <a href="/">
         <img class="header__logo" src="https://anthonycossins.com/assets/images/blink_animation.gif" class="logo" alt="A head as a logo">
       </a>
 
-      <a class="header__nav-link header__menu-button header__menu-button--hidden js-menu-button" href="#">Menu</a>
+      <!-- <a class="header__nav-link header__menu-button header__menu-button--hidden js-menu-button" href="#">Menu</a> -->
 
       <nav class="header__nav js-nav">
         <a class="header__nav-link" href="">Posts</a>
         <a class="header__nav-link" href="">About</a>
       </nav>
 
-      <a class="header__nav-link header__nav-link--fixed" href="">☾</a>
+      <a class="header__nav-link header__nav-link--fixed js-dark-mode" href="">
+        <img src="/assets/images/moon.svg">
+        <!-- <img src="/assets/images/sun.svg"> -->
+      </a>
       <!-- ☀ -->
     </header>
     <article class="article">
@@ -45,10 +48,14 @@
 
   <script>
     const state = {
+      darkMode: false,
       showMobileNav: false
     };
+
+    const $body = document.querySelector('.js-body');
     const $menuButton = document.querySelector('.js-menu-button');
     const $nav = document.querySelector('.js-nav');
+    const $darkModeButton = document.querySelector('.js-dark-mode')
 
     function createRender(renderFunc = () => {}) {
       let lastStateString = '';
@@ -67,18 +74,30 @@
     }
 
     const render = createRender(() => {
-      if (state.showMobileNav) {
-        $menuButton.classList.remove('header__menu-button--hidden');
-        $nav.classList.add('header__nav--hidden');
+      // if (state.showMobileNav) {
+      //   $menuButton.classList.remove('header__menu-button--hidden');
+      //   $nav.classList.add('header__nav--hidden');
+      // } else {
+      //   $menuButton.classList.add('header__menu-button--hidden');
+      //   $nav.classList.remove('header__nav--hidden');
+      // }
+
+      if (state.darkMode) {
+        $body.classList.add('body--dark');
       } else {
-        $menuButton.classList.add('header__menu-button--hidden');
-        $nav.classList.remove('header__nav--hidden');
+        $body.classList.remove('body--dark');
       }
+    });
+
+    $darkModeButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      state.darkMode = !state.darkMode;
+      render();
     });
 
     document.addEventListener('scroll', () => {
       state.showMobileNav = window.scrollY > 100;
-      render();
+      // render();
     });
   </script>
 </html>
