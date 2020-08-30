@@ -55,11 +55,6 @@
   height: 24px;
 }
 
-.header__menu-button {
-  display: none;
-  z-index: 2;
-}
-
 .header a:active {
   transform: scale(0.9);
 }
@@ -104,8 +99,6 @@
   .header {
     padding: 10px;
     max-width: 380px;
-    /* width: 100%; */
-    /* position: fixed; */
   }
 
   .header__logo {
@@ -129,34 +122,11 @@
     transition: 300ms all ease-in-out;
   }
 
-  .header__nav--hidden .header__nav-link:first-child {
-    transform: translateX(40px) scaleX(0.8);
-  }
-
-  .header__nav--hidden .header__nav-link:last-child {
-    transform: translateX(-40px) scaleX(0.8);
-  }
-
   .header__nav-link {
     margin-right: 5px;
   }
 
   .header__nav-link--fixed {
     margin-left: 0;
-  }
-
-  .header__menu-button {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleX(1);
-    transform-origin: center center;
-    transition: 300ms all ease-in-out;
-    opacity: 1;
-  }
-
-  .header__menu-button--hidden {
-    transform: translateX(-50%) scaleX(2);
-    opacity: 0;
   }
 }
