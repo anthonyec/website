@@ -1,5 +1,4 @@
 .contain {
-  /* max-width: 720px; */
   max-width: 60ch;
   padding: 0 35px;
   margin: 0 auto;
@@ -11,8 +10,6 @@
   padding-bottom: 3em;
   line-height: 1.54;
   margin: 0 auto;
-  /* font-size: 18px; */
-  /* width: 520px; */
 }
 
 .article h1 {
