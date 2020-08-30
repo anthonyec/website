@@ -1,0 +1,11 @@
+.theme-toggle__icon {
+  display: none;
+}
+
+.theme-toggle__icon--light {
+  height: 28px;
+}
+
+.theme-toggle__icon--dark {
+  height: 24px;
+}

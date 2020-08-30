@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-.body--dark {
+.body[data-theme="dark"] {
   --background-color: black;
   --text-color: white;
   --link-color: #96e7ff;

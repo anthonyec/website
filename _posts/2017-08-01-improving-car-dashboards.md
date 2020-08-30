@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Slides and links from my car dashboard presentation
 date: 2017-08-01
 ---
+
+# Slides and links from my car dashboard presentation
 
 Here are the slides and research notes for the lighting talk presentation I did at [Visualising Data London](https://www.meetup.com/Visualising-Data-London/).
 
