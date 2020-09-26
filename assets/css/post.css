@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-.article {
+.post {
   font-size: 24px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding-bottom: 3em;
@@ -12,57 +12,57 @@
   margin: 0 auto;
 }
 
-.article h1 {
+.post h1 {
   font-size: 2em;
   margin-top: 1em;
 }
 
-.article h2 {
+.post h2 {
   margin-top: 2em;
 }
 
-.article h3 {
+.post h3 {
   margin-top: 1em;
 }
 
-.article h4 {
+.post h4 {
   margin-top: 0.4em;
 }
 
-.article p,
-.article blockquote,
-.article ul,
-.article video,
-.article img,
-.article__block {
+.post p,
+.post blockquote,
+.post ul,
+.post video,
+.post img,
+.post__block {
   margin: 1.5em 0;
 }
 
-.article h2 + .article h3 {
+.post h2 + .post h3 {
   margin-top: 0.5em;
 }
 
-.article h3 + .article p,
-.article h4 + .article p {
+.post h3 + .post p,
+.post h4 + .post p {
   margin-top: 0.6em;
 }
 
-.article .overview {
+.post .overview {
   font-weight: 400;
   margin-bottom: 2em;
   line-height: 1.4;
 }
 
-.article img,
-.article video {
+.post img,
+.post video {
   display: block;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.article img + .article em,
-.article video + .article p em {
+.post img + .post em,
+.post video + .post p em {
   color: #78889F;
   display: block;
   font-size: 0.694em;
@@ -71,43 +71,43 @@
   max-width: 460px;
 }
 
-.article a:link,
-.article a:visited {
+.post a:link,
+.post a:visited {
   color: var(--link-color);
   transition: background 300ms ease-out;
 }
 
-.article a:hover,
-.article a:active {
+.post a:hover,
+.post a:active {
   background: var(--link-hover-background);
   transition: none;
 }
 
-.article a:active {
+.post a:active {
   border-bottom: 1px solid var(--link-color);
   top: 1px;
 }
 
-.article code {
+.post code {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 0;
   padding: 2px 4px;
 }
 
-.article iframe {
+.post iframe {
   width: 100%;
 }
 
-.article pre {
+.post pre {
   background: rgba(0, 0, 0, 0.1);
   padding: 5px;
 }
 
-.article pre code {
+.post pre code {
   background: none;
 }
 
-.article table {
+.post table {
   width: 100%;
   text-align: left;
 }
@@ -118,59 +118,59 @@
     padding: 0 20px;
   }
 
-  .article {
+  .post {
     font-size: 16px;
     width: 100%;
     padding-bottom: 0.5em;
   }
 
-  .article h1 {
+  .post h1 {
     max-width: 100%;
     margin-top: 0.8em;
   }
 
-  .article h2 {
+  .post h2 {
     margin-top: 1.5em;
   }
 
-  .article h3 {
+  .post h3 {
     margin-top: 1em;
   }
 
-  .article p,
-  .article blockquote,
-  .article ul,
-  .article video,
-  .article img {
+  .post p,
+  .post blockquote,
+  .post ul,
+  .post video,
+  .post img {
     margin: 1em 0;
   }
 
-  .article h2 + .article h3 {
+  .post h2 + .post h3 {
     margin-top: 0.5em;
   }
 
 
-  .article h2 + p,
-  .article h2 + blockquote,
-  .article h2 + ul,
-  .article h2 + video,
-  .article h2 + img,
+  .post h2 + p,
+  .post h2 + blockquote,
+  .post h2 + ul,
+  .post h2 + video,
+  .post h2 + img,
 
-  .article h3 + p,
-  .article h3 + blockquote,
-  .article h3 + ul,
-  .article h3 + video,
-  .article h3 + img,
+  .post h3 + p,
+  .post h3 + blockquote,
+  .post h3 + ul,
+  .post h3 + video,
+  .post h3 + img,
 
-  .article h4 + p,
-  .article h4 + blockquote,
-  .article h4 + ul,
-  .article h4 + video,
-  .article h4 + img {
+  .post h4 + p,
+  .post h4 + blockquote,
+  .post h4 + ul,
+  .post h4 + video,
+  .post h4 + img {
     margin-top: 0.5em;
   }
 
-  .article .overview {
+  .post .overview {
     margin-bottom: 1.5em;
   }
 }
