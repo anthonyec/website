@@ -36,6 +36,7 @@
       <button class="header__nav-link header__nav-link--fixed theme-toggle js-dark-mode">
         <img class="theme-toggle__icon theme-toggle__icon--dark" src="/assets/images/moon.svg">
         <img class="theme-toggle__icon theme-toggle__icon--light" src="/assets/images/sun.svg">
+        <img class="theme-toggle__icon theme-toggle__icon--overcast" src="/assets/images/cloud.svg">
       </button>
     </header>
     <article class="post">
@@ -83,15 +84,25 @@
         $darkModeButton.querySelector('img[src*="sun"').style.display = 'block';
       }
 
+      if (state.theme === 'overcast') {
+        $darkModeButton.querySelector('img[src*="cloud"').style.display = 'block';
+      }
+
       if (state.theme === 'light') {
         $darkModeButton.querySelector('img[src*="moon"').style.display = 'block';
       }
     });
 
+    const themes = ['light', 'overcast', 'dark'];
+
     $darkModeButton.addEventListener('click', (evt) => {
       evt.preventDefault();
 
-      state.theme = state.theme === 'light' ? 'dark' : 'light';
+
+      const themeIndex = themes.indexOf(state.theme);
+      const nextThemeIndex = themeIndex + 1;
+
+      state.theme = nextThemeIndex > themes.length - 1 ? themes[0] : themes[nextThemeIndex];
 
       render();
     });

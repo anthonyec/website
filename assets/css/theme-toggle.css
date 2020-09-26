@@ -9,3 +9,7 @@
 .theme-toggle__icon--dark {
   height: 24px;
 }
+
+.theme-toggle__icon--overcast {
+  height: 28px;
+}

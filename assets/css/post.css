@@ -74,6 +74,7 @@
 .post a:link,
 .post a:visited {
   color: var(--link-color);
+  background: var(--link-background);
   transition: background 300ms ease-out;
 }
 
