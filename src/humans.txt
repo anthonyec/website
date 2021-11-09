@@ -15,4 +15,4 @@
   Last update: 2017/05
   Language: English
   Doctype: XHTML 1.0 Transitional
-  Tech: Sublime Text 3, Jekyll, Sass, Susy, Sketch
+  Tech: VS Code, Folioscope and a custom made static site generator

@@ -1,0 +1,134 @@
+{{>header}}
+
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/read-more-button.css">
+
+{{>profile}}
+
+{{>nav}}
+
+<section class="projects">
+  <h3>
+    Projects
+  </h3>
+  <ul>
+    <li>
+      <a href="#">
+        <img src="./assets/images/handicons.png" alt="">
+        <span>Hand Icons</span>
+        <span>Collection of hand pictograms found around the world.</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="./assets/images/screenshot.png" alt="">
+        <span>Powerlet</span>
+        <span>Chrome Extension to find and run bookmarklets.</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <img src="./assets/images/salad.png" alt="">
+        <span>Salad Room</span>
+        <span>The easiest way to share stuff between devices.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section class="projects">
+  <h3>
+    Pins
+  </h3>
+  <ul>
+    <li>
+      <a href="#">
+      <div class="projects__image">
+        <img src="/posts/windowed-credits/images/windowed_credits.gif">
+      </div>
+        <span>iPlayer credits squeeze</span><span>Yeah, I'm basically responsible for that Netflix thing. Sorry?</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+      <div class="projects__image">
+        <img src="/posts/ubs-conference/images/people_looking_at_balls.gif">
+      </div>
+        <span>iPlayer + BBC Together</span><span>10% project to get party watching into iPlayer.</span>
+      </a>
+    </li>
+    <li>
+      <a href="/posts/ubs-conference">
+      <div class="projects__image">
+        <img src="/posts/ubs-conference/images/people_looking_at_balls.gif">
+      </div>
+        <span>Real-time visualisations</span><span>Some description that is very excting about UBS.</span>
+      </a>
+    </li>
+    <li>
+      <a href="/posts/findbot-case-study">
+      <div class="projects__image">
+        <img src="/posts/findbot-case-study/images/antarctic.gif">
+      </div>
+      <span>Findbot</span><span>How I made a chatbot to help my colleagues find project folders on the company server.</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+      <div class="projects__image">
+        <img src="/posts/ubs-conference/images/people_looking_at_balls.gif">
+      </div>
+        <span>Improving the car dashboard (slightly)</span><span>Case study about how dashboards could be improved.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section class="posts">
+  <h3>
+    Posts
+  </h3>
+  <ul>
+    {{#posts}}
+      <li>
+        <a href="{{path}}">
+          <span>{{#formatDate}}{{date}}{{/formatDate}}</span>
+          <span>{{title}}</span>
+        </a>
+      </li>
+    {{/posts}}
+  </ul>
+  <a class="read-more-button" href="/posts">
+    Read more <img class="read-more-button__icon" src="/assets/images/arrow.png">
+  </a>
+</section>
+
+<section>
+  <h3>
+    Contact
+  </h3>
+  <ul>
+    <li>
+      <a href="https://twitter.com/anthonyec">
+        Email
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/anthonyec">
+        GitHub
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/anthonyec">
+        Twitter
+      </a>
+    </li>
+    <li>
+      <a href="https://linkedin.com/in/anthonyec">
+        LinkedIn
+      </a>
+    </li>
+  </ul>
+</section>
+
+{{>footer}}
