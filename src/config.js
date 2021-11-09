@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-  async getPages({ collection  }) {
+  async getPages({ collection, redirects }) {
     const posts = await collection(
       'posts',
       'post',
@@ -32,7 +32,25 @@ module.exports = {
       }
     ];
 
-    return [...posts, ...standalone]
+    const oldPageRedirects = await redirects({
+      // Work pages that have moved to posts.
+      '/work/dashboard': '/posts/improving-car-dashboards-slightly',
+      '/work/findbot': '/posts/findbot-case-study',
+      '/work/conference': '/posts/ubs-conference-case-study',
+      '/work/totaljobs': '/posts/total-jobs-case-study',
+
+      // Outbound links.
+      '/redirects/london-creative-coding':
+        'https://www.meetup.com/london-creative-coding/',
+      '/redirects/robot-oracles':
+        'http://www.fullstopnewparagraph.co.uk/client/robots/',
+      '/redirects/handicons': 'https://www.instagram.com/handicons/',
+      '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
+      '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen'
+    });
+
+
+    return [...posts.reverse(), ...standalone, ...oldPageRedirects]
   },
   postBuild: async () => {
     // TODO: Make this less hacky!
@@ -50,5 +68,21 @@ module.exports = {
     fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'cv.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
     fs.cpSync(path.join('./src', 'favicon.ico'), path.join('./dist', 'favicon.ico'));
-  }
+  },
+
+  // Helper functions.
+  formatDate: () => (text, render) => {
+    function formatDateWithTemplate(template, date) {
+      var specs = 'YYYY:MM:DD:HH:mm:ss'.split(':');
+      date = new Date(date || Date.now() - new Date().getTimezoneOffset() * 6e4);
+      return date.toISOString().split(/[-:.TZ]/).reduce(function(template, item, i) {
+        return template.split(specs[i]).join(item);
+      }, template);
+    }
+
+    const renderedDate = render(text);
+    const date = new Date(renderedDate);
+
+    return formatDateWithTemplate('YYYY-MM-DD', date);
+  },
 };
