@@ -1,23 +1,9 @@
----
-layout: article
-weight: 3
-color: 68C859
-title: Total Jobs Commuter Survey
-client: Total Jobs — Signal Noise
-snippet: Tool that shows the cost of your commute over a lifetime.
-overview: Commuter tool created in 2015 for Total Jobs. It uses the information from user's daily commute. It calculates a few interesting stats displayed with illustrations.
-tags:
-    - backbone
-    - svg
-    - html/css
-    - php
-subjects:
-    - backbone
-    - svg
+<!-- color: #68C859 -->
+<!-- description: Tool that shows the cost of your commute over a lifetime. -->
+<!-- description_big: Commuter tool created in 2015 for Total Jobs. It uses the information from user's daily commute. It calculates a few interesting stats displayed with illustrations. -->
 
-cta_label: Try the tool
-cta_href: https://www.totaljobs.com/insidejob/commuter-calculator/
----
+# Total Jobs Commuter Survey
+
 From the design I created repeatable image assets to add some looping animation to the start screen.
 
 <video

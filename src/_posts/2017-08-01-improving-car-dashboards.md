@@ -1,16 +1,6 @@
----
-layout: article
-title: Improving the in-car dashboard and console
-client: Personal
-overview: Slides and research notes for the lighting talk presentation I did at Visualising Data London.
-date: 2017-08-01
-subjects: 
-    - dashboards
-    - usability
-    - prototyping
-cta_label: View on Google Slides
-cta_href: https://docs.google.com/presentation/d/1kxBuHmhbf1CzSe-ApM54Vh962DHiHwe1E8zfulMCdas/edit?usp=sharing
----
+<!-- description: Slides and research notes for the lighting talk presentation I did at Visualising Data London. -->
+
+# Improving the in-car dashboard and console
 
 ## Overview
 Here are the slides and research notes for the lighting talk presentation I did at [Visualising Data London](https://www.meetup.com/Visualising-Data-London/).

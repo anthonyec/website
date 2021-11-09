@@ -1,20 +1,8 @@
----
-layout: article
-weight: 1
-color: ffda2e
-title: Improving the in-car dashboard and console (slightly).
-client: Personal
-snippet: Improving the in-car dashboard and console (slightly).
-overview: Designing two product features to improve the digital instrument cluster. And doing so without completely re-inventing everything ever.
-tags:
-    - ui
-    - ux
-    - sketch
-subjects:
-    - dashboards
-    - usability
-    - prototyping
----
+<!-- color: #FFDA2E -->
+<!-- description: Improving the in-car dashboard and console (slightly). -->
+<!-- description_big: Designing two product features to improve the digital instrument cluster. And doing so without completely re-inventing everything ever. -->
+
+# Improving the in-car dashboard and console (slightly).
 
 During my visit to China I would often take the ride sharing service Didi (China's Uber equivalent). I'd find myself in fancy electric vehicles equipped with digital dashboards and consoles. Yet, all this technology gets replaced with a smartphone on a cheap plastic mount.
 

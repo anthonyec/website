@@ -1,23 +1,8 @@
----
-layout: article
-weight: 1
-color: FCC8D1
-title: Findbot
-client: Personal
-snippet: Slack chatbot to help my colleagues find project folders on the server fast.
-overview: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast.
-tags:
-    - nodejs
-    - slack
-    - raspberry pi
-    - ux
-subjects:
-    - chatbots
-    - nodejs
+<!-- color: #FCC8D1 -->
+<!-- description: Slack chatbot to help my colleagues find project folders on the server fast. -->
+<!-- description_big: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast. -->
 
-cta_label: View on GitHub
-cta_href: https://github.com/anthonyec/findbot
----
+# Findbot
 
 ## Problem
 

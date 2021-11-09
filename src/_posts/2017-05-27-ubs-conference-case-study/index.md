@@ -1,20 +1,8 @@
----
-layout: article
-weight: 2
-color: B4D5FF
-title: Conference visualisations
-snippet: Collecting insights from conference attendees and showing the results in real time.
-overview: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event.
-tags:
-    - backbone
-    - svg
-    - canvas
-    - laravel
-    - aws
-subjects:
-    - animation
-    - mobile
----
+<!-- color: #B4D5FF -->
+<!-- description: Collecting insights from conference attendees and showing the results in real time. -->
+<!-- description_big: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event. -->
+
+# Conference visualisations
 
 <style>
     .video-window {
