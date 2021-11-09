@@ -15,12 +15,14 @@
 
 .home-section__title {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .home-section__items {
   list-style: none;
   padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .home-section__item a:link,
@@ -38,6 +40,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
+}
+
+.home-section__items--list {
+  padding-top: 15px;
 }
 
 .home-section__items--grid .home-section__item {
@@ -99,10 +105,30 @@
   .home-section {
     font-size: 18px;
   }
+
+  .home-section__items {
+    margin-bottom: 20px;
+  }
 }
 
 @media(max-width: 500px) {
   .home-section__items--grid .home-section__item {
     width: 100%;
+  }
+}
+
+@media(max-width: 480px) {
+  .home-section {
+    max-width: 380px;
+    padding: 0 18px;
+    margin-bottom: 40px;
+  }
+
+  .home-section__title {
+    margin-bottom: 15px;
+  }
+
+  .home-section__items {
+    margin-bottom: 20px;
   }
 }
