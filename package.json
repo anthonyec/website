@@ -1,20 +1,17 @@
 {
   "name": "anthonyec.github.io",
   "version": "1.0.0",
-  "description": "- ruby - ruby-dev - jekyll (ruby gem) - bundle (ruby gem)",
+  "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "start": "static-build ./src ./dist -f"
+    "start": "static-build ./src ./dist -f -w",
+    "build": "static-build ./src ./dist -f"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anthonyec/anthonyec.github.io.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anthonyec/anthonyec.github.io/issues"
-  },
+  "author": "Anthony Cossins",
   "homepage": "https://github.com/anthonyec/anthonyec.github.io#readme",
   "devDependencies": {
     "static-build": "github:anthonyec/static_build"
