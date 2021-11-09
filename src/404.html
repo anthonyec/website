@@ -1,8 +1,14 @@
 <!-- title: 404 - Page not Found -->
+{{>header}}
+{{>nav}}
+
+<link rel="stylesheet" href="/assets/css/read-more-button.css">
 
 <style>
   /* yes I know this is bad but time. */
   .error-code {
+    color: var(--text-color);
+    top: 0;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -10,21 +16,29 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 24px;
+    text-align: center;
   }
 
   .error-code__title {
-    color: white;
-    text-shadow: 1px 1px black,
-                -1px 1px black,
-                -1px -1px black,
-                1px -1px black;
+    margin-bottom: 5px;
+    line-height: 1;
+    color: var(--background-color);
+    text-shadow: 1px 1px var(--text-color),
+                -1px 1px var(--text-color),
+                -1px -1px var(--text-color),
+                1px -1px var(--text-color);
+    -webkit-text-stroke: 2px var(--text-color);
+  }
 
-    -webkit-text-stroke: 0.5px black;
+  h2 {
+    margin-bottom: 5px;
   }
 
   .error-code__char {
     display: inline-block;
     position: relative;
+    font-size: 100px;
     -webkit-animation: 'wobble' 0.2s infinite ease-in-out;
   }
 
@@ -66,5 +80,8 @@
   <h2>
     Page not found.
   </h2><br>
-  <a href="/" class="link">Home</a>
+
+  <a href="/" class="read-more-button">Go to home page</a>
 </div>
+
+{{body}}

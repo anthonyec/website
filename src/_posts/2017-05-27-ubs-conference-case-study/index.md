@@ -2,15 +2,9 @@
 <!-- description: Collecting insights from conference attendees and showing the results in real time. -->
 <!-- description_big: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event. -->
 <!-- pinned: true -->
+<!-- thumbnail: images/people_looking_at_balls.gif -->
 
 # Conference visualisations
-
-<style>
-    .video-window {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
-        border-radius: 3px;
-    }
-</style>
 
 ## Problem
 For a global bank, Signal Noise designed looping, screen saver style visualisations which pulled in data and content in real time about the different topics being discussed at the conference. This information would originate from people answering quick questions through iPad kiosks located around the conference.
@@ -38,13 +32,13 @@ Testing for the answer submission app was done throughout developing it. It had 
 
 I chose the devices based on what was the best selling on Amazon. This is because the best selling devices are usually the best for value, and are not high-end phones. They tend more towards lower mid range devices. We got 1 device for each OS as well as using our own phone to test some high-end phones (we all have fancy phones in the office).
 
-<video src="videos/slider.mp4" muted playsinline loop autoplay class="video-window"></video>
+<video src="videos/slider.mp4" muted playsinline loop autoplay></video>
 *Example of the slider question.*
 
-<video src="videos/multiple.mp4" muted playsinline loop autoplay class="video-window"></video>
+<video src="videos/multiple.mp4" muted playsinline loop autoplay></video>
 *Example of the multple answers question.*
 
-<video src="videos/admin_screen.mp4" muted playsinline loop autoplay class="video-window"></video>
+<video src="videos/admin_screen.mp4" muted playsinline loop autoplay></video>
 *Admin panel.*
 
 Surprising Blackberry 10 wasn't the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.

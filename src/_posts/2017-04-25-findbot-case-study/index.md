@@ -2,6 +2,7 @@
 <!-- description: Slack chatbot to help my colleagues find project folders on the server fast. -->
 <!-- description_big: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast. -->
 <!-- pinned: true -->
+<!-- thumbnail: images/confused.gif -->
 
 # Findbot
 

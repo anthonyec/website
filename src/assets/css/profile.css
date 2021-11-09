@@ -1,0 +1,75 @@
+.profile {
+  color: var(--text-color);
+  font-size: 26px;
+  padding-top: 7.8em;
+  padding-bottom: 8.5em;
+}
+
+.profile__logo {
+  border-radius: 100px;
+  display: block;
+  position: absolute;
+  top: 2.5em;
+  left: 2.5em;
+  width: 3em;
+}
+
+.profile__title {
+  padding-left: span(1) + gutter();
+  font-weight: 500;
+  line-height: 1.16;
+}
+
+.profile__link {
+  border-bottom: 2px solid var(--text-color);
+  color: var(--link-color);
+  /* padding-bottom: 0.05em; */
+  text-decoration: underline;
+}
+
+.profile__link--iplayer-pink:hover {
+  color: #f34d97;
+  border-color: #f34d97;
+}
+
+@media (min-width: 1900px) and (min-height: 970px) {
+  .profile {
+    padding-top: 10em;
+    padding-bottom: 11em;
+  }
+
+  .profile__logo {
+    position: relative;
+    margin-left: span(1) + gutter();
+    margin-bottom: 3em;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 675px) {
+  .profile__logo {
+    width: 2.5em;
+  }
+
+  .profile__title {
+    font-size: 1.728em;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile {
+    padding-bottom: 6em;
+  }
+
+  .profile__contain {
+    padding: 0;
+    width: 100%;
+  }
+
+  .profile__title {
+    padding-left: 1.3em;
+    font-size: 1.2em;
+    line-height: 1.35;
+  }
+}

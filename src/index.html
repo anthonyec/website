@@ -1,52 +1,55 @@
 {{>header}}
 
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/home-section.css">
 <link rel="stylesheet" href="/assets/css/read-more-button.css">
 
 {{>profile}}
 
 {{>nav}}
 
-<section class="projects">
-  <h3>
+<section class="home-section home-section">
+  <h2 class="home-section__title" id="projects">
     Projects
-  </h3>
-  <ul>
-    <li>
-      <a href="#">
-        <img src="./assets/images/handicons.png" alt="">
-        <span>Hand Icons</span>
-        <span>Collection of hand pictograms found around the world.</span>
+  </h2>
+  <ul class="home-section__items home-section__items--grid">
+    <li class="home-section__item">
+      <a href="https://instagram.com/handicons">
+        <img class="home-section__thumbnail" src="./assets/images/handicons.png" alt="">
+        <span class="home-section__item-title">Hand Icons.</span>
+        <span class="home-section__item-description">Collection of hand pictograms found around the world.</span>
       </a>
     </li>
-    <li>
-      <a href="#">
-        <img src="./assets/images/screenshot.png" alt="">
-        <span>Powerlet</span>
-        <span>Chrome Extension to find and run bookmarklets.</span>
+    <li class="home-section__item">
+      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn">
+        <img class="home-section__thumbnail" src="./assets/images/powerlet.png" alt="">
+        <span class="home-section__item-title">Powerlet.</span>
+        <span class="home-section__item-description">Chrome Extension to find and run bookmarklets.</span>
       </a>
     </li>
-    <li>
-      <a href="#">
-        <img src="./assets/images/salad.png" alt="">
-        <span>Salad Room</span>
-        <span>The easiest way to share stuff between devices.</span>
+    <li class="home-section__item">
+      <a href="https://saladroom.net?ref=anthonycossins">
+        <img class="home-section__thumbnail" src="./assets/images/salad_room.png" alt="">
+        <span class="home-section__item-title">Salad Room.</span>
+        <span class="home-section__item-description">The easiest way to share stuff between devices.</span>
       </a>
     </li>
   </ul>
 </section>
 
-<section class="projects">
-  <h3>
+<section class="home-section home-section">
+  <h2 class="home-section__title" id="pins">
     Pins
-  </h3>
-  <ul>
+  </h2>
+  <ul class="home-section__items home-section__items--grid">
     {{#posts}}
       {{#pinned}}
-        <li>
+        <li class="home-section__item">
           <a href="{{path}}">
-            <span>{{title}}</span>
-            <span>{{description}}</span>
+            <div class="home-section__thumbnail-container">
+              <img class="home-section__thumbnail" src="{{path}}/{{thumbnail}}" alt="">
+            </div>
+            <span class="home-section__item-title">{{title}}.</span>
+            <span class="home-section__item-description">{{description}}</span>
           </a>
         </li>
       {{/pinned}}
@@ -54,46 +57,46 @@
   </ul>
 </section>
 
-<section class="posts">
-  <h3>
+<section class="home-section home-section">
+  <h2 class="home-section__title" id="posts">
     Posts
-  </h3>
-  <ul>
+  </h2>
+  <ul class="home-section__items home-section__items--list">
     {{#posts}}
-      <li>
+      <li class="home-section__item">
         <a href="{{path}}">
-          <span>{{#formatDate}}{{date}}{{/formatDate}}</span>
+          <span class="home-section__item-date">{{#formatDate}}{{date}}{{/formatDate}}</span>
           <span>{{title}}</span>
         </a>
       </li>
     {{/posts}}
   </ul>
   <a class="read-more-button" href="/posts">
-    Read more <img class="read-more-button__icon" src="/assets/images/arrow.png">
+    Read more <img class="read-more-button__icon" src="/assets/images/arrow_right.png">
   </a>
 </section>
 
-<section>
-  <h3>
+<section class="home-section home-section">
+  <h2 class="home-section__title" id="contact">
     Contact
-  </h3>
-  <ul>
-    <li>
+  </h2>
+  <ul class="home-section__items home-section__items--list">
+    <li class="home-section__item">
       <a href="https://twitter.com/anthonyec">
         Email
       </a>
     </li>
-    <li>
+    <li class="home-section__item">
       <a href="https://github.com/anthonyec">
         GitHub
       </a>
     </li>
-    <li>
+    <li class="home-section__item">
       <a href="https://twitter.com/anthonyec">
         Twitter
       </a>
     </li>
-    <li>
+    <li class="home-section__item">
       <a href="https://linkedin.com/in/anthonyec">
         LinkedIn
       </a>

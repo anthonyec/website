@@ -1,0 +1,25 @@
+.theme-toggle__icon {
+  width: 40px;
+}
+
+.theme-toggle__icon--light {
+  height: 28px;
+}
+
+.theme-toggle__icon--dark {
+  width: 26px;
+}
+
+.theme-toggle__icon--overcast {
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle__icon {
+    width: 30px;
+  }
+
+  .theme-toggle__icon--dark {
+    width: 20px;
+  }
+}

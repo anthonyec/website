@@ -3,7 +3,7 @@
 <!-- description_big: Designing two product features to improve the digital instrument cluster. And doing so without completely re-inventing everything ever. -->
 <!-- pinned: true -->
 
-# Improving the in-car dashboard and console (slightly).
+# Improving the in-car dashboard and console (slightly)
 
 During my visit to China I would often take the ride sharing service Didi (China's Uber equivalent). I'd find myself in fancy electric vehicles equipped with digital dashboards and consoles. Yet, all this technology gets replaced with a smartphone on a cheap plastic mount.
 
