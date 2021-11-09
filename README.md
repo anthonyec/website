@@ -1,13 +1,14 @@
 # anthonyec.github.io
+
 ## Requirements
-- ruby
-- ruby-dev
-- jekyll (ruby gem)
-- bundle (ruby gem)
+- NodeJS
 
 ## Run
-https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 
 ```bash
-$ bundle exec jekyll serve
+$ npm run start
+```
+
+```bash
+$ npm run build
 ```
