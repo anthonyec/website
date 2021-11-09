@@ -1,6 +1,7 @@
 <!-- color: #FFDA2E -->
 <!-- description: Improving the in-car dashboard and console (slightly). -->
 <!-- description_big: Designing two product features to improve the digital instrument cluster. And doing so without completely re-inventing everything ever. -->
+<!-- pinned: true -->
 
 # Improving the in-car dashboard and console (slightly).
 
