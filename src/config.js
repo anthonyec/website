@@ -85,4 +85,7 @@ module.exports = {
 
     return formatDateWithTemplate('YYYY-MM-DD', date);
   },
+  env: {
+    dev: process.env.NODE_ENV === 'dev'
+  }
 };
