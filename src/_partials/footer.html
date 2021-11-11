@@ -25,10 +25,17 @@
       }
     }
 
+    function cloneOrUseExisting(element, existingClassName) {
+      return document.querySelector(existingClassName) ?
+        document.querySelector(existingClassName) :
+        element.cloneNode();
+    }
+
     function createProxyLogo(element) {
       const bounds = element.getBoundingClientRect();
-      const cloned = element.cloneNode();
-      cloned.className = '';
+      const cloned = cloneOrUseExisting(element, '.proxy-logo');
+
+      cloned.className = 'proxy-logo';
       cloned.style.position = 'fixed';
       cloned.style.top = '0px';
       cloned.style.opacity = '0';
@@ -51,20 +58,6 @@
     function lerp(start, end, t) {
       return start * (1 - t) + end * t;
     }
-
-    const sourceLogo = document.querySelector('.js-profile-logo');
-    const targetLogo = document.querySelector('.js-target-logo');
-    const proxyLogo = createProxyLogo(sourceLogo);
-    const profile = document.querySelector('.js-profile');
-    const navButtons = document.querySelector('.js-nav-buttons');
-
-    const scrollPositionFrom = 0;
-    const { height: scrollPositionTo } = getPageBoundingRect(profile);
-
-    const sourceBounds = getLocalBoundingRect(sourceLogo);
-    const targetBounds = getLocalBoundingRect(targetLogo);
-    const navButtonsBounds = getPageBoundingRect(navButtons);
-    const navGap = navButtonsBounds.x - targetBounds.x;
 
     function lerpBoundsFromTo(fromBounds, toBounds, fromPosition, toPosition, percent) {
       const lerpedBounds = {
@@ -89,35 +82,64 @@
       return clamp(rawPercent, 0, 1);
     }
 
-    function handleScroll() {
-      const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
-      const navTimeProgress = getTimeProgress(scrollPositionTo - 500, scrollPositionTo);
+    function main() {
+      console.log('main');
 
-      const navX = lerp(-navGap, 0, navTimeProgress);
-      const { t, x, y, scale } = lerpBoundsFromTo(
-        sourceBounds,
-        targetBounds,
-        scrollPositionFrom,
-        scrollPositionTo,
-        logoTimeProgress
-      );
+      const sourceLogo = document.querySelector('.js-profile-logo');
+      const targetLogo = document.querySelector('.js-target-logo');
+      const proxyLogo = createProxyLogo(sourceLogo);
+      const profile = document.querySelector('.js-profile');
+      const navButtons = document.querySelector('.js-nav-buttons');
 
-      sourceLogo.style.opacity = logoTimeProgress === 0 ? '1' : '0';
-      targetLogo.style.opacity = logoTimeProgress === 1 ? '1' : '0';
+      const scrollPositionFrom = 0;
+      const { height: scrollPositionTo } = getPageBoundingRect(profile);
 
-      if (logoTimeProgress !== 0 && logoTimeProgress !== 1) {
-        proxyLogo.style.opacity = '1';
-      } else {
-        proxyLogo.style.opacity = '0';
+      const sourceBounds = getLocalBoundingRect(sourceLogo);
+      const targetBounds = getLocalBoundingRect(targetLogo);
+      const navButtonsBounds = getPageBoundingRect(navButtons);
+      const navGap = navButtonsBounds.x - targetBounds.x;
+
+      function handleScroll() {
+        const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
+        const navTimeProgress = getTimeProgress(scrollPositionTo - 500, scrollPositionTo);
+
+        const navX = lerp(-navGap, 0, navTimeProgress);
+        const { t, x, y, scale } = lerpBoundsFromTo(
+          sourceBounds,
+          targetBounds,
+          scrollPositionFrom,
+          scrollPositionTo,
+          logoTimeProgress
+        );
+
+        sourceLogo.style.opacity = logoTimeProgress === 0 ? '1' : '0';
+        targetLogo.style.opacity = logoTimeProgress === 1 ? '1' : '0';
+
+        if (logoTimeProgress !== 0 && logoTimeProgress !== 1) {
+          proxyLogo.style.opacity = '1';
+        } else {
+          proxyLogo.style.opacity = '0';
+        }
+
+        proxyLogo.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+        navButtons.style.transform = `translateX(${navX}px)`;
       }
 
-      proxyLogo.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
-      navButtons.style.transform = `translateX(${navX}px)`;
+      handleScroll();
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      }
     }
 
-    window.addEventListener('scroll', handleScroll);
+    const resetMain = main();
 
-    handleScroll();
+    window.addEventListener('resize', () => {
+      resetMain();
+      main();
+    })
   </script>
 
   </body>
