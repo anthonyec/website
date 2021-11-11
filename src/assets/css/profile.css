@@ -3,6 +3,7 @@
   font-size: 26px;
   padding-top: 7.8em;
   padding-bottom: 8.5em;
+  border-bottom: 1px solid red;
 }
 
 .profile__logo {

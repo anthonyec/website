@@ -14,11 +14,22 @@
       }
     }
 
+    function getBoundingRectAtScrollPosition(element, scrollPositionY) {
+      const bounds = element.getBoundingClientRect();
+
+      return {
+        x: bounds.x + window.pageXOffset,
+        y: (bounds.y - scrollPositionY) + window.pageYOffset,
+        width: bounds.width,
+        height: bounds.height
+      }
+    }
+
     function createProxyLogo(element) {
       const bounds = element.getBoundingClientRect();
       const cloned = element.cloneNode();
       cloned.className = '';
-      cloned.style.position = 'absolute';
+      cloned.style.position = 'fixed';
       cloned.style.top = '0px';
       cloned.style.opacity = '0';
       cloned.style.left = '0px';
@@ -44,16 +55,16 @@
     const sourceLogo = document.querySelector('.js-profile-logo');
     const targetLogo = document.querySelector('.js-target-logo');
     const proxyLogo = createProxyLogo(sourceLogo);
-    const nav = document.querySelector('.js-nav');
+    const profile = document.querySelector('.js-profile');
     const navButtons = document.querySelector('.js-nav-buttons');
 
-    const sourceBounds = getPageBoundingRect(sourceLogo);
-    const targetBounds = getPageBoundingRect(targetLogo);
+    const scrollPositionFrom = 0;
+    const { height: scrollPositionTo } = getPageBoundingRect(profile);
+
+    const sourceBounds = getBoundingRectAtScrollPosition(sourceLogo, scrollPositionFrom);
+    const targetBounds = getBoundingRectAtScrollPosition(targetLogo, scrollPositionTo);
     const navButtonsBounds = getPageBoundingRect(navButtons);
     const navGap = navButtonsBounds.x - targetBounds.x;
-
-    const scrollPositionFrom = 0;
-    const { y: scrollPositionTo } = getPageBoundingRect(nav);
 
     function lerpBoundsFromTo(fromBounds, toBounds, fromPosition, toPosition, percent) {
       const lerpedBounds = {
