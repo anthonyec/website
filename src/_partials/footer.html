@@ -14,12 +14,12 @@
       }
     }
 
-    function getBoundingRectAtScrollPosition(element, scrollPositionY) {
+    function getLocalBoundingRect(element) {
       const bounds = element.getBoundingClientRect();
 
       return {
-        x: bounds.x + window.pageXOffset,
-        y: (bounds.y - scrollPositionY) + window.pageYOffset,
+        x: element.offsetLeft,
+        y: element.offsetTop,
         width: bounds.width,
         height: bounds.height
       }
@@ -61,8 +61,8 @@
     const scrollPositionFrom = 0;
     const { height: scrollPositionTo } = getPageBoundingRect(profile);
 
-    const sourceBounds = getBoundingRectAtScrollPosition(sourceLogo, scrollPositionFrom);
-    const targetBounds = getBoundingRectAtScrollPosition(targetLogo, scrollPositionTo);
+    const sourceBounds = getLocalBoundingRect(sourceLogo);
+    const targetBounds = getLocalBoundingRect(targetLogo);
     const navButtonsBounds = getPageBoundingRect(navButtons);
     const navGap = navButtonsBounds.x - targetBounds.x;
 
