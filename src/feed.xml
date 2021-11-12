@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+>
+  <channel>
+    <link href="https://anthonycossins.com/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://anthonycossins.com/" rel="alternate" type="text/html"/>
+    <updated>{{#formatDateAsUTC}}{{site.date}}{{/formatDateAsUTC}}</updated>
+    <id>https://anthonycossins.com/feed.xml</id>
+
+    <title type="html">Anthony Cossins</title>
+    <subtitle>Anthony Cossins has a RSS feed on the internet and this is it.</subtitle>
+
+    {{#posts}}
+      <item>
+        <id>{{site.url}}{{path}}</id>
+        <title type="html">{{title}}</title>
+        <link href="{{site.url}}{{path}}" rel="alternate" type="text/html" title="{{title}}"/>
+        <published>{{#formatDateAsUTC}}{{date}}{{/formatDateAsUTC}}</published>
+        <updated>{{#formatDateAsUTC}}{{date}}{{/formatDateAsUTC}}</updated>
+        <content:encoded><![CDATA[{{#removeH1}}{{{content}}}{{/removeH1}}]]></content:encoded>
+      </item>
+    {{/posts}}
+
+  </channel>
+</rss>
