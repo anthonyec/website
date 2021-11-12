@@ -49,6 +49,11 @@
   line-height: 1.4;
 }
 
+.post video {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .post img,
 .post video {
   display: block;
