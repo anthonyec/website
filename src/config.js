@@ -1,5 +1,21 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+const cache = {};
+const scripts = {};
+
+function memorize(key, callback) {
+  const cleanKey = key.replace(/\n/g, '').replace(/\s\s/g, '').trim();
+
+  if (cache[cleanKey]) {
+    return cache[cleanKey];
+  }
+
+  const result = callback();
+  cache[cleanKey] = result;
+  return result;
+}
 
 module.exports = {
   env: {
@@ -98,6 +114,20 @@ module.exports = {
     fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'cv.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
     fs.cpSync(path.join('./src', 'favicon.ico'), path.join('./dist', 'favicon.ico'));
+
+    Object.keys(scripts).forEach((hash) => {
+      const script = scripts[hash];
+
+      fs.mkdirSync(path.join(__dirname, '../dist/assets/js/'), {
+        recursive: true
+      });
+
+      fs.writeFileSync(
+        path.join(__dirname, '../dist/assets/js/', `${hash}.js`),
+        script,
+        'utf8'
+      );
+    });
   },
 
   // Helper functions.
@@ -125,5 +155,16 @@ module.exports = {
     const renderedText = render(text);
 
     return renderedText.replace(/<h1>.*(?:<a.*>.*<\/a>).*<\/h1>/g, '');
-  }
+  },
+  script: () => (text) => memorize(text, () => {
+    const script = text.replace('<script>', '').replace('</script>', '');
+    const hash = crypto
+      .createHash('md5')
+      .update(script)
+      .digest('hex');
+
+    scripts[hash] = script.trim();
+
+    return `<script defer src="/assets/js/${hash}.js"></script>`;
+  })
 };
