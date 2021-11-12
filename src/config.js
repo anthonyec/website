@@ -2,6 +2,31 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
+  env: {
+    dev: process.env.NODE_ENV === 'dev'
+  },
+
+  site: {
+    url: 'https://anthonycossins.com',
+    title: 'Anthony Cossins',
+    description:
+      'Anthony Cossins has a website on the internet and this is it.',
+    timestamp: () => Date.now(),
+    date: () => new Date()
+  },
+
+  getPageVariables(site, page) {
+    const formattedTitle = page.title
+      ? `${page.title} — ${site.title}`
+      : site.title;
+    const url = page.slug ? path.join(site.url, page.slug) : site.url;
+
+    return {
+      formattedTitle,
+      url
+    };
+  },
+
   async getPages({ collection, redirects }) {
     const posts = await collection(
       'posts',
@@ -29,6 +54,11 @@ module.exports = {
         slug: 'index.html',
         path: '/',
         content: fs.readFileSync('./src/index.html', 'utf8')
+      },
+      {
+        slug: 'feed.xml',
+        path: '/',
+        content: fs.readFileSync('./src/feed.xml', 'utf8')
       }
     ];
 
@@ -85,7 +115,15 @@ module.exports = {
 
     return formatDateWithTemplate('YYYY-MM-DD', date);
   },
-  env: {
-    dev: process.env.NODE_ENV === 'dev'
+  formatDateAsUTC: () => (text, render) => {
+    const renderedDate = render(text);
+    const date = new Date(renderedDate);
+
+    return date.toUTCString();
+  },
+  removeH1: () => (text, render) => {
+    const renderedText = render(text);
+
+    return renderedText.replace(/<h1>.*(?:<a.*>.*<\/a>).*<\/h1>/g, '');
   }
 };
