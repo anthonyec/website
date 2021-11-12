@@ -4,7 +4,7 @@
 <!-- pinned: true -->
 <!-- thumbnail: images/people_looking_at_balls.gif -->
 
-# Conference visualisations
+# Real-time visualisations for UBS conference
 
 ## Problem
 For a global bank, Signal Noise designed looping, screen saver style visualisations which pulled in data and content in real time about the different topics being discussed at the conference. This information would originate from people answering quick questions through iPad kiosks located around the conference.
