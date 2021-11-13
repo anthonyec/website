@@ -1,10 +1,9 @@
 .home-section {
   color: var(--text-color);
   max-width: 1600px;
-  margin: 0 auto;
   font-size: 24px;
   line-height: 1.35;
-  margin: 0 120px;
+  margin: 0 120px; /*  TODO: Fix this not centering. */
   margin-bottom: 100px;
 }
 
@@ -165,7 +164,8 @@
 @media(max-width: 480px) {
   .home-section {
     max-width: 380px;
-    margin: 0 18px;
+    padding: 0 18px;
+    margin: 0 auto;
     margin-bottom: 40px;
   }
 
