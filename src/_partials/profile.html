@@ -108,13 +108,16 @@
       const { height: scrollPositionTo } = getPageBoundingRect(profile);
 
       const sourceBounds = getLocalBoundingRect(sourceLogo);
-      const targetBounds = getLocalBoundingRect(targetLogo);
+      const targetBounds = {
+        ...getLocalBoundingRect(targetLogo),
+        x: getPageBoundingRect(targetLogo).x
+      };
       const navButtonsBounds = getPageBoundingRect(navButtons);
       const navGap = navButtonsBounds.x - targetBounds.x;
 
       function handleScroll() {
         const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
-        const navTimeProgress = getTimeProgress(scrollPositionTo - 500, scrollPositionTo);
+        const navTimeProgress = getTimeProgress(scrollPositionTo - profile.clientHeight / 2, scrollPositionTo);
 
         const navX = lerp(-navGap, 0, navTimeProgress);
         const { t, x, y, scale } = lerpBoundsFromTo(
