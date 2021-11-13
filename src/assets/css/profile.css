@@ -18,6 +18,15 @@
   top: 2.5em;
   left: 2.5em;
   width: 3em;
+  cursor: pointer;
+}
+
+.profile__logo:hover {
+  filter: brightness(200%);
+}
+
+.profile__logo:active {
+  transform: scale(0.9);
 }
 
 .profile__title {
