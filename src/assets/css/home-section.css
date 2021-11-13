@@ -3,7 +3,8 @@
   max-width: 1600px;
   font-size: 24px;
   line-height: 1.35;
-  margin: 0 120px; /*  TODO: Fix this not centering. */
+  padding: 0 120px;
+  margin: 0 auto;
   margin-bottom: 100px;
 }
 
@@ -17,12 +18,13 @@
 }
 
 .home-section:target:after {
+  display: none; /* TODO: This affects layout too much. */
   content: '';
   border-radius: 20px;
-  left: -25px;
-  right: -25px;
-  top: -15px;
-  bottom: -25px;
+  left: 6px;
+  right: 6px;
+  top: 0px;
+  bottom: -5px;
   box-shadow: 0 0 0 5px #F23B39;
   position: absolute;
   pointer-events: none;
@@ -141,7 +143,7 @@
 
 @media(max-width: 1100px) {
   .home-section {
-    margin: 0 38px;
+    padding: 0 38px;
   }
 }
 

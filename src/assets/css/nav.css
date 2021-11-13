@@ -1,5 +1,6 @@
 .nav {
   display: flex;
+  max-width: 1440px;
   padding: 25px;
   margin: 0 auto;
   top: 0;
@@ -32,6 +33,7 @@
 .nav__nav-link,
 .nav__nav-link:visited {
   background: var(--nav-link-background);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 0;
   color: var(--nav-link-color);
