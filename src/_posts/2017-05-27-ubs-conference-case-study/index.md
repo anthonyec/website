@@ -3,6 +3,7 @@
 <!-- description_big: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event. -->
 <!-- pinned: true -->
 <!-- thumbnail: images/people_looking_at_balls.gif -->
+<!-- thumbnail_alt: Illustration of people looking at a visualisation on a giant screen -->
 
 # Real-time visualisations for UBS conference
 

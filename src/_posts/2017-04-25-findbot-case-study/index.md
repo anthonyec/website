@@ -3,6 +3,7 @@
 <!-- description_big: Finding specific project folders on my company server was hard. So I created a Slack bot for my colleagues to locate and open project folders fast. -->
 <!-- pinned: true -->
 <!-- thumbnail: images/confused.gif -->
+<!-- thumbnail_alt: Illustration of a person thinking about all confusing folders and their names -->
 
 # Findbot
 
