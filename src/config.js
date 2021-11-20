@@ -110,8 +110,6 @@ module.exports = {
     });
 
     fs.cpSync(path.join('./src', 'google0290ed350f9faa96.html'), path.join('./dist', 'google0290ed350f9faa96.html'));
-    fs.cpSync(path.join('./src', 'cv_2019.pdf'), path.join('./dist', 'cv_2019.pdf'));
-    fs.cpSync(path.join('./src', 'cv_2021.pdf'), path.join('./dist', 'cv_2021.pdf'));
     fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'cv.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
     fs.cpSync(path.join('./src', 'favicon.ico'), path.join('./dist', 'favicon.ico'));
