@@ -167,5 +167,40 @@ module.exports = {
     scripts[hash] = script.trim();
 
     return `<script defer src="/assets/js/${hash}.js"></script>`;
-  })
+  }),
+  concatCSS: () => (text) =>
+    memorize(text, () => {
+      const matches = [];
+      const regex = new RegExp('href="(.+)"', 'g');
+      let match = regex.exec(text);
+
+      while (match !== null) {
+        matches.push(match[1]);
+        match = regex.exec(text);
+      }
+
+      const hash = crypto
+        .createHash('md5')
+        .update(matches.join())
+        .digest('hex');
+
+      let concatenatedCSS = '';
+
+      for (const file of matches) {
+        const css = fs.readFileSync(path.join(__dirname, file), 'utf8');
+        concatenatedCSS += css;
+      }
+
+      // TODO: Make dynamic.
+      fs.mkdirSync(path.join(__dirname, '../dist/assets/css/'), {
+        recursive: true
+      });
+      fs.writeFileSync(
+        path.join(__dirname, '../dist/assets/css/', `${hash}.css`),
+        concatenatedCSS,
+        'utf8'
+      );
+
+      return `<link rel="stylesheet" href="/assets/css/${hash}.css" />`;
+    }),
 };
