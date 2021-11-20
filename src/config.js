@@ -84,7 +84,7 @@ module.exports = {
       '/work/dashboard': '/posts/improving-car-dashboards-slightly',
       '/work/findbot': '/posts/findbot-case-study',
       '/work/conference': '/posts/ubs-conference-case-study',
-      '/work/totaljobs': '/posts/total-jobs-case-study',
+      '/work/totaljobs': '/posts/total-jobs',
 
       // Outbound links.
       '/redirects/london-creative-coding':
