@@ -1,6 +1,6 @@
 <!-- description: Slides and research notes for the lighting talk presentation I did at Visualising Data London. -->
 
-# Improving the in-car dashboard and console
+# Improving the in-car dashboard and console presentation notes
 
 ## Overview
 Here are the slides and research notes for the lighting talk presentation I did at [Visualising Data London](https://www.meetup.com/Visualising-Data-London/).
