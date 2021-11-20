@@ -32,6 +32,21 @@ module.exports = {
     date: () => new Date()
   },
 
+  contact: [
+    {
+      title: 'Email', href: 'mailto:anthonycossins@gmail.com',
+    },
+    {
+      title: 'GitHub', href: 'https://github.com/anthonyec',
+    },
+    {
+      title: 'Twitter', href: 'https://twitter.com/anthonyec',
+    },
+    {
+      title: 'LinkedIn', href: 'https://linkedin.com/in/anthonyec',
+    },
+  ],
+
   getPageVariables(site, page) {
     const formattedTitle = page.title
       ? `${page.title} — ${site.title}`

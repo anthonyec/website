@@ -83,26 +83,13 @@
     Contact
   </h2>
   <ul class="home-section__items home-section__items--list">
-    <li class="home-section__item">
-      <a href="mailto:anthonycossins@gmail.com">
-        Email
-      </a>
-    </li>
-    <li class="home-section__item">
-      <a href="https://github.com/anthonyec">
-        GitHub
-      </a>
-    </li>
-    <li class="home-section__item">
-      <a href="https://twitter.com/anthonyec">
-        Twitter
-      </a>
-    </li>
-    <li class="home-section__item">
-      <a href="https://linkedin.com/in/anthonyec">
-        LinkedIn
-      </a>
-    </li>
+    {{#contact}}
+      <li class="home-section__item">
+        <a href="{{href}}">
+          <span>{{title}}</span>
+        </a>
+      </li>
+    {{/contact}}
   </ul>
 </section>
 

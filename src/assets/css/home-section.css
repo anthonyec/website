@@ -77,6 +77,15 @@
   display: block;
 }
 
+/* HAHAH THIS IS MESSY OH WELL! */
+.home-section__items--grid .home-section__item a:hover .home-section__item-title {
+  border-bottom: 2px solid var(--text-color);
+}
+
+.home-section__items--list .home-section__item a:hover span:not(.home-section__item-date) {
+  border-bottom: 2px solid var(--text-color);
+}
+
 /* TODO: Ah list and grid should probably just be separate. */
 .home-section__items--list .home-section__item {
   margin-bottom: 2px;
@@ -150,10 +159,19 @@
 @media(max-width: 768px) {
   .home-section {
     font-size: 18px;
+    margin-bottom: 60px;
   }
 
   .home-section__items {
     margin-bottom: 20px;
+  }
+
+  .home-section__items--list .home-section__item {
+    margin-bottom: 5px;
+  }
+
+  .home-section__item-date {
+    display: none;
   }
 }
 
