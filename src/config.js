@@ -27,6 +27,7 @@ module.exports = {
     title: 'Anthony Cossins',
     description:
       'Anthony Cossins has a website on the internet and this is it.',
+    keywords: 'just, a, great, guy',
     timestamp: () => Date.now(),
     date: () => new Date()
   },
