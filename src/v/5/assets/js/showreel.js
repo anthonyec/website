@@ -9,13 +9,13 @@
   }
 
   function handleClickVideo() {
-    window.location.href = '/assets/videos/showreel_sep_2017.mp4';
+    window.location.href = 'assets/videos/showreel_sep_2017.mp4';
   };
 
   window.onload = function() {
     setTimeout(function() {
-      addSourceToVideo($video, '/assets/videos/showreel_sep_2017.mp4', 'video/mp4');
-      addSourceToVideo($video, '/assets/videos/showreel_sep_2017.webm', 'video/mp4');
+      addSourceToVideo($video, 'assets/videos/showreel_sep_2017.mp4', 'video/mp4');
+      addSourceToVideo($video, 'assets/videos/showreel_sep_2017.webm', 'video/mp4');
       $video.removeEventListener('click', handleClickVideo);
     }, 500);
   };
