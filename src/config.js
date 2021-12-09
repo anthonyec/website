@@ -124,6 +124,14 @@ module.exports = {
       recursive: true
     });
 
+    fs.cpSync(path.join(__dirname, '../', 'stuff'), path.join('./dist', 'stuff'), {
+      recursive: true
+    });
+
+    fs.cpSync(path.join(__dirname, '../', 'snippets'), path.join('./dist', 'snippets'), {
+      recursive: true
+    });
+
     fs.cpSync(path.join('./src', 'google0290ed350f9faa96.html'), path.join('./dist', 'google0290ed350f9faa96.html'));
     fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'cv.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
