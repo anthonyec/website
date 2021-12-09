@@ -49,6 +49,7 @@
   font-size: 24px;
   text-decoration: none;
   margin-right: 15px;
+  transition: 0.5s background ease;
 }
 
 .nav__nav-link img {
@@ -75,6 +76,7 @@
 
 .nav__nav-link:hover {
   color: var(--nav-link-hover-color);
+  transition: none;
 }
 
 .nav__nav-link--posts:hover {

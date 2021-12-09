@@ -12,6 +12,6 @@
 
     <hr>
 
-    {{#formatDate}}{{page.date}}{{/formatDate}}
+    Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
   </article>
 {{>footer}}

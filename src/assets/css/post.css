@@ -132,6 +132,11 @@
   padding: 0.1em 1em;
 }
 
+.post hr {
+  border: 0;
+  border-top: 2px solid black;
+}
+
 /* Image paths ending with .gif are illustrations. */
 .post img[src$='.gif'] {
   image-rendering: pixelated;
