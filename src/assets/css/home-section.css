@@ -124,10 +124,14 @@
   margin: 0;
 }
 
-.home-section__thumbnail{
+.home-section__thumbnail {
   width: 100%;
   display: block;
   margin-bottom: 15px;
+}
+
+html[data-theme='dark'] .home-section__thumbnail {
+  filter: grayscale(100%);
 }
 
 .home-section__item-title {
