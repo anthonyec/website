@@ -18,7 +18,7 @@
   </nav>
 
   <button
-    class="nav__nav-link nav__nav-link--fixed theme-toggle js-dark-mode"
+    class="nav__nav-link nav__nav-link--fixed theme-toggle theme-toggle--no-js js-dark-mode"
   >
     <img
       class="theme-toggle__icon theme-toggle__icon--dark js-icon-dark"
@@ -73,5 +73,7 @@
     });
 
     setTheme(currentTheme);
+
+    document.querySelector('.js-dark-mode').classList.remove('theme-toggle--no-js');
   </script>
 {{/script}}
