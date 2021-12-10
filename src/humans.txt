@@ -1,0 +1,18 @@
+/* TEAM */
+  Design and Development: Anthony Cossins
+  Github: @anthonyec
+  Site: https://anthonycossins.com
+  From: London, UK
+
+/* SPECIAL THANKS */
+  鲁彦 (Yan Lu) - design feedback and life advice.
+  Benjamin Royer - design feedback, he showed me how to use a grid and baseline.
+  Zdenek Hynek - case study feedback, he introduced me to hemingway pose style.
+  Micah Gordon - case study feedback.
+  Jack Bzowski - case study feedback.
+
+/* SITE */
+  Last update: 2017/05
+  Language: English
+  Doctype: XHTML 1.0 Transitional
+  Tech: VS Code, Folioscope and a custom made static site generator

@@ -1,0 +1,79 @@
+{{#concatCSS}}
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="stylesheet" href="/assets/css/theme-toggle.css" />
+{{/concatCSS}}
+
+<header class="nav js-nav">
+  <a class="nav__logo js-target-logo" href="/">
+    <img
+      src="/assets/images/blink_animation.gif"
+      class="logo"
+      alt="A head as a logo"
+    />
+  </a>
+
+  <nav class="nav__nav js-nav-buttons">
+    <a class="nav__nav-link nav__nav-link--posts" href="/#posts">Posts</a>
+    <a class="nav__nav-link nav__nav-link--about" href="/">About</a>
+  </nav>
+
+  <button
+    class="nav__nav-link nav__nav-link--fixed theme-toggle theme-toggle--no-js js-dark-mode"
+  >
+    <img
+      class="theme-toggle__icon theme-toggle__icon--dark js-icon-dark"
+      src="/assets/images/moon.png"
+      role="presentation"
+    />
+    <img
+      class="theme-toggle__icon js-icon-light"
+      src="/assets/images/sun.png"
+      role="presentation"
+    />
+    <img
+      class="theme-toggle__icon js-icon-overcast"
+      src="/assets/images/cloud.png"
+      role="presentation"
+    />
+    <span>
+      Toggle theme
+    </span>
+  </button>
+</header>
+
+{{#script}}
+  <script>
+    const darkModeButton = document.querySelector('.js-dark-mode');
+    const themes = ['light', 'overcast', 'dark'];
+    const lastTheme = localStorage.getItem('lastTheme');
+
+    let currentTheme = lastTheme ? lastTheme : themes[0];
+
+    function setTheme(theme) {
+      document.querySelector('html').setAttribute('data-theme', currentTheme);
+
+      document.querySelector('.js-icon-dark').style.display = 'none';
+      document.querySelector('.js-icon-light').style.display = 'none';
+      document.querySelector('.js-icon-overcast').style.display = 'none';
+      document.querySelector('.js-icon-' + currentTheme).style.display = 'block';
+    }
+
+    darkModeButton.addEventListener('click', () => {
+      const currentThemeIndex = themes.indexOf(currentTheme);
+      const nextThemeIndex = currentThemeIndex + 1;
+
+      if (nextThemeIndex > themes.length - 1) {
+        currentTheme = themes[0];
+      } else {
+        currentTheme = themes[nextThemeIndex];
+      }
+
+      setTheme(currentTheme);
+      localStorage.setItem('lastTheme', currentTheme);
+    });
+
+    setTheme(currentTheme);
+
+    document.querySelector('.js-dark-mode').classList.remove('theme-toggle--no-js');
+  </script>
+{{/script}}

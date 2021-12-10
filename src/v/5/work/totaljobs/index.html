@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <title>Total Jobs Commuter Survey</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anthony Cossins has a website on the internet and this is it.">
+    <meta name="keywords" content="just, a, great, guy">
+
+    <meta property="og:title" content="Total Jobs Commuter Survey"/>
+    <meta property="og:description" content="Anthony Cossins has a website on the internet and this is it."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+
+    <meta name="twitter:title" content="Total Jobs Commuter Survey">
+    <meta name="twitter:description" content="Anthony Cossins has a website on the internet and this is it.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="">
+
+    <link rel="icon" type="image/png" href="../../favicon.png">
+
+    <link rel="stylesheet" href="../../assets/css/global-c=1614033677761011269.css">
+    <link rel="stylesheet" href="../../assets/css/default-c=1614033677761011269.css">
+
+    <script async type="text/javascript" src="https://plausible.io/js/analytics.js"></script>
+
+    <style>
+      body {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <link rel="stylesheet" href="../../assets/css/article-c=211.css">
+
+<div class="navbar">
+  <a class="navbar__home" href="../../index.html">
+    <div class="bio">
+      <div class="bio__icon">
+        <img class="bio__icon-img" src="../../assets/images/blink_animation.gif" alt="A head as a logo">
+      </div>
+      <div class="bio__details">
+        <div class="bio__name">
+          Anthony Cossins
+        </div>
+      </div>
+    </div>
+  </a>
+
+  
+    <div class="navbar__actions">
+      <a class="button" href="https://www.totaljobs.com/insidejob/commuter-calculator/">
+        <img src="../../assets/images/icons/external_link.svg" class="button__icon">
+        Try the tool
+      </a>
+    </div>
+  
+</div>
+
+
+<style>
+  body {
+    background: white;
+  }
+</style>
+
+<div class="l-contain">
+  <div class="article">
+    <div class="contain">
+      <h1>
+        Total Jobs Commuter Survey
+      </h1>
+      <h2 class="overview">
+        Commuter tool created in 2015 for Total Jobs. It uses the information from user's daily commute. It calculates a few interesting stats displayed with illustrations.
+      </h2>
+      <p>From the design I created repeatable image assets to add some looping animation to the start screen.</p>
+
+<video muted="" playsinline="" loop="" autoplay="" src="videos/start_animation.mp4" poster="images/start_animation_poster.jpg">
+</video>
+
+<video muted="" playsinline="" loop="" autoplay="" src="videos/form.mp4" poster="images/form_poster.jpg">
+</video>
+
+<p>The stats are displayed in a carousel. Each slide dynamically changes it’s illustrations depending on the numbers generated. The data is stored in a Backbone <code class="language-plaintext highlighter-rouge">model</code> and specific methods can return calculated numbers ready to be used in the template.</p>
+
+<video muted="" playsinline="" loop="" autoplay="" src="videos/slides.mp4" poster="images/slides_poster.jpg">
+</video>
+
+<p>When you reach the end of the carousel you are given the option to find out more or share your results. Clicking share will generate a custom share message for you to post.</p>
+
+<video muted="" playsinline="" loop="" autoplay="" src="videos/end.mp4" poster="images/end_poster.jpg">
+</video>
+
+    </div>
+  </div>
+</div>
+
+<div class="lets-talk">
+  <h2 class="lets-talk__title">
+    Let’s talk<span class="js-typey-container"> <span class="typey js-typey">
+      <noscript>work</noscript></span></span><span class="typey-cursor"></span>
+  </h2>
+
+  <a href="../../cdn-cgi/l/email-protection.html#f2939c869a9d9c8b919d81819b9c81b2959f939b9edc919d9f" class="lets-talk__button button">
+    <img src="../../assets/images/icons/mail.svg" class="button__icon">
+    Email me
+  </a>
+
+  <a href="../../wechat.html" class="lets-talk__button button">
+    <img src="../../assets/images/icons/message_circle.svg" class="button__icon">
+    WeChat
+  </a>
+</div>
+
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../assets/js/typey.js"></script>
+<script>
+  (function() {
+    var typey = new Typey({
+      target: document.querySelectorAll('.js-typey')[0],
+      sequence: [
+        
+        'backbone',
+        
+        'svg',
+        
+        'work',
+        '',
+      ],
+      onStop() {
+        document.querySelectorAll('.js-typey-container')[0].innerText = '!';
+        document.querySelectorAll('.typey-cursor')[0].classList.add(
+          'typey-cursor--hide'
+        );
+      },
+    });
+
+    var $letsTalk = document.querySelectorAll('.lets-talk')[0];
+
+    function onScroll() {
+      var scroll = document.body.scrollTop || window.scrollY;
+
+      if (scroll > $letsTalk.offsetTop - window.innerHeight) {
+        window.removeEventListener('scroll', onScroll, false);
+
+        setTimeout(function() {
+          typey.start();
+        }, 300);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, false);
+  })();
+</script>
+
+
+  </body>
+</html>

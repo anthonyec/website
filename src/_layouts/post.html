@@ -1,0 +1,17 @@
+{{#concatCSS}}
+  <link rel="stylesheet" href="/assets/css/post.css" />
+  <link rel="stylesheet" href="/assets/css/iframe.css" />
+{{/concatCSS}}
+
+{{>header}}
+
+{{>nav}}
+
+  <article class="post contain">
+    {{{page.content}}}
+
+    <hr>
+
+    Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
+  </article>
+{{>footer}}

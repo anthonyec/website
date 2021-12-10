@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blue House</title>
+	<link rel="shortcut icon" href="https://anthonycossins.com/stuff/favicon.ico" />
+	<link rel="shortcut icon" href="https://anthonycossins.com/stuff/favicon.png" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://anthonycossins.com/stuff/css/main.css" type="text/css" />
+
+	<meta charset="utf-8">
+<!-- 	<meta name="description" content="Anthony Cossins has a website on the internet and this is it">
+	<meta name="keywords" content="cool dude anthonyec web design front end tags"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+	<!-- <meta http-equiv="refresh" content="1"> -->
+</head>
+
+<body>
+	<div class="content">
+		<div class="containers">
+			<div class="container left">
+				<div class="page" id="page-home">
+					<!-- <a href="#" onclick="showPage('#page-home');" class="back"></a> -->
+
+					<ul>
+						<li class="icon"><img src="https://anthonycossins.com/stuff/images/play-icon.png" alt="Play"></li>
+						<li><a href="https://anthonycossins.com/stuff/play/">Web Browser</a></li>
+						<li><a href="https://github.com/anthonyec/bluehouse/releases/download/1.0/BlueHouse_Windows.zip">Windows</a></li>
+						<li><a href="https://github.com/anthonyec/bluehouse/releases/download/1.0/BlueHouse_Mac.zip">Mac OSX</a></li>
+						<li><a href="https://github.com/anthonyec/bluehouse/releases/download/1.0/BlueHouse_Linux.zip">Linux</a><span class="message">I haven't tested this yet</span></li>
+					</ul>
+
+					<ul>
+						<li class="icon"><img src="https://anthonycossins.com/stuff/images/extras-icon.png" alt="Extras"></li>
+						<li><a href="index.html#devblog">Development Blog</a></li>
+						<li><a href="index.html#controls" onclick="showPage('#page-controls'); showCover('#cover2');">Keyboard Controls</a></li>
+						<li><a href="index.html#credits" onclick="showPage('#page-credits'); showCover('#cover3');">Credits</a></li>
+					</ul>
+				</div>
+
+				<div class="page" id="page-controls">
+					<a href="index.html#" onclick="showPage('#page-home'); resetCover();" class="back"></a>
+
+					<ul>
+						<li>Controls</li>
+						<li>
+							<span class="key">W</span>
+							<span class="key">A</span>
+							<span class="key">S</span>
+							<span class="key">D</span>
+							<span class="key-info">Movement</span>
+						</li>
+
+						<li>
+							<span class="key">LEFT CLICK</span>
+							<span class="key-info">Interact</span>
+						</li>
+
+						<li>
+							<span class="key">SPACE</span>
+							<span class="key-info">Jump</span>
+						</li>
+					</ul>
+
+					<ul>
+						<li>Debug Controls</li>
+						<li>
+							<span class="key">ESC</span>
+							<span class="key-info">Pause</span>
+						</li>
+
+						<li>
+							<span class="key">F7</span>
+							<span class="key-info">Free Camera (buggy)</span>
+						</li>
+
+						<li>
+							<span class="key">F8</span>
+							<span class="key-info">Teleport Menu</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="page" id="page-credits">
+					<a href="index.html#" onclick="showPage('#page-home'); resetCover();" class="back"></a>
+
+					<ul>
+						<li>Audio (freesound.org usernames)</li>
+						<li>plagasul</li> <!-- rarexport-05.wav -->
+						<li>oyez</li>
+						<li>NoiseCollector</li>
+						<li>ERH</li>
+						<li>Leady</li>
+						<li>fresco</li>
+						<li>Erdie</li>
+						<li>offthesky</li> <!-- chair squeek.wav -->
+					</ul>
+
+					<ul>
+						<li>Character Concept Art and Music</li>
+						<li>Jack Bzowski</li>
+					</ul>
+
+					<ul>
+						<li>Created By</li>
+						<li>Anthony Cossins</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="container right">
+				<div class="cover" id="cover2"></div>
+				<div class="cover" id="cover3"></div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<img src="https://anthonycossins.com/stuff/images/eyes.png" alt="">
+			<span>2012</span>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+		function showPage ( pageName ) {
+			$(".page").fadeOut("fast").delay(300).queue( function(n) {
+				$(pageName).fadeIn("fast");
+				n();
+			});
+		}
+
+		function showCover ( coverName ) {
+			$(".cover").fadeOut("fast").delay(300).queue( function(n) {
+				$(coverName).fadeIn("fast");
+				n();
+			});
+		}
+
+		function resetCover () {
+			$(".cover").fadeOut("fast");
+		}
+	</script>
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-35803367-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+
+</html>

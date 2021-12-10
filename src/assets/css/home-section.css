@@ -1,0 +1,203 @@
+.home-section {
+  color: var(--text-color);
+  max-width: 1600px;
+  font-size: 24px;
+  line-height: 1.35;
+  padding: 0 120px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.home-section:first-of-type {
+  margin-top: 2em;
+}
+
+.home-section:target {
+  animation: highlight-target 1s ease-in-out forwards;
+  position: relative;
+}
+
+.home-section:target:after {
+  display: none; /* TODO: This affects layout too much. */
+  content: '';
+  border-radius: 20px;
+  left: 6px;
+  right: 6px;
+  top: 0px;
+  bottom: -5px;
+  box-shadow: 0 0 0 5px #F23B39;
+  position: absolute;
+  pointer-events: none;
+  animation: fade-out 1s 1s ease-in-out forwards;
+}
+
+@keyframes highlight-target {
+  10% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.home-section__title {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.home-section__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.home-section__item a:link,
+.home-section__item a:visited {
+  color: var(--text-color);
+  display: block;
+}
+
+/* HAHAH THIS IS MESSY OH WELL! */
+.home-section__items--grid .home-section__item a:hover .home-section__item-title {
+  border-bottom: 2px solid var(--text-color);
+}
+
+.home-section__items--list .home-section__item a:hover span:not(.home-section__item-date) {
+  border-bottom: 2px solid var(--text-color);
+}
+
+/* TODO: Ah list and grid should probably just be separate. */
+.home-section__items--list .home-section__item {
+  margin-bottom: 2px;
+}
+
+.home-section__items--grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.home-section__items--list {
+  padding-top: 15px;
+}
+
+.home-section__items--grid .home-section__item {
+  width: 33.33%;
+  padding: 15px;
+}
+
+.home-section__thumbnail-container {
+  background-color: #eee;
+  padding: 37.5%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* TODO: Make separate class */
+.home-section__thumbnail-container .home-section__thumbnail {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  padding: 0 20px;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.home-section__thumbnail {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+html[data-theme='dark'] .home-section__thumbnail {
+  filter: grayscale(100%);
+}
+
+.home-section__item-title {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.home-section__item-date,
+.home-section__item-description {
+  opacity: 0.6;
+}
+
+.home-section__item-date {
+  margin-right: 15px;
+}
+
+@media(max-width: 1050px) {
+  .home-section__items--grid .home-section__item {
+    width: 50%;
+  }
+}
+
+@media(max-width: 1100px) {
+  .home-section {
+    padding: 0 38px;
+  }
+}
+
+@media(max-width: 768px) {
+  .home-section {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+
+  .home-section__items {
+    margin-bottom: 20px;
+  }
+
+  .home-section__items--list .home-section__item {
+    margin-bottom: 5px;
+  }
+
+  .home-section__item-date {
+    display: none;
+  }
+}
+
+@media(max-width: 500px) {
+  .home-section__items--grid .home-section__item {
+    width: 100%;
+  }
+}
+
+@media(max-width: 480px) {
+  .home-section {
+    max-width: 380px;
+    padding: 0 18px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .home-section__title {
+    margin-bottom: 15px;
+  }
+
+  .home-section__items {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,96 @@
+{{>header}}
+
+{{#concatCSS}}
+  <link rel="stylesheet" href="/assets/css/home-section.css">
+  <link rel="stylesheet" href="/assets/css/read-more-button.css">
+{{/concatCSS}}
+
+{{>profile}}
+
+{{>nav}}
+
+<section class="home-section" id="projects">
+  <h2 class="home-section__title">
+    Projects
+  </h2>
+  <ul class="home-section__items home-section__items--grid">
+    <li class="home-section__item">
+      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" rel="noreferrer"`>
+        <img class="home-section__thumbnail" src="./assets/images/powerlet.jpg" alt="Screenshot of the Chrome extension Powerlet">
+        <span class="home-section__item-title">Powerlet.</span>
+        <span class="home-section__item-description">Chrome Extension to find and run bookmarklets.</span>
+      </a>
+    </li>
+    <li class="home-section__item">
+      <a href="https://saladroom.net?ref=anthonycossins" rel="noreferrer"`>
+        <img class="home-section__thumbnail" src="./assets/images/salad_room.jpg" alt="Thumbnail of the Salad Room logo">
+        <span class="home-section__item-title">Salad Room.</span>
+        <span class="home-section__item-description">The easiest way to share stuff between devices.</span>
+      </a>
+    </li>
+    <li class="home-section__item">
+      <a href="https://instagram.com/handicons/" rel="noreferrer"`>
+        <img class="home-section__thumbnail" src="./assets/images/handicons.jpg" alt="Thumbnail showing a hand icon">
+        <span class="home-section__item-title">Hand Icons.</span>
+        <span class="home-section__item-description">Collection of hand pictograms found around the world.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section class="home-section" id="pins">
+  <h2 class="home-section__title">
+    Pins
+  </h2>
+  <ul class="home-section__items home-section__items--grid">
+    {{#posts}}
+      {{#pinned}}
+        <li class="home-section__item">
+          <a href="{{path}}">
+            <div class="home-section__thumbnail-container">
+              <img class="home-section__thumbnail" src="{{path}}/{{thumbnail}}" alt="{{thumbnail_alt}}" loading="lazy">
+            </div>
+            <span class="home-section__item-title">{{title}}.</span>
+            <span class="home-section__item-description">{{description}}</span>
+          </a>
+        </li>
+      {{/pinned}}
+    {{/posts}}
+  </ul>
+</section>
+
+<section class="home-section" id="posts">
+  <h2 class="home-section__title">
+    Posts
+  </h2>
+  <ul class="home-section__items home-section__items--list">
+    {{#posts}}
+      <li class="home-section__item">
+        <a href="{{path}}">
+          <span class="home-section__item-date">{{#formatDate}}{{date}}{{/formatDate}}</span>
+          <span>{{title}}</span>
+        </a>
+      </li>
+    {{/posts}}
+  </ul>
+  <!-- <a class="read-more-button" href="/posts">
+    Read more <img class="read-more-button__icon" src="/assets/images/arrow_right.png">
+  </a> -->
+</section>
+
+<section class="home-section" id="contact">
+  <h2 class="home-section__title">
+    Contact
+  </h2>
+  <ul class="home-section__items home-section__items--list">
+    {{#contact}}
+      <li class="home-section__item">
+        <a href="{{href}}">
+          <span>{{title}}</span>
+        </a>
+      </li>
+    {{/contact}}
+  </ul>
+</section>
+
+{{>footer}}

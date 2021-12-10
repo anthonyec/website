@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-gb">
+  <head>
+    <title>Conference visualisations</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Anthony Cossins has a website on the internet and this is it.">
+    <meta name="keywords" content="just, a, great, guy">
+
+    <meta property="og:title" content="Conference visualisations"/>
+    <meta property="og:description" content="Anthony Cossins has a website on the internet and this is it."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+
+    <meta name="twitter:title" content="Conference visualisations">
+    <meta name="twitter:description" content="Anthony Cossins has a website on the internet and this is it.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="">
+
+    <link rel="icon" type="image/png" href="../../favicon.png">
+
+    <link rel="stylesheet" href="../../assets/css/global-c=1614033677761011269.css">
+    <link rel="stylesheet" href="../../assets/css/default-c=1614033677761011269.css">
+
+    <script async type="text/javascript" src="https://plausible.io/js/analytics.js"></script>
+
+    <style>
+      body {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <link rel="stylesheet" href="../../assets/css/article-c=211.css">
+
+<div class="navbar">
+  <a class="navbar__home" href="../../index.html">
+    <div class="bio">
+      <div class="bio__icon">
+        <img class="bio__icon-img" src="../../assets/images/blink_animation.gif" alt="A head as a logo">
+      </div>
+      <div class="bio__details">
+        <div class="bio__name">
+          Anthony Cossins
+        </div>
+      </div>
+    </div>
+  </a>
+
+
+</div>
+
+
+<style>
+  body {
+    background: white;
+  }
+</style>
+
+<div class="l-contain">
+  <div class="article">
+    <div class="contain">
+      <h1>
+        Conference visualisations
+      </h1>
+      <h2 class="overview">
+        Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event.
+      </h2>
+      <style>
+    .video-window {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+</style>
+
+<h2 id="problem">Problem</h2>
+<p>For a global bank, Signal Noise designed looping, screen saver style visualisations which pulled in data and content in real time about the different topics being discussed at the conference. This information would originate from people answering quick questions through iPad kiosks located around the conference.</p>
+
+<p>The iPad kiosks also allowed people to submit their own questions and then if approved, would be presented to other attendees to be answered. This meant the system needed a way for moderators to view submitted questions and approve them as necessary.</p>
+
+<h2 id="limitations">Limitations</h2>
+<p>We had just two weeks to have it ready for the event. This was a hard deadline as this is when the event was taking place.</p>
+
+<p>The visualisation and kiosk apps had to handle the possibility of the internet connection dropping. Both apps also had to be very robust in handling all sorts of input and interactions that users would throw at it. Having to restart the app wasn’t a possibility.</p>
+
+<p>The kiosk app that took users submissions had to work on iPads used as kiosks that would be active for many hours. Users could also submit questions via the website. This meant the app had to work on Blackberry 10, Windows Phone and Android devices.</p>
+
+<h2 id="solutions">Solutions</h2>
+<p>The solution was to split up the work of the three apps between three front-end developers, with each working on either the visualisations, kiosk and backend. My focus was the kiosk app.</p>
+
+<p>Five MacBook pros would also be rented for the event. We would then set up machine with the required software.</p>
+
+<p>The visualisation would randomly select animations to play and loop. However, the logic to the selection had to be smart and not completely random so that repeating animations would not appear one after another by chance.</p>
+
+<h2 id="my-role">My Role</h2>
+<h3 id="continuous-testing">Continuous testing</h3>
+<p>Testing for the answer submission app was done throughout developing it. It had to work across Android, iOS, Windows Phone and Blackberry as well as in kiosk mode on the iPads at the event. The test strategy was beyond just viewport size. Based on the audience from analytics from the bank.</p>
+
+<p>I chose the devices based on what was the best selling on Amazon. This is because the best selling devices are usually the best for value, and are not high-end phones. They tend more towards lower mid range devices. We got 1 device for each OS as well as using our own phone to test some high-end phones (we all have fancy phones in the office).</p>
+
+<video src="videos/slider.mp4" muted="" playsinline="" loop="" autoplay="" class="video-window"></video>
+<p><em>Example of the slider question.</em></p>
+
+<video src="videos/multiple.mp4" muted="" playsinline="" loop="" autoplay="" class="video-window"></video>
+<p><em>Example of the multple answers question.</em></p>
+
+<video src="videos/admin_screen.mp4" muted="" playsinline="" loop="" autoplay="" class="video-window"></video>
+<p><em>Admin panel.</em></p>
+
+<p>Surprising Blackberry 10 wasn’t the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.</p>
+
+<p><img src="images/IMG_20151107_121704_web.jpg" alt="Five identical MacBook Pros lined up in a row on a desk" /></p>
+
+<p>For the first conference, there were five different screens to show the visualisation. We rented
+five MacBook Pros and installed Apache, PHP and Chrome. I quickly put together a package of files that includes a shell script to install and setup the machines automatically. This was needed because we were still making changes to the code base and needed a way to setup the machines relatively quickly often.</p>
+
+<h2 id="late-night-fixes">Late night fixes</h2>
+<p><img src="images/IMG_20151104_191836_web.jpg" alt="Projector on the floor projecting the visualisation on a office wall" /></p>
+
+<p>We came in on the weekend to spend extra time to get it finished before the conference on Monday. We had a mock setup of a visualisation by putting it on a projector. This was not the accurate physical size the of the displays at the event (they were many times bigger), however by zooming scaling the webpage up it allowed us to view section of the visualisations at approximate size. It also allowed us to test contrast levels and colour of text and graphics then adjust accordingly.</p>
+
+<p>Hours away from midnight on Sunday night when we found a serious bug with the visualisation. Sometimes the visualisation would pause and not break the loop.</p>
+
+<h2 id="day-of-the-conference">Day of the conference</h2>
+
+<p>On the day of the conference, we turned up early to the hotel. We brought with us all the equipment that needed to be set up. We had to go round and set up five machines on various different screens. We were on site for first few conferences to help set up the visualisation and be on call for tech support.</p>
+
+<p><img src="images/IMG_20151109_185549_web.jpg" alt="Projector on the floor projecting the visualisation on a office wall" /></p>
+
+<h2 id="lessons-learned">Lessons learned</h2>
+<h3 id="developers-are-users-too">Developers are users too</h3>
+<p>Since the first conference, there have been over twenty conferences over the last two years. Each with a different set of questions, text and graphics. Over this time I helped onboard new developers to the project (got to increase that <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>). During this time I learned what were the main pain points from a development perspective. So this year during some downtime at the studio I spent time to improving the development process. I re-wrote all the documentation to help share knowledge that was only known by word of mouth. Originally the documentation was one page. It has been expanded to thirteen structured pages explaining topics from deployment and conference life cycle.</p>
+
+<h3 id="dont-use-manual-procedures">Don’t use manual procedures</h3>
+<blockquote>
+  <p>“People just aren’t as repeatable as computers. Nor should we expect them to be.”
+<cite>Pragmatic programmer, p231</cite></p>
+</blockquote>
+
+<p>A major difficulty with the setup was the reliance on Apache and PHP already have been installed with the right configuration on the developer’s local machine. I removed this requirement by migrating the project to use Vagrant. This reduced the dependencies down from nine to five and meant that setup was as easy as running 2 commands, <code class="language-plaintext highlighter-rouge">npm install</code> and <code class="language-plaintext highlighter-rouge">vagrant up</code>. On any future projects that involve setting up machines consistently, I would invest some time to automate this procedure.</p>
+
+<p>After setting up a conference became more routine, Signal Noise were required less to be on site and just provide support over the phone and email. This meant we could no longer assume people setting up the conference had the knowledge or experience to do so. This led to me creating an installer application that would set up the visualisation machines. This app would disable system functions such as sleep and notifications, and make sure the visualisation opened fullscreen at startup. Some other projects now also require this functionality, so an internal project managed by me called Bigscreen is in development now.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="lets-talk">
+  <h2 class="lets-talk__title">
+    Let’s talk<span class="js-typey-container"> <span class="typey js-typey">
+      <noscript>work</noscript></span></span><span class="typey-cursor"></span>
+  </h2>
+
+  <a href="../../cdn-cgi/l/email-protection.html#f0919e84989f9e89939f8383999e83b0979d91999cde939f9d" class="lets-talk__button button">
+    <img src="../../assets/images/icons/mail.svg" class="button__icon">
+    Email me
+  </a>
+
+  <a href="../../wechat.html" class="lets-talk__button button">
+    <img src="../../assets/images/icons/message_circle.svg" class="button__icon">
+    WeChat
+  </a>
+</div>
+
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../assets/js/typey.js"></script>
+<script>
+  (function() {
+    var typey = new Typey({
+      target: document.querySelectorAll('.js-typey')[0],
+      sequence: [
+
+        'animation',
+
+        'mobile',
+
+        'work',
+        '',
+      ],
+      onStop() {
+        document.querySelectorAll('.js-typey-container')[0].innerText = '!';
+        document.querySelectorAll('.typey-cursor')[0].classList.add(
+          'typey-cursor--hide'
+        );
+      },
+    });
+
+    var $letsTalk = document.querySelectorAll('.lets-talk')[0];
+
+    function onScroll() {
+      var scroll = document.body.scrollTop || window.scrollY;
+
+      if (scroll > $letsTalk.offsetTop - window.innerHeight) {
+        window.removeEventListener('scroll', onScroll, false);
+
+        setTimeout(function() {
+          typey.start();
+        }, 300);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, false);
+  })();
+</script>
+
+
+  </body>
+</html>

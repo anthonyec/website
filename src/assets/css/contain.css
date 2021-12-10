@@ -1,0 +1,12 @@
+.contain {
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .contain {
+    max-width: 380px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

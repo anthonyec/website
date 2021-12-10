@@ -1,0 +1,19 @@
+{
+  "name": "anthonyec.github.io",
+  "version": "1.0.0",
+  "description": "My website, my rulez!!",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev static-build ./src ./dist -f -w",
+    "build": "git submodule update --init --recursive --depth=1 && static-build ./src ./dist -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonyec/anthonyec.github.io.git"
+  },
+  "author": "Anthony Cossins",
+  "homepage": "https://github.com/anthonyec/anthonyec.github.io#readme",
+  "devDependencies": {
+    "static-build": "github:anthonyec/static_build#a1ddbbd1d29a47b4c0891076904254749abbe5a8"
+  }
+}

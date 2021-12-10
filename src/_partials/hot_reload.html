@@ -1,0 +1,16 @@
+<script>
+  async function poll() {
+    try {
+      const response = await window.fetch('http://localhost:9876', { mode: 'no-cors' });
+      window.location.reload();
+    } catch(err) {
+      console.log(err);
+
+      setTimeout(() => {
+        poll();
+      }, 1000);
+    }
+  }
+
+    poll();
+</script>
