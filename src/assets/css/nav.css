@@ -50,6 +50,7 @@
   text-decoration: none;
   margin-right: 15px;
   transition: 0.5s background ease;
+  overflow: hidden;
 }
 
 .nav__nav-link img {
