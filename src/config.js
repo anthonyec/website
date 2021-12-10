@@ -83,6 +83,11 @@ module.exports = {
         content: fs.readFileSync('./src/humans.txt', 'utf8')
       },
       {
+        slug: 'robots.txt',
+        path: '/',
+        content: fs.readFileSync('./src/robots.txt', 'utf8')
+      },
+      {
         slug: 'index.html',
         path: '/',
         content: fs.readFileSync('./src/index.html', 'utf8')
