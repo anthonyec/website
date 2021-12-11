@@ -103,7 +103,7 @@
 }
 
 .post code {
-  background: rgba(0, 0, 0, 0.1);
+  background-color: var(--post-code-background-color);
   border-radius: 0;
   padding: 2px 4px;
 }
@@ -122,6 +122,8 @@
 }
 
 .post table {
+  color: inherit;
+  font-size: inherit;
   width: 100%;
   text-align: left;
 }
@@ -134,7 +136,7 @@
 
 .post hr {
   border: 0;
-  border-top: 2px solid black;
+  border-top: 2px solid var(--text-color);
 }
 
 /* Image paths ending with .gif are illustrations. */
