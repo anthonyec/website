@@ -141,7 +141,6 @@ module.exports = {
     fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'cv.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
     fs.cpSync(path.join('./src', 'favicon.ico'), path.join('./dist', 'favicon.ico'));
-    fs.cpSync(path.join('./src', '_redirects'), path.join('./dist', '_redirects'));
 
     Object.keys(scripts).forEach((hash) => {
       const script = scripts[hash];
