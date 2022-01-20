@@ -105,6 +105,7 @@ module.exports = {
       '/work/findbot': '/posts/findbot-case-study',
       '/work/conference': '/posts/ubs-conference-case-study',
       '/work/totaljobs': '/posts/total-jobs',
+      '/cv': '/cv.pdf',
 
       // Outbound links.
       '/redirects/london-creative-coding':
@@ -115,7 +116,6 @@ module.exports = {
       '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
       '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen'
     });
-
 
     return [...posts.reverse(), ...standalone, ...oldPageRedirects]
   },
