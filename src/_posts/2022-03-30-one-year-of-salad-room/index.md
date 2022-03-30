@@ -12,7 +12,7 @@ You’re one of the rare darlings that I’ve released into the world. Most of t
 
 Fun fact: Salad Room isn’t a sentient being, it’s a [website](https://saladroom.net) on the internet! Use it to share files with your friends, family or even your colleagues!
 
-Since the launch it's used daily by people all over the world. The analytics may be [basic by design](https://github.com/saladroom/help/blob/main/faq.md#do-you-track-analytics) (see also laziness), but there's still some interesting insights.
+Since the launch, it has been used daily by people all over the world. The analytics may be [basic by design](https://github.com/saladroom/help/blob/main/faq.md#do-you-track-analytics) (see also laziness), but there's still some interesting insights.
 
 ![Illustration of a graph showing monthly unique visitors over 1 year.](./graph.gif)
 
@@ -24,7 +24,7 @@ Since the launch it's used daily by people all over the world. The analytics may
 
 **A [hella-la-la a lot](https://www.youtube.com/watch?v=5mFPS6ln6xk) of messages and files were sent.** I never implemented a way to keep count of messages sent or bytes transferred. It's tricky to get an exact number out of AWS with stuff [expiring after 24hrs](https://github.com/saladroom/help/blob/main/faq.md#how-long-do-files-stay-on-the-server). I _can_ say though it's roughly 100s of GBs!
 
-Salad Room was the result of a project to finish and release something. So it's nice to be able to say that more people who are not me use it, and more often than I do. That has kept me motivated to continue to work on it for [the past 12 months](./features.html).
+Salad Room was the result of a project to finish and release something. So it's nice to be able to say that more people who are not me use it, and they use it more often than I do. That has kept me motivated to continue to work on it for [the past 12 months](./features.html).
 
 Here's to the next year ~darling~.
 
