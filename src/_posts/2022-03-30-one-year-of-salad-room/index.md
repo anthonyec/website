@@ -2,6 +2,8 @@
 <!-- thumbnail: ./slice_of_cake.gif -->
 <!-- thumbnail_alt: Illustration of a slice of cake -->
 
+<!-- temp_meta_image: /slice_of_cake.png -->
+
 # One year of Salad Room
 
 Happy birthday Salad Room! It’s been one year since you were [“officially” launched](https://www.producthunt.com/posts/salad-room), and a little bit longer since you were created.
