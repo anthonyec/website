@@ -1,8 +1,7 @@
 <!-- pinned: true -->
 <!-- thumbnail: ./slice_of_cake.gif -->
 <!-- thumbnail_alt: Illustration of a slice of cake -->
-
-<!-- temp_meta_image: /slice_of_cake.png -->
+<!-- twitterSocialImage: ./slice_of_cake.png -->
 
 # One year of Salad Room
 
