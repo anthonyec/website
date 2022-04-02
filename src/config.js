@@ -23,7 +23,7 @@ module.exports = {
   },
 
   site: {
-    url: 'https://anthonycossins.com',
+    url: (process.env.context === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) || 'http://localhost:8080',
     title: 'Anthony Cossins',
     description:
       'Anthony Cossins has a website on the internet and this is it.',
@@ -55,7 +55,8 @@ module.exports = {
 
     return {
       formattedTitle,
-      url
+      url,
+      twitterSocialImage: page.twitterSocialImage ? path.join(site.url, page.path, page.twitterSocialImage) : path.join(site.url, './assets/images/twitter_social_image.png')
     };
   },
 
