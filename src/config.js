@@ -17,6 +17,23 @@ function memorize(key, callback) {
   return result;
 }
 
+function convertRelativeSourceToAbsolute(path, content) {
+  const regex = /src="(.*?).gif"/g;
+
+  return content.replaceAll(regex, (_, relativePath) => {
+    return `src="${path}/${relativePath}"`;
+  });
+}
+
+function getPostsWithContentForFeed(posts) {
+  return [...posts.reverse()].map((post) => {
+    return {
+      ...post,
+      content: convertRelativeSourceToAbsolute(post.path, post.content)
+    }
+  })
+}
+
 module.exports = {
   env: {
     dev: process.env.NODE_ENV === 'dev'
@@ -96,7 +113,8 @@ module.exports = {
       {
         slug: 'feed.xml',
         path: '/',
-        content: fs.readFileSync('./src/feed.xml', 'utf8')
+        content: fs.readFileSync('./src/feed.xml', 'utf8'),
+        postsAsFeed: getPostsWithContentForFeed(posts)
       }
     ];
 
