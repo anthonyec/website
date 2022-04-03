@@ -36,7 +36,7 @@ function convertRelativeSourceToAbsolute(path, content) {
 }
 
 function getPostsWithContentForFeed(posts) {
-  return [...posts.reverse()].map((post) => {
+  return [...posts].reverse().map((post) => {
     return {
       ...post,
       content: convertRelativeSourceToAbsolute(post.path, post.content)

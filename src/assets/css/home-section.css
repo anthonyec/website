@@ -130,6 +130,10 @@
   margin-bottom: 15px;
 }
 
+.home-section__thumbnail--pin {
+  mix-blend-mode: multiply;
+}
+
 html[data-theme='dark'] .home-section__thumbnail {
   filter: grayscale(100%);
 }
