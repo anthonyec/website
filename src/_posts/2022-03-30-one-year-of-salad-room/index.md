@@ -1,7 +1,7 @@
 <!-- pinned: true -->
 <!-- thumbnail: ./slice_of_cake.gif -->
-<!-- thumbnail_alt: Illustration of a slice of cake -->
-<!-- twitterSocialImage: ./slice_of_cake.png -->
+<!-- thumbnail_alt: Illustration of a slice of cake with one candle -->
+<!-- twitterSocialImage: ./slice_of_cake.gif -->
 
 # One year of Salad Room
 
@@ -13,7 +13,7 @@ Fun fact: Salad Room isn’t a sentient being, it’s a [website](https://saladr
 
 Since the launch, it has been used daily by people all over the world. The analytics may be [basic by design](https://github.com/saladroom/help/blob/main/faq.md#do-you-track-analytics) (see also laziness), but there's still some interesting insights.
 
-![Illustration of a graph showing monthly unique visitors over 1 year.](./graph.gif)
+![Illustration of a graph showing monthly unique visitors over 1 year.](graph.gif)
 
 **There are about 25-50 unique visitors per day.** The last 6 months have seen traffic numbers equivalent to the original launch month. There was a lull halfway through the year with 791 pageviews in August. It's now about ~3k pageviews each month.
 
@@ -21,10 +21,10 @@ Since the launch, it has been used daily by people all over the world. The analy
 
 **France is the biggest source of traffic.** My theory is it caught traction via word of mouth, starting with a post in a newsletter called [Un dernier onglet et j'arrête](https://dernieronglet.substack.com/p/un-dernier-onglet-et-jarrte?s=r#:~:text=%E2%86%92%20Un%20outil%20pour%20transf%C3%A9rer%20super%20facilement%20des%20fichiers%20d%27un%20ordinateur%20%C3%A0%20un%20t%C3%A9l%C3%A9phone%20ou%20un%20autre%20appareil%20(comme%20Airdrop%2C%20mais%20pour%20tous%C2%B7tes%20!)). Anyway, I like being [reminded](https://twitter.com/anthonyec/status/1368316225038745605) that the internet isn't only about the United States.
 
-**A [hella-la-la a lot](https://www.youtube.com/watch?v=5mFPS6ln6xk) of messages and files were sent.** I never implemented a way to keep count of messages sent or bytes transferred. It's tricky to get an exact number out of AWS with stuff [expiring after 24hrs](https://github.com/saladroom/help/blob/main/faq.md#how-long-do-files-stay-on-the-server). I _can_ say though it's roughly 100s of GBs!
+**A [hella-la-la a lot](https://youtu.be/5mFPS6ln6xk?t=9) of messages and files were sent.** I never implemented a way to keep count of messages sent or bytes transferred. It's tricky to get an exact number out of AWS with stuff [expiring after 24hrs](https://github.com/saladroom/help/blob/main/faq.md#how-long-do-files-stay-on-the-server). I _can_ say though it's roughly 100s of GBs!
 
-Salad Room was the result of a project to finish and release something. So it's nice to be able to say that more people who are not me use it, and they use it more often than I do. That has kept me motivated to continue to work on it for [the past 12 months](./features.html).
+Salad Room was the result of a project to finish and release something. So it's nice to be able to say that more people who are not me use it, and they use it more often than I do. That has kept me motivated to continue to work on it for [the past 12 months](features.html).
 
 Here's to the next year ~darling~.
 
-![Illustration of a slice of cake](./slice_of_cake.gif)
+![Illustration of a slice of cake](slice_of_cake.gif)
