@@ -18,9 +18,16 @@ function memorize(key, callback) {
 }
 
 function convertRelativeSourceToAbsolute(path, content) {
-  const regex = /src="(.*?)"/g;
+  const srcAttributeRegex = /src="(.*?)"/g;
+  const httpAtStartRegex = /^https?:\/\//;
 
-  return content.replaceAll(regex, (_, relativePath) => {
+  return content.replaceAll(srcAttributeRegex, (originalAttributeWithPath, relativePath) => {
+    const isAbsolutePath = relativePath.match(httpAtStartRegex) !== null;
+
+    if (isAbsolutePath) {
+      return originalAttributeWithPath;
+    }
+
     return `src="${path}/${relativePath}"`;
   });
 }
