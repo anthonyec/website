@@ -17,6 +17,9 @@ function memorize(key, callback) {
   return result;
 }
 
+// Doing this with regex is pretty bad. It could accidentally convert code
+// samples as it isn't exclusive to image tags. A better way to do this would be
+// to parse the HTML.
 function convertRelativeSourceToAbsolute(path, content) {
   const srcAttributeRegex = /src="(.*?)"/g;
   const httpAtStartRegex = /^https?:\/\//;
