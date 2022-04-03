@@ -13,7 +13,7 @@
     <title type="html">Anthony Cossins</title>
     <subtitle>Anthony Cossins has a RSS feed on the internet and this is it.</subtitle>
 
-    {{#posts}}
+    {{#page.postsAsFeed}}
       <item>
         <id>{{site.url}}{{path}}</id>
         <title type="html">{{title}}</title>
@@ -22,7 +22,7 @@
         <updated>{{#formatDateAsUTC}}{{date}}{{/formatDateAsUTC}}</updated>
         <content:encoded><![CDATA[{{#removeH1}}{{{content}}}{{/removeH1}}]]></content:encoded>
       </item>
-    {{/posts}}
+    {{/page.postsAsFeed}}
 
   </channel>
 </rss>

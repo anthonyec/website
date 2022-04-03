@@ -17,6 +17,33 @@ function memorize(key, callback) {
   return result;
 }
 
+// Doing this with regex is pretty bad. It could accidentally convert code
+// samples as it isn't exclusive to image tags. A better way to do this would be
+// to parse the HTML.
+function convertRelativeSourceToAbsolute(path, content) {
+  const srcAttributeRegex = /src="(.*?)"/g;
+  const httpAtStartRegex = /^https?:\/\//;
+
+  return content.replaceAll(srcAttributeRegex, (originalAttributeWithPath, relativePath) => {
+    const isAbsolutePath = relativePath.match(httpAtStartRegex) !== null;
+
+    if (isAbsolutePath) {
+      return originalAttributeWithPath;
+    }
+
+    return `src="${path}/${relativePath}"`;
+  });
+}
+
+function getPostsWithContentForFeed(posts) {
+  return [...posts.reverse()].map((post) => {
+    return {
+      ...post,
+      content: convertRelativeSourceToAbsolute(post.path, post.content)
+    }
+  })
+}
+
 module.exports = {
   env: {
     dev: process.env.NODE_ENV === 'dev'
@@ -96,7 +123,8 @@ module.exports = {
       {
         slug: 'feed.xml',
         path: '/',
-        content: fs.readFileSync('./src/feed.xml', 'utf8')
+        content: fs.readFileSync('./src/feed.xml', 'utf8'),
+        postsAsFeed: getPostsWithContentForFeed(posts)
       }
     ];
 

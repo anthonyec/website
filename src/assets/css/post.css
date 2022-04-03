@@ -142,12 +142,11 @@
 /* Image paths ending with .gif are illustrations. */
 .post img[src$='.gif'] {
   image-rendering: pixelated;
+  mix-blend-mode: multiply;
 }
 
 html[data-theme='dark'] .post img[src$='.gif'] {
-  /* background: gray; */
-  /* border-radius: 30px; */
-  /* padding: 50px 10px; */
+  mix-blend-mode: screen;
   filter: invert(100%) hue-rotate(190deg) brightness(120%);
 }
 
