@@ -18,7 +18,7 @@ function memorize(key, callback) {
 }
 
 function convertRelativeSourceToAbsolute(path, content) {
-  const regex = /src="(.*?).gif"/g;
+  const regex = /src="(.*?)"/g;
 
   return content.replaceAll(regex, (_, relativePath) => {
     return `src="${path}/${relativePath}"`;
