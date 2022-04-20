@@ -113,7 +113,7 @@
         x: getPageBoundingRect(targetLogo).x
       };
       const navButtonsBounds = getPageBoundingRect(navButtons);
-      const navGap = navButtonsBounds.x - targetBounds.x;
+      const navGap = targetBounds.width;
 
       function handleScroll() {
         const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
