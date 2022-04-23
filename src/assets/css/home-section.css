@@ -79,11 +79,13 @@
 
 /* HAHAH THIS IS MESSY OH WELL! */
 .home-section__items--grid .home-section__item a:hover .home-section__item-title {
-  border-bottom: 2px solid var(--text-color);
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 .home-section__items--list .home-section__item a:hover span:not(.home-section__item-date) {
-  border-bottom: 2px solid var(--text-color);
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 /* TODO: Ah list and grid should probably just be separate. */

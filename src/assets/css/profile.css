@@ -36,14 +36,24 @@
 
 .profile__link {
   border-bottom: 2px solid var(--text-color);
-  color: var(--link-color);
+  color: var(--text-color);
   /* padding-bottom: 0.05em; */
   text-decoration: underline;
+}
+
+.profile__link:hover {
+  color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
 }
 
 .profile__link--iplayer-pink:hover {
   color: #f34d97;
   border-color: #f34d97;
+}
+
+.profile__link--framer-blue:hover {
+  color: #0099FF;
+  border-color: #0099FF;
 }
 
 @media (max-width: 1060px) {

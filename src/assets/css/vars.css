@@ -5,6 +5,7 @@
 
   --link-color: #111;
   --link-background: transparent;
+  --link-hover-color: #F23B39;
   --link-hover-background: #d4f7ff;
 
   --nav-link-background: #d9d9d9;
@@ -21,6 +22,7 @@ html[data-theme='dark'] {
 
   --link-color: #96e7ff;
   --link-background: transparent;
+  --link-hover-color: #F23B39;
   --link-hover-background: rgba(212, 247, 255, 0.2);
 
   --nav-link-background: rgba(255, 255, 255, 0.6);
@@ -37,6 +39,7 @@ html[data-theme='overcast'] {
 
   --link-color: black;
   --link-background: transparent;
+  --link-hover-color: #F23B39;
   --link-hover-background: #c2dfe3;
 
   --nav-link-background: rgba(255, 255, 255, 1);
