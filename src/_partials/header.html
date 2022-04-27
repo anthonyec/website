@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-gb">
   <head>
-    <title>{{formattedTitle}}</title>
+    <title>{{ data.computed.formattedTitle }}</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{site.description}}" />
-    <meta name="keywords" content="{{site.keywords}}" />
+    <meta name="description" content="{{ data.site.description }}" />
+    <meta name="keywords" content="{{ data.site.keywords }}" />
 
-    <meta property="og:title" content="{{formattedTitle}}" />
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta property="og:title" content="{{ data.computed.formattedTitle }}" />
+    <meta property="og:description" content="{{ data.site.description }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{{twitterSocialImage}}}" />
+    <meta property="og:image" content="{{{ page.twitterSocialImage }}}" />
 
-    <meta name="twitter:title" content="{{formattedTitle}}" />
-    <meta name="twitter:description" content="{{site.description}}" />
+    <meta name="twitter:title" content="{{ data.computed.formattedTitle }}" />
+    <meta name="twitter:description" content="{{ data.site.description }}" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="{{{twitterSocialImage}}}" />
+    <meta name="twitter:image" content="{{{ page.twitterSocialImage }}}" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
 

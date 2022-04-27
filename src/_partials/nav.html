@@ -1,7 +1,7 @@
-{{#concatCSS}}
+{{#functions.concatCSS}}
   <link rel="stylesheet" href="/assets/css/nav.css" />
   <link rel="stylesheet" href="/assets/css/theme-toggle.css" />
-{{/concatCSS}}
+{{/functions.concatCSS}}
 
 <header class="nav js-nav">
   <a class="nav__logo js-target-logo" href="/">
@@ -41,7 +41,7 @@
   </button>
 </header>
 
-{{#script}}
+{{#functions.script}}
   <script>
     const darkModeButton = document.querySelector('.js-dark-mode');
     const themes = ['light', 'overcast', 'dark'];
@@ -76,4 +76,4 @@
 
     document.querySelector('.js-dark-mode').classList.remove('theme-toggle--no-js');
   </script>
-{{/script}}
+{{/functions.script}}

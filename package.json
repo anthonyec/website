@@ -4,7 +4,7 @@
   "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev static-build ./src ./dist -f -w",
+    "start": "NODE_ENV=dev staticbuild ./src ./dist",
     "build": "git submodule update --init --recursive --depth=1 && static-build ./src ./dist -f"
   },
   "repository": {
