@@ -11,21 +11,21 @@
     <meta property="og:title" content="{{ data.computed.formattedTitle }}" />
     <meta property="og:description" content="{{ data.site.description }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{{ page.twitterSocialImage }}}" />
+    <meta property="og:image" content="{{{ data.computed.twitterSocialImage }}}" />
 
     <meta name="twitter:title" content="{{ data.computed.formattedTitle }}" />
     <meta name="twitter:description" content="{{ data.site.description }}" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:image" content="{{{ page.twitterSocialImage }}}" />
+    <meta name="twitter:image" content="{{{ data.computed.twitterSocialImage }}}" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
 
-    {{#concatCSS}}
+    {{#functions.concatCSS}}
       <link rel="stylesheet" href="/assets/css/reset.css" />
       <link rel="stylesheet" href="/assets/css/vars.css" />
       <link rel="stylesheet" href="/assets/css/body.css" />
       <link rel="stylesheet" href="/assets/css/contain.css" />
-    {{/concatCSS}}
+    {{/functions.concatCSS}}
 
     <script async defer type="text/javascript" data-domain="anthonycossins.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
   </head>

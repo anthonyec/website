@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Powerlet",
+    "description": "Chrome Extension to find and run bookmarklets.",
+    "href": "https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn",
+    "thumbnail": "./assets/images/powerlet.jpg",
+    "thumbnail_alt": "Screenshot of the Chrome extension Powerlet"
+  },
+  {
+    "title": "Salad Room",
+    "description": "The easiest way to share stuff between devices.",
+    "href": "https://saladroom.net?ref=anthonycossins",
+    "thumbnail": "./assets/images/salad_room.jpg",
+    "thumbnail_alt": "Thumbnail of the Salad Room logo"
+  },
+  {
+    "title": "Hand Icons",
+    "description": "Collection of hand pictograms found around the world.",
+    "href": "https://instagram.com/handicons/",
+    "thumbnail": "./assets/images/handicons.jpg",
+    "thumbnail_alt": "Thumbnail showing a hand icon"
+  }
+]
