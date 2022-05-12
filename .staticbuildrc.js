@@ -29,7 +29,7 @@ module.exports = {
     ];
 
     return [
-      ...posts,
+      ...posts.reverse(),
       ...standalone
     ]
   },
