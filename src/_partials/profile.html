@@ -151,27 +151,29 @@
       }
     }
 
-    const resetMain = main();
+    window.onload = () => {
+      const resetMain = main();
 
-    window.addEventListener('resize', () => {
-      resetMain();
-      main();
-    });
-
-    document.querySelector('.js-profile-logo').addEventListener('click', () => {
-      window.scrollTo({
-        top: document.querySelector('.js-nav').offsetTop,
-        behavior: 'smooth'
+      window.addEventListener('resize', () => {
+        resetMain();
+        main();
       });
-    });
 
-    document.querySelector('.js-target-logo').addEventListener('click', (evt) => {
-      evt.preventDefault();
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      document.querySelector('.js-profile-logo').addEventListener('click', () => {
+        window.scrollTo({
+          top: document.querySelector('.js-nav').offsetTop,
+          behavior: 'smooth'
+        });
       });
-    });
+
+      document.querySelector('.js-target-logo').addEventListener('click', (evt) => {
+        evt.preventDefault();
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    };
   </script>
 {{/functions.script}}
