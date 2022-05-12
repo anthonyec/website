@@ -1,7 +1,7 @@
 const path = require('path');
 
-module.exports = (globals) => {
-  const { data: { site }, page } = globals;
+module.exports = (context) => {
+  const { data: { site }, page } = context;
 
   const formattedTitle = page.title
     ? `${page.title} — ${site.title}`
