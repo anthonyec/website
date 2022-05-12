@@ -1,6 +1,10 @@
 const path = require('path');
 const fs = require('fs');
-const { getCollectionFromFS, getAssetsFromFS } = require('staticbuild');
+const {
+  getCollectionFromFS,
+  getAssetsFromFS,
+  getRedirectsFromMap
+} = require('staticbuild');
 
 // Doing this with regex is pretty bad. It could accidentally convert code
 // samples as it isn't exclusive to image tags. A better way to do this would be
@@ -34,8 +38,7 @@ module.exports = {
     layouts: './src/_layouts',
     partials: './src/_partials',
     functions: './src/_functions',
-    data: './src/_data',
-    hooks: './src/_hooks',
+    data: './src/_data'
   },
 
   getPages: async () => {
@@ -68,9 +71,31 @@ module.exports = {
       }
     ];
 
+    const redirects = getRedirectsFromMap({
+      outputDirectory: './dist/',
+      redirects: {
+        // Work pages that have moved to posts.
+        '/work/dashboard': '/posts/improving-car-dashboards-slightly',
+        '/work/findbot': '/posts/findbot-case-study',
+        '/work/conference': '/posts/ubs-conference-case-study',
+        '/work/totaljobs': '/posts/total-jobs',
+        '/cv': `/anthony_cossins_cv_2022.pdf?c=${Date.now()}`,
+
+        // Outbound links.
+        '/redirects/london-creative-coding':
+        'https://www.meetup.com/london-creative-coding/',
+        '/redirects/robot-oracles':
+        'http://www.fullstopnewparagraph.co.uk/client/robots/',
+        '/redirects/handicons': 'https://www.instagram.com/handicons/',
+        '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
+        '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen'
+      }
+    });
+
     return [
       ...posts.reverse(),
-      ...standalone
+      ...standalone,
+      ...redirects
     ]
   },
 
@@ -87,10 +112,17 @@ module.exports = {
         './src/_posts',
         './src/index.html',
         './src/feed.xml',
-        './src/404.html'
+        './src/404.html',
+        './src/cv.pdf'
       ]
     });
 
-    return [...assets];
+    const cv = {
+      filename: 'cv.pdf',
+      inputPath: './src/cv.pdf',
+      outputPath: './dist/anthony_cossins_cv_2022.pdf'
+    };
+
+    return [...assets, cv];
   }
 };
