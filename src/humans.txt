@@ -12,7 +12,6 @@
   Jack Bzowski - case study feedback.
 
 /* SITE */
-  Last update: 2017/05
   Language: English
   Doctype: XHTML 1.0 Transitional
-  Tech: VS Code, Folioscope and a custom made static site generator
+  Tech: VSCode, Folioscope and staticbuild

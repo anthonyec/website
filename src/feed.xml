@@ -5,7 +5,7 @@
   <channel>
     <link href="https://anthonycossins.com/feed.xml" rel="self" type="application/atom+xml"/>
     <link href="https://anthonycossins.com/" rel="alternate" type="text/html"/>
-    <updated>{{#formatDateAsUTC}}{{site.date}}{{/formatDateAsUTC}}</updated>
+    <updated>{{#functions.formatDateAsUTC}}{{data.site.date}}{{/functions.formatDateAsUTC}}</updated>
     <id>https://anthonycossins.com/feed.xml</id>
 
     <title type="html">Anthony Cossins</title>
@@ -13,12 +13,12 @@
 
     {{#page.postsAsFeed}}
       <item>
-        <id>{{site.url}}{{path}}</id>
+        <id>{{data.site.url}}{{path}}</id>
         <title type="html">{{title}}</title>
         <link href="{{site.url}}{{path}}" rel="alternate" type="text/html" title="{{title}}"/>
-        <published>{{#formatDateAsUTC}}{{date}}{{/formatDateAsUTC}}</published>
-        <updated>{{#formatDateAsUTC}}{{date}}{{/formatDateAsUTC}}</updated>
-        <content:encoded><![CDATA[{{#removeH1}}{{{content}}}{{/removeH1}}]]></content:encoded>
+        <published>{{#functions.formatDateAsUTC}}{{date}}{{/functions.formatDateAsUTC}}</published>
+        <updated>{{#functions.formatDateAsUTC}}{{date}}{{/functions.formatDateAsUTC}}</updated>
+        <content:encoded><![CDATA[{{#functions.removeH1}}{{{content}}}{{/functions.removeH1}}]]></content:encoded>
       </item>
     {{/page.postsAsFeed}}
 
