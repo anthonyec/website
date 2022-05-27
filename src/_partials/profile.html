@@ -16,164 +16,162 @@
   </div>
 </div>
 
-{{#functions.script}}
-  <script>
-    function getPageBoundingRect(element) {
-      const bounds = element.getBoundingClientRect();
+<script>
+  function getPageBoundingRect(element) {
+    const bounds = element.getBoundingClientRect();
 
-      return {
-        x: bounds.x + window.pageXOffset,
-        y: bounds.y + window.pageYOffset,
-        width: bounds.width,
-        height: bounds.height
-      }
+    return {
+      x: bounds.x + window.pageXOffset,
+      y: bounds.y + window.pageYOffset,
+      width: bounds.width,
+      height: bounds.height
     }
+  }
 
-    function getLocalBoundingRect(element) {
-      const bounds = element.getBoundingClientRect();
+  function getLocalBoundingRect(element) {
+    const bounds = element.getBoundingClientRect();
 
-      return {
-        x: element.offsetLeft,
-        y: element.offsetTop,
-        width: bounds.width,
-        height: bounds.height
-      }
+    return {
+      x: element.offsetLeft,
+      y: element.offsetTop,
+      width: bounds.width,
+      height: bounds.height
     }
+  }
 
-    function cloneOrUseExisting(element, existingClassName) {
-      return document.querySelector(existingClassName) ?
-        document.querySelector(existingClassName) :
-        element.cloneNode();
-    }
+  function cloneOrUseExisting(element, existingClassName) {
+    return document.querySelector(existingClassName) ?
+      document.querySelector(existingClassName) :
+      element.cloneNode();
+  }
 
-    function createProxyLogo(element) {
-      const bounds = element.getBoundingClientRect();
-      const cloned = cloneOrUseExisting(element, '.proxy-logo');
+  function createProxyLogo(element) {
+    const bounds = element.getBoundingClientRect();
+    const cloned = cloneOrUseExisting(element, '.proxy-logo');
 
-      cloned.className = 'proxy-logo';
-      cloned.style.position = 'fixed';
-      cloned.style.top = '0px';
-      cloned.style.opacity = '0';
-      cloned.style.left = '0px';
-      cloned.style.width = `${bounds.width}px`;
+    cloned.className = 'proxy-logo';
+    cloned.style.position = 'fixed';
+    cloned.style.top = '0px';
+    cloned.style.opacity = '0';
+    cloned.style.left = '0px';
+    cloned.style.width = `${bounds.width}px`;
 
-      // Using width because sometimes height is not available when image is loading.
-      cloned.style.height = `${bounds.width}px`;
-      cloned.style.borderRadius = '100px';
-      cloned.style.transformOrigin = 'top left';
-      cloned.style.zIndex = '999999';
-      cloned.style.pointerEvents = 'none';
-      document.body.append(cloned);
-      return cloned;
-    }
+    // Using width because sometimes height is not available when image is loading.
+    cloned.style.height = `${bounds.width}px`;
+    cloned.style.borderRadius = '100px';
+    cloned.style.transformOrigin = 'top left';
+    cloned.style.zIndex = '999999';
+    cloned.style.pointerEvents = 'none';
+    document.body.append(cloned);
+    return cloned;
+  }
 
-    function clamp(t, min, max) {
-      return Math.min(Math.max(t, min), max);
-    }
+  function clamp(t, min, max) {
+    return Math.min(Math.max(t, min), max);
+  }
 
-    function lerp(start, end, t) {
-      return start * (1 - t) + end * t;
-    }
+  function lerp(start, end, t) {
+    return start * (1 - t) + end * t;
+  }
 
-    function lerpBoundsFromTo(fromBounds, toBounds, fromPosition, toPosition, percent) {
-      const lerpedBounds = {
-        x: lerp(fromBounds.x, toBounds.x, percent),
-        y: lerp(fromBounds.y, toBounds.y, percent),
-        width: lerp(fromBounds.width, toBounds.height, percent),
-        height: lerp(fromBounds.height, toBounds.height, percent)
-      };
-
-      const scale = lerpedBounds.width / fromBounds.width;
-
-      return {
-        ...lerpedBounds,
-        scale,
-        percent
-      };
-    }
-
-    function getTimeProgress(fromPosition, toPosition) {
-      const distance = toPosition - fromPosition;
-      const rawPercent = (window.pageYOffset - fromPosition) / distance;
-      return clamp(rawPercent, 0, 1);
-    }
-
-    function main() {
-      const sourceLogo = document.querySelector('.js-profile-logo');
-      const targetLogo = document.querySelector('.js-target-logo');
-      const proxyLogo = createProxyLogo(sourceLogo);
-      const profile = document.querySelector('.js-profile');
-      const navButtons = document.querySelector('.js-nav-buttons');
-
-      const scrollPositionFrom = 0;
-      const { height: scrollPositionTo } = getPageBoundingRect(profile);
-
-      const sourceBounds = getLocalBoundingRect(sourceLogo);
-      const targetBounds = {
-        ...getLocalBoundingRect(targetLogo),
-        x: getPageBoundingRect(targetLogo).x
-      };
-      const navButtonsBounds = getPageBoundingRect(navButtons);
-      const navGap = targetBounds.width;
-
-      function handleScroll() {
-        const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
-        const navTimeProgress = getTimeProgress(scrollPositionTo - profile.clientHeight / 2, scrollPositionTo);
-
-        const navX = lerp(-navGap, 0, navTimeProgress);
-        const { t, x, y, scale } = lerpBoundsFromTo(
-          sourceBounds,
-          targetBounds,
-          scrollPositionFrom,
-          scrollPositionTo,
-          logoTimeProgress
-        );
-
-        sourceLogo.style.opacity = logoTimeProgress === 0 ? '1' : '0';
-        targetLogo.style.opacity = logoTimeProgress === 1 ? '1' : '0';
-
-        if (logoTimeProgress !== 0 && logoTimeProgress !== 1) {
-          proxyLogo.style.opacity = '1';
-        } else {
-          proxyLogo.style.opacity = '0';
-        }
-
-        proxyLogo.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
-        navButtons.style.transform = `translateX(${navX}px)`;
-      }
-
-      handleScroll();
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      }
-    }
-
-    window.onload = () => {
-      const resetMain = main();
-
-      window.addEventListener('resize', () => {
-        resetMain();
-        main();
-      });
-
-      document.querySelector('.js-profile-logo').addEventListener('click', () => {
-        window.scrollTo({
-          top: document.querySelector('.js-nav').offsetTop,
-          behavior: 'smooth'
-        });
-      });
-
-      document.querySelector('.js-target-logo').addEventListener('click', (evt) => {
-        evt.preventDefault();
-
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
+  function lerpBoundsFromTo(fromBounds, toBounds, fromPosition, toPosition, percent) {
+    const lerpedBounds = {
+      x: lerp(fromBounds.x, toBounds.x, percent),
+      y: lerp(fromBounds.y, toBounds.y, percent),
+      width: lerp(fromBounds.width, toBounds.height, percent),
+      height: lerp(fromBounds.height, toBounds.height, percent)
     };
-  </script>
-{{/functions.script}}
+
+    const scale = lerpedBounds.width / fromBounds.width;
+
+    return {
+      ...lerpedBounds,
+      scale,
+      percent
+    };
+  }
+
+  function getTimeProgress(fromPosition, toPosition) {
+    const distance = toPosition - fromPosition;
+    const rawPercent = (window.pageYOffset - fromPosition) / distance;
+    return clamp(rawPercent, 0, 1);
+  }
+
+  function main() {
+    const sourceLogo = document.querySelector('.js-profile-logo');
+    const targetLogo = document.querySelector('.js-target-logo');
+    const proxyLogo = createProxyLogo(sourceLogo);
+    const profile = document.querySelector('.js-profile');
+    const navButtons = document.querySelector('.js-nav-buttons');
+
+    const scrollPositionFrom = 0;
+    const { height: scrollPositionTo } = getPageBoundingRect(profile);
+
+    const sourceBounds = getLocalBoundingRect(sourceLogo);
+    const targetBounds = {
+      ...getLocalBoundingRect(targetLogo),
+      x: getPageBoundingRect(targetLogo).x
+    };
+    const navButtonsBounds = getPageBoundingRect(navButtons);
+    const navGap = targetBounds.width;
+
+    function handleScroll() {
+      const logoTimeProgress = getTimeProgress(scrollPositionFrom, scrollPositionTo);
+      const navTimeProgress = getTimeProgress(scrollPositionTo - profile.clientHeight / 2, scrollPositionTo);
+
+      const navX = lerp(-navGap, 0, navTimeProgress);
+      const { t, x, y, scale } = lerpBoundsFromTo(
+        sourceBounds,
+        targetBounds,
+        scrollPositionFrom,
+        scrollPositionTo,
+        logoTimeProgress
+      );
+
+      sourceLogo.style.opacity = logoTimeProgress === 0 ? '1' : '0';
+      targetLogo.style.opacity = logoTimeProgress === 1 ? '1' : '0';
+
+      if (logoTimeProgress !== 0 && logoTimeProgress !== 1) {
+        proxyLogo.style.opacity = '1';
+      } else {
+        proxyLogo.style.opacity = '0';
+      }
+
+      proxyLogo.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+      navButtons.style.transform = `translateX(${navX}px)`;
+    }
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
+
+  window.onload = () => {
+    const resetMain = main();
+
+    window.addEventListener('resize', () => {
+      resetMain();
+      main();
+    });
+
+    document.querySelector('.js-profile-logo').addEventListener('click', () => {
+      window.scrollTo({
+        top: document.querySelector('.js-nav').offsetTop,
+        behavior: 'smooth'
+      });
+    });
+
+    document.querySelector('.js-target-logo').addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  };
+</script>

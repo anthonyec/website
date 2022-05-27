@@ -1,7 +1,5 @@
-{{#functions.concatCSS}}
-  <link rel="stylesheet" href="/assets/css/nav.css" />
-  <link rel="stylesheet" href="/assets/css/theme-toggle.css" />
-{{/functions.concatCSS}}
+<link rel="stylesheet" href="/assets/css/nav.css"/>
+<link rel="stylesheet" href="/assets/css/theme-toggle.css"/>
 
 <header class="nav js-nav">
   <a class="nav__logo js-target-logo" href="/">
@@ -41,39 +39,37 @@
   </button>
 </header>
 
-{{#functions.script}}
-  <script>
-    const darkModeButton = document.querySelector('.js-dark-mode');
-    const themes = ['light', 'overcast', 'dark'];
-    const lastTheme = localStorage.getItem('lastTheme');
+<script>
+  const darkModeButton = document.querySelector('.js-dark-mode');
+  const themes = ['light', 'overcast', 'dark'];
+  const lastTheme = localStorage.getItem('lastTheme');
 
-    let currentTheme = lastTheme ? lastTheme : themes[0];
+  let currentTheme = lastTheme ? lastTheme : themes[0];
 
-    function setTheme(theme) {
-      document.querySelector('html').setAttribute('data-theme', currentTheme);
+  function setTheme(theme) {
+    document.querySelector('html').setAttribute('data-theme', currentTheme);
 
-      document.querySelector('.js-icon-dark').style.display = 'none';
-      document.querySelector('.js-icon-light').style.display = 'none';
-      document.querySelector('.js-icon-overcast').style.display = 'none';
-      document.querySelector('.js-icon-' + currentTheme).style.display = 'block';
+    document.querySelector('.js-icon-dark').style.display = 'none';
+    document.querySelector('.js-icon-light').style.display = 'none';
+    document.querySelector('.js-icon-overcast').style.display = 'none';
+    document.querySelector('.js-icon-' + currentTheme).style.display = 'block';
+  }
+
+  darkModeButton.addEventListener('click', () => {
+    const currentThemeIndex = themes.indexOf(currentTheme);
+    const nextThemeIndex = currentThemeIndex + 1;
+
+    if (nextThemeIndex > themes.length - 1) {
+      currentTheme = themes[0];
+    } else {
+      currentTheme = themes[nextThemeIndex];
     }
 
-    darkModeButton.addEventListener('click', () => {
-      const currentThemeIndex = themes.indexOf(currentTheme);
-      const nextThemeIndex = currentThemeIndex + 1;
-
-      if (nextThemeIndex > themes.length - 1) {
-        currentTheme = themes[0];
-      } else {
-        currentTheme = themes[nextThemeIndex];
-      }
-
-      setTheme(currentTheme);
-      localStorage.setItem('lastTheme', currentTheme);
-    });
-
     setTheme(currentTheme);
+    localStorage.setItem('lastTheme', currentTheme);
+  });
 
-    document.querySelector('.js-dark-mode').classList.remove('theme-toggle--no-js');
-  </script>
-{{/functions.script}}
+  setTheme(currentTheme);
+
+  document.querySelector('.js-dark-mode').classList.remove('theme-toggle--no-js');
+</script>
