@@ -70,8 +70,11 @@ module.exports = {
       title: 'Twitter', href: 'https://twitter.com/anthonyec',
     },
     {
-      title: 'LinkedIn', href: 'https://linkedin.com/in/anthonyec',
+      title: 'Dribbble', href: 'https://dribbble.com/anthonyec'
     },
+    {
+      title: 'LinkedIn', href: 'https://linkedin.com/in/anthonyec',
+    }
   ],
 
   getPageVariables(site, page) {
