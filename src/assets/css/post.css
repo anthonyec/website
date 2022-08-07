@@ -131,7 +131,8 @@
 .post blockquote {
   background: transparent;
   border-left: 8px solid var(--nav-link-background);
-  padding: 0.1em 1em;
+  padding: 0em 1em;
+  font-style: italic;
 }
 
 .post del {
