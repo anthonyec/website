@@ -4,13 +4,13 @@
 
 # Reading notes: A Philosophy of Software Design
 
-![Drawing of the book cover for A Philosophy of Software Design](./book_cover.gif)
+![Drawing of the book cover for A Philosophy of Software Design. It looks like blue spaghetti.](./book_cover.gif)
 
-Here are my notes on [A Philosophy of Software Design by John Ousterhout](https://www.amazon.co.uk/Philosophy-Software-Design-2nd-ebook/dp/B09B8LFKQL/ref=sr_1_1?crid=15RRQNVVGGPTM&keywords=A+Philosophy+of+Software+Design&qid=1659823295&sprefix=a+philosophy+of+software+design%2Caps%2C177&sr=8-1).
+Here are a few notes on [A Philosophy of Software Design by John Ousterhout](https://www.amazon.co.uk/Philosophy-Software-Design-2nd-ebook/dp/B09B8LFKQL/ref=sr_1_1?crid=15RRQNVVGGPTM&keywords=A+Philosophy+of+Software+Design&qid=1659823295&sprefix=a+philosophy+of+software+design%2Caps%2C177&sr=8-1).
 
 It's a small book at 178 pages that says what it needs to say simply and to the point.
 
-This isn't a review of the book, for that check out [Pragmatics Engineer's great post and video](https://blog.pragmaticengineer.com/a-philosophy-of-software-design-review/). I'm just noting parts that relate and stand out to me.
+This isn't a review of the book, for that check out [Pragmatics Engineer's great post and video](https://blog.pragmaticengineer.com/a-philosophy-of-software-design-review/). I'm just noting some parts that I relate to and that stand out to me.
 
 ## Shallow vs deep
 <!-- TODO: Add stuff about shallow code? -->
@@ -22,9 +22,9 @@ This isn't a review of the book, for that check out [Pragmatics Engineer's great
 
 > Information leakage occurs when a design decision is reflected in multiple modules.
 
-## Together or apart?
+## Better together or better apart?
 
-It's hard to decide when pieces of code should be separate or together. Here are some good points to think about when deciding.
+When reading this chapter, I was reminded of a little side project I had worked on.
 
 > Bring pieces of code together is the most beneficial if they are closely related [...] Here are a few indications that two pieces of code are related:
 > - They share information.
@@ -33,7 +33,11 @@ It's hard to decide when pieces of code should be separate or together. Here are
 > - It is hard to understand one of the piece of code without looking at the other.
 <!-- p.60 -->
 
-I was reminded of a [small drawing tool](https://github.com/anthonyec/211203_wiggle_path/) I was creating. I tried to "clean" up the code by moving things into more generalized modules.
+It's a [small drawing tool](https://github.com/anthonyec/211203_wiggle_path/) that allows you to create vector networks out of nodes and connections, [like in Figma](https://youtu.be/5x2uHUB_pzw?t=30). But unlike Figma, the lines in the network can be animated making them shaky and wiggly.
+
+After a messy prototype, I tried to "clean" things up by splitting the code into generalised classes. These included a class to create the HTML canvas and a class to render the drawing. Another 2 classes handled data structures such as the [graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for connections between nodes and [spatial hashing](https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/spatial-hashing-r2697/) for [hit testing](https://en.wikipedia.org/wiki/Hit-testing).
+
+Setting it up looked a bit like this:
 
 ```ts
 const [_, context] = createCanvas2D();
@@ -41,31 +45,29 @@ const drawingGraph = createDrawingGraph();
 const renderer = createRenderer(context, drawing);
 const spatialStructure = createSpatialStructure();
 
-// Spatial structure needs to be updated
-// whenever the drawing graph changes.
 spatialStructure.parseFromGraph(drawing);
 ```
 
-However, this made the code hard to work with and introduced the need to keep parts of it in sync, `drawingGraph` and `spatialStructure`.
+But having these generalised classes made the project harder to work with. I had to switch between files constantly for simple features, and some parts relied on data from other bits. For example the `spatialStructure` needs to be updated each time the `drawingGraph` changes, which is often when drawing.  It could get out-of-sync easily if I'm not careful.
 
-A better solution would be to instantiate a generalized module inside another because they are used together and share information.
+A better solution would be to instantiate a generalized module inside another because they are used together and share information. Or worry about generalising later. <!-- TODO: Reword -->
 
 ## Code comments
 
-One of my favourite quotes in the book is an answer to the belief that comments should be avoided because good code will document itself.
+In my career I've been told many times that "good code is self documenting", so don't write comments and just make code good!
+
+I've always felt that this was the wrong way to think about things but couldn't succinctly say why. But now I can, and it's one of my favourite quotes in the book:
 
 > If users must read the code of a method in order to use it, then there is no abstraction.
 <!-- p.97 -->
 
-This is a good rule of thumb for writing comments. <!-- TODO: Expand on -->
+<!-- TODO: Add note about if other cant read it, it's not obvious -->
+
+Of course you'll still need to write good comments and there's a whole chapter dedicated on how to do that. I really liked this rule of thumb when writing comments:
 
 > A first step towards writing good comments is to use different words in the comment from those in the name of the entity being described.
 <!-- p.105 -->
 
-I like that this book splits comments into interface and implementation. <!-- TODO: Expand on -->
-
-> The main goal of implementation comments is to help reads understand _what_ the code is.
-<!-- TODO: PUT A QUOTE HERE -->
+It's not a silver bullet and shouldn't be taken to the extreme. But it's a decent starting point to get you thinking about how best to explain something in code. I've already started putting it into practice.
 
 
-<!-- TODO: Add note about if other cant read it, it's not obvious -->
