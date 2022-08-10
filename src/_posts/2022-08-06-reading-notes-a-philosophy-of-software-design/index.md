@@ -33,7 +33,7 @@ When reading this chapter, I was reminded of a little side project I had worked 
 > - It is hard to understand one of the piece of code without looking at the other.
 <!-- p.60 -->
 
-It's a [small drawing tool](https://github.com/anthonyec/211203_wiggle_path/) that allows you to create vector networks out of nodes and connections, [like in Figma](https://youtu.be/5x2uHUB_pzw?t=30). But unlike Figma, the lines in the network can be animated making them shaky and wiggly.
+It's a [small drawing tool](https://github.com/anthonyec/211203_wiggle_path/) that allows you to create vector networks out of nodes and connections, [like in Figma](https://youtu.be/5x2uHUB_pzw?t=30). But unlike Figma, you can animate the lines in the network, making them all shaky and wiggly.
 
 After a messy prototype, I tried to "clean" things up by splitting the code into generalised classes. These included a class to create the HTML canvas and a class to render the drawing. Another 2 classes handled data structures such as the [graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)) for connections between nodes and [spatial hashing](https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/spatial-hashing-r2697/) for [hit testing](https://en.wikipedia.org/wiki/Hit-testing).
 
@@ -54,7 +54,7 @@ A better solution would be to instantiate a generalized module inside another be
 
 ## Code comments
 
-In my career I've been told many times that "good code is self documenting", so don't write comments and just make code good!
+Many times in my career I've been told that  "good code is self documenting", so don't write comments and just write code good!
 
 I've always felt that this was the wrong way to think about things but couldn't succinctly say why. But now I can, and it's one of my favourite quotes in the book:
 
@@ -68,6 +68,7 @@ Of course you'll still need to write good comments and there's a whole chapter d
 > A first step towards writing good comments is to use different words in the comment from those in the name of the entity being described.
 <!-- p.105 -->
 
-It's not a silver bullet and shouldn't be taken to the extreme. But it's a decent starting point to get you thinking about how best to explain something in code. I've already started putting it into practice.
+It's not a silver bullet and shouldn't be taken to the extreme. But it's a decent starting point to get you thinking about how best to explain something in code.
+ <!-- I've already started putting it into practice. -->
 
 
