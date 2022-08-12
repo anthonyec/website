@@ -72,3 +72,4 @@ It's not a silver bullet and shouldn't be taken to the extreme. But it's a decen
  <!-- I've already started putting it into practice. -->
 
 
+<!-- TODO: Note on the difference between interface and implementation. And that commenting on just "why" isn't useful, and actually commenting on the "what" is a valid comment. Most people say it's not. Most people say "comment on why" and not "what". Say why that's not great advice>
