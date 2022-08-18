@@ -13,7 +13,6 @@
 }
 
 .home-section:target {
-  animation: highlight-target 1s ease-in-out forwards;
   position: relative;
 }
 
@@ -30,20 +29,6 @@
   left: 25px;
   transform-origin: right center;
   animation: shakey-hand 800ms steps(1) infinite;
-}
-
-@keyframes highlight-target {
-  10% {
-    transform: scale(1);
-  }
-
-  20% {
-    transform: scale(1.05);
-  }
-
-  60% {
-    transform: scale(1);
-  }
 }
 
 @keyframes fade-out {

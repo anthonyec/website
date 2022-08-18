@@ -19,7 +19,7 @@
 }
 
 .nav__logo {
-  /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.8); */
+  /* box-shadow: 0 0 3px black; */
   border-radius: 100px;
   flex-shrink: 0;
   width: 60px;
@@ -46,9 +46,10 @@
   background: var(--nav-link-background);
   box-shadow: 0 0 3px black;
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border: 0;
   color: var(--nav-link-color);
+  text-shadow: 0 0 1px var(--nav-link-color);
   display: inline-flex;
   padding: 0 20px;
   align-items: center;
