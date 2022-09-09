@@ -50,7 +50,7 @@ Select a BIOS! I chose the European version of the BIOS.
 
 ## Setup the basic settings
 
-By default PCSX2 will use a small resolution for the window size. To fix this, in the menubar go to `Config > General Settings > GS Window` and set the custom window size to `1264 x 717`. <!-- TODO: find out why it;s this resolution. -->
+By default PCSX2 will use a small resolution for the window size. To fix this, in the menubar go to `Config > General Settings > GS Window` and set the custom window size to `1280 x 720`.
 
 ![Screenshot of general window settings](./images/screenshot_window_settings.png)
 _I have the preset slider disabled, but this is to [fix issues in Silent Hill 2](#fixes-for-silent-hill-2), and you can probably leave it enabled._
@@ -63,7 +63,15 @@ You'll also want check the box "Start in full-screen mode by default" if it's no
 
 ![Screenshot of the graphics settings panel](./images/screenshot_graphics.png)
 
-Go to `Config > Graphic Settings` and set the internal resolution to "2x Native (~720p)" which should match the Steam Deck's screen nicely.
+Go to `Config > Graphic Settings` to set the renderer to "Vulkan" and the internal resolution to "2x Native (~720p)".
+
+Next go to `Config > Graphic Settings > Hacks` and enable hacks by checking the box "Manual HW Hacks (Disables automatic settings if checked)".
+
+Then enable the following hack "Disable Depth Emulation".
+
+![Screenshot of hacks](./images/screenshot_hacks.png)
+
+These hacks help speed things up. For example in Silent Hill 2 I noticed without these settings enabled, certain sections would run in slow motion when using the flashlight.
 
 ## Add PCSX to your Steam Library
 
@@ -89,25 +97,11 @@ There may be ways to automatically starting the last loaded game, but I don't fi
 
 ## Fixes for Silent Hill 2
 
-When using the flashlight, the games starts to lag as if  everything is in slow motion. To fix you'll need to change settings in 2 places.
-
-First go to `Config > General Settings` and in the bottom left of the window, uncheck the box next to the preset slider.
-
-Then go to `Config > Graphic Settings > Hacks` and enable hacks by checking the box "Manual HW Hacks (Disables automatic settings if checked)".
-
-Then enable the following hacks:
-
-- Disable Depth Emulation
-- Disable Partial Invalidation
-
-![Screenshot of hacks](./images/screenshot_hacks.png)
-
-Also the pre-rendered cut-scenes ([FMVs](https://en.wikipedia.org/wiki/Full-motion_video)) were broken. I thought the first few seconds of the game were supposed to bne black with only sound, but then I realised it's probably not the art direction if every cut-scene starts like that.
+Pre-rendered cut-scenes ([FMVs](https://en.wikipedia.org/wiki/Full-motion_video)) are broken by default. I thought the first few seconds of the game were supposed to bne black with only sound, but then I realised it's probably not the art direction if every cut-scene starts like that.
 
 To fix this go to `Config > General Settings > Game Fixes`, enable fixes by checking the box "Enable manual game fixes (Not recommended)".
 
-Then enable the following fix:
-- Switch to Software renderer for FMVs
+Then enable the following fix "Switch to Software renderer for FMVs".
 
 ![Screenshot of game fixes](./images/screenshot_game_fixes.png)
 
