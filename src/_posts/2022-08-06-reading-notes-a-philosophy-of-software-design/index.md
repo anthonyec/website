@@ -10,7 +10,7 @@ Here are a few notes on [A Philosophy of Software Design by John Ousterhout](htt
 
 It's a small book at 178 pages that says what it needs to say simply and to the point.
 
-This isn't a review of the book, for that check out [Pragmatics Engineer's great post and video](https://blog.pragmaticengineer.com/a-philosophy-of-software-design-review/). I'm just noting some parts that I relate to and that stand out to me.
+This isn't a review of the book, for that check out [Pragmatic Engineer's great post and video](https://blog.pragmaticengineer.com/a-philosophy-of-software-design-review/). I'm just noting some parts that I relate to and that stand out to me.
 
 ## Different layer, different abstractions
 > The interface of a class should normally be different from its implementation: the representations used internally should be different from the abstractions that appear in the interface.
@@ -44,9 +44,9 @@ const spatialStructure = createSpatialStructure();
 spatialStructure.parseFromGraph(drawing);
 ```
 
-But having these generalised classes made the project harder to work with. I had to switch between files constantly for simple features, and some parts relied on data from other bits. For example the `spatialStructure` needs to be updated each time the `drawingGraph` changes, which is often when drawing. It could get out-of-sync easily if I'm not careful.
+But having these generalised classes made the project harder to work with. I had to switch between files constantly for simple features, and some parts relied on data from other bits. For example the `spatialStructure` needs to be updated each time the `drawingGraph` changes, which is happens often. It could get out-of-sync easily if I'm not careful.
 
-A better solution would be to instantiate a generalized module inside another because they are used together and share information. Or worry about generalising later.
+A better solution would be to instantiate a generalized module inside another because they're used together and share information. Or worry about generalising later.
 
 ## Code comments
 
