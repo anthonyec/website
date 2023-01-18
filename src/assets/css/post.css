@@ -119,6 +119,9 @@
 
 .post pre code {
   background: none;
+  display: block;
+  padding: 1.1em;
+  overflow: scroll;
 }
 
 .post table {
@@ -129,9 +132,9 @@
 }
 
 .post blockquote {
-  background: transparent;
-  border-left: 8px solid var(--nav-link-background);
-  padding: 0.1em 1em;
+  background: var(--post-code-background-color);
+  border-left: 8px solid var(--post-code-background-color);
+  padding: 0.01em 1.1em;
 }
 
 .post del {
