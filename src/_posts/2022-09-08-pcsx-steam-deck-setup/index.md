@@ -44,9 +44,7 @@ Once downloaded and extracted, copy all the BIOS files to this location: `/home/
 
 ![Screenshot of the BIOS files in the folder](./images/screenshot_bios_files.png)
 
-Start up PCSX2 and click refresh list on the BIOS screen.
-
-Select a BIOS! I chose the European version of the BIOS.
+Start up PCSX2 and click refresh list on the BIOS screen. Select a BIOS, I went with the European version of the BIOS.
 
 ## Setup the basic settings
 
