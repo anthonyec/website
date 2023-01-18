@@ -106,6 +106,7 @@
   background-color: var(--post-code-background-color);
   border-radius: 0;
   padding: 2px 4px;
+  word-wrap: break-word;
 }
 
 .post iframe {
