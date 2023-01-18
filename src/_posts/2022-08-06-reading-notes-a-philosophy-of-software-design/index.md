@@ -1,5 +1,4 @@
 <!-- thumbnail: ./book_cover.gif -->
-<!-- pinned: true -->
 <!-- twitterSocialImage: ./book_cover.gif -->
 
 # Reading notes: A Philosophy of Software Design
