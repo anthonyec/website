@@ -3,7 +3,7 @@ const {
   getCollectionFromFS,
   getAssetsFromFS,
   getRedirectsFromMap
-} = require('staticbuild');
+} = require('@anthonyec/staticbuild');
 
 // Doing this with regex is pretty bad. It could accidentally convert code
 // samples as it isn't exclusive to image tags. A better way to do this would be
