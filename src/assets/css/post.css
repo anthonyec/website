@@ -105,8 +105,9 @@
 .post code {
   background-color: var(--post-code-background-color);
   border-radius: 0;
-  padding: 2px 4px;
+  padding: 2px 7px;
   word-wrap: break-word;
+  font-family: monospace;
 }
 
 .post iframe {
@@ -151,6 +152,14 @@
 .post img[src$='.gif'] {
   image-rendering: pixelated;
   mix-blend-mode: multiply;
+}
+
+.post a[href^="#footnote-"] {
+  background: var(--post-footnote-background-color);
+  border-radius: 100px;
+  color: var(--post-footnote-color);
+  padding: 0 10px;
+  text-decoration: none;
 }
 
 html[data-theme='dark'] .post img[src$='.gif'] {

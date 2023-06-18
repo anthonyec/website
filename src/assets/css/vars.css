@@ -13,6 +13,8 @@
   --nav-link-hover-color: black;
 
   --post-code-background-color: rgba(0, 0, 0, 0.1);
+  --post-footnote-background-color: black;
+  --post-footnote-color: white;
 }
 
 html[data-theme='dark'] {
@@ -30,6 +32,8 @@ html[data-theme='dark'] {
   --nav-link-hover-color: black;
 
   --post-code-background-color: rgba(255, 255, 255, 0.15);
+  --post-footnote-background-color: white;
+  --post-footnote-color: black;
 }
 
 html[data-theme='overcast'] {
