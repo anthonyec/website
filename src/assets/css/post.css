@@ -105,8 +105,9 @@
 .post code {
   background-color: var(--post-code-background-color);
   border-radius: 0;
-  padding: 2px 4px;
+  padding: 2px 7px;
   word-wrap: break-word;
+  font-family: monospace;
 }
 
 .post iframe {
