@@ -115,6 +115,9 @@ This will make the desktop visible through the main window, unlocking the potent
     bubble.style.borderRadius = '30px';
     bubble.style.lineHeight = 1.3
     bubble.style.fontFamily = "inherit";
+    bubble.style.border = "3px solid white";
+    bubble.style.boxShadow = "0 0 0 3px black, 0px 5px 20px rgba(0, 0, 0, 0.5)";
+    bubble.style.fontSize = 18;
 
     document.body.appendChild(bubble);
 
@@ -122,6 +125,7 @@ This will make the desktop visible through the main window, unlocking the potent
   };
 
   for (const link of footnoteLinks) {
+    link.textContent = link.textContent.replace('[', '').replace(']', '');
     link.addEventListener('click', handleFootnoteLinkClick)
   }
 </script>

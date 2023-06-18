@@ -154,6 +154,14 @@
   mix-blend-mode: multiply;
 }
 
+.post a[href^="#footnote-"] {
+  background: var(--post-footnote-background-color);
+  border-radius: 100px;
+  color: var(--post-footnote-color);
+  padding: 0 10px;
+  text-decoration: none;
+}
+
 html[data-theme='dark'] .post img[src$='.gif'] {
   mix-blend-mode: screen;
   filter: invert(100%) hue-rotate(190deg) brightness(120%);
