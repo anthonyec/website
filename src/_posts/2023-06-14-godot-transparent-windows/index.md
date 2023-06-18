@@ -24,7 +24,7 @@ This will make the desktop visible through the main window, unlocking the potent
 1. Open Project Settings
 2. Ensure `Advanced Settings` is toggled on
 3. Go to `Display > Window > Size`
-4. Enable the `Transparent` toggle, this _allows_ a window to be transparent but does not make it transparent
+4. Enable the `Transparent` toggle <a href="#footnote-2">[2]</a>
 5. Go to `Display > Window > Per Pixel Transparency`
 6. Enable the `Allowed` toggle
 
@@ -44,6 +44,10 @@ This will make the desktop visible through the main window, unlocking the potent
 <ol>
   <li id="footnote-1">
     This will make <strong>embedded</strong> windows transparent. If you are using native non-embedded windows, then you'll need to enable <code>Transparent</code> instead of <code>Borderless</code>.
+  </li>
+
+  <li id="footnote-2">
+    This <em>allows</em> a window to be transparent but does not make it transparent.
   </li>
 </ol>
 
