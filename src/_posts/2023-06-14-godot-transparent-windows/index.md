@@ -8,6 +8,10 @@
 
 Here's how to make the [main window](#make-the-main-window-transparent) or [a window node](#make-a-window-node-transparent) transparent in Godot 4 without using code. Unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
 
+<div class="youtube-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/NSRA_H8kGtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## Make the main window transparent
 
 1. Open Project Settings
@@ -28,7 +32,7 @@ Here's how to make the [main window](#make-the-main-window-transparent) or [a wi
 
 1. Select the Window node you want to make transparent
 2. In the Inspector panel, go to `Window > Flags`
-3. Enable the `Borderless` toggle <a href="#footnote-2">[2]</a>
+3. Enable the `Borderless` toggle
 4. Scroll down to the Viewport section in the Inspector
 5. Enable the `Transparent BG` toggle
 
