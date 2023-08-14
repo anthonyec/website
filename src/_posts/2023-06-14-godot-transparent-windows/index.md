@@ -6,7 +6,7 @@
 
 ![Illustration of a transparent window on top of another window](./window_on_window.gif)
 
-Here's how to make the [main window](#make-the-main-window-transparent) or [window nodes](#make-a-window-node-transparent) transparent in Godot 4. Unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
+Here's how to make the [main window](#make-the-main-window-transparent) or [a window node](#make-a-window-node-transparent) transparent in Godot 4 without using code. Unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
 
 ## Make the main window transparent
 
