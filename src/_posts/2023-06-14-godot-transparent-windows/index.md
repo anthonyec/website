@@ -1,6 +1,6 @@
 <!-- thumbnail: ./window_on_window.gif -->
 <!-- twitterSocialImage: ./window_on_window.gif -->
-<!-- dateUpdated: 2023-08-14 -->
+<!-- dateUpdated: 2023-08-20 -->
 
 # How to make transparent windows in Godot
 
@@ -8,16 +8,12 @@
 
 Here's how to make the [main window](#make-the-main-window-transparent) or [a window node](#make-a-window-node-transparent) transparent in Godot 4 without using code. Unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
 
-<div class="youtube-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/NSRA_H8kGtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-
 ## Make the main window transparent
 
 1. Open Project Settings
 2. Ensure `Advanced Settings` is toggled on
 3. Go to `Display > Window > Size`
-4. Enable the `Transparent` toggle <a href="#footnote-1">[1]</a>
+4. Enable the `Transparent` **and** the `Borderless` toggle <a href="#footnote-1">[1]</a>
 5. Go to `Display > Window > Per Pixel Transparency`
 6. Enable the `Allowed` toggle
 
@@ -32,15 +28,13 @@ Here's how to make the [main window](#make-the-main-window-transparent) or [a wi
 
 1. Select the Window node you want to make transparent
 2. In the Inspector panel, go to `Window > Flags`
-3. Enable the `Borderless` toggle
+3. Enable the `Borderless` and `Transparent` toggle
 4. Scroll down to the Viewport section in the Inspector
 5. Enable the `Transparent BG` toggle
 
 <img src="./inspector_screenshot.png" width="385"/>
 
-If you want Window nodes to appear outside the main window and also make them transparent, enable `Transparent` instead of `Borderless`.
-
-Then back in Project Settings, go to `Display > Window > Subwindows` and turn off `Embedded Subwindows`.
+If you want Window nodes to appear outside the main window, go into Project Settings and turn off `Display > Window > Subwindows > Embedded Subwindows`.
 
 ![Screenshot of the embedded subwindows setting](./subwindows_screenshot.png)
 
@@ -52,7 +46,7 @@ Then back in Project Settings, go to `Display > Window > Subwindows` and turn of
 
 <ol>
   <li id="footnote-1">
-    This <em>allows</em> a window to be transparent but does not make it transparent.
+    The <code>Borderless</code> setting is required for Windows and Linux, without it the window border and title bar will show. On macOS it isn't required for some reason.
   </li>
 </ol>
 
