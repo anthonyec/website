@@ -162,6 +162,18 @@
   text-decoration: none;
 }
 
+.post .youtube-embed {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.post .youtube-embed iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 html[data-theme='dark'] .post img[src$='.gif'] {
   mix-blend-mode: screen;
   filter: invert(100%) hue-rotate(190deg) brightness(120%);

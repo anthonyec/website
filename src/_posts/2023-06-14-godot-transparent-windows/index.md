@@ -1,39 +1,42 @@
 <!-- thumbnail: ./window_on_window.gif -->
 <!-- twitterSocialImage: ./window_on_window.gif -->
+<!-- dateUpdated: 2023-08-20 -->
 
 # How to make transparent windows in Godot
 
 ![Illustration of a transparent window on top of another window](./window_on_window.gif)
 
-⚠️ This guide is for Godot 4.
+Here's how to make the [main window](#make-the-main-window-transparent) or [a window node](#make-a-window-node-transparent) transparent in Godot 4 without using code. Unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
+
+## Make the main window transparent
+
+1. Open Project Settings
+2. Ensure `Advanced Settings` is toggled on
+3. Go to `Display > Window > Size`
+4. Enable the `Transparent` **and** the `Borderless` toggle <a href="#footnote-1">[1]</a>
+5. Go to `Display > Window > Per Pixel Transparency`
+6. Enable the `Allowed` toggle
+
+![Screenshot of the per pixel transparency setting](./sub_pixel_transparent_screenshot.png)
+
+5. Still in Project Settings, go to `Rendering > Viewport`
+6. Enable the `Transparent Background` toggle
+
+![Screenshot of the transparent viewport background setting](./transparent_background_screenshot.png)
 
 ## Make a Window node transparent
 
 1. Select the Window node you want to make transparent
 2. In the Inspector panel, go to `Window > Flags`
-3. Enable the `Borderless` toggle <a href="#footnote-1">[1]</a>
+3. Enable the `Borderless` and `Transparent` toggle
 4. Scroll down to the Viewport section in the Inspector
 5. Enable the `Transparent BG` toggle
 
 <img src="./inspector_screenshot.png" width="385"/>
 
-## Make the main window transparent
+If you want Window nodes to appear outside the main window, go into Project Settings and turn off `Display > Window > Subwindows > Embedded Subwindows`.
 
-This will make the desktop visible through the main window, unlocking the potential to make your own [BonziBuddy](https://en.wikipedia.org/wiki/BonziBuddy).
-
-1. Open Project Settings
-2. Ensure `Advanced Settings` is toggled on
-3. Go to `Display > Window > Size`
-4. Enable the `Transparent` toggle <a href="#footnote-2">[2]</a>
-5. Go to `Display > Window > Per Pixel Transparency`
-6. Enable the `Allowed` toggle
-
-![](./sub_pixel_transparent_screenshot.png)
-
-5. Still in Project Settings, go to `Rendering > Viewport`
-6. Enable the `Transparent Background` toggle
-
-![](./transparent_background_screenshot.png)
+![Screenshot of the embedded subwindows setting](./subwindows_screenshot.png)
 
 ## Other resources
 
@@ -43,11 +46,7 @@ This will make the desktop visible through the main window, unlocking the potent
 
 <ol>
   <li id="footnote-1">
-    This will make <strong>embedded</strong> windows transparent. If you are using native non-embedded windows, then you'll need to enable <code>Transparent</code> instead of <code>Borderless</code>.
-  </li>
-
-  <li id="footnote-2">
-    This <em>allows</em> a window to be transparent but does not make it transparent.
+    The <code>Borderless</code> setting is required for Windows and Linux, without it the window border and title bar will show. On macOS it isn't required for some reason.
   </li>
 </ol>
 
