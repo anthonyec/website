@@ -130,6 +130,17 @@
   padding: 15px;
 }
 
+.home-section__items--grid .home-section__item--space-filler {
+  color: var(--text-color);
+  width: 66.6%;
+  opacity: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-3deg);
+}
+
 .home-section__thumbnail-container {
   /* background-color: #eee; */
   padding: 37.5%;
@@ -187,11 +198,19 @@ html[data-theme='dark'] .home-section__thumbnail {
     left: 25px;
     transform-origin: bottom center;
   }
+
+  .home-section__items--grid .home-section__item--space-filler {
+    display: none;
+  }
 }
 
 @media(max-width: 1050px) {
   .home-section__items--grid .home-section__item {
     width: 50%;
+  }
+
+  .home-section__items--grid .home-section__item--space-filler {
+    display: none;
   }
 }
 
