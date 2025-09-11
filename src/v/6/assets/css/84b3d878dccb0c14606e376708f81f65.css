@@ -1,0 +1,346 @@
+.home {
+  background: var(--background-color);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  margin-top: calc(100vh - 155px);
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: 40px;
+  margin-bottom: 0;
+  z-index: 2;
+  box-shadow: 0 0 3px var(--text-color);
+  border-radius: 40px 40px 0 0;
+}
+
+@media(max-width: 1400px) {
+  .home {
+    max-width: 100%;
+    margin-right: auto;
+  }
+}
+
+.home__button {
+  background-color: var(--background-color);
+  -webkit-backdrop-filter: blur(20px);
+  /* TODO: WHY DOES BLUR NOT WORK HERE? */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 3px var(--text-color);
+  border-radius: 100px;
+  color: var(--text-color);
+  text-shadow: 0 0 1px var(--text-color);
+  padding: 10px 15px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+.home-section {
+  color: var(--text-color);
+  max-width: 1600px;
+  font-size: 24px;
+  line-height: 1.35;
+  padding: 0 120px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.home-section:first-of-type {
+  margin-top: 2em;
+}
+
+.home-section:target {
+  position: relative;
+}
+
+.home-section:target:after {
+  content: '☞';
+  color: #F23B39;
+  position: absolute;
+  width: 80px;
+  height: 85px;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: right;
+  top: -15px;
+  left: 25px;
+  transform-origin: right center;
+  animation: shakey-hand 800ms steps(1) infinite;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shakey-hand {
+  0% {
+    transform: rotate(-5deg) translate(2px, -1px);
+  }
+
+  25% {
+    transform: rotate(10deg) translate(-2px, 5px);
+  }
+
+  50% {
+    transform: rotate(8deg) translate(1px, -5px);
+  }
+
+  75% {
+    transform: rotate(-10deg) translate(2px, 1px);
+  }
+
+  100% {
+    transform: rotate(-2deg) translate(-1px, -1px);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.home-section__title {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.home-section__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.home-section__item a:link,
+.home-section__item a:visited {
+  color: var(--text-color);
+  display: block;
+}
+
+/* HAHAH THIS IS MESSY OH WELL! */
+.home-section__items--grid .home-section__item a:hover .home-section__item-title {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.home-section__items--list .home-section__item a:hover span:not(.home-section__item-date) {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* TODO: Ah list and grid should probably just be separate. */
+.home-section__items--list .home-section__item {
+  margin-bottom: 2px;
+}
+
+.home-section__items--grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.home-section__items--list {
+  padding-top: 15px;
+}
+
+.home-section__items--grid .home-section__item {
+  width: 33.33%;
+  padding: 15px;
+}
+
+.home-section__items--grid .home-section__item--space-filler {
+  color: var(--text-color);
+  width: 66.6%;
+  opacity: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-3deg);
+}
+
+.home-section__thumbnail-container {
+  /* background-color: #eee; */
+  padding: 37.5%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* TODO: Make separate class */
+.home-section__thumbnail-container .home-section__thumbnail {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  padding: 0 20px;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+.home-section__thumbnail {
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.home-section__thumbnail--pin {
+  mix-blend-mode: multiply;
+}
+
+html[data-theme='dark'] .home-section__thumbnail {
+  filter: grayscale(100%);
+}
+
+.home-section__item-title {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.home-section__item-date,
+.home-section__item-description {
+  opacity: 0.6;
+}
+
+.home-section__item-date {
+  margin-right: 15px;
+}
+
+@media(max-width: 1100px) {
+  .home-section {
+    padding: 0 38px;
+  }
+
+  .home-section:target:after {
+    content: '☟';
+    top: -85px;
+    left: 25px;
+    transform-origin: bottom center;
+  }
+
+  .home-section__items--grid .home-section__item--space-filler {
+    display: none;
+  }
+}
+
+@media(max-width: 1050px) {
+  .home-section__items--grid .home-section__item {
+    width: 50%;
+  }
+
+  .home-section__items--grid .home-section__item--space-filler {
+    display: none;
+  }
+}
+
+@media(max-width: 768px) {
+  .home-section {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+
+  .home-section__items {
+    margin-bottom: 20px;
+  }
+
+  .home-section__items--list .home-section__item {
+    margin-bottom: 5px;
+  }
+
+  .home-section__item-date {
+    display: none;
+  }
+
+  .home-section:target:after {
+    font-size: 50px;
+    top: -60px;
+    left: 10px;
+  }
+}
+
+@media(max-width: 500px) {
+  .home-section__items--grid .home-section__item {
+    width: 100%;
+  }
+
+  .home-section:target:after {
+    content: '☜';
+    top: -10px;
+    right: 15px;
+    left: auto;
+    transform-origin: left center;
+  }
+}
+
+@media(max-width: 480px) {
+  .home-section {
+    max-width: 380px;
+    padding: 0 18px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .home-section__title {
+    margin-bottom: 15px;
+  }
+
+  .home-section__items {
+    margin-bottom: 20px;
+  }
+}
+.read-more-button {
+  background: var(--nav-link-background);
+  color: var(--nav-link-color) !important; /* TODO: Fix this! */
+  display: inline-flex;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 24px;
+  align-items: center;
+  transition: 0.5s background ease;
+}
+
+.read-more-button:hover {
+  background: #FFFEAD;
+  transition: none;
+}
+
+.read-more-button:active {
+  transform: scale(0.95);
+}
+
+.read-more-button__icon {
+  width: 30px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+@media(max-width: 768px) {
+  .read-more-button {
+    font-size: 18px;
+  }
+
+  .read-more-button__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
