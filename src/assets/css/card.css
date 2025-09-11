@@ -31,6 +31,7 @@
 
 .card--big, .card--big:nth-child(3n + 1) {
   width: 100%;
+  max-width: 600px;
   transform: rotate(-1deg);
 }
 
@@ -61,4 +62,11 @@
 
 .card__link:focus {
   outline: none;
+}
+
+@media (max-width: 760px) {
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
 }

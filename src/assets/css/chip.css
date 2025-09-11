@@ -13,6 +13,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: background 250ms ease-out;
+  text-align: center;
 }
 
 .chip--text-only {
@@ -99,4 +100,13 @@
 
 .chip__icon {
   height: 24px;
+}
+
+@media (max-width: 760px) {
+  .chip--text-only {
+    font-size: 13px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
