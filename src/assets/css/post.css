@@ -3,7 +3,7 @@
   font-size: 20px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding-bottom: 3em;
-  padding: 90px 35px;
+  padding: 0 52px;
   line-height: 1.54;
 }
 
@@ -11,7 +11,7 @@
   background: #F23B39 !important;
 }
 .post .anchor {
-  border-radius: 100px;;
+  border-radius: 100px;
   display: block;
   height: 10px;
   margin-top: -10px;
@@ -192,6 +192,7 @@ html[data-theme='dark'] .post img[src$='.gif'] {
   .post h1 {
     max-width: 100%;
     margin-top: 0.8em;
+    text-align: center;
   }
 
   .post h2 {
