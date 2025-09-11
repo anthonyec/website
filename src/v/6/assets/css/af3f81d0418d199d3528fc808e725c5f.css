@@ -1,0 +1,120 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+:root {
+  --background-color: white;
+
+  --text-color: #111;
+
+  --link-color: #111;
+  --link-background: transparent;
+  --link-hover-color: #F23B39;
+  --link-hover-background: #d4f7ff;
+
+  --nav-link-background: rgba(255, 255, 255, 0.6);
+  --nav-link-color: black;
+  --nav-link-hover-color: black;
+
+  --post-code-background-color: rgba(0, 0, 0, 0.1);
+  --post-footnote-background-color: black;
+  --post-footnote-color: white;
+}
+
+html[data-theme='dark'] {
+  --background-color: black;
+
+  --text-color: white;
+
+  --link-color: #96e7ff;
+  --link-background: transparent;
+  --link-hover-color: #F23B39;
+  --link-hover-background: rgba(212, 247, 255, 0.2);
+
+  --nav-link-background: rgba(255, 255, 255, 0.6);
+  --nav-link-color: black;
+  --nav-link-hover-color: black;
+
+  --post-code-background-color: rgba(255, 255, 255, 0.15);
+  --post-footnote-background-color: white;
+  --post-footnote-color: black;
+}
+
+html[data-theme='overcast'] {
+  --background-color: #d1d8de;
+
+  --text-color: black;
+
+  --link-color: black;
+  --link-background: transparent;
+  --link-hover-color: #F23B39;
+  --link-hover-background: #c2dfe3;
+
+  --nav-link-background: rgba(209, 216, 222, 0.6);
+  --nav-link-color: black;
+  --nav-link-hover-color: black;
+}
+
+
+html[data-theme='ffeead'] {
+  --background-color: #ffeead;
+
+  --text-color: black;
+
+  --link-color: black;
+  --link-background: transparent;
+  --link-hover-background: #c2dfe3;
+
+  --nav-link-background: black;
+  --nav-link-color: #ffeead;
+  --nav-link-hover-color: black;
+}
+
+html[data-theme='depop'] {
+  --background-color: #ff2300;
+
+  --text-color: black;
+
+  --link-color: black;
+  --link-background: transparent;
+  --link-hover-background: #c2dfe3;
+
+  --nav-link-background: black;
+  --nav-link-color: #ffeead;
+  --nav-link-hover-color: black;
+}
+html {
+  scroll-padding-top: 110px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background-color);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+.contain {
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .contain {
+    max-width: 380px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

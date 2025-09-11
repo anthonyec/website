@@ -1,39 +1,47 @@
 .home {
-  background: var(--background-color);
-  padding-top: 50px;
-  padding-bottom: 50px;
-  position: relative;
-  margin-top: calc(100vh - 155px);
-  max-width: 75%;
-  margin-left: auto;
-  margin-right: 40px;
-  margin-bottom: 0;
-  z-index: 2;
-  box-shadow: 0 0 3px var(--text-color);
-  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 0;
+  gap: 60px;
+  overflow: hidden;
 }
 
-@media(max-width: 1400px) {
-  .home {
-    max-width: 100%;
-    margin-right: auto;
+.home .logo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
+}
+
+.home__section {
+  width: 100%;
+  max-width: calc(672px + 20px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.home__section--grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home__section--list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.home__chip-group {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .home__section--grid {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-.home__button {
-  background-color: var(--background-color);
-  -webkit-backdrop-filter: blur(20px);
-  /* TODO: WHY DOES BLUR NOT WORK HERE? */
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 3px var(--text-color);
-  border-radius: 100px;
-  color: var(--text-color);
-  text-shadow: 0 0 1px var(--text-color);
-  padding: 10px 15px;
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
-  z-index: 5;
 }

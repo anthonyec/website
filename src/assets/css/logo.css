@@ -1,0 +1,106 @@
+.logo {
+  border-radius: 100px;
+  display: block;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  cursor: pointer;
+  transition: filter 250ms ease-out;
+  user-select: none;
+}
+
+.logo:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35) inset;
+}
+
+.logo:hover {
+  filter: brightness(130%);
+  transition: none;
+}
+
+.logo:focus {
+  outline: none;
+}
+
+.logo img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.logo__eyes {
+  width: 25%;
+  height: 10%;
+  top: 40px;
+  position: absolute;
+  transform: translateX(-50%);
+  top: 48%;
+  left: 41%;
+  animation: blink 10s infinite;
+}
+
+.logo__eyes:before {
+  content: "";
+  background: #F23B39;
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  left: 0;
+}
+
+.logo__eyes:after {
+  content: "";
+  background: #F23B39;
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  3% {
+    opacity: 0;
+  }
+
+  4% {
+    opacity: 1;
+  }
+
+  5% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  52% {
+    opacity: 0;
+  }
+
+  53% {
+    opacity: 1;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
