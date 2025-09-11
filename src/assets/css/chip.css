@@ -7,6 +7,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0 14px;
+  position: relative;
   height: 48px;
   gap: 10px;
   cursor: pointer;
@@ -28,16 +29,19 @@
 .chip--linkedin {
   background: white;
   color: black;
+  transform: rotate(-3deg) !important;
 }
 
 .chip--x {
   background: black;
   color: white;
+  transform: rotate(3deg) !important;
 }
 
 .chip--bluesky {
   background: rgb(11, 122, 255);
   color: white;
+  transform: rotate(-2deg) !important;
 }
 
 .chip--mastodon {
@@ -66,7 +70,7 @@
 }
 
 .chip:focus {
-  box-shadow: 0 0 0 1px #F23B39;
+  outline: none;
 }
 
 .card + .chip:hover {
@@ -74,7 +78,7 @@
 }
 
 .chip:nth-child(5n + 1) {
-  transform: rotate(1eg);
+  transform: rotate(1deg);
 }
 
 .chip:nth-child(5n + 2) {

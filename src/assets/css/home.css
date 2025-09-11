@@ -30,3 +30,8 @@
   align-items: center;
   gap: 15px;
 }
+
+.home__chip-group {
+  display: flex;
+  gap: 10px;
+}
