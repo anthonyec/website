@@ -102,11 +102,35 @@
   height: 24px;
 }
 
+.chip--has-image {
+  transform: none !important; /* Hacky hack because transform break child mx-blend-modes! wtf! */
+}
+
+.chip__image {
+  position: absolute;
+  mix-blend-mode: multiply;
+  width: 110px;
+  left: 0;
+  transform: translate(-65%) rotate(5deg);
+  user-select: none;
+  pointer-events: none;
+}
+
+.chip:nth-child(3n + 1) .chip__image {
+  left: unset;
+  right: 0;
+  transform: translate(65%) rotate(-5deg);
+}
+
 @media (max-width: 760px) {
   .chip--text-only {
     font-size: 13px;
     height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .chip__image {
+    width: 70px;
   }
 }

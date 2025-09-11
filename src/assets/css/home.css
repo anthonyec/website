@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 60px 0;
   gap: 60px;
+  overflow: hidden;
 }
 
 .home .logo {
