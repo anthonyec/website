@@ -111,7 +111,7 @@
   mix-blend-mode: multiply;
   width: 110px;
   left: 0;
-  transform: translate(-65%) rotate(5deg);
+  transform: translate(-65%, -10%) rotate(5deg);
   user-select: none;
   pointer-events: none;
 }
@@ -119,7 +119,7 @@
 .chip:nth-child(3n + 1) .chip__image {
   left: unset;
   right: 0;
-  transform: translate(65%) rotate(-5deg);
+  transform: translate(65%, -5%) rotate(-5deg);
 }
 
 @media (max-width: 760px) {
