@@ -5,7 +5,7 @@
 <!-- thumbnail: images/confused.png -->
 <!-- thumbnail_alt: Illustration of a person thinking about all confusing folders and their names -->
 
-# Findbot
+# Findbot case study
 
 ## Problem
 

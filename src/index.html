@@ -1,89 +1,80 @@
 {{>header}}
 
 {{#concatCSS}}
-  <link rel="stylesheet" href="/assets/css/home.css">
-  <link rel="stylesheet" href="/assets/css/home-section.css">
-  <link rel="stylesheet" href="/assets/css/read-more-button.css">
+  <link rel="stylesheet" href="/assets/css/home.css" />
+  <link rel="stylesheet" href="/assets/css/chip.css" />
+  <link rel="stylesheet" href="/assets/css/card.css" />
 {{/concatCSS}}
 
-{{>profile}}
+<div class="home">
+  <div class="home__section home__section--list">
+    {{>logo}}
 
-{{>nav}}
+    <a href="#" class="chip chip--linkedin">
+      <img src="/assets/images/linkedin.svg" alt="" class="chip__icon">
+      LinkedIn
+    </a>
 
-<main class="home">
-  <a class="home__button" href="#projects">
-    Scroll down
-  </a>
+    <a href="#" class="chip chip--x">
+      <img src="/assets/images/x.svg" alt="" class="chip__icon">
+      @anthonyec
+    </a>
+    
+    <a href="#" class="chip chip--bluesky">
+      <img src="/assets/images/bluesky.svg" alt="" class="chip__icon">
+      @anthonyec
+    </a>
 
-  <section class="home-section" id="projects">
-    <h2 class="home-section__title">
-      Projects
-    </h2>
-    <ul class="home-section__items home-section__items--grid">
-      <li class="home-section__item">
-        <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" rel="noreferrer">
-          <img class="home-section__thumbnail" src="./assets/images/powerlet.jpg" alt="Screenshot of the Chrome extension Powerlet">
-          <span class="home-section__item-title">Powerlet.</span>
-          <span class="home-section__item-description">Chrome Extension to find and run bookmarklets.</span>
-        </a>
-      </li>
-      <li class="home-section__item">
-        <a href="https://saladroom.net?ref=anthonycossins" rel="noreferrer">
-          <img class="home-section__thumbnail" src="./assets/images/salad_room.jpg" alt="Thumbnail of the Salad Room logo">
-          <span class="home-section__item-title">Salad Room.</span>
-          <span class="home-section__i tem-description">The easiest way to share stuff between devices.</span>
-        </a>
-      </li>
-      <li class="home-section__item">
-        <a href="https://instagram.com/handicons/" rel="noreferrer">
-          <img class="home-section__thumbnail" src="./assets/images/handicons.jpg" alt="Thumbnail showing a hand icon">
-          <span class="home-section__item-title">Hand Icons.</span>
-          <span class="home-section__item-description">Collection of hand pictograms found around the world.</span>
-        </a>
-      </li>
-      <li class="home-section__item">
-        <a href="https://github.com/anthonyec/godot_little_camera_preview" rel="noreferrer">
-          <img class="home-section__thumbnail" src="./assets/images/little_camera_preview.jpg" alt="Thumbnail of the plugin logo">
-          <span class="home-section__item-title">Little Camera Preview.</span>
-          <span class="home-section__item-description">Picture-in-picture style camera preview for Godot.</span>
-        </a>
-      </li>
-      <li class="home-section__item home-section__item--space-filler">
-        what am I going to do <br> with all this space oooooh nooo
-      </li>
-    </ul>
+    <div class="home__chip-group">
+      <a href="#" class="chip chip--icon-only chip--mastodon">
+        <img src="/assets/images/mastodon.svg" alt="" class="chip__icon">
+      </a>
+
+      <a href="#" class="chip chip--icon-only chip--email">
+        <img src="/assets/images/email.svg" alt="" class="chip__icon" style="height: 20px">
+      </a>
+    </div>
+  </div>
+  
+  <section class="home__section home__section--grid">
+    <div class="card">
+      <img class="card__image" src="/assets/images/little_camera_preview.png" alt="">
+      <h2 class="card__title">Little Camera Preview</h2>
+      <a href="https://github.com/anthonyec/godot_little_camera_preview" target="_blank" class="card__link"></a>
+    </div>
+  
+    <div class="card">
+      <img class="card__image" src="/assets/images/salad_room.png" alt="">
+      <h2 class="card__title">Salad Room</h2>
+      <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
+    </div>
+  
+    <div class="card">
+      <img class="card__image" src="/assets/images/powerlet.png" alt="">
+      <h2 class="card__title">Powerlet</h2>
+      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
+    </div>
   </section>
 
-  <section class="home-section" id="posts">
-    <h2 class="home-section__title">
-      Posts
-    </h2>
-    <ul class="home-section__items home-section__items--list">
-      {{#posts}}
-        <li class="home-section__item">
-          <a href="{{path}}">
-            <span class="home-section__item-date">{{#formatDate}}{{date}}{{/formatDate}}</span>
-            <span>{{title}}</span>
-          </a>
-        </li>
-      {{/posts}}
-    </ul>
+  <section class="home__section home__section--grid">
+    <div class="card card--big">
+      <img class="card__image" src="/assets/images/talk.webp" alt="">
+      <h2 class="card__title">Godot Conf Lighting Talk</h2>
+      <a href="#" class="card__link"></a>
+    </div>
+
+    <a href="https://docs.google.com/presentation/d/19LbnZkiqPtgA6RhjIRrS6TPylVEq3zm-i_fe3FVgFiw/edit?usp=drive_link" class="chip">
+      View slides
+    </a>
   </section>
 
-  <section class="home-section" id="contact">
-    <h2 class="home-section__title">
-      Contact
-    </h2>
-    <ul class="home-section__items home-section__items--list">
-      {{#contact}}
-        <li class="home-section__item">
-          <a href="{{href}}">
-            <span>{{title}}</span>
-          </a>
-        </li>
-      {{/contact}}
-    </ul>
+  <section class="home__section home__section--list">
+    {{#posts}}
+      <a href="{{path}}" class="chip chip--text-only">
+        {{title}}
+      </a>
+    {{/posts}}
   </section>
-</main>
+</div>
 
 {{>footer}}

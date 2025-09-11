@@ -1,0 +1,62 @@
+.card {
+  background: var(--card-background);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  position: relative;
+  width: 45%;
+  padding: 15px;
+  padding-bottom: 0;
+  transition: background 250ms ease-out;
+}
+
+.card:hover {
+  background: #FFEEAD;
+  transition: none;
+}
+
+.card:nth-child(3n + 1) {
+  transform: rotate(1.5deg);
+}
+
+.card:nth-child(3n + 2) {
+  transform: rotate(-1.5deg);
+}
+
+.card:nth-child(3n + 3) {
+  transform: rotate(0.5deg);
+}
+
+.card--big, .card--big:nth-child(3n + 1) {
+  width: 100%;
+  transform: rotate(-1deg);
+}
+
+.card--big:hover {
+  background: #BBFFAD;
+}
+
+.card__image {
+  background: lightblue;
+  border-radius: 9px;
+  display: block;
+  width: 100%;
+}
+
+.card__title {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 11px;
+  margin-bottom: 13px;
+}
+
+.card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.card__link:focus {
+  box-shadow: 0 0 0 2px #F23B39;
+}

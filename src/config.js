@@ -79,7 +79,7 @@ module.exports = {
 
   getPageVariables(site, page) {
     const formattedTitle = page.title
-      ? `${page.title} — ${site.title}`
+      ? `${page.title} - ${site.title}`
       : site.title;
     const url = page.slug ? path.join(site.url, page.slug) : site.url;
 
