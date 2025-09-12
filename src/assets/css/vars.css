@@ -15,20 +15,5 @@
   --post-footnote-color: white;
 }
 
-html[data-theme='dark'] {
-  --background-color: black;
-
-  --text-color: white;
-
-  --link-color: #96e7ff;
-  --link-background: transparent;
-  --link-hover-color: #F23B39;
-  --link-hover-background: rgba(212, 247, 255, 0.2);
-
-  --card-background: white;
-
-  --post-code-background-color: rgba(255, 255, 255, 0.15);
-  --post-footnote-background-color: white;
-  --post-footnote-color: black;
-}
+html[data-theme='dark'] {}
 

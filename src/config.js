@@ -104,11 +104,6 @@ module.exports = {
         content: fs.readFileSync('./src/404.html', 'utf8')
       },
       {
-        slug: 'wechat.html',
-        path: '/',
-        content: fs.readFileSync('./src/wechat.html', 'utf8')
-      },
-      {
         slug: 'humans.txt',
         path: '/',
         content: fs.readFileSync('./src/humans.txt', 'utf8')
