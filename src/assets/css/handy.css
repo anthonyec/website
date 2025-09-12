@@ -1,0 +1,31 @@
+.handy {
+  color: var(--the-brand-color);
+  display: inline-block;
+  font-size: 2em;
+  line-height: 0.6em;
+  height: 1ch;
+  font-weight: 900;
+  animation: pointy-hand 800ms steps(1) infinite;
+}
+
+@keyframes pointy-hand {
+  0% {
+    transform: rotate(-2deg) translate(-1px, 0px);
+  }
+
+  25% {
+    transform: rotate(-1deg) translate(2px, -0.5px);
+  }
+
+  50% {
+    transform: rotate(1deg) translate(0px, 0.5px);
+  }
+
+  75% {
+    transform: rotate(-2deg) translate(-3px, 0.5px);
+  }
+
+  100% {
+    transform: rotate(-1deg) translate(2px, -0.5px);
+  }
+}
