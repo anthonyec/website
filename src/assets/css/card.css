@@ -69,4 +69,8 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .card--big {
+    max-width: 600px;
+  }
 }

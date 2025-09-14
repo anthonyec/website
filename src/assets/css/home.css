@@ -37,11 +37,3 @@
   display: flex;
   gap: 10px;
 }
-
-@media (max-width: 760px) {
-  .home__section--grid {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
-  }
-}

@@ -14,7 +14,23 @@ a:focus:before {
   border-radius: inherit;
   box-shadow: 0 0 0 2px white, 0 0 0 4px black, 0 0 0 6px white;
   position: absolute;
-  inset: 0;
+  inset: -1px;
   pointer-events: none;
   user-select: none;
+  animation: breath 1s infinite steps(3);
+  z-index: 256;
+}
+
+@keyframes breath {
+  0% {
+    inset: -1px;
+  }
+
+  50% {
+    inset: -3px;
+  }
+
+  100% {
+    inset: -1px;
+  }
 }
