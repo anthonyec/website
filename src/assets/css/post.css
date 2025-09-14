@@ -11,11 +11,44 @@
 .post .anchor:target {
   background: #F23B39 !important;
 }
+
 .post .anchor {
   border-radius: 100px;
   display: block;
+  width: 10px;
   height: 10px;
-  margin-top: -10px;
+  top: 50%;
+  left: -25px;
+  margin-top: -4px;
+  position: absolute;
+}
+
+.post .anchor:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post .anchor:focus {
+  outline: none;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4 {
+  position: relative;
+}
+
+.post h1:hover .anchor,
+.post h2:hover .anchor,
+.post h3:hover .anchor,
+.post h4:hover .anchor {
+  background: rgba(100, 100, 100, 0.3);
 }
 
 .post h1 {
@@ -96,11 +129,6 @@
 .post a:active {
   color: var(--link-hover-color);
   transition: none;
-}
-
-.post a:active {
-  border-bottom: 1px solid var(--link-color);
-  top: 1px;
 }
 
 .post code {
@@ -191,6 +219,11 @@ html[data-theme='dark'] .post img[src$='.gif'] {
     padding-bottom: 30px;
   }
 
+  .post .anchor {
+    left: -20px;
+    margin-top: -5px;
+  }
+
   .post h1 {
     max-width: 100%;
     margin-top: 0.8em;
@@ -237,5 +270,13 @@ html[data-theme='dark'] .post img[src$='.gif'] {
 
   .post .overview {
     margin-bottom: 1.5em;
+  }
+}
+
+@media (max-width: 404px) {
+  .post .anchor {
+    border-radius: 0 100px 100px 0;
+    width: 30px;
+    left: -40px;
   }
 }
