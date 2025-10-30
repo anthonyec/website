@@ -39,43 +39,44 @@
   
   <section class="home__section home__section--grid">
     <article class="card">
+      <a href="https://github.com/anthonyec/godot_little_camera_preview" target="_blank" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
       </div>
       <h2 class="card__title">Little Camera Preview</h2>
-      <a href="https://github.com/anthonyec/godot_little_camera_preview" target="_blank" class="card__link"></a>
     </article>
   
     <article class="card">
+      <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
       </div>
       <h2 class="card__title">Salad Room</h2>
-      <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
     </article>
   
     <article class="card">
+      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
       </div>
       <h2 class="card__title">Powerlet</h2>
-      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
     </article>
   </section>
 
   <section class="home__section home__section--grid">
     <article class="card card--big">
+      <a href="https://www.reddit.com/r/godot/comments/1ndesjs/i_did_my_first_commercial_godot_project_it_was/" target="_blank" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
       </div>
       <h2 class="card__title">Reddit post on my first commercial Godot project</h2> 
-      <a href="https://www.reddit.com/r/godot/comments/1ndesjs/i_did_my_first_commercial_godot_project_it_was/" target="_blank" class="card__link"></a>
     </article>
 
     <div class="home__card-group">
       <article class="card">
+        <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
         <div class="card__image">
-          <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 570.7 / 324.45;">
+          <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
           <video data-src="/assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">6:30</div>
           <button class="card__sound-button" title="Unmute">
@@ -83,12 +84,12 @@
           </button>
         </div>
         <h2 class="card__title">Godot Conf Lighting Talk</h2>
-        <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
       </article>
       
       <article class="card">
+        <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
         <div class="card__image">
-          <img src="/assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 570.7 / 324.45;">
+          <img src="/assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
           <video data-src="/assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">1:03:15</div>
           <button class="card__sound-button" title="Unmute">
@@ -96,7 +97,6 @@
           </button>
         </div>
         <h2 class="card__title">Game prototype retrospective</h2>
-        <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
       </article>
     </div>
   </section>
@@ -124,6 +124,7 @@
       }
 
       video.play()
+      video.volume = 1.0
 
       try {
         plausible('hover_video')
@@ -165,6 +166,8 @@
 
       card.addEventListener("mouseover", () => showVideo(video))
       card.addEventListener("mouseout", () => hideVideo(video))
+      card.addEventListener("focusin", () => showVideo(video))
+      card.addEventListener("focusout", () => hideVideo(video))
 
       const soundButton = card.querySelector(".card__sound-button")
       if (!soundButton) continue

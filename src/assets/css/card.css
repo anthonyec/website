@@ -72,15 +72,18 @@
   user-select: none;
 }
 
-.card:hover video {
+.card:hover video,
+.card:focus-within video {
   opacity: 1;
 }
 
-.card:hover .card__image-timestamp {
+.card:hover .card__image-timestamp,
+.card:focus-within .card__image-timestamp {
   opacity: 0;
 }
 
-.card:hover .card__sound-button {
+.card:hover .card__sound-button,
+.card:focus-within .card__sound-button {
   opacity: 1;
 }
 
