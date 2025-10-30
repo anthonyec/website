@@ -42,6 +42,19 @@
 .card__image {
   background: lightgray;
   border-radius: 9px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.card__image img {
   display: block;
   width: 100%;
 }

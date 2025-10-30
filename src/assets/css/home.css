@@ -37,3 +37,10 @@
   display: flex;
   gap: 10px;
 }
+
+.home__card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
