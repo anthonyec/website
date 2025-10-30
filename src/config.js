@@ -211,7 +211,7 @@ module.exports = {
 
     return renderedText.replace(/<h1>.*(?:<a.*>.*<\/a>).*<\/h1>/g, '');
   },
-  script: () => (text) => memorize(text, () => {
+  extractScript: () => (text) => memorize(text, () => {
     const script = text.replace('<script>', '').replace('</script>', '');
     const hash = crypto
       .createHash('md5')

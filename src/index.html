@@ -114,7 +114,7 @@
   </section>
 </div>
 
-{{#script}}
+{{#extractScript}}
   <script>
     function showVideo(video) {
       if (!(video instanceof HTMLVideoElement)) return
@@ -172,6 +172,6 @@
       soundButton.addEventListener("click", () => toggleMute(video, soundButton))
     }
   </script>
-{{/script}}
+{{/extractScript}}
 
 {{>footer}}
