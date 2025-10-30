@@ -68,6 +68,8 @@
   inset: 0;
   opacity: 0;
   transition: opacity 200ms ease;
+  pointer-events: none;
+  user-select: none;
 }
 
 .card:hover video {
