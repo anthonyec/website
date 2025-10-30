@@ -17,6 +17,10 @@
   transition: none;
 }
 
+.card--green:hover {
+  background: #BBFFAD;
+}
+
 .card:nth-child(3n + 1) {
   transform: rotate(1.5deg);
 }
@@ -33,10 +37,6 @@
   width: 100%;
   max-width: 600px;
   transform: rotate(-1deg);
-}
-
-.card--big:hover {
-  background: #BBFFAD;
 }
 
 .card__image {
