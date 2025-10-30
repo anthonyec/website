@@ -72,17 +72,15 @@
       <a href="https://www.reddit.com/r/godot/comments/1ndesjs/i_did_my_first_commercial_godot_project_it_was/" target="_blank" class="card__link"></a>
     </article>
 
-    <div>
-      <a href="https://set-reset.com/work/futurechoice-ai" target="_blank" class="chip chip--text-only">
-        Case study <span class="handy">☞</span>
-      </a>
-    </div>
-
     <div class="home__card-group">
       <article class="card">
         <div class="card__image">
           <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 570.7 / 324.45;">
+          <video data-src="/assets/videos/talk_clip.mp4" autoplay muted loop preload="none"></video>
           <div class="card__image-timestamp">6:30</div>
+          <button class="card__sound-button" title="Unmute">
+            <img src="/assets/images/muted.svg" alt="Muted">
+          </button>
         </div>
         <h2 class="card__title">Godot Conf Lighting Talk</h2>
         <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
@@ -91,7 +89,11 @@
       <article class="card">
         <div class="card__image">
           <img src="/assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 570.7 / 324.45;">
+          <video data-src="/assets/videos/garden_station_clip.mp4" autoplay muted loop preload="none"></video>
           <div class="card__image-timestamp">1:03:15</div>
+          <button class="card__sound-button" title="Unmute">
+            <img src="/assets/images/muted.svg" alt="Muted">
+          </button>
         </div>
         <h2 class="card__title">Game prototype retrospective</h2>
         <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
@@ -111,5 +113,65 @@
     {{/posts}}
   </section>
 </div>
+
+{{#script}}
+  <script>
+    function showVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
+      
+      if (!video.src) {
+        video.src = video.getAttribute("data-src")
+      }
+
+      video.play()
+
+      try {
+        plausible('hover_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
+    }
+
+    function hideVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
+
+      video.pause()
+    }
+
+    function toggleMute(video, soundButton) {
+      if (!(video instanceof HTMLVideoElement)) return
+      if (!(soundButton instanceof HTMLButtonElement)) return
+
+      const icon = soundButton.querySelector("img")
+      if (!(icon instanceof HTMLImageElement)) return
+
+      video.muted = !video.muted
+
+      soundButton.title = video.muted ? "Unmute" : "Mute"
+      icon.src = video.muted ? "assets/images/muted.svg" : "assets/images/unmuted.svg"
+
+      try {
+        plausible('unmuted_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
+    }
+
+    const cards = document.querySelectorAll('.card')
+
+    for (const card of cards) {
+      const video = card.querySelector("video")
+      if (!video) continue
+
+      card.addEventListener("mouseover", () => showVideo(video))
+      card.addEventListener("mouseout", () => hideVideo(video))
+
+      const soundButton = card.querySelector(".card__sound-button")
+      if (!soundButton) continue
+
+      soundButton.addEventListener("click", () => toggleMute(video, soundButton))
+    }
+  </script>
+{{/script}}
 
 {{>footer}}
