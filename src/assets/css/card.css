@@ -59,6 +59,19 @@
   width: 100%;
 }
 
+.card__image-timestamp {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 1px 4px 2px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 1);
+}
+
 .card__title {
   text-align: center;
   font-size: 16px;
