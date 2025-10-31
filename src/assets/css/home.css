@@ -23,7 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
 }
 
 .home__section--list {
@@ -36,4 +36,11 @@
 .home__chip-group {
   display: flex;
   gap: 10px;
+}
+
+.home__card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }

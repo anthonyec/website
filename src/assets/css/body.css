@@ -9,7 +9,11 @@ body {
   margin: 0;
 }
 
-a:focus:before {
+a:focus, button:focus {
+  outline: none;
+}
+
+a:focus:before, button:focus:before {
   content: "";
   border-radius: inherit;
   box-shadow: 0 0 0 2px white, 0 0 0 4px black, 0 0 0 6px white;

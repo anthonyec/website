@@ -17,6 +17,10 @@
   transition: none;
 }
 
+.card--green:hover {
+  background: #BBFFAD;
+}
+
 .card:nth-child(3n + 1) {
   transform: rotate(1.5deg);
 }
@@ -35,15 +39,105 @@
   transform: rotate(-1deg);
 }
 
-.card--big:hover {
-  background: #BBFFAD;
-}
-
 .card__image {
   background: lightgray;
   border-radius: 9px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+}
+
+.card__image img,
+.card__image video {
   display: block;
   width: 100%;
+  border-radius: inherit;
+}
+
+.card__image video {
+  background-color: black;
+  position: absolute;
+  object-fit: cover;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.card:hover video,
+.card:focus-within video {
+  opacity: 1;
+}
+
+.card:hover .card__image-timestamp,
+.card:focus-within .card__image-timestamp {
+  opacity: 0;
+}
+
+.card:hover .card__sound-button,
+.card:focus-within .card__sound-button {
+  opacity: 1;
+}
+
+.card__image-timestamp {
+  position: absolute;
+  backdrop-filter: blur(3px);
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 1px 4px 2px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 1);
+  transition: opacity 200ms ease;
+}
+
+.card__sound-button {
+  z-index: 5;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 1);
+  transition: opacity 200ms ease;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card__sound-button:after {
+  content: "";
+  inset: -15px;
+  position: absolute;
+}
+
+.card__sound-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.card__sound-button:active {
+  transform: scale(0.95);
+  filter: brightness(80%);
 }
 
 .card__title {

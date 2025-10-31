@@ -39,44 +39,66 @@
   
   <section class="home__section home__section--grid">
     <article class="card">
-      <img class="card__image" src="/assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
-      <h2 class="card__title">Little Camera Preview</h2>
       <a href="https://github.com/anthonyec/godot_little_camera_preview" target="_blank" class="card__link"></a>
+      <div class="card__image">
+        <img class="card__image" src="/assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
+      </div>
+      <h2 class="card__title">Little Camera Preview</h2>
     </article>
   
     <article class="card">
-      <img class="card__image" src="/assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
-      <h2 class="card__title">Salad Room</h2>
       <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
+      <div class="card__image">
+        <img class="card__image" src="/assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
+      </div>
+      <h2 class="card__title">Salad Room</h2>
     </article>
   
     <article class="card">
-      <img class="card__image" src="/assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
-      <h2 class="card__title">Powerlet</h2>
       <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
+      <div class="card__image">
+        <img class="card__image" src="/assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
+      </div>
+      <h2 class="card__title">Powerlet</h2>
     </article>
   </section>
 
   <section class="home__section home__section--grid">
-    <article class="card card--big">
-      <img class="card__image" src="/assets/images/future_choice.jpg" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-      <h2 class="card__title">I did my first commercial Godot project!</h2>
+    <article class="card card--big card--green">
       <a href="https://www.reddit.com/r/godot/comments/1ndesjs/i_did_my_first_commercial_godot_project_it_was/" target="_blank" class="card__link"></a>
+      <div class="card__image">
+        <img class="card__image" src="/assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
+      </div>
+      <h2 class="card__title">Reddit post on my first commercial Godot project</h2> 
     </article>
 
-    <a href="https://set-reset.com/work/futurechoice-ai" target="_blank" class="chip chip--text-only">
-      Read case study <span class="handy">☞</span>
-    </a>
-
-    <article class="card card--big">
-      <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 570.7 / 324.45;">
-      <h2 class="card__title">Godot Conf Lighting Talk</h2>
-      <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
-    </article>
-
-    <a href="https://docs.google.com/presentation/d/19LbnZkiqPtgA6RhjIRrS6TPylVEq3zm-i_fe3FVgFiw/edit?usp=drive_link" target="_blank" class="chip chip--text-only">
-      View slides <span class="handy">☞</span>
-    </a>
+    <div class="home__card-group">
+      <article class="card card--green">
+        <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
+        <div class="card__image">
+          <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
+          <video data-src="/assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+          <div class="card__image-timestamp">6:30</div>
+          <button class="card__sound-button" title="Unmute">
+            <img src="/assets/images/muted.svg" alt="Muted">
+          </button>
+        </div>
+        <h2 class="card__title">Godot Conf Lighting Talk</h2>
+      </article>
+      
+      <article class="card card--green">
+        <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
+        <div class="card__image">
+          <img src="/assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
+          <video data-src="/assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+          <div class="card__image-timestamp">1:03:15</div>
+          <button class="card__sound-button" title="Unmute">
+            <img src="/assets/images/muted.svg" alt="Muted">
+          </button>
+        </div>
+        <h2 class="card__title">Game prototype retrospective</h2>
+      </article>
+    </div>
   </section>
 
   <section class="home__section home__section--list">
@@ -85,11 +107,74 @@
         {{title}}
         
         {{#thumbnail}}
-          <img src="{{path}}/{{thumbnail}}" class="chip__image">
+          <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
         {{/thumbnail}}
       </a>
     {{/posts}}
   </section>
 </div>
+
+{{#extractScript}}
+  <script>
+    function showVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
+      
+      if (!video.src) {
+        video.src = video.getAttribute("data-src")
+      }
+
+      video.play()
+      video.volume = 1.0
+
+      try {
+        plausible('hover_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
+    }
+
+    function hideVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
+
+      video.pause()
+    }
+
+    function toggleMute(video, soundButton) {
+      if (!(video instanceof HTMLVideoElement)) return
+      if (!(soundButton instanceof HTMLButtonElement)) return
+
+      const icon = soundButton.querySelector("img")
+      if (!(icon instanceof HTMLImageElement)) return
+
+      video.muted = !video.muted
+
+      soundButton.title = video.muted ? "Unmute" : "Mute"
+      icon.src = video.muted ? "assets/images/muted.svg" : "assets/images/unmuted.svg"
+
+      try {
+        plausible('unmuted_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
+    }
+
+    const cards = document.querySelectorAll('.card')
+
+    for (const card of cards) {
+      const video = card.querySelector("video")
+      if (!video) continue
+
+      card.addEventListener("mouseover", () => showVideo(video))
+      card.addEventListener("mouseout", () => hideVideo(video))
+      card.addEventListener("focusin", () => showVideo(video))
+      card.addEventListener("focusout", () => hideVideo(video))
+
+      const soundButton = card.querySelector(".card__sound-button")
+      if (!soundButton) continue
+
+      soundButton.addEventListener("click", () => toggleMute(video, soundButton))
+    }
+  </script>
+{{/extractScript}}
 
 {{>footer}}
