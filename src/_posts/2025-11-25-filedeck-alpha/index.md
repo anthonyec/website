@@ -9,6 +9,15 @@ Welcome! You have chosen, or been chosen, to test out FileDeck on your fine Stea
 
 On your Steam Deck, switch to Desktop and open this page in a browser.
 
+<details>
+<summary>🆒 Desktop Mode Top Tips (if you don't know already)</summary>
+
+> - Use `STEAM + X` to print up the keyboard
+> - Use `STEAM + Right Trackpad` to move the mouse
+> - Use `STEAM + L2 or R2` to left or right click
+
+</details>
+
 Visit [Salad Room](https://saladroom.net/) and enter the secret room code I gave you.
 
 Download the `.zip` file in that room to your Steam Deck. Then extract the archive, it doesn't matter where but make a mental note.
