@@ -14,7 +14,8 @@ On your Steam Deck, switch to Desktop and open this page in a browser.
 
 > - Use `STEAM + X` to print up the keyboard
 > - Use `STEAM + Right Trackpad` to move the mouse
-> - Use `STEAM + L2 or R2` to left or right click
+> - Use `STEAM + R2` to left click (primary action)
+> - Use `STEAM + L2` for right click (context menu)
 
 </details>
 
@@ -22,19 +23,31 @@ Visit [Salad Room](https://saladroom.net/) and enter the secret room code I gave
 
 Download the `.zip` file in that room to your Steam Deck. Then extract the archive, it doesn't matter where but make a mental note.
 
-Once extracted, run the executable `filedeck.x84_86`. A security warning will appear, select **Continue** to open FileDeck, then close it.
+Once extracted, run the executable `filedeck.x84_86`. A security warning will appear, select **Execute** to open FileDeck, then close it.
+
+![Screenshot of the execute dialog](./execute_dialog.png)
 
 > ℹ️ Opening and closing FileDeck allows it to be executed later in game mode.
 
-Open Steam in Desktop mode and select **Add Non-Steam Game** in the bottom left.
+Open Steam in Desktop mode and select **Add a Game** > **Add a Non-Steam Game**.
 
-In the non-steam game dialog, select **Browse** to open a file selector.
+![Screenshot of adding a non-steam game](./add_non_steam_game.png)
 
-Choose **All Files** in the dropdown to ensure the executable is visible to select. Navigate to where FileDeck was extracted.
+In the add non-steam game dialog, select **Browse** to open a file selector.
 
+Choose **All Files** in the dropdown and then navigate to where FileDeck was extracted.
 
-Select the executable `filedeck.x84_86` and add it as a non-steam game.
+![Screenshot of selecting all files](./all_files.png)
 
-You can now return to Game Mode and use FileDeck as intended.
+Select the executable `filedeck.x84_86` then press **Add Selected Programs** to finish.
+
+![Screenshot of adding FileDeck as the selected program](./add_selected_program.png)
+
+You can now return to Game Mode.
+
+FileDeck should now appear in your Steam Library under the **Non-steam** category.
+
+![Screenshot of the non-steam category tab](./non_steam_category.jpeg)
+
 
 Report any issues, bugs and critique to me through whatever channel. And thank you for testing!
