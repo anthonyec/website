@@ -103,13 +103,15 @@
 
   <section class="home__section home__section--list">
     {{#posts}}
-      <a href="{{path}}" class="chip chip--text-only {{#thumbnail}}chip--has-image{{/thumbnail}}">
-        {{title}}
-        
-        {{#thumbnail}}
-          <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
-        {{/thumbnail}}
-      </a>
+      {{^draft}}
+        <a href="{{path}}" class="chip chip--text-only {{#thumbnail}}chip--has-image{{/thumbnail}}">
+          {{title}}
+          
+          {{#thumbnail}}
+            <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
+          {{/thumbnail}}
+        </a>
+      {{/draft}}
     {{/posts}}
   </section>
 </div>
