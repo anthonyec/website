@@ -14,6 +14,7 @@
   font-weight: 600;
   transition: background 250ms ease-out;
   text-align: center;
+  font-size: 16px;
 }
 
 .chip--text-only {

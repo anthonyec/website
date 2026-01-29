@@ -12,6 +12,14 @@
   margin-bottom: 12px;
 }
 
+.home .logo__bubble {
+  display: none;
+}
+
+.home .logo:hover .logo__info {
+  display: none;
+}
+
 .home__section {
   width: 100%;
   max-width: calc(672px + 20px);
