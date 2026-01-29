@@ -35,9 +35,16 @@
   transform: rotate(0.5deg);
 }
 
-.card--big, .card--big:nth-child(3n + 1) {
+.card--big {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
+}
+
+.card--big:nth-child(3n + 1) {
+  transform: rotate(1deg);
+}
+
+.card--big, .card--big:nth-child(3n + 2) {
   transform: rotate(-1deg);
 }
 

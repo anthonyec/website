@@ -19,6 +19,10 @@
   padding: 0 20px;
 }
 
+.home__section--wide {
+  max-width: calc(1200px + 20px);
+}
+
 .home__section--grid {
   display: flex;
   flex-wrap: wrap;
@@ -31,6 +35,10 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
+}
+
+.home__section--temp-gap-hack {
+  margin-top: -30px;
 }
 
 .home__chip-group {
