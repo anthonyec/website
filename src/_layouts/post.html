@@ -20,4 +20,40 @@
       Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
     </div>
   </article>
+
+  {{#extractScript}}
+    <script>
+      const videos = document.querySelectorAll("video");
+      
+      for (const video of videos) {
+        if (video.autoplay && video.muted) continue
+
+        video.controls = false
+
+        const container = document.createElement("div")
+        container.classList.add("post__video")
+        container.classList.add("post__video--paused")
+        // Move video into container.
+        video.before(container)
+        container.replaceChildren(video)
+
+        const playButton = document.createElement("button")
+        playButton.textContent = "▶ Play"
+        container.appendChild(playButton)
+
+        const overlay = document.createElement("div")
+        overlay.classList.add("post__video-overlay")
+        container.appendChild(overlay)
+        
+        playButton.addEventListener("click", () => {
+          video.play()
+          container.classList.remove("post__video--paused")
+
+          video.addEventListener("ended", () => {
+            container.classList.add("post__video--paused")
+          }, { once: true })
+        });
+      }
+    </script>
+  {{/extractScript}}
 {{>footer}}

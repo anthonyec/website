@@ -18,26 +18,6 @@
     border-radius: 1.8vw;
   }
 
-  .post video + button {
-    margin-top: -0.5lh;
-    transition: opacity 200ms 150ms ease;
-  }
-
-  .post button {
-    background: var(--card-background);
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
-    position: relative;
-    padding: 8px 15px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
   @media(max-width: 1250px) {
     .post video, .post img {
       width: 150%;
@@ -53,7 +33,7 @@
   }
 </style>
 
-<video src="./videos/titles.mp4" muted playsinline loop autoplay style="border-radius: 1.8vw;"></video>
+<video src="./videos/titles.mp4" muted playsinline loop autoplay></video>
 
 - [Set Reset](https://www.set-reset.com/work/futurechoice-ai) - Team and images credit 
 - [Reddit Post](https://www.reddit.com/r/godot/comments/1ndesjs/i_did_my_first_commercial_godot_project_it_was/) - Original post with Q&A
@@ -73,16 +53,12 @@ I worked on both the 3D and 2D parts of the app. This included:
 - Implemented many of the UI components
 
 <video src="./videos/role.webm" style="border-radius: 0" playsinline></video>
-<button title="Play video">▶ Play video</button>
 
 <video src="./videos/strategy.webm" style="border-radius: 0" playsinline></video>
-<button title="Play video">▶ Play video</button>
 
 <video src="./videos/sim.webm" style="border-radius: 0" playsinline></video>
-<button title="Play video">▶ Play video</button>
 
 <video src="./videos/worldview.webm" style="border-radius: 0" playsinline></video>
-<button title="Play video">▶ Play video</button>
 
 Some little interesting bits:
 - The team originally planned to use Unreal, but when that didn’t work out I suggested switching to Godot. So that's a win for Godot!
@@ -94,22 +70,3 @@ Some little interesting bits:
 In the end, it went very smoothly with it running nonstop for 4 days straight!
 
 ![](./images/podiums.avif)
-
-<script>
-  const videos = document.querySelectorAll("video");
-  
-  for (const video of videos) {
-    const playButton = video.nextElementSibling;
-    if (!playButton) continue;
-
-
-    playButton.addEventListener("click", () => {
-      video.play()
-      playButton.style.opacity = 0
-
-      video.addEventListener("ended", () => {
-        playButton.style.opacity = 1
-      }, { once: true })
-    });
-  }
-</script>
