@@ -2,12 +2,36 @@
 <meta name="robots" content="noindex">
 
 <style>
+  .post video {
+    background: black;
+  }
+
   .post video, .post img {
     max-width: none;
-    width: 200%;
-    margin-left: -50%;
-    border-radius: 24px;
+    width: 170%;
+    margin-left: -30%;
+    border-radius: 1.8vw;
     border: 0;
+  }
+
+  .post video + button {
+    margin-top: -0.5lh;
+    transition: opacity 200ms 150ms ease;
+  }
+
+  .post button {
+    background: var(--card-background);
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    position: relative;
+    padding: 8px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
   }
 
   @media(max-width: 1250px) {
@@ -55,40 +79,49 @@ FileDeck is a file browser for the Steam Deck. It's designed for use with the ga
 
 I'm currently developing FileDeck in the <strong>Godot</strong> game engine, fully leveraging it for it's UI system and graphic capabilities.
 
-## Tab switcher
+<video src="./videos/tabs.webm"></video>
+<button title="Play video">▶ Play video</button>
 
-<video src="./videos/switch_tabs.webm" muted playsinline loop autoplay></video>
+The interface makes use of sound to inform the user with what's going on but also make everyday actions fun. For example, the pitch of the select sound effect varies depending on how many files are being selected.
 
-## High performance
+<video src="./videos/selecting.webm"></video>
+<button title="Play video">▶ Play video</button>
 
-<video src="./videos/scrolling.webm" muted playsinline loop autoplay></video>
+Images can be viewed and simple edits can be made to text files. This is useful for adjusting game config files.
+
+<video src="./videos/chickens.webm"></video>
+<button title="Play video">▶ Play video</button>
 
 FileDeck can scroll through 1000s of files without dropping frames. This is because I've implemented a virtual scroll grid, which only renders items that should be visible in the viewport.
 
-The virtual scroll grid can be configured so that the scroll area and viewport can be separate. This allows the same UI component to be used for different kinds of lists and layouts.
+<video src="./videos/scroll.webm"></video>
+<button title="Play video">▶ Play video</button>
 
-For example, the Go to Folder UI uses the virtual scroll grid with a centered layout.
+The same virtual grid UI component is used throughout the app for all the menus.
 
-<video src="./videos/goto_folder.webm" muted playsinline loop autoplay></video>
+<video src="./videos/menus.webm"></video>
+<button title="Play video">▶ Play video</button>
 
 Common actions like copying, moving and deleting are all done using threads. This keeps the main thread for the UI responsive and makes it easy to track a tasks progress.
 
-<video src="./videos/deleting.webm" muted playsinline loop autoplay></video>
+<video src="./videos/trash.webm"></video>
+<button title="Play video">▶ Play video</button>
 
-## Copy, rename and delete files
+<script>
+  const videos = document.querySelectorAll("video");
+  
+  for (const video of videos) {
+    const playButton = video.nextElementSibling;
+    if (!playButton) continue;
 
-<video src="./videos/renaming.webm" muted playsinline loop autoplay></video>
 
-<video src="./videos/replacing.webm" muted playsinline loop autoplay></video>
+    playButton.addEventListener("click", () => {
+      video.play()
+      playButton.style.opacity = 0
 
-## Filtering files
-
-<video src="./videos/filtering.webm" muted playsinline loop autoplay></video>
-
-## Open images and edit text
-
-<video src="./videos/opening_images.webm" muted playsinline loop autoplay></video>
-
-## Selecting files
-
-<video src="./videos/selecting.webm" muted playsinline loop autoplay></video>
+      video.addEventListener("ended", () => {
+        playButton.style.opacity = 1
+      }, { once: true })
+    });
+  }
+</script>
