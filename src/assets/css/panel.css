@@ -50,8 +50,12 @@
     flex-direction: column;
   }
 
+  .panel__icon {
+    display: none;
+  }
+
   .panel__content {
     font-size: 14px;
-    text-align: center;
+    text-wrap: unset;
   }
 }
