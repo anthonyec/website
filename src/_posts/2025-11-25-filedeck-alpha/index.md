@@ -1,4 +1,4 @@
-<!-- draft: false -->
+<!-- draft: true -->
 <meta name="robots" content="noindex">
 
 # How to install the FileDeck alpha
