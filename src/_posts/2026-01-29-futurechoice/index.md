@@ -72,16 +72,16 @@ I worked on both the 3D and 2D parts of the app. This included:
 - Player and strategy selection UI
 - Implemented many of the UI components
 
-<video src="./videos/role.webm"></video>
+<video src="./videos/role.webm" style="border-radius: 0" playsinline></video>
 <button title="Play video">▶ Play video</button>
 
-<video src="./videos/strategy.webm"></video>
+<video src="./videos/strategy.webm" style="border-radius: 0" playsinline></video>
 <button title="Play video">▶ Play video</button>
 
-<video src="./videos/sim.webm"></video>
+<video src="./videos/sim.webm" style="border-radius: 0" playsinline></video>
 <button title="Play video">▶ Play video</button>
 
-<video src="./videos/worldview.webm"></video>
+<video src="./videos/worldview.webm" style="border-radius: 0" playsinline></video>
 <button title="Play video">▶ Play video</button>
 
 Some little interesting bits:
