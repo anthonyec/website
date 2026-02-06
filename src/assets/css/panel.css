@@ -33,7 +33,7 @@
   flex-direction: column;
   position: relative;
   padding: 15px 18px;
-  max-width: 460px;
+  max-width: 500px;
   text-wrap: balance;
   gap: 10px;
   line-height: 1.3;
@@ -43,6 +43,21 @@
 
 .panel__content p {
   margin: 0;
+}
+
+.panel__content a:link,
+.panel__content a:visited,
+.panel__content a:active {
+  color: var(--link-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  border-radius: 9px;
+}
+
+.panel__content a svg {
+  height: 16px;
 }
 
 @media (max-width: 620px) {
