@@ -132,7 +132,7 @@ module.exports = {
       '/work/findbot': '/posts/findbot-case-study',
       '/work/conference': '/posts/ubs-conference-case-study',
       '/work/totaljobs': '/posts/total-jobs',
-      '/cv': `/anthony_cossins_cv_2022.pdf?c=${Date.now()}`,
+      '/cv': `/anthony_cossins_cv_2026.pdf?c=${Date.now()}`,
 
       // Outbound links.
       '/redirects/london-creative-coding':
@@ -165,7 +165,7 @@ module.exports = {
     });
 
     fs.cpSync(path.join('./src', 'google0290ed350f9faa96.html'), path.join('./dist', 'google0290ed350f9faa96.html'));
-    fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'anthony_cossins_cv_2022.pdf'));
+    fs.cpSync(path.join('./src', 'cv.pdf'), path.join('./dist', 'anthony_cossins_cv_2026.pdf'));
     fs.cpSync(path.join('./src', 'favicon.png'), path.join('./dist', 'favicon.png'));
     fs.cpSync(path.join('./src', 'favicon.ico'), path.join('./dist', 'favicon.ico'));
     fs.cpSync(path.join('./src', '_redirects'), path.join('./dist', '_redirects'));
