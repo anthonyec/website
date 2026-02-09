@@ -6,12 +6,20 @@
   z-index: 100;
 }
 
-.nav__background {
-  background: linear-gradient(to bottom, var(--background-color) 10%, transparent);
-  position: absolute;
-  height: 150%;
-  inset: 0;
-  pointer-events: none;
+@media (max-width: 1002px) {
+  .nav {
+    display: flex;
+    padding-bottom: 35px;
+    justify-content: center;
+  }
+
+  .nav__background {
+    background: linear-gradient(to bottom, var(--background-color) 10%, transparent);
+    position: absolute;
+    height: 150%;
+    inset: 0;
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -19,7 +27,7 @@
     display: flex;
     justify-content: center;
     padding: 15px;
-    padding-bottom: 0;
+    padding-bottom: 15px;
   }
 
   .nav .logo {

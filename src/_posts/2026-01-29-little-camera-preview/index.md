@@ -2,34 +2,6 @@
 
 # Little Camera Preview
 
-<style>
-  .post h1, .post .time {
-    display: none
-  }
-
-  .post video, .post img {
-    max-width: none;
-    width: 200%;
-    margin-left: -50%;
-    border-radius: 24px;
-    border: 0;
-  }
-
-  @media(max-width: 1250px) {
-    .post video, .post img {
-      width: 150%;
-      margin-left: -25%;
-    }
-  }
-
-  @media(max-width: 950px) {
-    .post video, .post img {
-      width: 100%;
-      margin-left: auto;
-    }
-  }
-</style>
-
 <video src="./videos/demo.mp4" muted playsinline loop autoplay></video>
 
 A Godot editor plugin that shows a picture-in-picture style preview when selecting a 2D or 3D camera.

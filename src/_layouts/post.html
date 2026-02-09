@@ -1,7 +1,8 @@
 {{#concatCSS}}
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="stylesheet" href="/assets/css/footer.css" />
   <link rel="stylesheet" href="/assets/css/post.css" />
   <link rel="stylesheet" href="/assets/css/iframe.css" />
-  <link rel="stylesheet" href="/assets/css/nav.css" />
 {{/concatCSS}}
 
 {{>header}}
@@ -11,15 +12,15 @@
     {{>logo}}
   </div>
 
-  <article class="post contain">
-    {{{page.content}}}
+  <main style="padding: 0 15px;">
+    <article class="post contain">
+      {{{page.content}}}
+    </article>
+  </main>
 
-    <hr>
-
-    <div class="time">
-      Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
-    </div>
-  </article>
+  <footer class="footer">
+    Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
+  </footer>
 
   {{#extractScript}}
     <script>

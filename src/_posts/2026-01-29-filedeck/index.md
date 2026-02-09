@@ -2,35 +2,7 @@
 <meta name="robots" content="noindex">
 
 <style>
-  .post video {
-    background: black;
-  }
-
-  .post video, .post img {
-    max-width: none;
-    width: 170%;
-    margin-left: -30%;
-    border-radius: 1.8vw;
-    border: 0;
-  }
-
-  @media(max-width: 1250px) {
-    .post video, .post img {
-      width: 150%;
-      margin-left: -25%;
-    }
-  }
-
-  @media(max-width: 950px) {
-    .post video, .post img {
-      width: 100%;
-      margin-left: auto;
-    }
-  }
-</style>
-
-<style>
-  .post h1, .post .time {
+  .post h1 {
     display: none
   }
 
