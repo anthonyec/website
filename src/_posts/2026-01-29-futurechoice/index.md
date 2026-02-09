@@ -2,34 +2,8 @@
 # S&P FutureChoice Installation
 
 <style>
-  .post h1, .post .time {
+  .post h1 {
     display: none
-  }
-
-  .post video, .post img {
-    max-width: none;
-    width: 200%;
-    margin-left: -50%;
-    border-radius: 24px;
-    border: 0;
-  }
-
-  .post img {
-    border-radius: 1.8vw;
-  }
-
-  @media(max-width: 1250px) {
-    .post video, .post img {
-      width: 150%;
-      margin-left: -25%;
-    }
-  }
-
-  @media(max-width: 950px) {
-    .post video, .post img {
-      width: 100%;
-      margin-left: auto;
-    }
   }
 </style>
 
