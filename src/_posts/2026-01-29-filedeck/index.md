@@ -1,4 +1,4 @@
-<!-- draft: true -->
+<!-- hidden: true -->
 <meta name="robots" content="noindex">
 
 <style>
