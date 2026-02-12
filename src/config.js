@@ -225,7 +225,7 @@ module.exports = {
   concatCSS: () => (text) =>
     memorize(text, () => {
       const matches = [];
-      const regex = new RegExp('href="(.+)"', 'g');
+      const regex = new RegExp('href="([^"]+)"', 'g');
       let match = regex.exec(text);
 
       while (match !== null) {
@@ -257,4 +257,24 @@ module.exports = {
 
       return `<link rel="stylesheet" href="/assets/css/${hash}.css" />`;
     }),
+  inlineSVG: () => (text) => {
+    return memorize(text, () => {
+      const regex = new RegExp('src="([^"]+)"', 'g');
+      const match = regex.exec(text);
+
+      if (!match || !match[1]) {
+        return text;
+      }
+
+      const svgPath = match[1];
+
+      try {
+        const svgContent = fs.readFileSync(path.join(__dirname, svgPath), 'utf8');
+        return svgContent;
+      } catch (err) {
+        console.error(`Error reading SVG file: ${svgPath}`, err);
+        return text;
+      }
+    });
+  },
 };
