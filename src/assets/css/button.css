@@ -44,7 +44,8 @@
   color: #00960C;
 }
 
-.button svg {
+.button svg,
+.button img {
   height: 15px;
   flex-shrink: 0;
   opacity: 0.9;
