@@ -157,7 +157,7 @@
 
   <section class="home__section home__section--list">
     {{#posts}}
-      {{^draft}}
+      {{^hidden}}
         <a href="{{path}}" class="chip chip--text-only {{#thumbnail}}chip--has-image{{/thumbnail}}">
           {{title}}
           
@@ -165,7 +165,7 @@
             <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
           {{/thumbnail}}
         </a>
-      {{/draft}}
+      {{/hidden}}
     {{/posts}}
   </section>
   

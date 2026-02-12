@@ -1,4 +1,4 @@
-<!-- draft: true -->
+<!-- hidden: true -->
 
 # Little Camera Preview
 
