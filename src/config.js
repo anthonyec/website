@@ -141,7 +141,8 @@ module.exports = {
         'http://www.fullstopnewparagraph.co.uk/client/robots/',
       '/redirects/handicons': 'https://www.instagram.com/handicons/',
       '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
-      '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen'
+      '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen',
+      '/posts': '/#posts',
     });
 
     return [...posts.reverse(), ...standalone, ...oldPageRedirects]
