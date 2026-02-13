@@ -1,4 +1,4 @@
-<!-- draft: true -->
+<!-- hidden: true -->
 # S&P FutureChoice Installation
 
 <style>

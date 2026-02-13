@@ -127,8 +127,10 @@
 .post a:visited {
   color: var(--link-color);
   background: var(--link-background);
+  border-radius: 9px;
   text-decoration: underline;
   transition: background 300ms ease-out;
+  position: relative;
 }
 
 .post a:hover,

@@ -1,4 +1,3 @@
-
 .panel {
   display: flex;
   align-items: center;
@@ -49,37 +48,6 @@
   gap: 10px;
   margin-top: 5px;
   padding-bottom: 3px;
-}
-
-.panel__footer a:link,
-.panel__footer a:visited,
-.panel__footer a:active {
-  color: var(--link-color);
-  background: color-mix(in srgb, currentColor, transparent 90%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 8px;
-  position: relative;
-  padding: 8px 12px;
-  border-radius: 9px;
-  width: 100%;
-}
-
-.panel__footer a:hover {
-  filter: brightness(130%);
-}
-
-.panel__footer .panel__available-link:link,
-.panel__footer .panel__available-link:visited,
-.panel__footer .panel__available-link:active {
-  color: #00960C;
-}
-
-.panel__footer a svg {
-  height: 16px;
-  flex-shrink: 0;
 }
 
 @media (max-width: 620px) {

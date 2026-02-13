@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="/assets/css/home.css" />
   <link rel="stylesheet" href="/assets/css/chip.css" />
   <link rel="stylesheet" href="/assets/css/card.css" />
+  <link rel="stylesheet" href="/assets/css/button.css" />
   <link rel="stylesheet" href="/assets/css/panel.css" />
   <link rel="stylesheet" href="/assets/css/handy.css" />
 {{/concatCSS}}
@@ -33,7 +34,7 @@
     </div>
   </div>
 
-  <section class="home__section home__section--list">
+  <section class="home__section home__section--list home__section--small-gap-1">
     <div class="panel">
       <div class="panel__icon">
         <img src="/assets/images/info.svg" alt="">
@@ -47,29 +48,19 @@
         <p>I've been doing this for over a decade and have previously worked at&nbsp;<strong>Framer</strong>, the <strong>BBC</strong> and <strong>Signal-Noise</strong>.</p>
         
         <div class="panel__footer">
-          <a href="mailto:anthonycossins@gmail.com" class="panel__available-link">
-            <svg viewBox="0 0 83.999998 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Group" fill="currentColor" fill-rule="nonzero">
-                        <path d="M29,0 C27.892,0 27,0.89199 27,2 L27,8 L57,8 L57,2 C57,0.89199 56.107998,0 55,0 L29,0 Z M7,12 C3.122,12 0,15.12199 0,19 L0,65 C0,68.87801 3.122,72 7,72 L12.9688,72 L12.9688,12 L7,12 Z M16.9688,12 L16.9688,72 L67.031298,72 L67.031298,12 L16.9688,12 Z M71.031298,12 L71.031298,72 L76.999998,72 C80.877998,72 83.999998,68.87801 83.999998,65 L83.999998,19 C83.999998,15.122 80.877998,12 76.999998,12 L71.031298,12 Z" id="Shape"></path>
-                    </g>
-                </g>
-            </svg>
-  
+          <a href="mailto:anthonycossins@gmail.com" class="button button--full-width button--green">
+            {{#inlineSVG}}
+              <img src="/assets/images/briefcase.svg" alt="">
+            {{/inlineSVG}}
+
             Open to freelance work
           </a>
   
-          <a href="/cv">
-            <svg viewBox="0 0 91.428906 91.425" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="CV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Artboard" transform="translate(-27.286, -9)" fill="currentColor" fill-rule="nonzero">
-                        <g id="noun-cv-8135682" transform="translate(23, 9)">
-                            <path d="M81.43,0 L18.571,0 C10.6999,0 4.286,6.4141 4.286,14.285 L4.286,77.14 C4.286,85.0111 10.7001,91.425 18.571,91.425 L81.426,91.425 C89.2971,91.425 95.711,85.0109 95.711,77.14 L95.714906,14.285 C95.714906,6.4139 89.300806,0 81.429906,0 L81.43,0 Z M21.43,18.57 C21.43,16.9997 22.7152,15.7145 24.2855,15.7145 L38.5705,15.7145 C40.1408,15.7145 41.426,16.9997 41.426,18.57 L41.426,32.855 C41.426,34.4253 40.1408,35.7105 38.5705,35.7105 L24.2855,35.7105 C22.7152,35.7105 21.43,34.4253 21.43,32.855 L21.43,18.57 Z M75.715,72.859 L24.285,72.859 C22.7147,72.859 21.4295,71.5738 21.4295,70.0035 C21.4295,68.4332 22.7147,67.148 24.285,67.148 L75.715,67.148 C77.2853,67.148 78.5705,68.4332 78.5705,70.0035 C78.5705,71.5738 77.2853,72.859 75.715,72.859 Z M75.715,52.859 L24.285,52.859 C22.7147,52.859 21.4295,51.5738 21.4295,50.0035 C21.4295,48.4332 22.7147,47.148 24.285,47.148 L75.715,47.148 C77.2853,47.148 78.5705,48.4332 78.5705,50.0035 C78.5705,51.5738 77.2853,52.859 75.715,52.859 Z M75.715,32.859 L52.86,32.859 C51.2897,32.859 50.0045,31.5738 50.0045,30.0035 C50.0045,28.4332 51.2897,27.148 52.86,27.148 L75.715,27.148 C77.2853,27.148 78.5705,28.4332 78.5705,30.0035 C78.5705,31.5738 77.2853,32.859 75.715,32.859 Z M35.715,29.9996 L27.1447,29.9996 L27.1447,21.4293 L35.715,21.4293 L35.715,29.9996 Z" id="Shape"></path>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-  
+          <a href="/cv" class="button button--full-width">
+            {{#inlineSVG}}
+              <img src="/assets/images/cv.svg" alt="">
+            {{/inlineSVG}}
+
             Download CV
           </a>
         </div>
@@ -78,7 +69,7 @@
     </div>
   </section>
   
-  <section class="home__section home__section--grid">
+  <section class="home__section home__section--grid" id="projects">
     <article class="card">
       <a href="/posts/little-camera-preview" class="card__link"></a>
       
@@ -125,7 +116,7 @@
     </article>
   </section>
 
-  <section class="home__section home__section--grid home__section--temp-gap-hack">
+  <section class="home__section home__section--grid home__section--small-gap-2">
     <div class="home__card-group">
       <article class="card card--green">
         <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
@@ -155,9 +146,9 @@
     </div>
   </section>
 
-  <section class="home__section home__section--list">
+  <section class="home__section home__section--list" id="posts">
     {{#posts}}
-      {{^draft}}
+      {{^hidden}}
         <a href="{{path}}" class="chip chip--text-only {{#thumbnail}}chip--has-image{{/thumbnail}}">
           {{title}}
           
@@ -165,7 +156,7 @@
             <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
           {{/thumbnail}}
         </a>
-      {{/draft}}
+      {{/hidden}}
     {{/posts}}
   </section>
   
