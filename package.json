@@ -4,16 +4,16 @@
   "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev static-build ./src ./dist -f -w",
-    "build": "git submodule update --init --recursive --depth=1 && static-build ./src ./dist -f"
+    "start": "NODE_ENV=dev node --enable-source-maps ./node_modules/.bin/staticbuild ./src ./dist --watch",
+    "build": "git submodule update --init --recursive --depth=1 && node --enable-source-maps ./node_modules/.bin/staticbuild ./src ./dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthonyec/anthonyec.github.io.git"
+    "url": "git+https://github.com/anthonyec/website.git"
   },
   "author": "Anthony Cossins",
-  "homepage": "https://github.com/anthonyec/anthonyec.github.io#readme",
+  "homepage": "https://github.com/anthonyec/website#readme",
   "devDependencies": {
-    "static-build": "github:anthonyec/static_build#a1ddbbd1d29a47b4c0891076904254749abbe5a8"
+    "@anthonyec/staticbuild": "github:anthonyec/staticbuild"
   }
 }

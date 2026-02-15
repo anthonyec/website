@@ -1,9 +1,9 @@
-{{#concatCSS}}
+{{#functions.concatCSS}}
   <link rel="stylesheet" href="/assets/css/nav.css" />
   <link rel="stylesheet" href="/assets/css/footer.css" />
   <link rel="stylesheet" href="/assets/css/post.css" />
   <link rel="stylesheet" href="/assets/css/iframe.css" />
-{{/concatCSS}}
+{{/functions.concatCSS}}
 
 {{>header}}
 
@@ -19,10 +19,10 @@
   </main>
 
   <footer class="footer">
-    Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
+    Posted on <time datetime="{{page.date}}">{{#functions.formatDate}}{{page.date}}{{/functions.formatDate}}</time>
   </footer>
 
-  {{#extractScript}}
+  {{#functions.extractScript}}
     <script>
       const videos = document.querySelectorAll("video");
       
@@ -56,5 +56,5 @@
         });
       }
     </script>
-  {{/extractScript}}
+  {{/functions.extractScript}}
 {{>footer}}

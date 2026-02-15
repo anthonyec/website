@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
   <head>
-    <title>{{formattedTitle}}</title>
+    <title>{{data.computed.formattedTitle}}</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,12 +21,12 @@
     <link rel="icon" href="/favicon.png">
     <link rel="canonical" href="https://anthonycossins.com/">
 
-    {{#concatCSS}}
+    {{#functions.concatCSS}}
       <link rel="stylesheet" href="/assets/css/reset.css" />
       <link rel="stylesheet" href="/assets/css/vars.css" />
       <link rel="stylesheet" href="/assets/css/body.css" />
       <link rel="stylesheet" href="/assets/css/contain.css" />
-    {{/concatCSS}}
+    {{/functions.concatCSS}}
 
     <script async defer type="text/javascript" data-domain="anthonycossins.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
   </head>
