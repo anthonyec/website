@@ -1,14 +1,16 @@
+{{>header}}
+
 <script sb:buildtime type="application/json">
   {
     "name": "Anthony Cossins",
 
-    "role": "Senior Software Engineer",
+    "role": "Senior Frontend Engineer",
 
     "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences. What I've built has been relied upon by millions.",
     
     "links": [
-      "anthonycossins.com",
-      "github.com/anthonyec"
+      { "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
+      { "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
     ],
 
     "skills": [
@@ -32,11 +34,14 @@
 
     "experience": [
       {
-        "title": "Sabbatical",
-        "from": "April 2025",
-        "to": "February 2025",
+        "title": "Freelance",
+        "role": "Senior Frontend Engineer",
+        "from": "December 2024",
+        "to": "Present",
         "highlights": [
-          "Took a planned break, spending time on personal projects, network building and some freelance."
+          "Lead the development of a 3D interactive installation for SetReset and S&P.",
+          "Lead the development of a 3D interactive installation for SetReset and S&P.",
+          "Lead the development of a 3D interactive installation for SetReset and S&P."
         ]
       },
       {
@@ -84,6 +89,16 @@
 <link rel="stylesheet" href="./assets/css/reset.css">
 <link rel="stylesheet" href="./assets/css/vars.css">
 <link rel="stylesheet" href="./assets/css/body.css">
+<link rel="stylesheet" href="./assets/css/button.css">
+
+<style>
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+  }
+</style>
 
 <style>
   .cv {
@@ -93,6 +108,7 @@
     --info-column-width: 35%;
 
     background: white;
+    border: 1px solid rgba(0, 0, 0, 0.35);
     box-shadow: 
       0px 0px 3px 0px rgba(0, 0, 0, 0.25), 
       0 0 0 calc(var(--outer-padding) - 1px) white inset,
@@ -109,7 +125,7 @@
     aspect-ratio: 210 / 297;
     overflow: hidden;
     
-    margin: 50px auto;
+    margin: 0 auto;
   }
 
   @media screen {
@@ -137,11 +153,15 @@
       background: none;
     }
 
+    nav {
+      display: none;
+    }
+
     .cv {
       box-shadow:
         0 0 0 calc(var(--outer-padding) - 1px) white inset,
         0 0 0 var(--outer-padding) black inset;
-
+      border: none;
       border-radius: 0;
       margin: 0;
     }
@@ -276,38 +296,43 @@
     line-height: 1.4;
   }
 
-  .cv__employment ul {
+  .cv__experience-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
     flex-grow: 1;
   }
 
-  .cv__employment ul li {
+  .cv__experience-list li {
     display: flex;
     align-items: flex-start;
     gap: 15px;
   }
 
-  .cv__employment ul li img {
+  .cv__experience-list li img {
     height: 0.7rem;
     margin-top: 5px;
     user-select: none;
   }
 
-  .cv__employment ul.list {
+  .cv__experience-list {
     flex-direction: row;
-    padding-left: 28px
   }
 
-  .cv__employment ul.list li {
+  .cv__experience-list li {
+    background-color: rgba(0, 0, 0, 0.2);
     gap: 0;
   }
 
-  .cv__employment ul.list li:not(:last-child)::after {
+  .cv__experience-list li:not(:last-child)::after {
     content: ","
   }
 </style>
+
+<nav>
+  <button id="download-pdf" class="button">Download as PDF</button>
+  <button id="copy-markdown" class="button">Copy as Markdown</button>
+</nav>
 
 <main class="cv">
   <section class="cv__profile">
@@ -330,9 +355,21 @@
         {{data.bio}}
       </p>
 
+      <ul class="cv__experience-list">
+        {{#data.skills}}
+          <li>{{.}}</li>
+        {{/data.skills}}
+      </ul>
+
+      <ul class="cv__experience-list">
+        {{#data.tools}}
+          <li>{{.}}</li>
+        {{/data.tools}}
+      </ul>
+
       <ul>
         {{#data.links}}
-          <li><a href="https://{{.}}" target="_blank">{{.}}</a></li>
+          <li><a href="{{url}}" target="_blank">{{label}}</a></li>
         {{/data.links}}
       </ul>
     </aside>
@@ -362,32 +399,55 @@
       </article>
     {{/data.experience}}
   </section>
-
-  <section class="cv__section cv__section--small">
-    <h2 class="cv__section-title">Experience</h2>
-
-    <article class="cv__employment">
-      <aside>
-        <h3>Skills</h3>
-      </aside>
-
-      <ul class="list">
-        {{#data.skills}}
-          <li>{{.}}</li>
-        {{/data.skills}}
-      </ul>
-    </article>
-
-    <article class="cv__employment">
-      <aside>
-        <h3>Tools</h3>
-      </aside>
-
-      <ul class="list">
-        {{#data.tools}}
-          <li>{{.}}</li>
-        {{/data.tools}}
-      </ul>
-    </article>
-  </section>
 </main>
+
+
+<script>
+  const markdown = `
+# {{data.name}} - {{data.role}}
+{{data.bio}}
+
+## Employment
+{{#data.experience}}
+
+### {{title}} - {{from}} to {{to}}
+{{#highlights}}
+- {{.}}
+{{/highlights}}
+{{/data.experience}}
+
+## Experience
+### Skills
+{{#data.skills}}
+- {{.}}
+{{/data.skills}}
+
+### Tools
+{{#data.tools}}
+- {{.}}
+{{/data.tools}}
+
+Thank you for your time!
+  `.trim()
+
+  const downloadPDFButton = document.querySelector("#download-pdf")
+  const copyMarkdownButton = document.querySelector("#copy-markdown")
+
+  downloadPDFButton.addEventListener("click", () => {
+
+  })
+
+  copyMarkdownButton.addEventListener("click", () => {
+    const tempInput = document.createElement('textarea');
+    tempInput.value = markdown;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+  })
+</script>
+
+<nav></nav>
+
+{{>footer}}
