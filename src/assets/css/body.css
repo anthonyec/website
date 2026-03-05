@@ -10,6 +10,7 @@ body {
 }
 
 a:focus, button:focus {
+  position: relative;
   outline: none;
 }
 

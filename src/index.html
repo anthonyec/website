@@ -1,13 +1,11 @@
 {{>header}}
 
-{{#concatCSS}}
-  <link rel="stylesheet" href="/assets/css/home.css" />
-  <link rel="stylesheet" href="/assets/css/chip.css" />
-  <link rel="stylesheet" href="/assets/css/card.css" />
-  <link rel="stylesheet" href="/assets/css/button.css" />
-  <link rel="stylesheet" href="/assets/css/panel.css" />
-  <link rel="stylesheet" href="/assets/css/handy.css" />
-{{/concatCSS}}
+<link rel="stylesheet" href="/assets/css/home.css" />
+<link rel="stylesheet" href="/assets/css/chip.css" />
+<link rel="stylesheet" href="/assets/css/card.css" />
+<link rel="stylesheet" href="/assets/css/button.css" />
+<link rel="stylesheet" href="/assets/css/panel.css" />
+<link rel="stylesheet" href="/assets/css/handy.css" />
 
 <main class="home">
   <div class="home__section home__section--list">
@@ -49,18 +47,12 @@
         
         <div class="panel__footer">
           <a href="mailto:anthonycossins@gmail.com" class="button button--full-width button--green">
-            {{#inlineSVG}}
-              <img src="/assets/images/briefcase.svg" alt="">
-            {{/inlineSVG}}
-
+            <img src="/assets/images/briefcase.svg" alt="" sb:inline>
             Open to freelance work
           </a>
   
           <a href="/cv" class="button button--full-width">
-            {{#inlineSVG}}
-              <img src="/assets/images/cv.svg" alt="">
-            {{/inlineSVG}}
-
+            <img src="/assets/images/cv.svg" alt="" sb:inline>
             Download CV
           </a>
         </div>
@@ -101,7 +93,7 @@
       <a href="/posts/futurechoice" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-        <video data-src="/assets/videos/s_and_p.webm" autoplay muted loop playsinline preload="none"></video>
+        <video sb:src="/assets/videos/s_and_p.webm" autoplay muted loop playsinline preload="none"></video>
       </div>
       <h2 class="card__title">First commercial Godot project</h2> 
     </article>
@@ -110,7 +102,7 @@
       <a href="/posts/filedeck" class="card__link"></a>
       <div class="card__image">
         <img class="card__image" src="/assets/images/filedeck.png" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-        <video data-src="/assets/videos/filedeck.webm" autoplay muted loop playsinline preload="none"></video>
+        <video sb:src="/assets/videos/filedeck.webm" autoplay muted loop playsinline preload="none"></video>
       </div>
       <h2 class="card__title">File browser for the Steam Deck</h2> 
     </article>
@@ -122,7 +114,7 @@
         <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
         <div class="card__image">
           <img class="card__image" src="/assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
-          <video data-src="/assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+          <video sb:src="/assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">6:30</div>
           <button class="card__sound-button" title="Unmute">
             <img src="/assets/images/muted.svg" alt="Muted">
@@ -135,7 +127,7 @@
         <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
         <div class="card__image">
           <img src="/assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
-          <video data-src="/assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+          <video sb:src="/assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">1:03:15</div>
           <button class="card__sound-button" title="Unmute">
             <img src="/assets/images/muted.svg" alt="Muted">
@@ -169,67 +161,65 @@
   </footer>
 </main>
 
-{{#extractScript}}
-  <script>
-    function showVideo(video) {
-      if (!(video instanceof HTMLVideoElement)) return
-      
-      if (!video.src) {
-        video.src = video.getAttribute("data-src")
-      }
-
-      video.play()
-      video.volume = 1.0
-
-      try {
-        plausible('hover_video')
-      } catch (err) {
-        console.log("Event failed:", err)
-      }
+<script>
+  function showVideo(video) {
+    if (!(video instanceof HTMLVideoElement)) return
+    
+    if (!video.src) {
+      video.src = video.getAttribute("sb:src")
     }
 
-    function hideVideo(video) {
-      if (!(video instanceof HTMLVideoElement)) return
+    video.play()
+    video.volume = 1.0
 
-      video.pause()
+    try {
+      plausible('hover_video')
+    } catch (err) {
+      console.log("Event failed:", err)
     }
+  }
 
-    function toggleMute(video, soundButton) {
-      if (!(video instanceof HTMLVideoElement)) return
-      if (!(soundButton instanceof HTMLButtonElement)) return
+  function hideVideo(video) {
+    if (!(video instanceof HTMLVideoElement)) return
 
-      const icon = soundButton.querySelector("img")
-      if (!(icon instanceof HTMLImageElement)) return
+    video.pause()
+  }
 
-      video.muted = !video.muted
+  function toggleMute(video, soundButton) {
+    if (!(video instanceof HTMLVideoElement)) return
+    if (!(soundButton instanceof HTMLButtonElement)) return
 
-      soundButton.title = video.muted ? "Unmute" : "Mute"
-      icon.src = video.muted ? "assets/images/muted.svg" : "assets/images/unmuted.svg"
+    const icon = soundButton.querySelector("img")
+    if (!(icon instanceof HTMLImageElement)) return
 
-      try {
-        plausible('unmuted_video')
-      } catch (err) {
-        console.log("Event failed:", err)
-      }
+    video.muted = !video.muted
+
+    soundButton.title = video.muted ? "Unmute" : "Mute"
+    icon.src = video.muted ? "assets/images/muted.svg" : "assets/images/unmuted.svg"
+
+    try {
+      plausible('unmuted_video')
+    } catch (err) {
+      console.log("Event failed:", err)
     }
+  }
 
-    const cards = document.querySelectorAll('.card')
+  const cards = document.querySelectorAll('.card')
 
-    for (const card of cards) {
-      const video = card.querySelector("video")
-      if (!video) continue
+  for (const card of cards) {
+    const video = card.querySelector("video")
+    if (!video) continue
 
-      card.addEventListener("mouseover", () => showVideo(video))
-      card.addEventListener("mouseout", () => hideVideo(video))
-      card.addEventListener("focusin", () => showVideo(video))
-      card.addEventListener("focusout", () => hideVideo(video))
+    card.addEventListener("mouseover", () => showVideo(video))
+    card.addEventListener("mouseout", () => hideVideo(video))
+    card.addEventListener("focusin", () => showVideo(video))
+    card.addEventListener("focusout", () => hideVideo(video))
 
-      const soundButton = card.querySelector(".card__sound-button")
-      if (!soundButton) continue
+    const soundButton = card.querySelector(".card__sound-button")
+    if (!soundButton) continue
 
-      soundButton.addEventListener("click", () => toggleMute(video, soundButton))
-    }
-  </script>
-{{/extractScript}}
+    soundButton.addEventListener("click", () => toggleMute(video, soundButton))
+  }
+</script>
 
 {{>footer}}
