@@ -203,6 +203,10 @@
     /* margin-bottom: 10px; */
   }
 
+  .cv__profile p {
+    margin-bottom: 4px;
+  }
+
   .cv__profile-logo {
     width: var(--info-column-width);
     flex-shrink: 0;
@@ -234,7 +238,7 @@
   }
 
   .cv__section:last-child {
-    margin-top: auto;
+    /* margin-top: auto; */
   }
 
   .cv__section-title {
@@ -296,37 +300,38 @@
     line-height: 1.4;
   }
 
-  .cv__experience-list {
+  .cv__employment ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
     flex-grow: 1;
   }
 
-  .cv__experience-list li {
+  .cv__employment ul li {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 12px;
   }
 
-  .cv__experience-list li img {
+  .cv__employment ul li img {
     height: 0.7rem;
     margin-top: 5px;
     user-select: none;
   }
 
-  .cv__experience-list {
+  ul.cv__skill-list {
     flex-direction: row;
+    gap: 10px;
   }
 
-  .cv__experience-list li {
-    background-color: rgba(0, 0, 0, 0.2);
-    gap: 0;
+  .cv__skill-list li {
+    /* background-color: rgba(0, 0, 0, 0.05); */
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 15px;
   }
 
-  .cv__experience-list li:not(:last-child)::after {
-    content: ","
-  }
 </style>
 
 <nav>
@@ -355,13 +360,13 @@
         {{data.bio}}
       </p>
 
-      <ul class="cv__experience-list">
+      <ul class="cv__skill-list">
         {{#data.skills}}
           <li>{{.}}</li>
         {{/data.skills}}
       </ul>
 
-      <ul class="cv__experience-list">
+      <ul class="cv__skill-list">
         {{#data.tools}}
           <li>{{.}}</li>
         {{/data.tools}}
@@ -408,15 +413,17 @@
 {{data.bio}}
 
 ## Employment
-{{#data.experience}}
 
+{{#data.experience}}
 ### {{title}} - {{from}} to {{to}}
 {{#highlights}}
 - {{.}}
 {{/highlights}}
+
 {{/data.experience}}
 
 ## Experience
+
 ### Skills
 {{#data.skills}}
 - {{.}}
