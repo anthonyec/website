@@ -9,8 +9,8 @@
     "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences. What I've built has been relied upon by millions.",
     
     "links": [
-      { "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
-      { "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
+      { "icon": "/assets/images/email.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
+      { "icon": "/assets/images/globe.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
     ],
 
     "skills": [
@@ -40,7 +40,8 @@
         "from": "December 2024",
         "to": "Present",
         "highlights": [
-          "Worked with Set Reset to deliver a reliable and high fidelity 3D interactive installation for S&P Global. Lead the development of the asset pipeline that automated the processing of larges amounts of 3D content.",
+          "Collaborated with Set Reset to deliver a reliable, high fidelity 3D interactive installation for S&P Global.",
+          "Lead the development of the asset pipeline that automated the processing of larges amounts of 3D content.",
           "Worked on various frontend projects creating polished and dynamic interfaces for games and web applications."
         ]
       },
@@ -53,8 +54,7 @@
         "highlights": [
           "Designed and developed the font previews feature, from initial hackathon concept to fullstack production ready feature.",
           "Led the engineering work to integrate Fontshare typefaces. Managed communication and coordination with the external development team.",
-          "Played a key role in launching the Plugins platform, designing and implementing core APIs and owning the authentication model.",
-          "Shipped multiple high quality product features relied upon daily by thousands of users to run their businesses.",
+          "Played a key role in launching the Plugins platform, designing and implementing core APIs, and creating the OAuth model for plugins.",
           "Shipped multiple high quality product features relied upon daily by thousands of users to run their businesses."
         ]
       },
@@ -80,9 +80,8 @@
         "to": "October 2017",
         "highlights": [
           "Worked closely with designers to create single page web applications for clients including The Guardian, eBay and Alzheimer's Society.",
-          "Developed, maintained and shipped real-time data visualisations for UBS global conferences and exhibitions run by The Economist.",
-          "Created internal tools, such as Bigscreen for displaying web content in “kiosk mode” and FindBot which made the company server searchable.",
-          "Animated interactive visualisations using Canvas and SVG."
+          "Developed, maintained and shipped real-time data visualisations for conferences and exhibitions.",
+          "Created and animated interactive data visualisations using Canvas, SVG and WebGL."
         ]
       }
     ]
@@ -107,7 +106,7 @@
   .cv {
     --outer-padding: 30px;
     --inner-padding-horizontal: 40px;
-    --inner-vertical-padding: 40px;
+    --inner-vertical-padding: 45px;
     --info-column-width: 35%;
 
     background: white;
@@ -148,6 +147,11 @@
       .cv {
         zoom: 0.3;
       }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -178,7 +182,7 @@
 
   .cv a {
     color: var(--link-color);
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   .cv ul {
@@ -223,17 +227,29 @@
 
   .cv__profile-info ul {
     display: flex;
-    gap: 20px;
-    margin-top: auto;
+    gap: 30px;
+  }
+
+  .cv__profile-info ul a {
+    border-radius: 4px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .cv__profile-info ul svg {
+    color: var(--link-color);
+    width: 15px;
+    height: 15px;
   }
 
   .cv__section {
     display: flex;
     flex-direction: column;
     gap: var(--inner-padding-horizontal);
-    border-top: 1px solid black;
     padding: var(--inner-vertical-padding) var(--inner-padding-horizontal);
     position: relative;
+    border-top: 1px solid black;
   }
 
   .cv__section--small {
@@ -357,10 +373,12 @@
 <img sb:src="./assets/images/bbc_logo.jpeg" style="display: none;">
 <img sb:src="./assets/images/signal_noise_logo.jpeg" style="display: none;">
 <img sb:src="./assets/images/freelance_logo.png" style="display: none;">
+<img sb:src="./assets/images/email.svg" style="display: none;">
 
 <nav>
-  <button id="download-pdf" class="button">Download as PDF</button>
+  <a class="button" href="/cv.pdf" download="anthony_cossins_cv_2026.pdf">Download as PDF</a>
   <button id="copy-markdown" class="button">Copy as Markdown</button>
+  <button id="print-paper" class="button">Print as Paper</button>
 </nav>
 
 <main class="cv">
@@ -396,9 +414,14 @@
         {{/data.tools}}
       </ul>
 
-      <ul>
+      <ul style="margin-top: 20px;">
         {{#data.links}}
-          <li><a href="{{url}}" target="_blank">{{label}}</a></li>
+          <li>
+            <a href="{{url}}" target="_blank">
+              <img src="{{icon}}" alt="" sb:inline>
+              {{label}}
+            </a>
+          </li>
         {{/data.links}}
       </ul>
     </aside>
@@ -466,12 +489,8 @@
 Thank you for your time!
   `.trim()
 
-  const downloadPDFButton = document.querySelector("#download-pdf")
   const copyMarkdownButton = document.querySelector("#copy-markdown")
-
-  downloadPDFButton.addEventListener("click", () => {
-
-  })
+  const printPaperButton = document.querySelector("#print-paper")
 
   copyMarkdownButton.addEventListener("click", () => {
     const tempInput = document.createElement('textarea');
@@ -481,6 +500,10 @@ Thank you for your time!
     tempInput.setSelectionRange(0, 99999);
     document.execCommand('copy');
     document.body.removeChild(tempInput);
+  })
+
+  printPaperButton.addEventListener("click", () => {
+    print()
   })
 </script>
 
