@@ -36,17 +36,18 @@
       {
         "title": "Freelance",
         "role": "Senior Frontend Engineer",
+        "logo": "/assets/images/freelance_logo.png",
         "from": "December 2024",
         "to": "Present",
         "highlights": [
-          "Lead the development of a 3D interactive installation for SetReset and S&P.",
-          "Lead the development of a 3D interactive installation for SetReset and S&P.",
-          "Lead the development of a 3D interactive installation for SetReset and S&P."
+          "Worked with Set Reset to deliver a reliable and high fidelity 3D interactive installation for S&P Global. Lead the development of the asset pipeline that automated the processing of larges amounts of 3D content.",
+          "Worked on various frontend projects creating polished and dynamic interfaces for games and web applications."
         ]
       },
       {
         "title": "Framer",
         "role": "Product Engineer",
+        "logo": "/assets/images/framer_logo.jpeg",
         "from": "June 2022",
         "to": "December 2024",
         "highlights": [
@@ -60,6 +61,7 @@
       {
         "title": "BBC iPlayer",
         "role": "Senior Software Engineer",
+        "logo": "/assets/images/bbc_logo.jpeg",
         "from": "June 2018",
         "to": "June 2022",
         "highlights": [
@@ -73,6 +75,7 @@
       {
         "title": "Signal Noise",
         "role": "Frontend Developer",
+        "logo": "/assets/images/signal_noise_logo.jpeg",
         "from": "June 2013",
         "to": "October 2017",
         "highlights": [
@@ -296,14 +299,30 @@
     width: var(--info-column-width);
     flex-shrink: 0;
     display: flex;
-    flex-direction: column;
+    gap: 12px;
     line-height: 1.4;
+  }
+
+  .cv__employment aside div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cv__employment aside div:first-child {
+    padding-top: 5px;
+  }
+
+  .cv__employment aside div:first-child img {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
   }
 
   .cv__employment ul {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 13px;
     flex-grow: 1;
   }
 
@@ -325,7 +344,6 @@
   }
 
   .cv__skill-list li {
-    /* background-color: rgba(0, 0, 0, 0.05); */
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 4px;
     padding: 2px 8px;
@@ -333,6 +351,12 @@
   }
 
 </style>
+
+<img sb:src="./assets/images/set_reset_logo.jpeg" style="display: none;">
+<img sb:src="./assets/images/framer_logo.jpeg" style="display: none;">
+<img sb:src="./assets/images/bbc_logo.jpeg" style="display: none;">
+<img sb:src="./assets/images/signal_noise_logo.jpeg" style="display: none;">
+<img sb:src="./assets/images/freelance_logo.png" style="display: none;">
 
 <nav>
   <button id="download-pdf" class="button">Download as PDF</button>
@@ -386,11 +410,16 @@
     {{#data.experience}}
       <article class="cv__employment">
         <aside>
-          <h3>{{title}}</h3>
-          <h4>{{role}}</h4>
-          <h5>
-            <time>{{from}}</time> <span>—</span> <time>{{to}}</time>
-          </h5>
+          <div>
+            <img src="{{logo}}" alt="{{title}} logo">
+          </div>
+          <div>
+            <h3>{{title}}</h3>
+            <h4>{{role}}</h4>
+            <h5>
+              <time>{{from}}</time> <span>—</span> <time>{{to}}</time>
+            </h5>
+          </div>
         </aside>
 
         <ul>
