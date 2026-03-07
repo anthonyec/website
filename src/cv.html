@@ -9,8 +9,8 @@
     "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences. What I've built has been relied upon by millions.",
     
     "links": [
-      { "icon": "/assets/images/email.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
-      { "icon": "/assets/images/globe.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
+      { "icon": "/assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
+      { "icon": "/assets/images/email.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
     ],
 
     "skills": [
@@ -111,10 +111,6 @@
 
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.35);
-    box-shadow: 
-      0px 0px 3px 0px rgba(0, 0, 0, 0.25), 
-      0 0 0 calc(var(--outer-padding) - 1px) white inset,
-      0 0 0 var(--outer-padding) black inset;
     border-radius: 24px;
     color: var(--text-color);
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -165,9 +161,6 @@
     }
 
     .cv {
-      box-shadow:
-        0 0 0 calc(var(--outer-padding) - 1px) white inset,
-        0 0 0 var(--outer-padding) black inset;
       border: none;
       border-radius: 0;
       margin: 0;
@@ -206,8 +199,8 @@
 
   .cv__profile h2 {
     font-size: 1.6em;
-    font-weight: 500;
-    /* margin-bottom: 10px; */
+    font-weight: 400;
+    margin-top: 5px;
   }
 
   .cv__profile p {
@@ -217,6 +210,7 @@
   .cv__profile-logo {
     width: var(--info-column-width);
     flex-shrink: 0;
+    padding-top: 1px;
   }
 
   .cv__profile-info {
@@ -247,9 +241,15 @@
     display: flex;
     flex-direction: column;
     gap: var(--inner-padding-horizontal);
-    padding: var(--inner-vertical-padding) var(--inner-padding-horizontal);
+    padding: 0  var(--inner-padding-horizontal) var(--inner-vertical-padding);
     position: relative;
+  }
+
+  .cv__section::before {
+    content: "";
     border-top: 1px solid black;
+    left: var(--inner-padding-horizontal);
+    right: var(--inner-padding-horizontal);
   }
 
   .cv__section--small {
@@ -258,35 +258,6 @@
 
   .cv__section:last-child {
     /* margin-top: auto; */
-  }
-
-  .cv__section-title {
-    background-color: white;
-    display: inline-block;
-    position: absolute;
-    font-size: 0.8rem;
-    top: 0;
-    transform: translateY(-50%);
-  }
-
-  .cv__section-title::before,
-  .cv__section-title::after {
-    --title-gap-width: 20px;
-
-    content: "";
-    background: white;
-    position: absolute;
-    top: 0;
-    width: var(--title-gap-width);
-    height: 100%;
-  }
-
-  .cv__section-title::before {
-    left: calc(0px - var(--title-gap-width));
-  }
-
-  .cv__section-title::after {
-    right: calc(0px - var(--title-gap-width));
   }
 
   .cv__employment {
@@ -348,10 +319,15 @@
     gap: 12px;
   }
 
-  .cv__employment ul li img {
-    height: 0.7rem;
+  .cv__employment ul li svg {
+    color: var(--the-brand-color);
+    width: 0.65rem;
+    height: 0.65rem;
     margin-top: 5px;
+    margin-left: -2px;
     user-select: none;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
 
   ul.cv__skill-list {
@@ -428,8 +404,6 @@
   </section>
 
   <section class="cv__section">
-    <h2 class="cv__section-title">Employment</h2>
-
     {{#data.experience}}
       <article class="cv__employment">
         <aside>
@@ -448,7 +422,7 @@
         <ul>
           {{#highlights}}
             <li>
-              <img src="data:image/svg+xml,%3C?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3E%20%3Csvg%20width=%279px%27%20height=%277px%27%20viewBox=%270%200%209%207%27%20version=%271.1%27%20xmlns=%27http://www.w3.org/2000/svg%27%20xmlns:xlink=%27http://www.w3.org/1999/xlink%27%3E%20%3Cdefs%3E%20%3Cpath%20d=%27M7.6136,1.0485%20L3.3956,5.2964%20L1.407,3.444%20L1.0688,3.7763%20L3.3619,5.9611%20L7.9444,1.3735%20L7.6136,1.0485%20Z%20M7.6069,0%20L9,1.3687%20L3.375,7%20L0,3.7844%20L1.3928,2.4154%20L3.375,4.2615%20L7.6069,0%20Z%27%20id=%27path-1%27%3E%3C/path%3E%20%3C/defs%3E%20%3Cg%20id=%27point%27%20stroke=%27none%27%20stroke-width=%271%27%20fill=%27none%27%20fill-rule=%27evenodd%27%3E%20%3Cmask%20id=%27mask-2%27%20fill=%27white%27%3E%20%3Cuse%20xlink:href=%27%23path-1%27%3E%3C/use%3E%20%3C/mask%3E%20%3Cg%20id=%27Clip-71%27%3E%3C/g%3E%20%3Cpolygon%20id=%27Fill-70%27%20fill=%27%23000000%27%20mask=%27url(%23mask-2)%27%20points=%27-5%20-5%2014%20-5%2014%2012%20-5%2012%27%3E%3C/polygon%3E%20%3C/g%3E%20%3C/svg%3E" alt="+">
+              <img src="./assets/images/bullet.svg" alt="+" sb:inline>
               <p>{{.}}</p>
             </li>
           {{/highlights}}
