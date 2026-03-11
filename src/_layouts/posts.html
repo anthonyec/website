@@ -16,7 +16,7 @@
   </main>
 
   <footer class="footer">
-    Posted on <time datetime="{{page.date}}">{{#formatDate}}{{page.date}}{{/formatDate}}</time>
+    Posted on <time datetime="{{page.date}}">{{#fn.dateToISO8601}}{{page.date}}{{/fn.dateToISO8601}}</time>
   </footer>
 
   <script>
