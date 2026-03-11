@@ -6,11 +6,11 @@
 
     "role": "Senior Frontend Engineer",
 
-    "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences. What I've built has been relied upon by millions.",
+    "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences.",
     
     "links": [
-      { "icon": "/assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
-      { "icon": "/assets/images/email.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
+      { "icon": "./assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
+      { "icon": "./assets/images/email.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
     ],
 
     "skills": [
@@ -41,7 +41,7 @@
         "to": "Present",
         "highlights": [
           "Collaborated with Set Reset to deliver a reliable, high fidelity 3D interactive installation for S&P Global.",
-          "Lead the development of the asset pipeline that automated the processing of larges amounts of 3D content.",
+          "Lead the development of the asset pipeline that automated the processing of large amounts of 3D content.",
           "Worked on various frontend projects creating polished and dynamic interfaces for games and web applications."
         ]
       },
@@ -366,45 +366,45 @@
     <aside class="cv__profile-info">
       <div>
         <h1>
-          {{data.name}}
+          {{page.name}}
         </h1>
       
         <h2>
-          {{data.role}}
+          {{page.role}}
         </h2>
       </div>
     
       <p>
-        {{data.bio}}
+        {{page.bio}}
       </p>
 
       <ul class="cv__skill-list">
-        {{#data.skills}}
+        {{#page.skills}}
           <li>{{.}}</li>
-        {{/data.skills}}
+        {{/page.skills}}
       </ul>
 
       <ul class="cv__skill-list">
-        {{#data.tools}}
+        {{#page.tools}}
           <li>{{.}}</li>
-        {{/data.tools}}
+        {{/page.tools}}
       </ul>
 
       <ul style="margin-top: 20px;">
-        {{#data.links}}
+        {{#page.links}}
           <li>
             <a href="{{url}}" target="_blank">
               <img src="{{icon}}" alt="" sb:inline>
               {{label}}
             </a>
           </li>
-        {{/data.links}}
+        {{/page.links}}
       </ul>
     </aside>
   </section>
 
   <section class="cv__section">
-    {{#data.experience}}
+    {{#page.experience}}
       <article class="cv__employment">
         <aside>
           <div>
@@ -428,37 +428,37 @@
           {{/highlights}}
         </ul>
       </article>
-    {{/data.experience}}
+    {{/page.experience}}
   </section>
 </main>
 
 
 <script>
   const markdown = `
-# {{data.name}} - {{data.role}}
-{{data.bio}}
+# {{page.name}} - {{page.role}}
+{{page.bio}}
 
 ## Employment
 
-{{#data.experience}}
+{{#page.experience}}
 ### {{title}} - {{from}} to {{to}}
 {{#highlights}}
 - {{.}}
 {{/highlights}}
 
-{{/data.experience}}
+{{/page.experience}}
 
 ## Experience
 
 ### Skills
-{{#data.skills}}
+{{#page.skills}}
 - {{.}}
-{{/data.skills}}
+{{/page.skills}}
 
 ### Tools
-{{#data.tools}}
+{{#page.tools}}
 - {{.}}
-{{/data.tools}}
+{{/page.tools}}
 
 Thank you for your time!
   `.trim()
