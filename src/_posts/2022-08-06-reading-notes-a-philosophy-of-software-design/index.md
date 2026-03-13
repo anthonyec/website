@@ -1,5 +1,8 @@
-<!-- thumbnail: ./book_cover.gif -->
-<!-- twitterSocialImage: ./book_cover.gif -->
+<data sb:buildtime>
+  {
+    "thumbnail": "./book_cover.gif"
+  }
+</data>
 
 # Reading notes: A Philosophy of Software Design
 

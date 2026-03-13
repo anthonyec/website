@@ -1,6 +1,6 @@
 {{>header}}
 
-<script sb:buildtime type="application/json">
+<data sb:buildtime>
   {
     "title": "CV",
     
@@ -8,7 +8,7 @@
 
     "role": "Senior Frontend Engineer",
 
-    "bio": "Hello! I specialise in implementing user-facing features for web applications and interactive experiences.",
+    "bio": "Hello! I specialise in building user-facing features for web applications and interactive experiences.",
     
     "links": [
       { "icon": "./assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
@@ -43,8 +43,8 @@
         "to": "Present",
         "highlights": [
           "Collaborated with Set Reset to deliver a reliable, high fidelity 3D interactive installation for S&P Global.",
-          "Lead the development of the asset pipeline that automated the processing of large amounts of 3D content.",
-          "Worked on various frontend projects creating polished and dynamic interfaces for games and web applications."
+          "Led development of an asset pipeline that automated the processing of large amounts of 3D content.",
+          "Built polished, dynamic frontend interfaces for games and web applications."
         ]
       },
       {
@@ -67,7 +67,8 @@
         "from": "June 2018",
         "to": "June 2022",
         "highlights": [
-          "Led development and technical direction for the content item redesign and “hover card” interaction on the iPlayer homepage.",
+          "Led development and technical direction for the homepage content item redesign. This included a versatile and accessible \"hover card\" system used across iPlayer.",
+          "Initiated and led the work on bringing a legacy image optimization system up-to-date using Docker, enabling future work on portrait content images.",
           "Mentored graduate and junior software engineers and initiated knowledge sharing sessions for the team.",
           "Maintained Jenkins CI/CD pipelines and AWS infrastructure.",
           "Collaborated with team members to create high quality code following TDD and pair programming best practices.",
@@ -88,12 +89,9 @@
       }
     ],
 
-    "hobbies": [
-      "Salad Room",
-      "Game tools development, Little Camera Preview"
-    ]
+    "sidenote": "I maintain few small projects with small user bases. These include Salad Room, Powerlet and Little Camera Preview."
   }
-</script>
+</data>
 
 <link rel="stylesheet" href="./assets/css/reset.css">
 <link rel="stylesheet" href="./assets/css/vars.css">
@@ -111,7 +109,7 @@
 
 <style>
   .cv {
-    --outer-padding: 30px;
+    --outer-padding: 15px;
     --inner-padding-horizontal: 40px;
     --inner-vertical-padding: 45px;
     --info-column-width: 35%;
@@ -196,7 +194,7 @@
 
   .cv__profile {
     display: flex;
-    padding: var(--inner-vertical-padding) var(--inner-padding-horizontal);
+    padding: 30px var(--inner-padding-horizontal);
   }
 
   .cv__profile h1 {
@@ -247,8 +245,8 @@
   .cv__section {
     display: flex;
     flex-direction: column;
-    gap: var(--inner-padding-horizontal);
-    padding: 0  var(--inner-padding-horizontal) var(--inner-vertical-padding);
+    gap: 32px;
+    padding: 0  var(--inner-padding-horizontal) 30px;
     position: relative;
   }
 
@@ -316,7 +314,7 @@
   .cv__employment ul {
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 11px;
     flex-grow: 1;
   }
 
@@ -330,7 +328,7 @@
     color: var(--the-brand-color);
     width: 0.65rem;
     height: 0.65rem;
-    margin-top: 5px;
+    margin-top: 6px;
     margin-left: -2px;
     user-select: none;
     flex-shrink: 0;
@@ -367,51 +365,53 @@
 <main class="cv">
   <section class="cv__profile">
     <aside class="cv__profile-logo">
-      {{>logo}}
+      <sb:include src="./_partials/logo.html"/>
     </aside>
 
     <aside class="cv__profile-info">
       <div>
-        <h1>
-          {{page.name}}
+        <h1 style="display: none;">CV</h1>
+        
+        <h1 sb:ignore>
+          {{page.data.name}}
         </h1>
       
         <h2>
-          {{page.role}}
+          {{page.data.role}}
         </h2>
       </div>
     
       <p>
-        {{page.bio}}
+        {{page.data.bio}}
       </p>
 
       <ul class="cv__skill-list">
-        {{#page.skills}}
+        {{#page.data.skills}}
           <li>{{.}}</li>
-        {{/page.skills}}
+        {{/page.data.skills}}
       </ul>
 
       <ul class="cv__skill-list">
-        {{#page.tools}}
+        {{#page.data.tools}}
           <li>{{.}}</li>
-        {{/page.tools}}
+        {{/page.data.tools}}
       </ul>
 
-      <ul style="margin-top: 20px;">
-        {{#page.links}}
+      <ul style="margin-top: 10px;">
+        {{#page.data.links}}
           <li>
             <a href="{{url}}" target="_blank">
               <img src="{{icon}}" alt="" sb:inline>
               {{label}}
             </a>
           </li>
-        {{/page.links}}
+        {{/page.data.links}}
       </ul>
     </aside>
   </section>
 
   <section class="cv__section">
-    {{#page.experience}}
+    {{#page.data.experience}}
       <article class="cv__employment">
         <aside>
           <div>
@@ -435,37 +435,52 @@
           {{/highlights}}
         </ul>
       </article>
-    {{/page.experience}}
+    {{/page.data.experience}}
+  </section>
+
+  <section class="cv__section">
+
+    <article class="cv__employment">
+      <aside>
+        <div>
+          <h3>Side projects</h3>
+        </div>
+      </aside>
+
+      <ul>
+        {{page.data.sidenote}}
+      </ul>
+    </article>
   </section>
 </main>
 
 
 <script>
   const markdown = `
-# {{page.name}} - {{page.role}}
-{{page.bio}}
+# {{page.data.name}} - {{page.data.role}}
+{{page.data.bio}}
 
 ## Employment
 
-{{#page.experience}}
+{{#page.data.experience}}
 ### {{title}} - {{from}} to {{to}}
 {{#highlights}}
 - {{.}}
 {{/highlights}}
 
-{{/page.experience}}
+{{/page.data.experience}}
 
 ## Experience
 
 ### Skills
-{{#page.skills}}
+{{#page.data.skills}}
 - {{.}}
-{{/page.skills}}
+{{/page.data.skills}}
 
 ### Tools
-{{#page.tools}}
+{{#page.data.tools}}
 - {{.}}
-{{/page.tools}}
+{{/page.data.tools}}
 
 Thank you for your time!
   `.trim()

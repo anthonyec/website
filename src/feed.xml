@@ -9,7 +9,7 @@
     <subtitle>Anthony Cossins has a RSS feed on the internet and this is it.</subtitle>
 
     {{#collection.posts}}
-      {{^hidden}}
+      {{^data.hidden}}
         <item>
           <id>{{site.url}}{{path}}</id>
           <title type="html">{{title}}</title>
@@ -18,7 +18,7 @@
           <updated>{{#fn.dateToUTC}}{{date}}{{/fn.dateToUTC}}</updated>
           <content:encoded><![CDATA[{{#fn.removeH1}}{{{content}}}{{/fn.removeH1}}]]></content:encoded>
         </item>
-      {{/hidden}}
+      {{/data.hidden}}
     {{/collection.posts}}
   </channel>
 </rss>
