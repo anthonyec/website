@@ -1,228 +1,226 @@
-{{>header}}
+<sb:include src="./_partials/page.html">
+  <link rel="stylesheet" href="./assets/css/home.css" />
+  <link rel="stylesheet" href="./assets/css/chip.css" />
+  <link rel="stylesheet" href="./assets/css/card.css" />
+  <link rel="stylesheet" href="./assets/css/button.css" />
+  <link rel="stylesheet" href="./assets/css/panel.css" />
+  <link rel="stylesheet" href="./assets/css/handy.css" />
 
-<link rel="stylesheet" href="./assets/css/home.css" />
-<link rel="stylesheet" href="./assets/css/chip.css" />
-<link rel="stylesheet" href="./assets/css/card.css" />
-<link rel="stylesheet" href="./assets/css/button.css" />
-<link rel="stylesheet" href="./assets/css/panel.css" />
-<link rel="stylesheet" href="./assets/css/handy.css" />
+  <main class="home">
+    <div class="home__section home__section--list">
+      <sb:include src="./_partials/logo.html" big="true" />
 
-<main class="home">
-  <div class="home__section home__section--list">
-    <sb:include src="./_partials/logo.html" big="true" />
-
-    <a href="https://www.linkedin.com/in/anthonyec/" target="_blank" class="chip chip--linkedin">
-      <img src="./assets/images/linkedin.svg" alt="" class="chip__icon">
-      LinkedIn
-    </a>
-
-    <a href="https://x.com/anthonyec" target="_blank" class="chip chip--x">
-      <img src="./assets/images/x.svg" alt="" class="chip__icon">
-      @anthonyec
-    </a>
-
-    <div class="home__chip-group">
-      <a href="https://bsky.app/profile/anthony.ec" target="_blank" class="chip chip--icon-only chip--bluesky">
-        <img src="./assets/images/bluesky.svg" alt="" class="chip__icon" style="height: 22px">
+      <a href="https://www.linkedin.com/in/anthonyec/" target="_blank" class="chip chip--linkedin">
+        <img src="./assets/images/linkedin.svg" alt="" class="chip__icon">
+        LinkedIn
       </a>
 
-      <a href="mailto:anthonycossins@gmail.com" target="_blank" class="chip chip--icon-only chip--email">
-        <img src="./assets/images/email.svg" alt="" class="chip__icon" style="height: 20px">
+      <a href="https://x.com/anthonyec" target="_blank" class="chip chip--x">
+        <img src="./assets/images/x.svg" alt="" class="chip__icon">
+        @anthonyec
       </a>
-    </div>
-  </div>
 
-  <section class="home__section home__section--list home__section--small-gap-1">
-    <div class="panel">
-      <div class="panel__icon">
-        <img src="./assets/images/info.svg" alt="">
-      </div>
-
-      <div class="panel__content">
-        <p>Hello! My name is <strong>Anthony Cossins</strong>.</p>
-  
-        <p>I'm a <strong>senior software engineer</strong> who specializes in implementing user-facing features for web applications and interactive experiences.</p>
-  
-        <p>I've been doing this for over a decade and have previously worked at&nbsp;<strong>Framer</strong>, the <strong>BBC</strong> and <strong>Signal-Noise</strong>.</p>
-        
-        <div class="panel__footer">
-          <a href="mailto:anthonycossins@gmail.com" class="button button--full-width button--green">
-            <img src="./assets/images/briefcase.svg" alt="" sb:inline>
-            Open to work
-          </a>
-  
-          <a href="/cv" class="button button--full-width">
-            <img src="./assets/images/cv.svg" alt="" sb:inline>
-            View my CV
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  
-  <section class="home__section home__section--grid" id="projects">
-    <article class="card">
-      <a href="/posts/little-camera-preview" class="card__link"></a>
-      
-      <div class="card__image">
-        <img class="card__image" src="./assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
-      </div>
-      <h2 class="card__title">Little Camera Preview</h2>
-    </article>
-  
-    <article class="card">
-      <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
-      <div class="card__image">
-        <img class="card__image" src="./assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
-      </div>
-      <h2 class="card__title">Salad Room</h2>
-    </article>
-
-    <article class="card">
-      <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
-      <div class="card__image">
-        <img class="card__image" src="./assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
-      </div>
-      <h2 class="card__title">Powerlet</h2>
-    </article>
-  </section>
-
-  <section class="home__section home__section--grid home__section--wide">
-    <article class="card card--big card--green">
-      <a href="/posts/futurechoice" class="card__link"></a>
-      <div class="card__image">
-        <img class="card__image" src="./assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-        <video sb:src="./assets/videos/s_and_p.webm" autoplay muted loop playsinline preload="none"></video>
-      </div>
-      <h2 class="card__title">First commercial Godot project</h2> 
-    </article>
-  
-    <article class="card card--big card--green">
-      <a href="/posts/filedeck" class="card__link"></a>
-      <div class="card__image">
-        <img class="card__image" src="./assets/images/filedeck.png" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-        <video sb:src="./assets/videos/filedeck.webm" autoplay muted loop playsinline preload="none"></video>
-      </div>
-      <h2 class="card__title">File browser for the Steam Deck</h2> 
-    </article>
-  </section>
-
-  <section class="home__section home__section--grid home__section--small-gap-2">
-    <div class="home__card-group">
-      <article class="card card--green">
-        <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
-          <video sb:src="./assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
-          <div class="card__image-timestamp">6:30</div>
-          <button class="card__sound-button" title="Unmute">
-            <img src="./assets/images/muted.svg" alt="Unmute">
-            <img src="./assets/images/unmuted.svg" alt="Mute">
-          </button>
-        </div>
-        <h2 class="card__title">Godot Conference 2024 Lighting&nbsp;Talk</h2>
-      </article>
-      
-      <article class="card card--green">
-        <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
-        <div class="card__image">
-          <img src="./assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
-          <video sb:src="./assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
-          <div class="card__image-timestamp">1:03:15</div>
-          <button class="card__sound-button" title="Unmute">
-            <img src="./assets/images/muted.svg" alt="Unmute">
-            <img src="./assets/images/unmuted.svg" alt="Mute">
-          </button>
-        </div>
-        <h2 class="card__title">One month of full time game&nbsp;making</h2>
-      </article>
-    </div>
-  </section>
-
-  <section class="home__section home__section--list" id="posts">
-    {{#collection.posts}}
-      {{^data.hidden}}
-        <a href="{{path}}" class="chip chip--text-only {{#data.thumbnail}}chip--has-image{{/data.thumbnail}}">
-          {{title}}
-          
-          {{#data.thumbnail}}
-            <img src="{{path}}/{{data.thumbnail}}" class="chip__image" loading="lazy">
-          {{/data.thumbnail}}
+      <div class="home__chip-group">
+        <a href="https://bsky.app/profile/anthony.ec" target="_blank" class="chip chip--icon-only chip--bluesky">
+          <img src="./assets/images/bluesky.svg" alt="" class="chip__icon" style="height: 22px">
         </a>
-      {{/data.hidden}}
-    {{/collection.posts}}
-  </section>
-  
-  <footer class="home__footer">
-    <div class="home__footer-circle">
-      <span>
-        This site was <a href="https://github.com/anthonyec/staticbuild" target="_blank">built with a tool</a> that's not made for you!
-      </span>
+
+        <a href="mailto:anthonycossins@gmail.com" target="_blank" class="chip chip--icon-only chip--email">
+          <img src="./assets/images/email.svg" alt="" class="chip__icon" style="height: 20px">
+        </a>
+      </div>
     </div>
-  </footer>
-</main>
 
-<script>
-  function showVideo(video) {
-    if (!(video instanceof HTMLVideoElement)) return
+    <section class="home__section home__section--list home__section--small-gap-1">
+      <div class="panel">
+        <div class="panel__icon">
+          <img src="./assets/images/info.svg" alt="">
+        </div>
+
+        <div class="panel__content">
+          <p>Hello! My name is <strong>Anthony Cossins</strong>.</p>
     
-    if (!video.src) {
-      video.src = video.getAttribute("sb:src")
+          <p>I'm a <strong>senior software engineer</strong> who specializes in implementing user-facing features for web applications and interactive experiences.</p>
+    
+          <p>I've been doing this for over a decade and have previously worked at&nbsp;<strong>Framer</strong>, the <strong>BBC</strong> and <strong>Signal-Noise</strong>.</p>
+          
+          <div class="panel__footer">
+            <a href="mailto:anthonycossins@gmail.com" class="button button--full-width button--green">
+              <img src="./assets/images/briefcase.svg" alt="" sb:inline>
+              Open to work
+            </a>
+    
+            <a href="/cv" class="button button--full-width">
+              <img src="./assets/images/cv.svg" alt="" sb:inline>
+              View my CV
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="home__section home__section--grid" id="projects">
+      <article class="card">
+        <a href="/posts/little-camera-preview" class="card__link"></a>
+        
+        <div class="card__image">
+          <img class="card__image" src="./assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
+        </div>
+        <h2 class="card__title">Little Camera Preview</h2>
+      </article>
+    
+      <article class="card">
+        <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
+        <div class="card__image">
+          <img class="card__image" src="./assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
+        </div>
+        <h2 class="card__title">Salad Room</h2>
+      </article>
+
+      <article class="card">
+        <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
+        <div class="card__image">
+          <img class="card__image" src="./assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
+        </div>
+        <h2 class="card__title">Powerlet</h2>
+      </article>
+    </section>
+
+    <section class="home__section home__section--grid home__section--wide">
+      <article class="card card--big card--green">
+        <a href="/posts/futurechoice" class="card__link"></a>
+        <div class="card__image">
+          <img class="card__image" src="./assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
+          <video sb:src="./assets/videos/s_and_p.webm" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        <h2 class="card__title">First commercial Godot project</h2> 
+      </article>
+    
+      <article class="card card--big card--green">
+        <a href="/posts/filedeck" class="card__link"></a>
+        <div class="card__image">
+          <img class="card__image" src="./assets/images/filedeck.png" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
+          <video sb:src="./assets/videos/filedeck.webm" autoplay muted loop playsinline preload="none"></video>
+        </div>
+        <h2 class="card__title">File browser for the Steam Deck</h2> 
+      </article>
+    </section>
+
+    <section class="home__section home__section--grid home__section--small-gap-2">
+      <div class="home__card-group">
+        <article class="card card--green">
+          <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
+          <div class="card__image">
+            <img class="card__image" src="./assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
+            <video sb:src="./assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+            <div class="card__image-timestamp">6:30</div>
+            <button class="card__sound-button" title="Unmute">
+              <img src="./assets/images/muted.svg" alt="Unmute">
+              <img src="./assets/images/unmuted.svg" alt="Mute">
+            </button>
+          </div>
+          <h2 class="card__title">Godot Conference 2024 Lighting&nbsp;Talk</h2>
+        </article>
+        
+        <article class="card card--green">
+          <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
+          <div class="card__image">
+            <img src="./assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
+            <video sb:src="./assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
+            <div class="card__image-timestamp">1:03:15</div>
+            <button class="card__sound-button" title="Unmute">
+              <img src="./assets/images/muted.svg" alt="Unmute">
+              <img src="./assets/images/unmuted.svg" alt="Mute">
+            </button>
+          </div>
+          <h2 class="card__title">One month of full time game&nbsp;making</h2>
+        </article>
+      </div>
+    </section>
+
+    <section class="home__section home__section--list" id="posts">
+      {{#collection.posts}}
+        {{^data.hidden}}
+          <a href="{{path}}" class="chip chip--text-only {{#data.thumbnail}}chip--has-image{{/data.thumbnail}}">
+            {{title}}
+            
+            {{#data.thumbnail}}
+              <img src="{{path}}/{{data.thumbnail}}" class="chip__image" loading="lazy">
+            {{/data.thumbnail}}
+          </a>
+        {{/data.hidden}}
+      {{/collection.posts}}
+    </section>
+    
+    <footer class="home__footer">
+      <div class="home__footer-circle">
+        <span>
+          This site was <a href="https://github.com/anthonyec/staticbuild" target="_blank">built with a tool</a> that's not made for you!
+        </span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function showVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
+      
+      if (!video.src) {
+        video.src = video.getAttribute("sb:src")
+      }
+
+      video.play()
+      video.volume = 1.0
+
+      try {
+        plausible('hover_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
     }
 
-    video.play()
-    video.volume = 1.0
+    function hideVideo(video) {
+      if (!(video instanceof HTMLVideoElement)) return
 
-    try {
-      plausible('hover_video')
-    } catch (err) {
-      console.log("Event failed:", err)
+      video.pause()
     }
-  }
 
-  function hideVideo(video) {
-    if (!(video instanceof HTMLVideoElement)) return
+    function toggleMute(video, soundButton) {
+      if (!(video instanceof HTMLVideoElement)) return
+      if (!(soundButton instanceof HTMLButtonElement)) return
 
-    video.pause()
-  }
+      const muteIcon = soundButton.querySelector("img:nth-child(1)")
+      const unmuteIcon = soundButton.querySelector("img:nth-child(2)")
+      if (!(muteIcon instanceof HTMLImageElement)) return
+      if (!(unmuteIcon instanceof HTMLImageElement)) return
 
-  function toggleMute(video, soundButton) {
-    if (!(video instanceof HTMLVideoElement)) return
-    if (!(soundButton instanceof HTMLButtonElement)) return
+      video.muted = !video.muted
+      soundButton.title = video.muted ? "Unmute" : "Mute"
+      soundButton.classList.toggle("card__sound-button--unmuted", !video.muted)
 
-    const muteIcon = soundButton.querySelector("img:nth-child(1)")
-    const unmuteIcon = soundButton.querySelector("img:nth-child(2)")
-    if (!(muteIcon instanceof HTMLImageElement)) return
-    if (!(unmuteIcon instanceof HTMLImageElement)) return
-
-    video.muted = !video.muted
-    soundButton.title = video.muted ? "Unmute" : "Mute"
-    soundButton.classList.toggle("card__sound-button--unmuted", !video.muted)
-
-    try {
-      plausible('unmuted_video')
-    } catch (err) {
-      console.log("Event failed:", err)
+      try {
+        plausible('unmuted_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
     }
-  }
 
-  const cards = document.querySelectorAll('.card')
+    const cards = document.querySelectorAll('.card')
 
-  for (const card of cards) {
-    const video = card.querySelector("video")
-    if (!video) continue
+    for (const card of cards) {
+      const video = card.querySelector("video")
+      if (!video) continue
 
-    card.addEventListener("mouseover", () => showVideo(video))
-    card.addEventListener("mouseout", () => hideVideo(video))
-    card.addEventListener("focusin", () => showVideo(video))
-    card.addEventListener("focusout", () => hideVideo(video))
+      card.addEventListener("mouseover", () => showVideo(video))
+      card.addEventListener("mouseout", () => hideVideo(video))
+      card.addEventListener("focusin", () => showVideo(video))
+      card.addEventListener("focusout", () => hideVideo(video))
 
-    const soundButton = card.querySelector(".card__sound-button")
-    if (!soundButton) continue
+      const soundButton = card.querySelector(".card__sound-button")
+      if (!soundButton) continue
 
-    soundButton.addEventListener("click", () => toggleMute(video, soundButton))
-  }
-</script>
-
-{{>footer}}
+      soundButton.addEventListener("click", () => toggleMute(video, soundButton))
+    }
+  </script>
+</sb:include>
