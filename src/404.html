@@ -4,133 +4,131 @@
   }
 </data>
 
-{{>header}}
+<sb:include src="./_partials/page.html">
+  <link rel="stylesheet" href="./assets/css/chip.css">
+  <link rel="stylesheet" href="./assets/css/button.css">
 
-<link rel="stylesheet" href="./assets/css/chip.css">
-<link rel="stylesheet" href="./assets/css/button.css">
-
-<style>
-  /* yes I know this is bad but time. */
-  .error-code {
-    color: var(--text-color);
-    top: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .error-code__title {
-    margin-bottom: 5px;
-    line-height: 1;
-    color: white;
-    text-shadow: 1px 1px var(--text-color),
-                -1px 1px var(--text-color),
-                -1px -1px var(--text-color),
-                1px -1px var(--text-color);
-    -webkit-text-stroke: 2px var(--text-color);
-  }
-
-  h2 {
-    margin-bottom: 5px;
-  }
-
-  .error-code__char {
-    display: inline-block;
-    position: relative;
-    font-size: 100px;
-    -webkit-animation: 'wobble-1' 1s infinite steps(1);
-  }
-
-  .error-code__char:nth-child(2) {
-    -webkit-animation: 'wobble-2' 1s infinite steps(1);
-  }
-
-  .error-code__char:nth-child(3) {
-    -webkit-animation: 'wobble-3' 1s infinite steps(1);
-  }
-
-  @-webkit-keyframes wobble-1 {
-    0% {
-      -webkit-transform: translate(1px, -2px) rotate(2deg);
-    }
-    
-    25% {
-      -webkit-transform: translate(2px, 1px) rotate(-2deg);
-    }
-    
-    50% {
-      -webkit-transform: translate(-1px, 2px) rotate(3deg);
-    }
-    
-    75% {
-      -webkit-transform: translate(2px, -2px) rotate(-2deg);
-    }
-    
-    100% {
-      -webkit-transform: translate(2px, 1px) rotate(-3deg);
-    }
-  }
-
-  @-webkit-keyframes wobble-2 {
-    0% {
-      -webkit-transform: translate(1px, -2px) rotate(2deg);
-    }
-    
-    25% {
-      -webkit-transform: translate(2px, 1px) rotate(-3deg);
+  <style>
+    /* yes I know this is bad but time. */
+    .error-code {
+      color: var(--text-color);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 24px;
+      text-align: center;
     }
 
-    50% {
-      -webkit-transform: translate(2px, 1px) rotate(-2deg);
-    }
-    
-    75% {
-      -webkit-transform: translate(2px, -2px) rotate(-2deg);
-    }
-    
-    100% {
-      -webkit-transform: translate(-1px, 2px) rotate(3deg);
-    }
-  }
-
-  @-webkit-keyframes wobble-3 {
-    0% {
-      -webkit-transform: translate(2px, -1px) rotate(-2deg);
-    }
-    
-    25% {
-      -webkit-transform: translate(2px, 1px) rotate(-3deg);
+    .error-code__title {
+      margin-bottom: 5px;
+      line-height: 1;
+      color: white;
+      text-shadow: 1px 1px var(--text-color),
+                  -1px 1px var(--text-color),
+                  -1px -1px var(--text-color),
+                  1px -1px var(--text-color);
+      -webkit-text-stroke: 2px var(--text-color);
     }
 
-    50% {
-      -webkit-transform: translate(2px, -2px) rotate(-2deg);
+    h2 {
+      margin-bottom: 5px;
     }
 
-    75% {
-      -webkit-transform: translate(2px, -1px) rotate(3deg);
+    .error-code__char {
+      display: inline-block;
+      position: relative;
+      font-size: 100px;
+      -webkit-animation: 'wobble-1' 1s infinite steps(1);
     }
 
-    100% {
-      -webkit-transform: translate(2px, 1px) rotate(-2deg);
+    .error-code__char:nth-child(2) {
+      -webkit-animation: 'wobble-2' 1s infinite steps(1);
     }
-  }
-</style>
 
-<div class="error-code">
-  <h1 class="error-code__title">
-    <span class="error-code__char">4</span><span class="error-code__char">0</span><span class="error-code__char">4</span>
-  </h1>
-  <h2>
-    Page not found.
-  </h2><br>
+    .error-code__char:nth-child(3) {
+      -webkit-animation: 'wobble-3' 1s infinite steps(1);
+    }
 
-  <a href="/" class="button">Go to home page</a>
-</div>
+    @-webkit-keyframes wobble-1 {
+      0% {
+        -webkit-transform: translate(1px, -2px) rotate(2deg);
+      }
+      
+      25% {
+        -webkit-transform: translate(2px, 1px) rotate(-2deg);
+      }
+      
+      50% {
+        -webkit-transform: translate(-1px, 2px) rotate(3deg);
+      }
+      
+      75% {
+        -webkit-transform: translate(2px, -2px) rotate(-2deg);
+      }
+      
+      100% {
+        -webkit-transform: translate(2px, 1px) rotate(-3deg);
+      }
+    }
 
-{{body}}
+    @-webkit-keyframes wobble-2 {
+      0% {
+        -webkit-transform: translate(1px, -2px) rotate(2deg);
+      }
+      
+      25% {
+        -webkit-transform: translate(2px, 1px) rotate(-3deg);
+      }
+
+      50% {
+        -webkit-transform: translate(2px, 1px) rotate(-2deg);
+      }
+      
+      75% {
+        -webkit-transform: translate(2px, -2px) rotate(-2deg);
+      }
+      
+      100% {
+        -webkit-transform: translate(-1px, 2px) rotate(3deg);
+      }
+    }
+
+    @-webkit-keyframes wobble-3 {
+      0% {
+        -webkit-transform: translate(2px, -1px) rotate(-2deg);
+      }
+      
+      25% {
+        -webkit-transform: translate(2px, 1px) rotate(-3deg);
+      }
+
+      50% {
+        -webkit-transform: translate(2px, -2px) rotate(-2deg);
+      }
+
+      75% {
+        -webkit-transform: translate(2px, -1px) rotate(3deg);
+      }
+
+      100% {
+        -webkit-transform: translate(2px, 1px) rotate(-2deg);
+      }
+    }
+  </style>
+
+  <div class="error-code">
+    <h1 class="error-code__title">
+      <span class="error-code__char">4</span><span class="error-code__char">0</span><span class="error-code__char">4</span>
+    </h1>
+    <h2>
+      Page not found.
+    </h2><br>
+
+    <a href="/" class="button">Go to home page</a>
+  </div>
+</sb:include>

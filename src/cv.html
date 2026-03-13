@@ -1,508 +1,506 @@
-{{>header}}
+<sb:include src="./_partials/page.html">
+  <data sb:buildtime>
+    {
+      "title": "CV",
+      
+      "name": "Anthony Cossins",
 
-<data sb:buildtime>
-  {
-    "title": "CV",
-    
-    "name": "Anthony Cossins",
+      "role": "Senior Frontend Engineer",
 
-    "role": "Senior Frontend Engineer",
+      "bio": "Hello! I I specialise in building high quality and reliable frontend experiences for products.",
+      
+      "links": [
+        { "icon": "./assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
+        { "icon": "./assets/images/email.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
+      ],
 
-    "bio": "Hello! I specialise in building user-facing features for web applications and interactive experiences.",
-    
-    "links": [
-      { "icon": "./assets/images/globe.svg", "label": "anthonycossins.com", "url": "https://anthonycossins.com" },
-      { "icon": "./assets/images/email.svg", "label": "anthony.cossins@gmail.com", "url": "mailto:anthony.cossins@gmail.com" }
-    ],
+      "skills": [
+        "TypeScript",
+        "JavaScript",
+        "CSS",
+        "Node.js",
+        "AWS",
+        "CI/CD"
+      ],
 
-    "skills": [
-      "TypeScript",
-      "JavaScript",
-      "CSS",
-      "Node.js",
-      "AWS",
-      "CI/CD"
-    ],
+      "tools": [
+        "React",
+        "Svelte",
+        "Redux",
+        "Docker",
+        "Git",
+        "Figma",
+        "Godot Engine"
+      ],
 
-    "tools": [
-      "React",
-      "Svelte",
-      "Redux",
-      "Docker",
-      "Git",
-      "Figma",
-      "Godot Engine"
-    ],
+      "experience": [
+        {
+          "title": "Freelance",
+          "role": "Senior Frontend Engineer",
+          "logo": "/assets/images/freelance_logo.png",
+          "from": "December 2024",
+          "to": "Present",
+          "highlights": [
+            "Collaborated with Set Reset to deliver a reliable, high fidelity 3D interactive installation for S&P Global.",
+            "Led development of an asset pipeline that automated the processing of large amounts of 3D content.",
+            "Built polished, dynamic frontend interfaces for games and web applications."
+          ]
+        },
+        {
+          "title": "Framer",
+          "role": "Product Engineer",
+          "logo": "/assets/images/framer_logo.jpeg",
+          "from": "June 2022",
+          "to": "December 2024",
+          "highlights": [
+            "Designed and developed the font previews feature, from initial hackathon concept to fullstack production ready feature.",
+            "Led the engineering work to integrate Fontshare typefaces. Managed communication and coordination with the external development team.",
+            "Played a key role in launching the Plugins platform, designing and implementing core APIs, and creating the OAuth model for plugins.",
+            "Shipped multiple high quality product features relied upon daily by thousands of users to run their businesses."
+          ]
+        },
+        {
+          "title": "BBC iPlayer",
+          "role": "Senior Software Engineer",
+          "logo": "/assets/images/bbc_logo.jpeg",
+          "from": "June 2018",
+          "to": "June 2022",
+          "highlights": [
+            "Led development and technical direction for the homepage content item redesign. This included a versatile and accessible \"hover card\" system used across iPlayer.",
+            "Initiated and led the work on bringing a legacy image optimization system up-to-date using Docker, enabling future work on portrait content images.",
+            "Mentored graduate and junior software engineers and initiated knowledge sharing sessions for the team.",
+            "Maintained Jenkins CI/CD pipelines and AWS infrastructure.",
+            "Collaborated with team members to create high quality code following TDD and pair programming best practices.",
+            "Shipped performant and accessible web applications used by millions of people per week using React, Redux and CSS."
+          ]
+        },
+        {
+          "title": "Signal Noise",
+          "role": "Frontend Developer",
+          "logo": "/assets/images/signal_noise_logo.jpeg",
+          "from": "June 2013",
+          "to": "October 2017",
+          "highlights": [
+            "Worked closely with designers to create single page web applications for clients including The Guardian, eBay and Alzheimer's Society.",
+            "Developed, maintained and shipped real-time data visualisations for conferences and exhibitions.",
+            "Created and animated interactive data visualisations using Canvas, SVG and WebGL."
+          ]
+        }
+      ],
 
-    "experience": [
-      {
-        "title": "Freelance",
-        "role": "Senior Frontend Engineer",
-        "logo": "/assets/images/freelance_logo.png",
-        "from": "December 2024",
-        "to": "Present",
-        "highlights": [
-          "Collaborated with Set Reset to deliver a reliable, high fidelity 3D interactive installation for S&P Global.",
-          "Led development of an asset pipeline that automated the processing of large amounts of 3D content.",
-          "Built polished, dynamic frontend interfaces for games and web applications."
-        ]
-      },
-      {
-        "title": "Framer",
-        "role": "Product Engineer",
-        "logo": "/assets/images/framer_logo.jpeg",
-        "from": "June 2022",
-        "to": "December 2024",
-        "highlights": [
-          "Designed and developed the font previews feature, from initial hackathon concept to fullstack production ready feature.",
-          "Led the engineering work to integrate Fontshare typefaces. Managed communication and coordination with the external development team.",
-          "Played a key role in launching the Plugins platform, designing and implementing core APIs, and creating the OAuth model for plugins.",
-          "Shipped multiple high quality product features relied upon daily by thousands of users to run their businesses."
-        ]
-      },
-      {
-        "title": "BBC iPlayer",
-        "role": "Senior Software Engineer",
-        "logo": "/assets/images/bbc_logo.jpeg",
-        "from": "June 2018",
-        "to": "June 2022",
-        "highlights": [
-          "Led development and technical direction for the homepage content item redesign. This included a versatile and accessible \"hover card\" system used across iPlayer.",
-          "Initiated and led the work on bringing a legacy image optimization system up-to-date using Docker, enabling future work on portrait content images.",
-          "Mentored graduate and junior software engineers and initiated knowledge sharing sessions for the team.",
-          "Maintained Jenkins CI/CD pipelines and AWS infrastructure.",
-          "Collaborated with team members to create high quality code following TDD and pair programming best practices.",
-          "Shipped performant and accessible web applications used by millions of people per week using React, Redux and CSS."
-        ]
-      },
-      {
-        "title": "Signal Noise",
-        "role": "Frontend Developer",
-        "logo": "/assets/images/signal_noise_logo.jpeg",
-        "from": "June 2013",
-        "to": "October 2017",
-        "highlights": [
-          "Worked closely with designers to create single page web applications for clients including The Guardian, eBay and Alzheimer's Society.",
-          "Developed, maintained and shipped real-time data visualisations for conferences and exhibitions.",
-          "Created and animated interactive data visualisations using Canvas, SVG and WebGL."
-        ]
+      "sidenote": "I maintain few small projects with small user bases. These include Salad Room, Powerlet and Little Camera Preview."
+    }
+  </data>
+
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/vars.css">
+  <link rel="stylesheet" href="./assets/css/body.css">
+  <link rel="stylesheet" href="./assets/css/button.css">
+
+  <style>
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 0;
+    }
+  </style>
+
+  <style>
+    .cv {
+      --outer-padding: 15px;
+      --inner-padding-horizontal: 40px;
+      --inner-vertical-padding: 45px;
+      --info-column-width: 35%;
+
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.35);
+      border-radius: 24px;
+      color: var(--text-color);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      padding: var(--outer-padding);
+      
+      display: flex;
+      flex-direction: column;
+      
+      width: 1024px;
+      aspect-ratio: 210 / 297;
+      overflow: hidden;
+      
+      margin: 0 auto;
+    }
+
+    @media screen {
+      @media (max-width: 1024px) {
+        .cv {
+          zoom: 0.8;
+        }
       }
-    ],
 
-    "sidenote": "I maintain few small projects with small user bases. These include Salad Room, Powerlet and Little Camera Preview."
-  }
-</data>
+      @media (max-width: 860px) {
+        .cv {
+          zoom: 0.5;
+        }
+      }
 
-<link rel="stylesheet" href="./assets/css/reset.css">
-<link rel="stylesheet" href="./assets/css/vars.css">
-<link rel="stylesheet" href="./assets/css/body.css">
-<link rel="stylesheet" href="./assets/css/button.css">
+      @media (max-width: 560px) {
+        .cv {
+          zoom: 0.3;
+        }
 
-<style>
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 50px 0;
-  }
-</style>
-
-<style>
-  .cv {
-    --outer-padding: 15px;
-    --inner-padding-horizontal: 40px;
-    --inner-vertical-padding: 45px;
-    --info-column-width: 35%;
-
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    border-radius: 24px;
-    color: var(--text-color);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    padding: var(--outer-padding);
-    
-    display: flex;
-    flex-direction: column;
-    
-    width: 1024px;
-    aspect-ratio: 210 / 297;
-    overflow: hidden;
-    
-    margin: 0 auto;
-  }
-
-  @media screen {
-    @media (max-width: 1024px) {
-      .cv {
-        zoom: 0.8;
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
 
-    @media (max-width: 860px) {
-      .cv {
-        zoom: 0.5;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .cv {
-        zoom: 0.3;
+    @media print {
+      body {
+        background: none;
       }
 
       nav {
-        flex-direction: column;
-        align-items: center;
+        display: none;
+      }
+
+      .cv {
+        border: none;
+        border-radius: 0;
+        margin: 0;
       }
     }
-  }
 
-  @media print {
-    body {
-      background: none;
-    }
-
-    nav {
-      display: none;
-    }
-
-    .cv {
-      border: none;
-      border-radius: 0;
+    .cv * {
+      font-size: 1rem;
       margin: 0;
+      padding: 0;
     }
-  }
 
-  .cv * {
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-  }
+    .cv a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
 
-  .cv a {
-    color: var(--link-color);
-    text-decoration: none;
-  }
+    .cv ul {
+      list-style: none;
+    }
 
-  .cv ul {
-    list-style: none;
-  }
+    .cv ul,
+    .cv p {
+      line-height: 1.4;
+    }
 
-  .cv ul,
-  .cv p {
-    line-height: 1.4;
-  }
+    .cv__profile {
+      display: flex;
+      padding: 30px var(--inner-padding-horizontal);
+    }
 
-  .cv__profile {
-    display: flex;
-    padding: 30px var(--inner-padding-horizontal);
-  }
+    .cv__profile h1 {
+      font-size: 1.6em;
+      margin-top: 0.15rem;
+    }
 
-  .cv__profile h1 {
-    font-size: 1.6em;
-    margin-top: 0.15rem;
-  }
+    .cv__profile h2 {
+      font-size: 1.6em;
+      font-weight: 400;
+      margin-top: 5px;
+    }
 
-  .cv__profile h2 {
-    font-size: 1.6em;
-    font-weight: 400;
-    margin-top: 5px;
-  }
+    .cv__profile p {
+      margin-bottom: 4px;
+    }
 
-  .cv__profile p {
-    margin-bottom: 4px;
-  }
+    .cv__profile-logo {
+      width: var(--info-column-width);
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
 
-  .cv__profile-logo {
-    width: var(--info-column-width);
-    flex-shrink: 0;
-    padding-top: 1px;
-  }
+    .cv__profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-  .cv__profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+    .cv__profile-info ul {
+      display: flex;
+      gap: 30px;
+    }
 
-  .cv__profile-info ul {
-    display: flex;
-    gap: 30px;
-  }
+    .cv__profile-info ul a {
+      border-radius: 4px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-  .cv__profile-info ul a {
-    border-radius: 4px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
+    .cv__profile-info ul svg {
+      color: var(--link-color);
+      width: 15px;
+      height: 15px;
+    }
 
-  .cv__profile-info ul svg {
-    color: var(--link-color);
-    width: 15px;
-    height: 15px;
-  }
+    .cv__section {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding: 0  var(--inner-padding-horizontal) 30px;
+      position: relative;
+    }
 
-  .cv__section {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding: 0  var(--inner-padding-horizontal) 30px;
-    position: relative;
-  }
+    .cv__section::before {
+      content: "";
+      border-top: 1px solid black;
+      left: var(--inner-padding-horizontal);
+      right: var(--inner-padding-horizontal);
+    }
 
-  .cv__section::before {
-    content: "";
-    border-top: 1px solid black;
-    left: var(--inner-padding-horizontal);
-    right: var(--inner-padding-horizontal);
-  }
+    .cv__section--small {
+      gap: 15px;
+    }
 
-  .cv__section--small {
-    gap: 15px;
-  }
+    .cv__section:last-child {
+      /* margin-top: auto; */
+    }
 
-  .cv__section:last-child {
-    /* margin-top: auto; */
-  }
+    .cv__employment {
+      display: flex;
+    }
 
-  .cv__employment {
-    display: flex;
-  }
+    .cv__employment h4 {
+      font-weight: 500;
+    }
 
-  .cv__employment h4 {
-    font-weight: 500;
-  }
+    .cv__employment h5 {
+      display: flex;
+      gap: 10px;
+      font-weight: 500;
+    }
 
-  .cv__employment h5 {
-    display: flex;
-    gap: 10px;
-    font-weight: 500;
-  }
+    .cv__employment h5 time {
+      opacity: 0.5;
+    }
 
-  .cv__employment h5 time {
-    opacity: 0.5;
-  }
+    .cv__employment h5 span {
+      opacity: 0.5;
+    }
 
-  .cv__employment h5 span {
-    opacity: 0.5;
-  }
+    .cv__employment aside {
+      width: var(--info-column-width);
+      flex-shrink: 0;
+      display: flex;
+      gap: 12px;
+      line-height: 1.4;
+    }
 
-  .cv__employment aside {
-    width: var(--info-column-width);
-    flex-shrink: 0;
-    display: flex;
-    gap: 12px;
-    line-height: 1.4;
-  }
+    .cv__employment aside div {
+      display: flex;
+      flex-direction: column;
+    }
 
-  .cv__employment aside div {
-    display: flex;
-    flex-direction: column;
-  }
+    .cv__employment aside div:first-child {
+      padding-top: 5px;
+    }
 
-  .cv__employment aside div:first-child {
-    padding-top: 5px;
-  }
+    .cv__employment aside div:first-child img {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      width: 35px;
+      height: 35px;
+    }
 
-  .cv__employment aside div:first-child img {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
-    width: 35px;
-    height: 35px;
-  }
+    .cv__employment ul {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex-grow: 1;
+    }
 
-  .cv__employment ul {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    flex-grow: 1;
-  }
+    .cv__employment ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
 
-  .cv__employment ul li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
+    .cv__employment ul li svg {
+      color: var(--the-brand-color);
+      width: 0.65rem;
+      height: 0.65rem;
+      margin-top: 6px;
+      margin-left: -2px;
+      user-select: none;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
 
-  .cv__employment ul li svg {
-    color: var(--the-brand-color);
-    width: 0.65rem;
-    height: 0.65rem;
-    margin-top: 6px;
-    margin-left: -2px;
-    user-select: none;
-    flex-shrink: 0;
-    flex-grow: 0;
-  }
+    ul.cv__skill-list {
+      flex-direction: row;
+      gap: 10px;
+    }
 
-  ul.cv__skill-list {
-    flex-direction: row;
-    gap: 10px;
-  }
+    .cv__skill-list li {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 15px;
+    }
 
-  .cv__skill-list li {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 15px;
-  }
+  </style>
 
-</style>
+  <img sb:src="./assets/images/set_reset_logo.jpeg" style="display: none;">
+  <img sb:src="./assets/images/framer_logo.jpeg" style="display: none;">
+  <img sb:src="./assets/images/bbc_logo.jpeg" style="display: none;">
+  <img sb:src="./assets/images/signal_noise_logo.jpeg" style="display: none;">
+  <img sb:src="./assets/images/freelance_logo.png" style="display: none;">
+  <img sb:src="./assets/images/email.svg" style="display: none;">
 
-<img sb:src="./assets/images/set_reset_logo.jpeg" style="display: none;">
-<img sb:src="./assets/images/framer_logo.jpeg" style="display: none;">
-<img sb:src="./assets/images/bbc_logo.jpeg" style="display: none;">
-<img sb:src="./assets/images/signal_noise_logo.jpeg" style="display: none;">
-<img sb:src="./assets/images/freelance_logo.png" style="display: none;">
-<img sb:src="./assets/images/email.svg" style="display: none;">
+  <nav>
+    <a class="button" href="/cv.pdf" download="anthony_cossins_cv_2026.pdf">Download as PDF</a>
+    <button id="copy-markdown" class="button">Copy as Markdown</button>
+    <button id="print-paper" class="button">Print as Paper</button>
+  </nav>
 
-<nav>
-  <a class="button" href="/cv.pdf" download="anthony_cossins_cv_2026.pdf">Download as PDF</a>
-  <button id="copy-markdown" class="button">Copy as Markdown</button>
-  <button id="print-paper" class="button">Print as Paper</button>
-</nav>
+  <main class="cv">
+    <section class="cv__profile">
+      <aside class="cv__profile-logo">
+        <sb:include src="./_partials/logo.html"/>
+      </aside>
 
-<main class="cv">
-  <section class="cv__profile">
-    <aside class="cv__profile-logo">
-      <sb:include src="./_partials/logo.html"/>
-    </aside>
-
-    <aside class="cv__profile-info">
-      <div>
-        <h1 style="display: none;">CV</h1>
+      <aside class="cv__profile-info">
+        <div>
+          <h1 style="display: none;">CV</h1>
+          
+          <h1 sb:ignore>
+            {{page.data.name}}
+          </h1>
         
-        <h1 sb:ignore>
-          {{page.data.name}}
-        </h1>
+          <h2>
+            {{page.data.role}}
+          </h2>
+        </div>
       
-        <h2>
-          {{page.data.role}}
-        </h2>
-      </div>
-    
-      <p>
-        {{page.data.bio}}
-      </p>
+        <p>
+          {{page.data.bio}}
+        </p>
 
-      <ul class="cv__skill-list">
-        {{#page.data.skills}}
-          <li>{{.}}</li>
-        {{/page.data.skills}}
-      </ul>
+        <ul class="cv__skill-list">
+          {{#page.data.skills}}
+            <li>{{.}}</li>
+          {{/page.data.skills}}
+        </ul>
 
-      <ul class="cv__skill-list">
-        {{#page.data.tools}}
-          <li>{{.}}</li>
-        {{/page.data.tools}}
-      </ul>
+        <ul class="cv__skill-list">
+          {{#page.data.tools}}
+            <li>{{.}}</li>
+          {{/page.data.tools}}
+        </ul>
 
-      <ul style="margin-top: 10px;">
-        {{#page.data.links}}
-          <li>
-            <a href="{{url}}" target="_blank">
-              <img src="{{icon}}" alt="" sb:inline>
-              {{label}}
-            </a>
-          </li>
-        {{/page.data.links}}
-      </ul>
-    </aside>
-  </section>
+        <ul style="margin-top: 10px;">
+          {{#page.data.links}}
+            <li>
+              <a href="{{url}}" target="_blank">
+                <img src="{{icon}}" alt="" sb:inline>
+                {{label}}
+              </a>
+            </li>
+          {{/page.data.links}}
+        </ul>
+      </aside>
+    </section>
 
-  <section class="cv__section">
-    {{#page.data.experience}}
+    <section class="cv__section">
+      {{#page.data.experience}}
+        <article class="cv__employment">
+          <aside>
+            <div>
+              <img src="{{logo}}" alt="{{title}} logo">
+            </div>
+            <div>
+              <h3>{{title}}</h3>
+              <h4>{{role}}</h4>
+              <h5>
+                <time>{{from}}</time> <span>—</span> <time>{{to}}</time>
+              </h5>
+            </div>
+          </aside>
+
+          <ul>
+            {{#highlights}}
+              <li>
+                <img src="./assets/images/bullet.svg" alt="+" sb:inline>
+                <p>{{.}}</p>
+              </li>
+            {{/highlights}}
+          </ul>
+        </article>
+      {{/page.data.experience}}
+    </section>
+
+    <section class="cv__section">
+
       <article class="cv__employment">
         <aside>
           <div>
-            <img src="{{logo}}" alt="{{title}} logo">
-          </div>
-          <div>
-            <h3>{{title}}</h3>
-            <h4>{{role}}</h4>
-            <h5>
-              <time>{{from}}</time> <span>—</span> <time>{{to}}</time>
-            </h5>
+            <h3>Side projects</h3>
           </div>
         </aside>
 
         <ul>
-          {{#highlights}}
-            <li>
-              <img src="./assets/images/bullet.svg" alt="+" sb:inline>
-              <p>{{.}}</p>
-            </li>
-          {{/highlights}}
+          {{page.data.sidenote}}
         </ul>
       </article>
-    {{/page.data.experience}}
-  </section>
-
-  <section class="cv__section">
-
-    <article class="cv__employment">
-      <aside>
-        <div>
-          <h3>Side projects</h3>
-        </div>
-      </aside>
-
-      <ul>
-        {{page.data.sidenote}}
-      </ul>
-    </article>
-  </section>
-</main>
+    </section>
+  </main>
 
 
-<script>
-  const markdown = `
-# {{page.data.name}} - {{page.data.role}}
-{{page.data.bio}}
+  <script>
+    const markdown = `
+  # {{page.data.name}} - {{page.data.role}}
+  {{page.data.bio}}
 
-## Employment
+  ## Employment
 
-{{#page.data.experience}}
-### {{title}} - {{from}} to {{to}}
-{{#highlights}}
-- {{.}}
-{{/highlights}}
+  {{#page.data.experience}}
+  ### {{title}} - {{from}} to {{to}}
+  {{#highlights}}
+  - {{.}}
+  {{/highlights}}
 
-{{/page.data.experience}}
+  {{/page.data.experience}}
 
-## Experience
+  ## Experience
 
-### Skills
-{{#page.data.skills}}
-- {{.}}
-{{/page.data.skills}}
+  ### Skills
+  {{#page.data.skills}}
+  - {{.}}
+  {{/page.data.skills}}
 
-### Tools
-{{#page.data.tools}}
-- {{.}}
-{{/page.data.tools}}
+  ### Tools
+  {{#page.data.tools}}
+  - {{.}}
+  {{/page.data.tools}}
 
-Thank you for your time!
-  `.trim()
+  Thank you for your time!
+    `.trim()
 
-  const copyMarkdownButton = document.querySelector("#copy-markdown")
-  const printPaperButton = document.querySelector("#print-paper")
+    const copyMarkdownButton = document.querySelector("#copy-markdown")
+    const printPaperButton = document.querySelector("#print-paper")
 
-  copyMarkdownButton.addEventListener("click", () => {
-    const tempInput = document.createElement('textarea');
-    tempInput.value = markdown;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-  })
+    copyMarkdownButton.addEventListener("click", () => {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = markdown;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+    })
 
-  printPaperButton.addEventListener("click", () => {
-    print()
-  })
-</script>
+    printPaperButton.addEventListener("click", () => {
+      print()
+    })
+  </script>
 
-<nav></nav>
-
-{{>footer}}
+  <nav></nav>
+</sb:include>
