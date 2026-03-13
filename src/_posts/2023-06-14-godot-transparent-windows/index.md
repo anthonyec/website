@@ -1,6 +1,9 @@
-<!-- thumbnail: ./window_on_window.gif -->
-<!-- twitterSocialImage: ./window_on_window.gif -->
-<!-- dateUpdated: 2023-08-20 -->
+<data sb:buildtime>
+  {
+    "thumbnail": "./window_on_window.gif",
+    "updated": "2023-08-20"
+  }
+</data>
 
 # How to make transparent windows in Godot
 

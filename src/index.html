@@ -9,7 +9,7 @@
 
 <main class="home">
   <div class="home__section home__section--list">
-    {{>logo}}
+    <sb:include src="./_partials/logo.html" big="true" />
 
     <a href="https://www.linkedin.com/in/anthonyec/" target="_blank" class="chip chip--linkedin">
       <img src="./assets/images/linkedin.svg" alt="" class="chip__icon">
@@ -117,7 +117,8 @@
           <video sb:src="./assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">6:30</div>
           <button class="card__sound-button" title="Unmute">
-            <img src="./assets/images/muted.svg" alt="Muted">
+            <img src="./assets/images/muted.svg" alt="Unmute">
+            <img src="./assets/images/unmuted.svg" alt="Mute">
           </button>
         </div>
         <h2 class="card__title">Godot Conference 2024 Lighting&nbsp;Talk</h2>
@@ -130,7 +131,8 @@
           <video sb:src="./assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
           <div class="card__image-timestamp">1:03:15</div>
           <button class="card__sound-button" title="Unmute">
-            <img src="./assets/images/muted.svg" alt="Muted">
+            <img src="./assets/images/muted.svg" alt="Unmute">
+            <img src="./assets/images/unmuted.svg" alt="Mute">
           </button>
         </div>
         <h2 class="card__title">One month of full time game&nbsp;making</h2>
@@ -140,22 +142,22 @@
 
   <section class="home__section home__section--list" id="posts">
     {{#collection.posts}}
-      {{^hidden}}
-        <a href="{{path}}" class="chip chip--text-only {{#thumbnail}}chip--has-image{{/thumbnail}}">
+      {{^data.hidden}}
+        <a href="{{path}}" class="chip chip--text-only {{#data.thumbnail}}chip--has-image{{/data.thumbnail}}">
           {{title}}
           
-          {{#thumbnail}}
-            <img src="{{path}}/{{thumbnail}}" class="chip__image" loading="lazy">
-          {{/thumbnail}}
+          {{#data.thumbnail}}
+            <img src="{{path}}/{{data.thumbnail}}" class="chip__image" loading="lazy">
+          {{/data.thumbnail}}
         </a>
-      {{/hidden}}
+      {{/data.hidden}}
     {{/collection.posts}}
   </section>
   
   <footer class="home__footer">
     <div class="home__footer-circle">
       <span>
-        This site was <a href="https://github.com/anthonyec/staticbuild">built with a tool</a> that's not made for you!
+        This site was <a href="https://github.com/anthonyec/staticbuild" target="_blank">built with a tool</a> that's not made for you!
       </span>
     </div>
   </footer>
@@ -189,13 +191,14 @@
     if (!(video instanceof HTMLVideoElement)) return
     if (!(soundButton instanceof HTMLButtonElement)) return
 
-    const icon = soundButton.querySelector("img")
-    if (!(icon instanceof HTMLImageElement)) return
+    const muteIcon = soundButton.querySelector("img:nth-child(1)")
+    const unmuteIcon = soundButton.querySelector("img:nth-child(2)")
+    if (!(muteIcon instanceof HTMLImageElement)) return
+    if (!(unmuteIcon instanceof HTMLImageElement)) return
 
     video.muted = !video.muted
-
     soundButton.title = video.muted ? "Unmute" : "Mute"
-    icon.src = video.muted ? "assets/images/muted.svg" : "assets/images/unmuted.svg"
+    soundButton.classList.toggle("card__sound-button--unmuted", !video.muted)
 
     try {
       plausible('unmuted_video')

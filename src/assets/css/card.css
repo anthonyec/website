@@ -151,6 +151,22 @@
   filter: brightness(80%);
 }
 
+.card__sound-button img:nth-child(1) {
+  display: block;
+}
+
+.card__sound-button img:nth-child(2) {
+  display: none;
+}
+
+.card__sound-button--unmuted img:nth-child(1) {
+  display: none;
+}
+
+.card__sound-button--unmuted img:nth-child(2) {
+  display: block;
+}
+
 .card__title {
   display: flex;
   flex-grow: 1;

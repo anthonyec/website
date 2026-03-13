@@ -29,6 +29,12 @@
   outline: none;
 }
 
+.logo--big {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
+}
+
 .logo img {
   border-radius: inherit;
   width: 100%;

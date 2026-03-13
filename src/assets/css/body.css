@@ -38,3 +38,7 @@ a:focus:before, button:focus:before {
     inset: -1px;
   }
 }
+
+@view-transition {
+  navigation: auto;
+}
