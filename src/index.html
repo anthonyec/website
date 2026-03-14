@@ -1,7 +1,6 @@
 <sb:include src="./_partials/page.html">
   <link rel="stylesheet" href="./assets/css/home.css" />
   <link rel="stylesheet" href="./assets/css/chip.css" />
-  <link rel="stylesheet" href="./assets/css/card.css" />
   <link rel="stylesheet" href="./assets/css/button.css" />
   <link rel="stylesheet" href="./assets/css/panel.css" />
   <link rel="stylesheet" href="./assets/css/handy.css" />
@@ -59,83 +58,92 @@
 
       </div>
     </section>
-    
-    <section class="home__section home__section--grid" id="projects">
-      <article class="card">
-        <a href="/posts/little-camera-preview" class="card__link"></a>
-        
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/little_camera_preview.jpg" alt="" style="background-color: #1C202B; aspect-ratio: 265 / 170;">
-        </div>
-        <h2 class="card__title">Little Camera Preview</h2>
-      </article>
-    
-      <article class="card">
-        <a href="https://saladroom.net/?ref=anthonycossins" target="_blank" class="card__link"></a>
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/salad_room.jpg" alt="" style="background-color: #00C657; aspect-ratio: 265 / 170;">
-        </div>
-        <h2 class="card__title">Salad Room</h2>
-      </article>
 
-      <article class="card">
-        <a href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn" target="_blank" class="card__link"></a>
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/powerlet.jpg" alt="" style="background-color: #DA6396; aspect-ratio: 265 / 170;">
-        </div>
-        <h2 class="card__title">Powerlet</h2>
-      </article>
+    <section class="home__section home__section--grid" id="projects">
+      <sb:include 
+        src="./_partials/card.html"
+        href="/posts/little-camera-preview"
+        title="Little Camera Preview"
+        color="#1C202B"
+        aspectRatio="265 / 170"
+        imageSrc="./assets/images/little_camera_preview.jpg"
+      />
+
+      <sb:include 
+        src="./_partials/card.html"
+        href="https://saladroom.net/?ref=anthonycossins"
+        target="_blank"
+        title="Salad Room"
+        color="#00C657"
+        aspectRatio="265 / 170"
+        imageSrc="./assets/images/salad_room.jpg"
+      />
+
+      <sb:include 
+        src="./_partials/card.html"
+        href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn"
+        target="_blank"
+        title="Powerlet"
+        color="#DA6396"
+        aspectRatio="265 / 170"
+        imageSrc="./assets/images/powerlet.jpg"
+      />
     </section>
 
     <section class="home__section home__section--grid home__section--wide">
-      <article class="card card--big card--green">
-        <a href="/posts/futurechoice" class="card__link"></a>
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/future_choice.webp" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-          <video sb:src="./assets/videos/s_and_p.webm" autoplay muted loop playsinline preload="none"></video>
-        </div>
-        <h2 class="card__title">First commercial Godot project</h2> 
-      </article>
-    
-      <article class="card card--big card--green">
-        <a href="/posts/filedeck" class="card__link"></a>
-        <div class="card__image">
-          <img class="card__image" src="./assets/images/filedeck.png" alt="Picture of four podiums and a big wide screen" loading="lazy" style="background-color: #310167; aspect-ratio: 574.2 / 364.8;">
-          <video sb:src="./assets/videos/filedeck.webm" autoplay muted loop playsinline preload="none"></video>
-        </div>
-        <h2 class="card__title">File browser for the Steam Deck</h2> 
-      </article>
+      <sb:include 
+        src="./_partials/card.html"
+        href="/posts/futurechoice"
+        title="First commercial Godot project"
+        color="#310167"
+        aspectRatio="574.2 / 364.8"
+        imageAlt="Picture of four podiums and a big wide screen"
+        imageSrc="./assets/images/future_choice.webp"
+        videoSrc="./assets/videos/s_and_p.webm"
+        isBig="true"
+        hideMuteButton="true"
+      />
+
+      <sb:include 
+        src="./_partials/card.html"
+        href="/posts/filedeck"
+        title="File browser for the Steam Deck"
+        color="#310167"
+        aspectRatio="574.2 / 364.8"
+        imageSrc="./assets/images/filedeck.png"
+        videoSrc="./assets/videos/filedeck.webm"
+        isBig="true"
+        hideMuteButton="true"
+      />
     </section>
 
     <section class="home__section home__section--grid home__section--small-gap-2">
       <div class="home__card-group">
-        <article class="card card--green">
-          <a href="https://www.youtube.com/watch?v=xY26Fbu2ZEg" target="_blank" class="card__link"></a>
-          <div class="card__image">
-            <img class="card__image" src="./assets/images/talk.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #02192E; aspect-ratio: 16 / 9;">
-            <video sb:src="./assets/videos/talk_clip.mp4" autoplay muted loop playsinline preload="none"></video>
-            <div class="card__image-timestamp">6:30</div>
-            <button class="card__sound-button" title="Unmute">
-              <img src="./assets/images/muted.svg" alt="Unmute">
-              <img src="./assets/images/unmuted.svg" alt="Mute">
-            </button>
-          </div>
-          <h2 class="card__title">Godot Conference 2024 Lighting&nbsp;Talk</h2>
-        </article>
-        
-        <article class="card card--green">
-          <a href="https://www.youtube.com/watch?v=LgAApm9fCcI" target="_blank" class="card__link"></a>
-          <div class="card__image">
-            <img src="./assets/images/garden_station.webp" alt="Video still from my Godot conference talk" loading="lazy" style="background-color: #FFFFFF; aspect-ratio: 16 / 9;">
-            <video sb:src="./assets/videos/garden_station_clip.mp4" autoplay muted loop playsinline preload="none"></video>
-            <div class="card__image-timestamp">1:03:15</div>
-            <button class="card__sound-button" title="Unmute">
-              <img src="./assets/images/muted.svg" alt="Unmute">
-              <img src="./assets/images/unmuted.svg" alt="Mute">
-            </button>
-          </div>
-          <h2 class="card__title">One month of full time game&nbsp;making</h2>
-        </article>
+        <sb:include 
+          src="./_partials/card.html"
+          href="https://www.youtube.com/watch?v=xY26Fbu2ZEg"
+          target="_blank"
+          title="Godot Conference 2024 Lighting&nbsp;Talk"
+          color="#02192E"
+          aspectRatio="16 / 9"
+          imageAlt="Video still from my Godot conference talk"
+          imageSrc="./assets/images/talk.webp"
+          videoSrc="./assets/videos/talk_clip.mp4"
+          timestamp="6:30"
+        />
+
+        <sb:include 
+          src="./_partials/card.html"
+          href="https://www.youtube.com/watch?v=LgAApm9fCcI"
+          target="_blank"
+          title="One month of full time game&nbsp;making"
+          color="#FFFFFF"
+          aspectRatio="16 / 9"
+          imageAlt="Video still from my my dev log video"
+          imageSrc="./assets/images/garden_station.webp"
+          videoSrc="./assets/videos/garden_station_clip.mp4"
+          timestamp="1:03:15"
+        />
       </div>
     </section>
 
@@ -162,7 +170,7 @@
     </footer>
   </main>
 
-  <script>
+  <!-- <script>
     function showVideo(video) {
       if (!(video instanceof HTMLVideoElement)) return
       
@@ -222,5 +230,5 @@
 
       soundButton.addEventListener("click", () => toggleMute(video, soundButton))
     }
-  </script>
+  </script> -->
 </sb:include>
