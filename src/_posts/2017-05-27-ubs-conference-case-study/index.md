@@ -1,7 +1,3 @@
-<!-- color: #B4D5FF -->
-<!-- description: Collecting insights from conference attendees and showing the results in real time. -->
-<!-- description_big: Bank hosted high profile conferences globally for senior investors and corporates. We created a way for them to collect insights from attendees. The results are displayed in real time on visualisations around the event. -->
-
 # Real-time visualisations for UBS conference
 
 ## Problem
@@ -30,24 +26,24 @@ Testing for the answer submission app was done throughout developing it. It had 
 
 I chose the devices based on what was the best selling on Amazon. This is because the best selling devices are usually the best for value, and are not high-end phones. They tend more towards lower mid range devices. We got 1 device for each OS as well as using our own phone to test some high-end phones (we all have fancy phones in the office).
 
-<video src="videos/slider.mp4" muted playsinline loop autoplay></video>
+<video src="./videos/slider.mp4" muted playsinline loop autoplay></video>
 *Example of the slider question.*
 
-<video src="videos/multiple.mp4" muted playsinline loop autoplay></video>
+<video src="./videos/multiple.mp4" muted playsinline loop autoplay></video>
 *Example of the multple answers question.*
 
-<video src="videos/admin_screen.mp4" muted playsinline loop autoplay></video>
+<video src="./videos/admin_screen.mp4" muted playsinline loop autoplay></video>
 *Admin panel.*
 
 Surprising Blackberry 10 wasn't the hardest device to develop for being that it uses WebKit. It was actually Windows Phones.
 
-![Five identical MacBook Pros lined up in a row on a desk](images/IMG_20151107_121704_web.jpg)
+![Five identical MacBook Pros lined up in a row on a desk](./images/IMG_20151107_121704_web.jpg)
 
 For the first conference, there were five different screens to show the visualisation. We rented
 five MacBook Pros and installed Apache, PHP and Chrome. I quickly put together a package of files that includes a shell script to install and setup the machines automatically. This was needed because we were still making changes to the code base and needed a way to setup the machines relatively quickly often.
 
 ## Late night fixes
-![Projector on the floor projecting the visualisation on a office wall](images/IMG_20151104_191836_web.jpg)
+![Projector on the floor projecting the visualisation on a office wall](./images/IMG_20151104_191836_web.jpg)
 
 We came in on the weekend to spend extra time to get it finished before the conference on Monday. We had a mock setup of a visualisation by putting it on a projector. This was not the accurate physical size the of the displays at the event (they were many times bigger), however by zooming scaling the webpage up it allowed us to view section of the visualisations at approximate size. It also allowed us to test contrast levels and colour of text and graphics then adjust accordingly.
 
@@ -57,7 +53,7 @@ Hours away from midnight on Sunday night when we found a serious bug with the vi
 
 On the day of the conference, we turned up early to the hotel. We brought with us all the equipment that needed to be set up. We had to go round and set up five machines on various different screens. We were on site for first few conferences to help set up the visualisation and be on call for tech support.
 
-![Projector on the floor projecting the visualisation on a office wall](images/IMG_20151109_185549_web.jpg)
+![Projector on the floor projecting the visualisation on a office wall](./images/IMG_20151109_185549_web.jpg)
 
 ## Lessons learned
 ### Developers are users too

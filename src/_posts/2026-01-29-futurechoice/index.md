@@ -1,4 +1,9 @@
-<!-- hidden: true -->
+<data sb:buildtime>
+  {
+    "hidden": true
+  }
+</data>
+
 # S&P FutureChoice Installation
 
 <style>

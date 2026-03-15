@@ -1,14 +1,10 @@
-<!-- color: #FFDA2E -->
-<!-- description: Improving the in-car dashboard and console (slightly). -->
-<!-- description_big: Designing two product features to improve the digital instrument cluster. And doing so without completely re-inventing everything ever. -->
-
 # Improving the in-car dashboard and console (slightly)
 
 During my visit to China I would often take the ride sharing service Didi (China's Uber equivalent). I'd find myself in fancy electric vehicles equipped with digital dashboards and consoles. Yet, all this technology gets replaced with a smartphone on a cheap plastic mount.
 
 Car software is not as compelling or useful enough to replace a smartphone. What is the problem and how can it be improved?
 
-![Photo of a phone mounted on top of a big display inside a car](images/wasted_space.jpg)
+![Photo of a phone mounted on top of a big display inside a car](./images/wasted_space.jpg)
 *Forget about disrupting the automotive industry. I'm targeting the cheap plastic mount industry.*
 
 ## Problem
@@ -16,7 +12,7 @@ There is a trend for digital dashboards in cars. Take the existing physical dash
 
 There is a huge opportunity in in-car UI design now. To re-think the dashboard and console we need to ask question; what does a driver need? Two of these requirements are **clarity** and **anticipation**.
 
-![Photo of a digital dashboard from the 2018 Jaguar E-PACE](images/digital_dashboard.jpg)
+![Photo of a digital dashboard from the 2018 Jaguar E-PACE](./images/digital_dashboard.jpg)
 *This is digital. Photo from caricos.com*
 
 When the car dashboard was physical, it's immalleable state limited it. Designers and engineers needed to include an array of symbols, gauges and numbers. Even if some were rarely useful. With a digital dashboard, it is infinitely changeable. But digital dashboards today still include warning lights without any explanation. Drivers do not know what they mean. And they shouldn’t need to remember them or refer to a handbook.
@@ -29,7 +25,7 @@ Some of the icons are deceptively simple, like the engine symbol. Of course it m
 
 And everyone understands the fuel symbol's meaning. But it has a little secret. Do you know what the arrow means? It’s to indicate what side the fuel cap is on. Which is kind of smart, for a physcial dashboard. But somehow gets carried over to the digital world.
 
-![Screenshot of the macOS dock with tooltip label showing over an icon](images/dock.png)
+![Screenshot of the macOS dock with tooltip label showing over an icon](./images/dock.png)
 *[The best icon is a text label.](https://thomasbyttebier.be/blog/the-best-icon-is-a-text-label)*
 
 <!-- [illustration of computer tooltips, maybe mac doc] -->
@@ -54,7 +50,7 @@ Predictions on occasion can and will be wrong. But connected cars can upload the
 ## Implementation
 I’ve focused on two key features for the dashboard. Status and Detour. Both these features have the dashboard and console working together in tandem.
 
-![](images/dashboard_plain.jpg)
+![](./images/dashboard_plain.jpg)
 
 This is the dashboard I’ve designed. It’s pretty simple. There is a speedometer on the right side and a status bar at the bottom.
 
@@ -66,12 +62,12 @@ TALK ABOUT THE PLACEMENT OF THE NOTIFICATION BAR AND WHY. AND THE NEED FOR SPEED
 ### Status
 Fancy marketing slogan: View glanceable information about the status of your car. Find out more by diving deeper.
 
-<video src="videos/notification_example.mp4" controls muted playsinline></video>
+<video src="./videos/notification_example.mp4" controls muted playsinline></video>
 *This is an example of a status notification appearing.*
 
 Notifications appear in the dashboard to explain something. This notification alerts the driver that the tyre pressure is low. A subtle animation in the driver's visions catches their attention. ​After which the notification hides and a icon displays in the status bar.
 
-![Notification appearing the center console](images/console_tire_notification.jpg)
+![Notification appearing the center console](./images/console_tire_notification.jpg)
 *Damn my tyre.*
 
 At the same time, a status card appears on the driver's console. The driver can then view the console to take action in their own time. Or have a passenger do it.
@@ -79,16 +75,16 @@ At the same time, a status card appears on the driver's console. The driver can 
 ### Detour
 Fancy marketing slogan: intelligently offer different routes that respond to events inside and outside of the car.
 
-![](images/detour_bubbles.jpg)
+![](./images/detour_bubbles.jpg)
 <!-- In this example for the console, they can find a service station, or call for help.  -->
 It can offer different routes that respond to events inside and outside of the car. Detours are suggested based on internal factors such as engine problems. Or external ones like how to avoid heavy traffic.
 
-![](images/dashboard_with_detour.jpg)
+![](./images/dashboard_with_detour.jpg)
 <!-- *Damn my petrol.* -->
 
 In this example the driver is running out of petrol. A detour gets added to the nearest petrol station.
 
-![Notification appearing the center console](images/console_petrol_notification.jpg)
+![Notification appearing the center console](./images/console_petrol_notification.jpg)
 *Damn my petrol.*
 
 And this appears in tandem on the console as a status card. This is useful so that a passenger to confirm the Detour for the driver.
