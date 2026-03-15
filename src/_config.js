@@ -1,0 +1,25 @@
+module.exports = {
+  redirects: {
+    // Work pages that have moved to posts.
+    '/work/dashboard': '/posts/improving-car-dashboards-slightly',
+    '/work/findbot': '/posts/findbot-case-study',
+    '/work/conference': '/posts/ubs-conference-case-study',
+    '/work/totaljobs': '/posts/total-jobs',
+
+    // Outbound links.
+    '/redirects/london-creative-coding':
+    'https://www.meetup.com/london-creative-coding/',
+    '/redirects/robot-oracles':
+    'http://www.fullstopnewparagraph.co.uk/client/robots/',
+    '/redirects/handicons': 'https://www.instagram.com/handicons/',
+    '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
+    '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen',
+    '/posts': '/#posts'
+  },
+  
+  copies: [
+    "./_redirects",
+    "./favicon.ico",
+    "./v",
+  ]
+}
