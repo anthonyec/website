@@ -1,4 +1,9 @@
-<!-- hidden: true -->
+<data sb:buildtime>
+  {
+    "hidden": true
+  }
+</data>
+
 <meta name="robots" content="noindex">
 
 # How to install the FileDeck alpha

@@ -10,8 +10,8 @@ Like I get any press. I'm just putting these assets here otherwise I'll keep col
 
 ## Logo
 
-![Logo red](images/pp_head_v2_black_on_red.png)
-![Logo white](images/pp-head-optically-centered-white.jpg)
+![Logo red](./images/pp_head_v2_black_on_red.png)
+![Logo white](./images/pp-head-optically-centered-white.jpg)
 
 ## Asset files
 

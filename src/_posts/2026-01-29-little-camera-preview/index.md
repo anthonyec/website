@@ -1,4 +1,8 @@
-<!-- hidden: true -->
+<data sb:buildtime>
+  {
+    "hidden": true
+  }
+</data>
 
 # Little Camera Preview
 
