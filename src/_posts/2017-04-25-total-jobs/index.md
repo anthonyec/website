@@ -30,4 +30,4 @@ src="./videos/end.mp4"
     poster="images/end_poster.jpg">
 </video>
 
-[Try out the tool here.](https://www.totaljobs.com/insidejob/commuter-calculator/#)
+[Try out the tool here.](https://web.archive.org/web/20241217213056/https://www.totaljobs.com/insidejob/commuter-calculator/)

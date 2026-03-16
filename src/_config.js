@@ -9,8 +9,10 @@ module.exports = {
     // Outbound links.
     '/redirects/london-creative-coding':
     'https://www.meetup.com/london-creative-coding/',
+
     '/redirects/robot-oracles':
-    'http://www.fullstopnewparagraph.co.uk/client/robots/',
+    'https://web.archive.org/web/20220129014038/http://www.fullstopnewparagraph.co.uk/client/robots/',
+    
     '/redirects/handicons': 'https://www.instagram.com/handicons/',
     '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
     '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen',
