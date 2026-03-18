@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <title>{{#page.title}}{{page.title}} - {{/page.title}}Anthony Cossins</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Anthony Cossins has a website on the internet and this is it." />
+    <meta name="keywords" content="just, a, great, guy" />
+
+    <meta property="og:title" content="{{#page.title}}{{page.title}} - {{/page.title}}Anthony Cossins" />
+    <meta property="og:description" content="Anthony Cossins has a website on the internet and this is it." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{{page.data.thumbnail}}}" />
+
+    <meta name="twitter:title" content="{{#page.title}}{{page.title}} - {{/page.title}}Anthony Cossins" />
+    <meta name="twitter:description" content="Anthony Cossins has a website on the internet and this is it." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="{{{page.data.thumbnail}}}" />
+
+    <link rel="icon" href="../favicon.png">
+    <link rel="canonical" href="https://anthonycossins.com/">
+
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/vars.css" />
+    <link rel="stylesheet" href="../assets/css/body.css" />
+
+    <script async defer type="text/javascript" data-domain="anthonycossins.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+  </head>
+  
+  <body>
+    {{{attributes.children}}}
+  </body>
+</html>

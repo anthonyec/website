@@ -1,6 +1,9 @@
-<!-- thumbnail: ./window_on_window.gif -->
-<!-- twitterSocialImage: ./window_on_window.gif -->
-<!-- dateUpdated: 2023-08-20 -->
+<data sb:buildtime>
+  {
+    "thumbnail": "./window_on_window.gif",
+    "updated": "2023-08-20"
+  }
+</data>
 
 # How to make transparent windows in Godot
 
@@ -13,7 +16,7 @@ Here's how to make the [main window](#make-the-main-window-transparent) or [a wi
 1. Open Project Settings
 2. Ensure `Advanced Settings` is toggled on
 3. Go to `Display > Window > Size`
-4. Enable the `Transparent` **and** the `Borderless` toggle <a href="#footnote-1">[1]</a>
+4. Enable the `Transparent` and the `Borderless` toggle <a href="#footnote-1">[1]</a>
 5. Go to `Display > Window > Per Pixel Transparency`
 6. Enable the `Allowed` toggle
 
@@ -102,28 +105,25 @@ If you want Window nodes to appear outside the main window, go into Project Sett
     }
 
     const bubble = document.createElement('div');
-
     bubble.setAttribute('class', 'footnote-bubble');
     bubble.setAttribute('data-footnote-id', id)
 
     bubble.innerHTML = footnote.innerHTML
-
     bubble.style.position = "absolute"
-    bubble.style.width = FOOTNOTE_BUBBLE_WIDTH;
-    bubble.style.top = target.offsetTop + 50;
-    bubble.style.left = target.offsetLeft - (FOOTNOTE_BUBBLE_WIDTH / 2);
+    bubble.style.width = `${FOOTNOTE_BUBBLE_WIDTH}px`;
+    bubble.style.top = `${target.offsetTop + 50}px`;
+    bubble.style.left = `${target.offsetLeft - (FOOTNOTE_BUBBLE_WIDTH / 2)}px`;
     bubble.style.background = 'black';
     bubble.style.color = 'white';
-    bubble.style.padding = 20;
+    bubble.style.padding = "20px";
     bubble.style.borderRadius = '30px';
     bubble.style.lineHeight = 1.3
     bubble.style.fontFamily = "inherit";
     bubble.style.border = "3px solid white";
     bubble.style.boxShadow = "0 0 0 3px black, 0px 5px 20px rgba(0, 0, 0, 0.5)";
-    bubble.style.fontSize = 18;
+    bubble.style.fontSize = "inherit";
 
     document.body.appendChild(bubble);
-
     document.body.addEventListener('click', closeFootnoteBubble);
   };
 
