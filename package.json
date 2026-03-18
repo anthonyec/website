@@ -4,8 +4,8 @@
   "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev node --enable-source-maps ./node_modules/.bin/staticbuild ./src ./dist --watch",
-    "build": "git submodule update --init --recursive --depth=1 && node --enable-source-maps ./node_modules/.bin/staticbuild ./src ./dist"
+    "start": "staticbuild ./src ./dist --watch",
+    "build": "staticbuild ./src ./dist"
   },
   "repository": {
     "type": "git",
