@@ -13,7 +13,7 @@
   },
   "author": "Anthony Cossins",
   "homepage": "https://github.com/anthonyec/website#readme",
-  "devDependencies": {
-    "@anthonyec/staticbuild": "github:anthonyec/staticbuild"
+  "dependencies": {
+    "@anthonyec/staticbuild": "^3.0.0"
   }
 }
