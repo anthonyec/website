@@ -16,7 +16,6 @@
           <link href="{{site.url}}{{path}}" rel="alternate" type="text/html" title="{{title}}"/>
           <published>{{#fn.dateToUTC}}{{date}}{{/fn.dateToUTC}}</published>
           <updated>{{#fn.dateToUTC}}{{date}}{{/fn.dateToUTC}}</updated>
-          <content:encoded><![CDATA[{{#fn.removeH1}}{{{content}}}{{/fn.removeH1}}]]></content:encoded>
         </item>
       {{/data.hidden}}
     {{/collection.posts}}
