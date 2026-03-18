@@ -16,7 +16,10 @@ module.exports = {
     '/redirects/handicons': 'https://www.instagram.com/handicons/',
     '/redirects/gnormanperry': 'https://www.instagram.com/gnormanperry/',
     '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen',
-    '/posts': '/#posts'
+    '/posts': '/#posts',
+
+    "/snippets": "https://github.com/anthonyec/snippets/tree/master/heart",
+    "/stuff/bluehouse": "https://github.com/anthonyec/bluehouse",
   },
   
   copies: [
