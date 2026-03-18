@@ -1,6 +1,6 @@
-[submodule "stuff/bluehouse"]
-	path = stuff/bluehouse
+[submodule "bluehouse"]
+	path = src/_submodules/stuff/bluehouse
 	url = https://github.com/anthonyec/bluehouse.git
 [submodule "snippets"]
-	path = snippets
+	path = src/_submodules/snippets
 	url = https://github.com/anthonyec/snippets.git
