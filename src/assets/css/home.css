@@ -53,24 +53,6 @@
   text-decoration: underline;
 }
 
-.home__footer-circle {
-  border: 1px solid var(--text-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 200px;
-  height: 80px;
-  text-align: center;
-  text-transform: lowercase;
-  font-size: 12px;
-}
-
-.home__footer-circle span {
-  width: 180px;
-}
-
 .home__chip-group {
   display: flex;
   gap: 10px;

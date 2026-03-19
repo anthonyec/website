@@ -4,7 +4,7 @@
   "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "start": "staticbuild ./src ./dist --watch",
+    "watch": "staticbuild ./src ./dist --watch",
     "build": "staticbuild ./src ./dist"
   },
   "repository": {

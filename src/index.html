@@ -159,13 +159,9 @@
         {{/data.hidden}}
       {{/collection.posts}}
     </section>
-    
+
     <footer class="home__footer">
-      <div class="home__footer-circle">
-        <span>
-          This site was <a href="https://github.com/anthonyec/staticbuild" target="_blank">built with a tool</a> that's not made for you!
-        </span>
-      </div>
+      <sb:include src="./node_modules/@anthonyec/staticbuild/dist/partials/badge.html" />
     </footer>
   </main>
 </sb:include>
