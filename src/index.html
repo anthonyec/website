@@ -1,4 +1,4 @@
-<sb:include src="./_partials/page.html">
+<sb:include src="./_partials/_page.html">
   <link rel="stylesheet" href="./assets/css/home.css" />
   <link rel="stylesheet" href="./assets/css/chip.css" />
   <link rel="stylesheet" href="./assets/css/button.css" />
@@ -6,7 +6,7 @@
 
   <main class="home">
     <div class="home__section home__section--list">
-      <sb:include src="./_partials/logo.html" big="true" />
+      <sb:include src="./_partials/_logo.html" big="true" />
 
       <a href="https://www.linkedin.com/in/anthonyec/" target="_blank" class="chip chip--linkedin">
         <img src="./assets/images/linkedin.svg" alt="" class="chip__icon">
@@ -60,7 +60,7 @@
 
     <section class="home__section home__section--grid" id="projects">
       <sb:include 
-        src="./_partials/card.html"
+        src="./_partials/_card.html"
         href="/posts/little-camera-preview"
         title="Little Camera Preview"
         color="#1C202B"
@@ -69,7 +69,7 @@
       />
 
       <sb:include 
-        src="./_partials/card.html"
+        src="./_partials/_card.html"
         href="https://saladroom.net/?ref=anthonycossins"
         target="_blank"
         title="Salad Room"
@@ -79,7 +79,7 @@
       />
 
       <sb:include 
-        src="./_partials/card.html"
+        src="./_partials/_card.html"
         href="https://chrome.google.com/webstore/detail/powerlet/ofecodkcadbenmiknnidnfepbblapgkn"
         target="_blank"
         title="Powerlet"
@@ -91,7 +91,7 @@
 
     <section class="home__section home__section--grid home__section--wide">
       <sb:include 
-        src="./_partials/card.html"
+        src="./_partials/_card.html"
         href="/posts/futurechoice"
         title="First commercial Godot project"
         color="#BB87D8"
@@ -104,7 +104,7 @@
       />
 
       <sb:include 
-        src="./_partials/card.html"
+        src="./_partials/_card.html"
         href="/posts/filedeck"
         title="File browser for the Steam Deck"
         color="#15CDFF"
@@ -119,7 +119,7 @@
     <section class="home__section home__section--grid home__section--small-gap-2">
       <div class="home__card-group">
         <sb:include 
-          src="./_partials/card.html"
+          src="./_partials/_card.html"
           href="https://www.youtube.com/watch?v=xY26Fbu2ZEg"
           target="_blank"
           title="Godot Conference 2024 Lighting&nbsp;Talk"
@@ -132,7 +132,7 @@
         />
 
         <sb:include 
-          src="./_partials/card.html"
+          src="./_partials/_card.html"
           href="https://www.youtube.com/watch?v=LgAApm9fCcI"
           target="_blank"
           title="One month of full time game&nbsp;making"
@@ -161,7 +161,7 @@
     </section>
 
     <footer class="home__footer">
-      <sb:include src="./node_modules/@anthonyec/staticbuild/dist/partials/badge.html" />
+      <sb:include src="./node_modules/@anthonyec/staticbuild/dist/partials/_badge.html" />
     </footer>
   </main>
 </sb:include>
