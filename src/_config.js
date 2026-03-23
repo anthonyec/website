@@ -18,7 +18,7 @@ module.exports = {
     '/redirects/bigscreen': 'https://github.com/anthonyec/bigscreen',
     '/posts': '/#posts',
 
-    "/snippets": "https://github.com/anthonyec/snippets/tree/master/heart",
+    "/snippets": "https://github.com/anthonyec/snippets",
     "/stuff/bluehouse": "https://github.com/anthonyec/bluehouse",
   },
   
