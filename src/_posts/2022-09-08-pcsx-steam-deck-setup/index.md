@@ -22,7 +22,7 @@ Install PCSX2!
 
 ⚠️ Before adjusting any settings, run PCSX2 and then quit. This will create the necessary files and folders for settings.
 
-Download this <a href="PAD.ini" download>controller config file</a> called `PAD.ini`.
+Download this <a href="./PAD.ini" download>controller config file</a> called `PAD.ini`.
 
 Message from our sponser: you can use [Salad Room](https://saladroom.net/) to copy over text and files easily.
 

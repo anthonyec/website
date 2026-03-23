@@ -102,7 +102,7 @@ And car manufactures want to develop their own platforms. The reward is big for 
 
 I hear those upcoming self driving cars use a lot of software.
 
-**This case study is loosely based on a small talk that I did for [Visualising Data London](hhttps://www.meetup.com/Visualising-Data-London/events/241775682/). See the slides [here](https://docs.google.com/presentation/d/1kxBuHmhbf1CzSe-ApM54Vh962DHiHwe1E8zfulMCdas/edit?usp=sharing).**
+**This case study is loosely based on a small talk that I did for [Visualising Data London](https://www.meetup.com/Visualising-Data-London/events/241775682/). See the slides [here](https://docs.google.com/presentation/d/1kxBuHmhbf1CzSe-ApM54Vh962DHiHwe1E8zfulMCdas/edit?usp=sharing).**
 
 
 <!-- [illustration of hidden sneaky self driving car] -->
