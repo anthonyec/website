@@ -103,16 +103,24 @@ class Floaty {
   isOnScreen = false
 
   setup() {
-    this.element = document.createElement("img")
-    this.element.src = "/assets/images/woo.gif"
+    this.element = document.createElement("div")
     this.element.width = this.size.x
     this.element.height = this.size.y
     this.element.style.position = "fixed"
     this.element.style.left = "0px"
     this.element.style.top = "0px"
-    this.element.style.pointerEvents = "none"
     this.element.style.transformOrigin = "center"
+    this.element.style.pointerEvents = "none"
+    this.element.style.filter = "drop-shadow(20px 30px 20px rgba(0, 0, 0, 0.4))"
     this.element.style.zIndex = "999"
+
+    const image = document.createElement("img")
+    image.style.position = "absolute"
+    image.src = "/assets/images/woo.gif"
+    image.width = this.size.x
+    image.height = this.size.y
+    image.style.transformOrigin = "center"
+    this.element.appendChild(image)
 
     document.addEventListener("mousemove", (event) => {
       if (!(event instanceof MouseEvent)) return
@@ -194,7 +202,11 @@ class Floaty {
   }
 
   render() {
-    this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px) rotate(${this.rotation}deg)`;
+    const image = this.element.firstChild
+    if (!image) return
+
+    image.style.transform = `rotate(${this.rotation}deg)`;
+    this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px)`;
   }
 
   onBecomeVisible() {
