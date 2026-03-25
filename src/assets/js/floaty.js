@@ -38,6 +38,11 @@ class Vector2 {
     return b.sub(this).normalize()
   }
 
+  distanceTo(b) {
+    const difference = this.sub(b);
+    return Math.sqrt(difference.x * difference.x + difference.y * difference.y);
+  }
+
   rotated(angle) {
     const sin = Math.sin(angle);
     const cos = Math.cos(angle);
@@ -53,9 +58,17 @@ function randomRange(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+function remap(value, istart, iend, ostart, oend) {
+  return (value - istart) / (iend - istart) * (oend - ostart) + ostart
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
 // Time to wait between showing the floaty again once it has gone off screen.
-const MIN_WAIT_TIME = 2
-const MAX_WAIT_TIME = 8
+const MIN_WAIT_TIME = 1
+const MAX_WAIT_TIME = 10
 
 const MIN_ROTATION_SPEED = 50
 const MAX_ROTATION_SPEED = 150
@@ -63,93 +76,135 @@ const MAX_ROTATION_SPEED = 150
 const MIN_MOVE_SPEED = 50
 const MAX_MOVE_SPEED = 250
 
+const INACTIVE_WAIT_TIME = 30_000
+
 let lastFrameTime = Date.now()
 
-const floaty = {
-  element: null,
-  timeOffScreen: 0,
-  waitTime: 1,
-
-  position: new Vector2(-100, -100),
-  size: new Vector2(100, 100),
-  rotation: 0,
-
-  moveSpeed: new Vector2(-100, -100),
-  rotationSpeed: 0,
+const user = {
+  lastInteractTime: Date.now(),
+  mousePosition: new Vector2(0, 0)
 }
 
-function setup() {
-  floaty.element = document.createElement("img")
-  floaty.element.src = "logo.jpg"
-  floaty.element.width = floaty.size.x
-  floaty.element.height = floaty.size.y
-  floaty.element.style.position = "fixed"
-  floaty.element.style.left = "0px"
-  floaty.element.style.top = "0px"
-  floaty.element.style.pointerEvents = "none"
-  floaty.element.style.transformOrigin = "center"
+const floaties = []
 
-  document.body.appendChild(floaty.element)
+class Floaty {
+  element = null
+  timeOffScreen = 0
+  waitTime = 1
+
+  position = new Vector2(-100, -100)
+  size = new Vector2(100, 100)
+  rotation = 0
+
+  moveSpeed = new Vector2(-100, -100)
+  rotationSpeed = 0
+
+  forceSpeed = new Vector2(100, 10)
+
+  setup() {
+    this.element = document.createElement("img")
+    this.element.src = "/assets/images/woo.gif"
+    this.element.width = this.size.x
+    this.element.height = this.size.y
+    this.element.style.position = "fixed"
+    this.element.style.left = "0px"
+    this.element.style.top = "0px"
+    this.element.style.pointerEvents = "none"
+    this.element.style.transformOrigin = "center"
+    this.element.style.zIndex = "999"
+
+    document.body.appendChild(this.element)
+
+    document.addEventListener("mousemove", (event) => {
+      if (!(event instanceof MouseEvent)) return
+
+      user.mousePosition.x = event.clientX
+      user.mousePosition.y = event.clientY
+
+      user.lastInteractTime = Date.now()
+    })
+
+    document.addEventListener("scroll", () => {
+      user.lastInteractTime = Date.now()
+    })
+  }
+
+  update(deltaTime = 0) {
+    // Update.
+    this.position.x += this.moveSpeed.x * deltaTime
+    this.position.y += this.moveSpeed.y * deltaTime
+    this.rotation += this.rotationSpeed * deltaTime
+
+    const isOffScreen = 
+      this.position.x < 0 - this.size.x ||
+      this.position.x > window.innerWidth ||
+      this.position.y < 0 - this.size.y ||
+      this.position.y > window.innerHeight
+
+    // Track how long floaty has been hidden off screen for to decide when to
+    // show it again.
+    if (isOffScreen) {
+      this.timeOffScreen += deltaTime
+    }
+
+    const timeUserInactive = Date.now() - user.lastInteractTime
+
+    if (!isOffScreen && timeUserInactive < INACTIVE_WAIT_TIME) {
+      const directionToFloaty = user.mousePosition.directionTo(this.position)
+      const distanceToFloaty = user.mousePosition.distanceTo(this.position)
+      const pushPercent = clamp(remap(distanceToFloaty, 0, 500, 1, 0), 0.1, 1)
+      this.moveSpeed = this.moveSpeed.add(directionToFloaty.scale(10 * pushPercent))
+    }
+    
+    if (isOffScreen && this.timeOffScreen > this.waitTime && timeUserInactive > INACTIVE_WAIT_TIME) {
+      const screenCenter = new Vector2(window.innerWidth / 2, window.innerHeight / 2)
+
+      const directionToCenter = this.position.directionTo(screenCenter)
+      const isMovingAwayFromCenter = this.moveSpeed.normalize().dot(directionToCenter) < 0
+
+      // If the floaty is off screen and is moving away, that means it has done
+      // a pass by and it's time to put it into a new random position.
+      if (isMovingAwayFromCenter) {
+        // Pick the new position off screen by choosing a random direction from
+        // the center of the window, going outwards. Imagine a clock hand being
+        // rotated around.
+        const randomDirection = new Vector2(1, 1).rotated(Math.random() * Math.PI * 2)
+        const randomPositionOffScreen = screenCenter.add(
+          new Vector2(randomDirection.x * (window.innerWidth / 2), randomDirection.y * (window.innerHeight / 2))
+        )
+        this.position = randomPositionOffScreen
+
+        const randomRotationDirection = Math.random() < 0.5 ? -1 : 1
+        this.rotationSpeed = randomRange(MIN_ROTATION_SPEED, MAX_ROTATION_SPEED) * randomRotationDirection
+        this.moveSpeed = this.position.directionTo(screenCenter).scale(randomRange(MIN_MOVE_SPEED, MAX_MOVE_SPEED))
+
+        // Reset timers.
+        this.timeOffScreen = 0
+        this.waitTime = randomRange(MIN_WAIT_TIME, MAX_WAIT_TIME)
+      }
+    }
+
+    // Render.
+    this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px) rotate(${this.rotation}deg)`;
+  }
+}
+
+for (let index = 0; index < 10; index ++) {
+  const floaty = new Floaty()
+  floaty.setup()
+  floaties.push(floaty)
 }
 
 function update() {
-  console.assert(floaty.element instanceof HTMLImageElement, "Expected floaty <img> element to exist")
-  
   const nowTime = Date.now()
   const deltaTime = (nowTime - lastFrameTime) / 1000
 
-  // Update.
-  floaty.position.x += floaty.moveSpeed.x * deltaTime
-  floaty.position.y += floaty.moveSpeed.y * deltaTime
-  floaty.rotation += floaty.rotationSpeed * deltaTime
-
-  const isOffScreen = 
-    floaty.position.x < 0 - floaty.size.x ||
-    floaty.position.x > window.innerWidth ||
-    floaty.position.y < 0 - floaty.size.y ||
-    floaty.position.y > window.innerHeight
-
-  // Track how long floaty has been hidden off screen for to decide when to
-  // show it again.
-  if (isOffScreen) {
-    floaty.timeOffScreen += deltaTime
+  for (const floaty of floaties) {
+    floaty.update(deltaTime)
   }
-  
-  if (isOffScreen && floaty.timeOffScreen > floaty.waitTime) {
-    const screenCenter = new Vector2(window.innerWidth / 2, window.innerHeight / 2)
-
-    const directionToCenter = floaty.position.directionTo(screenCenter)
-    const isMovingAwayFromCenter = floaty.moveSpeed.normalize().dot(directionToCenter) < 0
-
-    // If the floaty is off screen and is moving away, that means it has done
-    // a pass by and it's time to put it into a new random position.
-    if (isMovingAwayFromCenter) {
-      // Pick the new position off screen by choosing a random direction from
-      // the center of the window, going outwards. Imagine a clock hand being
-      // rotated around.
-      const randomDirection = new Vector2(1, 1).rotated(Math.random() * Math.PI * 2)
-      const randomPositionOffScreen = screenCenter.add(
-        new Vector2(randomDirection.x * (window.innerWidth / 2), randomDirection.y * (window.innerHeight / 2))
-      )
-      floaty.position = randomPositionOffScreen
-
-      const randomRotationDirection = Math.random() < 0.5 ? -1 : 1
-      floaty.rotationSpeed = randomRange(MIN_ROTATION_SPEED, MAX_ROTATION_SPEED) * randomRotationDirection
-      floaty.moveSpeed = floaty.position.directionTo(screenCenter).scale(randomRange(MIN_MOVE_SPEED, MAX_MOVE_SPEED))
-
-      // Reset timers.
-      floaty.timeOffScreen = 0
-      floaty.waitTime = randomRange(MIN_WAIT_TIME, MAX_WAIT_TIME)
-    }
-
-  }
-
-  // Render.
-  floaty.element.style.transform = `translate(${floaty.position.x}px, ${floaty.position.y}px) rotate(${floaty.rotation}deg)`;
 
   lastFrameTime = Date.now()
   window.requestAnimationFrame(update)
 }
 
-setup()
 update()
