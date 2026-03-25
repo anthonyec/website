@@ -98,8 +98,9 @@ class Floaty {
 
   moveSpeed = new Vector2(-100, -100)
   rotationSpeed = 0
-
   forceSpeed = new Vector2(100, 10)
+
+  isOnScreen = false
 
   setup() {
     this.element = document.createElement("img")
@@ -112,8 +113,6 @@ class Floaty {
     this.element.style.pointerEvents = "none"
     this.element.style.transformOrigin = "center"
     this.element.style.zIndex = "999"
-
-    document.body.appendChild(this.element)
 
     document.addEventListener("mousemove", (event) => {
       if (!(event instanceof MouseEvent)) return
@@ -135,28 +134,37 @@ class Floaty {
     this.position.y += this.moveSpeed.y * deltaTime
     this.rotation += this.rotationSpeed * deltaTime
 
-    const isOffScreen = 
-      this.position.x < 0 - this.size.x ||
-      this.position.x > window.innerWidth ||
-      this.position.y < 0 - this.size.y ||
-      this.position.y > window.innerHeight
+    const isOnScreen = this.position.x < 0 - this.size.x
+      || this.position.x > window.innerWidth
+      || this.position.y < 0 - this.size.y
+      || this.position.y > window.innerHeight
+
+    if (!this.isOnScreen && isOnScreen) {
+      this.onBecomeHidden()
+    }
+    
+    if (this.isOnScreen && !isOnScreen) {
+      this.onBecomeVisible()
+    }
+
+    this.isOnScreen = isOnScreen
 
     // Track how long floaty has been hidden off screen for to decide when to
     // show it again.
-    if (isOffScreen) {
+    if (this.isOnScreen) {
       this.timeOffScreen += deltaTime
     }
 
     const timeUserInactive = Date.now() - user.lastInteractTime
 
-    if (!isOffScreen && timeUserInactive < INACTIVE_WAIT_TIME) {
+    if (!this.isOnScreen && timeUserInactive < INACTIVE_WAIT_TIME) {
       const directionToFloaty = user.mousePosition.directionTo(this.position)
       const distanceToFloaty = user.mousePosition.distanceTo(this.position)
-      const pushPercent = clamp(remap(distanceToFloaty, 0, 500, 1, 0), 0.1, 1)
+      const pushPercent = clamp(remap(distanceToFloaty, 0, 500, 1, 0), 0.5, 1)
       this.moveSpeed = this.moveSpeed.add(directionToFloaty.scale(10 * pushPercent))
     }
     
-    if (isOffScreen && this.timeOffScreen > this.waitTime && timeUserInactive > INACTIVE_WAIT_TIME) {
+    if (this.isOnScreen && this.timeOffScreen > this.waitTime && timeUserInactive > INACTIVE_WAIT_TIME) {
       const screenCenter = new Vector2(window.innerWidth / 2, window.innerHeight / 2)
 
       const directionToCenter = this.position.directionTo(screenCenter)
@@ -183,9 +191,19 @@ class Floaty {
         this.waitTime = randomRange(MIN_WAIT_TIME, MAX_WAIT_TIME)
       }
     }
+  }
 
-    // Render.
+  render() {
     this.element.style.transform = `translate(${this.position.x}px, ${this.position.y}px) rotate(${this.rotation}deg)`;
+  }
+
+  onBecomeVisible() {
+    document.body.appendChild(this.element)
+  }
+
+  onBecomeHidden() {
+    if (!this.element.parentElement) return
+    this.element.parentElement.removeChild(this.element)
   }
 }
 
@@ -201,6 +219,7 @@ function update() {
 
   for (const floaty of floaties) {
     floaty.update(deltaTime)
+    floaty.render()
   }
 
   lastFrameTime = Date.now()
