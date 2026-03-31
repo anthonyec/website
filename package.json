@@ -4,8 +4,8 @@
   "description": "My website, my rulez!!",
   "main": "index.js",
   "scripts": {
-    "watch": "staticbuild ./src ./dist --watch",
-    "build": "staticbuild ./src ./dist"
+    "watch": "staticbuild ./src ./dist --watch --ignore ./v",
+    "build": "staticbuild ./src ./dist --ignore ./v"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,6 @@
   "author": "Anthony Cossins",
   "homepage": "https://github.com/anthonyec/website#readme",
   "dependencies": {
-    "@anthonyec/staticbuild": "^3.0.10"
+    "@anthonyec/staticbuild": "^3.0.11"
   }
 }
