@@ -14,6 +14,6 @@
   "author": "Anthony Cossins",
   "homepage": "https://github.com/anthonyec/website#readme",
   "dependencies": {
-    "@anthonyec/staticbuild": "^3.0.14"
+    "@anthonyec/staticbuild": "^3.0.15"
   }
 }
