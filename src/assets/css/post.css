@@ -83,6 +83,11 @@
   margin: 1.5em 0;
 }
 
+.post ul ul {
+  margin: 0.3em 0;
+  padding-left: 0.8em;
+}
+
 .post h2 + .post h3 {
   margin-top: 0.5em;
 }
