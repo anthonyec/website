@@ -2,10 +2,12 @@
   <a href="{{attributes.href}}" target="{{attributes.target}}" class="card__link"></a>
 
   <div class="card__image">
-    <img class="card__image" src="{{{attributes.imageSrc}}}" alt="{{attributes.imageAlt}}" loading="lazy" style="background-color: {{attributes.color}}; aspect-ratio: {{attributes.aspectRatio}};">
+    <img class="card__image-img" src="{{{attributes.imageSrc}}}" alt="{{attributes.imageAlt}}" loading="lazy" style="background-color: {{attributes.color}}; aspect-ratio: {{attributes.aspectRatio}};">
 
     {{#attributes.videoSrc}}
       <video sb:src="{{{attributes.videoSrc}}}" autoplay muted loop playsinline preload="none"></video>
+
+      <img class="card__loading" src="../assets/images/loading.gif" alt="">
 
       {{#attributes.timestamp}}
         <div class="card__image-timestamp">{{attributes.timestamp}}</div>
@@ -24,64 +26,82 @@
 </article>
 
 <script>
-  function showVideo(video) {
-    if (!(video instanceof HTMLVideoElement)) return
-    
-    if (!video.src) {
-      video.src = video.getAttribute("sb:src")
+  class VideoThumbnail {
+    video = null
+    soundButton = null
+    loadingIndictor = null
+
+    constructor(card) {
+      if (!(card instanceof HTMLElement)) return
+      
+      const video = card.querySelector("video")
+      if (!(video instanceof HTMLVideoElement)) return
+      
+      card.addEventListener("mouseover", () => this.show())
+      card.addEventListener("mouseout", () => this.hide())
+      card.addEventListener("focusin", () => this.show())
+      card.addEventListener("focusout", () => this.hide())
+      
+      this.video = video
+      this.video.addEventListener("waiting", () => this.#startWaiting())
+      this.video.addEventListener("playing", () => this.#stopWaiting())
+      
+      this.loadingIndictor = card.querySelector(".card__loading")
+
+      const soundButton = card.querySelector(".card__sound-button")
+      if (!(soundButton instanceof HTMLButtonElement)) return
+
+      this.soundButton = soundButton
+      this.soundButton.addEventListener("click", () => this.toggleMute())
     }
 
-    video.play()
-    video.volume = 1.0
+    #startWaiting() {
+      this.loadingIndictor.classList.add("card__loading--visible")
+    }
 
-    try {
-      plausible('hover_video')
-    } catch (err) {
-      console.log("Event failed:", err)
+    #stopWaiting() {
+      this.loadingIndictor.classList.remove("card__loading--visible")
+    }
+
+    show() {
+      if (!this.video.src) {
+        this.video.src = this.video.getAttribute("sb:src")
+      }
+
+      this.video.play()
+      this.video.volume = 1.0
+
+      try {
+        plausible('hover_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
+    }
+
+    hide () {
+      this.video.pause()
+    }
+
+    toggleMute() {
+      const muteIcon = this.soundButton.querySelector("img:nth-child(1)")
+      const unmuteIcon = this.soundButton.querySelector("img:nth-child(2)")
+      if (!(muteIcon instanceof HTMLImageElement)) return
+      if (!(unmuteIcon instanceof HTMLImageElement)) return
+
+      this.video.muted = !this.video.muted
+      this.soundButton.title = this.video.muted ? "Unmute" : "Mute"
+      this.soundButton.classList.toggle("card__sound-button--unmuted", !this.video.muted)
+
+      try {
+        plausible('unmuted_video')
+      } catch (err) {
+        console.log("Event failed:", err)
+      }
     }
   }
 
-  function hideVideo(video) {
-    if (!(video instanceof HTMLVideoElement)) return
-
-    video.pause()
-  }
-
-  function toggleMute(video, soundButton) {
-    if (!(video instanceof HTMLVideoElement)) return
-    if (!(soundButton instanceof HTMLButtonElement)) return
-
-    const muteIcon = soundButton.querySelector("img:nth-child(1)")
-    const unmuteIcon = soundButton.querySelector("img:nth-child(2)")
-    if (!(muteIcon instanceof HTMLImageElement)) return
-    if (!(unmuteIcon instanceof HTMLImageElement)) return
-
-    video.muted = !video.muted
-    soundButton.title = video.muted ? "Unmute" : "Mute"
-    soundButton.classList.toggle("card__sound-button--unmuted", !video.muted)
-
-    try {
-      plausible('unmuted_video')
-    } catch (err) {
-      console.log("Event failed:", err)
-    }
-  }
-
-  const cards = document.querySelectorAll('.card')
-
-  for (const card of cards) {
-    const video = card.querySelector("video")
-    if (!video) continue
-
-    card.addEventListener("mouseover", () => showVideo(video))
-    card.addEventListener("mouseout", () => hideVideo(video))
-    card.addEventListener("focusin", () => showVideo(video))
-    card.addEventListener("focusout", () => hideVideo(video))
-
-    const soundButton = card.querySelector(".card__sound-button")
-    if (!soundButton) continue
-
-    soundButton.addEventListener("click", () => toggleMute(video, soundButton))
+  for (const card of document.querySelectorAll('.card')) {
+    new VideoThumbnail(card)
   }
 </script>
 
@@ -151,7 +171,8 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
   }
 
-  .card__image img,
+  .card__image-img,
+  .card__sound-button img,
   .card__image video {
     display: block;
     width: 100%;
@@ -275,6 +296,25 @@
 
   .card__link:focus {
     outline: none;
+  }
+
+  .card__loading {
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 10px;
+    top: 10px;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 5px black)
+  }
+
+  .card__loading--visible {
+    display: block;
+  }
+
+  .card:not(:hover) .card__loading--visible {
+    display: none;
   }
 
   @media (max-width: 760px) {
