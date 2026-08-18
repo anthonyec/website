@@ -127,26 +127,15 @@
       overflow: hidden;
       
       margin: 0 auto;
+      transform-origin: top left;
     }
 
     @media screen {
-      @media (max-width: 1024px) {
-        .cv {
-          zoom: 0.8;
-        }
-      }
-
-      @media (max-width: 860px) {
-        .cv {
-          zoom: 0.5;
-        }
+      .cv {
+        transform: scale(var(--vw-scale)) translateX(30px);
       }
 
       @media (max-width: 560px) {
-        .cv {
-          zoom: 0.3;
-        }
-
         nav {
           flex-direction: column;
           align-items: center;
@@ -492,6 +481,21 @@
     printPaperButton.addEventListener("click", () => {
       print()
     })
+
+    const clamp = (value, min, max) => {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    const resize = () => {
+      const windowWidth = window.innerWidth
+      const cvWidth = document.querySelector(".cv").clientWidth + (60)
+      const scale = clamp(windowWidth / cvWidth, 0.2, 1)
+
+      document.documentElement.style.setProperty('--vw-scale', scale);
+    }
+
+    window.addEventListener('resize', resize);
+    resize()
   </script>
 
   <nav></nav>
