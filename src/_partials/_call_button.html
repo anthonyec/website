@@ -4,15 +4,15 @@
 
   <style>
     @keyframes ring {
-      0% { transform: rotate(-7deg); }
-      25% { transform: rotate(7deg); }
-      50% { transform: rotate(-7deg); }
-      75% { transform: rotate(7deg); }
+      0% { transform: rotate(-12deg); }
+      25% { transform: rotate(12deg); }
+      50% { transform: rotate(-12deg); }
+      75% { transform: rotate(12deg); }
       100% { transform: rotate(0deg); }
     }
 
-    .button--green:hover svg {
-      animation: ring 0.4s linear forwards;
+    .button--green:hover svg, .button--green:focus svg {
+      animation: ring 0.35s linear forwards;
     }
   </style>
 </a>

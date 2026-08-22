@@ -19,10 +19,6 @@
       </a>
 
       <div class="home__chip-group">
-        <a href="https://bsky.app/profile/anthony.ec" target="_blank" class="chip chip--icon-only chip--bluesky">
-          <img src="./assets/images/bluesky.svg" alt="" class="chip__icon" style="height: 22px">
-        </a>
-
         <a href="mailto:anthonycossins@gmail.com" target="_blank" class="chip chip--icon-only chip--email">
           <img src="./assets/images/email.svg" alt="" class="chip__icon" style="height: 20px">
         </a>
@@ -86,22 +82,7 @@
       />
     </section>
 
-    <section class="home__section home__section--grid home__section--wide">
-      <sb:include 
-        src="./_partials/_card.html"
-        href="/posts/futurechoice"
-        title="First commercial Godot project"
-        color="#BB87D8"
-        aspectRatio="574.2 / 364.8"
-        imageAlt="Picture of four podiums and a big wide screen"
-        imageSrc="./assets/images/future_choice.webp"
-        videoSrc="./assets/videos/s_and_p.webm"
-        isBig="true"
-        hideMuteButton="true"
-      />
-    </section>
-
-    <section class="home__section home__section--grid home__section--small-gap-2">
+    <section class="home__section home__section--grid">
       <div class="home__card-group">
         <sb:include 
           src="./_partials/_card.html"
@@ -129,6 +110,21 @@
           timestamp="1:03:15"
         />
       </div>
+    </section>
+
+    <section class="home__section home__section--grid home__section--wide home__section--small-gap-2">
+      <sb:include 
+        src="./_partials/_card.html"
+        href="/posts/futurechoice"
+        title="First commercial Godot project"
+        color="#BB87D8"
+        aspectRatio="574.2 / 364.8"
+        imageAlt="Picture of four podiums and a big wide screen"
+        imageSrc="./assets/images/future_choice.webp"
+        videoSrc="./assets/videos/s_and_p.webm"
+        isBig="true"
+        hideMuteButton="true"
+      />
     </section>
 
     <section class="home__section home__section--list" id="posts">
